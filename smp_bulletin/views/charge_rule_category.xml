@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="smp_charge_rule_category_form" model="ir.ui.view">
+        <field name="name">smp.charge.rule.category.form</field>
+        <field name="model">charge.rule.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="charge_rule_id"/>
+                </group>
+                <notebook>
+                    <page string="Charge Rule List">
+<!--                        <field name="charge_rule_ids" context="{'tree_view_ref':'smp_charge_rule_category_tree','form_view_ref':'smp_charge_rule_category_form'}"/>-->
+                        <field name="charge_rule_ids">
+                                <tree>
+                                    <field name="sequence"/>
+                                    <field name="name" />
+                                    <field name="code"/>
+                                    <field name="amount_select"/>
+                                    <field name="category_id"/>
+                                    <field name="is_mandatory_input"/>
+                                    <field name="is_mandatory_output"/>
+                                    <field name="parent_rule_id" widget="many2many_tags"/>
+                                </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="smp_charge_rule_category_tree" model="ir.ui.view">
+        <field name="name">smp.charge.rule.category.tree</field>
+        <field name="model">charge.rule.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="charge_rule_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="smp_charge_rule_category_search" model="ir.ui.view">
+        <field name="name">smp.charge.rule.category.search</field>
+        <field name="model">charge.rule.category</field>
+        <field name="arch" type="xml">
+            <search string="Charge rule category">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="charge_rule_id"/>
+            </search>
+        </field>
+    </record>
+
+    <act_window
+        id="smp_charge_rule_category_action"
+        res_model="charge.rule.category"
+        name="Catégorie de Règle de calcul"
+        view_mode="tree,form"
+    />
+
+    <menuitem id="smp_charge_rule_category_menu"
+              name="Catégorie de Règle de calcul"
+              action="smp_charge_rule_category_action"
+              parent="smp_bulletin.smp_stock_accounting_menu_conf"
+    />
+
+</odoo>

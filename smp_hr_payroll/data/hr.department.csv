@@ -1,0 +1,11 @@
+id,name,parent_id
+smp_hr_department_010,Direction Générale,
+smp_hr_department_008,Direction Régionale Nouadhibou,
+smp_hr_department_001,Commercial Nouakchott,Direction Générale
+smp_hr_department_002,Comptabilité,Direction Générale
+smp_hr_department_003,Contrôle et Audit,Direction Générale
+smp_hr_department_004,Commercial Nouadhibou,Direction Régionale Nouadhibou
+smp_hr_department_005,Support,Direction Générale
+smp_hr_department_006,Réseau,Direction Générale
+smp_hr_department_007,Ressources Humaines,Direction Générale
+smp_hr_department_009,Moyens Généraux,Direction Générale

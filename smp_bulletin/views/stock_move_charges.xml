@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    ---------------- Stock Move Charge Views  ----------------
+    <record id="smp_stock_move_charges_form" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.form</field>
+        <field name="model">stock.move.charges</field>
+        <field name="inherit_id" ref="smp_inventory.smp_stock_move_charges_form"/>
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="after">
+                <field name="bulletin_line_id"/>
+                <field name="bulletin_id"/>
+                <field name="regulated_amount"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="smp_stock_move_charges_tree" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.tree</field>
+        <field name="model">stock.move.charges</field>
+        <field name="inherit_id" ref="smp_inventory.smp_stock_move_charges_tree"/>
+        <field name="arch" type="xml">
+            <field name="cost" position="after">
+<!--                <field name="bulletin_line_id"/>-->
+                <field name="regulated_amount"/>
+                <field name="bulletin_id"/>
+            </field>
+        </field>
+    </record>
+
+    <menuitem id="smp_stock_move_charges_menu" name="Charges Générées" parent="smp_bulletin.smp_stock_accounting_charge"
+              action="smp_inventory.smp_stock_move_charges_action"/>
+
+     ---------- Stock Move Charge - Update Account Entries -  Action server ----------------
+    <record id="smp_stock_move_charges_gennerate_accoutngl_move_action" model="ir.actions.server">
+        <field name="name">Generate account entries</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="smp_bulletin.model_stock_move_charges"/>
+        <field name="binding_model_id" ref="smp_bulletin.model_stock_move_charges"/>
+        <field name="code">
+            records.generate_move_charge_accounting_entry()
+        </field>
+    </record>
+    
+
+    ---------- Stock Move Charge Action server - Appliquer un modèle de regularisation ----------------
+<!--    <record id="smp_stock_move_charges_compute_rule_action" model="ir.actions.server">-->
+<!--        <field name="name">Appliquer un modèle de regularisation</field>-->
+<!--        <field name="type">ir.actions.server</field>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="model_id" ref="smp_bulletin.model_stock_move_charges"/>-->
+<!--        <field name="binding_model_id" ref="smp_bulletin.model_stock_move_charges"/>-->
+<!--        <field name="code">-->
+<!--            records.open_stock_move_charge_wizard()-->
+<!--        </field>-->
+<!--    </record>-->
+
+    ---------- Stock Move Charge Action server - Update state ----------------
+
+    <record id="smp_stock_move_charges_compute_state_action" model="ir.actions.server">
+        <field name="name">Update state</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="smp_bulletin.model_stock_move_charges"/>
+        <field name="binding_model_id" ref="smp_bulletin.model_stock_move_charges"/>
+        <field name="code">
+            records._compute_set_state()
+        </field>
+    </record>
+
+
+    ---------- Stock Move Charge Regularization Wizard----------------
+    <record id="smp_stock_move_charges_compute_rule_wizard_form1" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.compute.rule.wizard.form</field>
+        <field name="model">stock.move.charges.wizard</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="multi_step_wizard.multi_step_wizard_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//footer" position="before">
+            <h3>
+                <p>Guide de sélections et de régularisation des charges logistiques et commerciales</p>
+            </h3>
+
+            <group name="start" attrs="{'invisible': [('state', '!=', 'start')]}">
+                <div>
+                    <p>Souhaitez-vous incorporer les frais selectionnés dans un bulletin existant?</p>
+<!--                    <field name="bulletin_selection" widget="state_selection"/>-->
+                    <field name="bulletin_selection" widget="selection"/>
+                    <group>
+                        <field name="bulletin_id"
+                               attrs="{'invisible':[('bulletin_selection','=','no')],
+                                'required':[('bulletin_selection','=','yes')] }"/>
+                        <field name="charge_rule_category_id"/>
+                    </group>
+                </div>
+            </group>
+
+            <group name="bulletin_line" attrs="{'invisible': [('state', '!=', 'bulletin_line')]}">
+                <div>
+                    <p>Souhaitez-vous incorporer les frais selectionnés dans une nouvelle ligne bulletin ?</p>
+                    <field name="bulletin_line_selection"/>
+<!--                    <group name="bulletin_line_yes" attrs="{'invisible': [('state', '!=', 'bulletin_line'),('bulletin_line_selection', '!=', 'yes')]}">-->
+                    <group name="bulletin_line_yes" attrs="{'invisible': [('bulletin_line_selection','=','no')]}">
+                        <p><b>Attentions !!! </b>Dans le cas contraire les entrées obligatoires existant seront réutilisées !!!</p>
+                        <field name="bulletin_line_id"
+                               attrs="{'invisible':[('bulletin_line_selection','=','no')],'required':[('bulletin_line_selection','=','yes')] }"/>
+<!--                        <field  name="bulletin_line_id"-->
+                    </group>
+                </div>
+            </group>
+
+            <group name="input" attrs="{'invisible': [('state', '!=', 'input')]}">
+                <div>
+                    <p>Please enter the mandatory entries for the revaluation of costs</p>
+<!--                    <group>-->
+                        <!--                  <field name="charge_slip_line_ids" context="{'tree_view_ref':'smp_bulletin.view_charge_slip_line_tree'}"/>-->
+                    <field name="charge_slip_line_ids">
+                        <tree editable="bottom" create="false" delete="false">
+                            <field name="sequence"/>
+                            <field name="charge_rule_id"/>
+                            <field name="amount"/>
+                        </tree>
+                    </field>
+
+<!--                    </group>-->
+                </div>
+            </group>
+
+            <div name="final" attrs="{'invisible': [('state', '!=', 'final')]}">
+              <p>Adjustment form for stock and invoicing costs.</p>
+            </div>
+
+          </xpath>
+        </field>
+    </record>
+
+    <record id="smp_stock_move_charges_compute_rule_wizard_action" model="ir.actions.act_window">
+            <field name="name">Régularisation des charges</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.move.charges.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="smp_bulletin.smp_stock_move_charges_compute_rule_wizard_form1"/>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="smp_bulletin.model_stock_move_charges" />
+            <field name="binding_type">action</field>
+        </record>
+
+<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Stock Move Charge - Delete Action server &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--    <record id="smp_stock_move_charges_unlink_action" model="ir.actions.server">-->
+<!--        <field name="name">Delete</field>-->
+<!--        <field name="type">ir.actions.server</field>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="model_id" ref="smp_bulletin.model_stock_move_charges"/>-->
+<!--        <field name="binding_model_id" ref="smp_bulletin.model_stock_move_charges"/>-->
+<!--        <field name="code">-->
+<!--            records.unlink()-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+</odoo>

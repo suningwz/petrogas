@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="ir.config_parameter" id="smp_test.stock_propagate_uom">
+            <field name="key">stock.propagate_uom</field>
+            <field name="value" type="text">1</field>
+        </record>
+    </data>
+
+</odoo>

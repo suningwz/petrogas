@@ -1,0 +1,6 @@
+pip3 install pywheel
+
+
+python3 odoo-bin -r petrogas --addons-path=addons -d petrogas -i base --without-demo=all --load-language en_EN --language en_EN --data-dir /home/ubuntu/petrogaz/filestore --save --config petrogas.cfg  --stop-after-init
+
+python3 odoo-bin -r petrogas --addons-path=addons -d petrogas -i base --without-demo=all --data-dir /home/ubuntu/petrogaz/filestore --save --config petrogas.cfg  --stop-after-init

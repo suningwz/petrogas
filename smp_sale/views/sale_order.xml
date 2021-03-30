@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="smp_view_order_form">
+            <field name="name">smp.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <field name="validity_date" position="replace">
+                </field>
+
+                <field name="partner_id" position="after">
+                    <field name="regime_id" required="0" attrs="{'readonly':[('state','!=','draft')]}"
+                           options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="client_order_ref"/>
+                </field>
+
+                <field name="pricelist_id" position="replace">
+                    <field name="date_order" readonly="True"/>
+                    <field name="location_id" required="0" attrs="{'readonly':[('state','!=','draft')]}"
+                           options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="pricelist_id" attrs="{'readonly':[('state','!=','draft')]}"
+                        options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="product_domain" invisible="1" />
+                </field>
+
+                <field name="payment_term_id" position="after">
+                    <field name="currency_id"/>
+                    <field name="currency_rate_visible" invisible="1"/>
+                    <field name="currency_rate" attrs="{'invisible':[('currency_rate_visible','=',False)]}"/>
+
+                </field>
+
+
+                <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="after">
+                    <field name="qty_to_confirm"/>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='confirmation_date']" position="attributes">
+                    <attribute name="invisible">0</attribute>
+                </xpath>
+
+
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                    <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                    <attribute name="readonly">True</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='sale_order_option_ids']/.." position="attributes">
+                	<attribute name="invisible">True</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="smp_view_order_form1">
+            <field name="name">smp.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="smp_sale.smp_view_order_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('smp_sale.bc_validation_control')])]"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='sale_order_option_ids']/.." position="attributes">
+                	<attribute name="invisible">False</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="smp_view_order_form2">
+            <field name="name">smp.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="smp_sale.smp_view_order_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('smp_sale.bc_price_control')])]"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='sale_order_option_ids']/.." position="attributes">
+                	<attribute name="invisible">False</attribute>
+                </xpath>
+
+            </field>
+    </record>
+
+<!--        <record id="view_quotation_tree_with_onboarding" model="ir.ui.view">-->
+<!--            <field name="name">sale.order.tree</field>-->
+<!--            <field name="model">sale.order</field>-->
+<!--            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <field>-->
+<!--                    <field name="picking_ids"/>-->
+<!--                </field>-->
+<!--            </field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

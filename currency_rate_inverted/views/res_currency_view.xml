@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_currency_tree" model="ir.ui.view">
+        <field name="name">res.currency.tree</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_tree"/>
+        <field name="arch" type="xml">
+            <field name="rate" position="after">
+                <field name="rate_inverted"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_currency_form" model="ir.ui.view">
+        <field name="name">res.currency.form</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" string="Taux de la BCM" type="object" name="get_bcm_rate"
+                    icon="fa-arrow-down"  attrs="{'invisible': [('active', '=', False)]}"/>
+            </div>
+            <field name="rate" position="after">
+                <field name="rate_inverted"/>
+            </field>
+        </field>
+    </record>
+
+   *-----------------  Currency Rate ----------------------------
+        <record id="view_currency_rate_credoc_form" model="ir.ui.view">
+            <field name="name">res.currency.rate.credoc.form</field>
+            <field name="model">res.currency.rate</field>
+            <field name="inherit_id" ref="base.view_currency_rate_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="currency_id"/>
+                </field>
+                <field name="rate" position="after">
+                    <field name="sale_rate"/>
+                    <field name="buy_rate"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_currency_rate_credoc_tree" model="ir.ui.view">
+            <field name="name">res.currency.rate.credoc.tree</field>
+            <field name="model">res.currency.rate</field>
+            <field name="inherit_id" ref="base.view_currency_rate_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="currency_id"/>
+                </field>
+                <field name="rate" position="after">
+                    <field name="sale_rate"/>
+                    <field name="buy_rate"/>
+                </field>
+            </field>
+        </record>
+
+
+        <act_window
+           id="act_view_currency_rates_credoc"
+           name="Currency Rates"
+           view_mode='tree,form'
+           view_id='currency_rate_inverted.view_currency_rate_credoc_tree'
+           res_model="res.currency.rate"/>
+
+        <menuitem id="currency_rate_menu"
+                  name="Liste des taux de change"
+                  action="currency_rate_inverted.act_view_currency_rates_credoc"
+                  parent="account.account_account_menu"
+                  sequence="1" />
+
+
+        *----------------- Wizard Currency Rate ----------------------------
+    <record id="view_currency_rate_wizard_form" model="ir.ui.view">
+<field name="name">res.currency.rate.wizard.form</field>
+<field name="model">res.currency.rate.wizard</field>
+<field name="arch" type="xml">
+    <form>
+        <sheet>
+            <field name="rate_type"/>
+            <group col="4">
+                <field name="currency_from"/>
+                <field name="currency_to"/>
+            </group>
+            <field name="rate_type"/>
+            <footer>
+                <button string="Confirmer" class="oe_highlight" type="object" name="confirm"/>
+<!--                    Ou-->
+<!--                    <button string="Cancel" class="btn-secondary" special="cancel" />-->
+            </footer>
+        </sheet>
+    </form>
+</field>
+</record>
+
+</odoo>

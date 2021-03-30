@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bulletin_user,bulletin_user,model_bulletin_bulletin,smp_bulletin.group_bulletin,1,1,1,1
+bulletin_line_user,bulletin_line_user,model_bulletin_line,smp_bulletin.group_bulletin,1,1,1,1
+charge_rule_user,charge_rule_user,model_charge_rule,smp_bulletin.group_bulletin,1,0,0,0
+charge_rule_manager,charge_rule_manager,model_charge_rule,smp_bulletin.group_bulletin_manager,1,1,1,1
+charge_rule_category_user,charge_rule_category_user,model_charge_rule_category,smp_bulletin.group_bulletin,1,0,0,0
+charge_rule_category_manager,charge_rule_category_manager,model_charge_rule_category,smp_bulletin.group_bulletin_manager,1,1,1,1
+charge_slip_line_user,charge_slip_line_user,model_charge_slip_line,smp_bulletin.group_bulletin,1,0,0,0
+charge_slip_line_manager,charge_slip_line_manager,model_charge_slip_line,smp_bulletin.group_bulletin_manager,1,1,1,1
+conf_manager,conf_manager,model_bulletin_configuration,smp_bulletin.group_bulletin_manager,1,1,1,0

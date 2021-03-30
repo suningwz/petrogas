@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    ---------------- Stock Partial picking ----------------
+    <record id="view_stock_partial_picking" model="ir.ui.view">
+        <field name="name">stock.partial.picking.view.form</field>
+        <field name="model">stock.partial.picking</field>
+        <field name="arch" type="xml">
+            <form string="Immediate transfer?">
+                <sheet>
+<!--                    <div class="alert alert-warning">-->
+                    <div class="text-warning mt16 mb4">
+                        <p><b>Please confirm the quantities moved in storage unit.</b></p>
+                    </div>
+                    <field name="picking_id" readonly="1" option='{"no_open": True, "no_create": True}'/>
+                    <field name="line_ids" option='{"no_open": True, "no_create": True}'>
+                        <tree create="0" delete="0" editable="bottom">
+                            <field name="product_id"/>
+                            <field name="product_uom_qty"/>
+                            <field name="product_uom_id"/>
+                            <field name="product_qty"/>
+                            <field name="uom_id"/>
+                            <field name="inter_uom_factor"/>
+                            <!--                            <button name="action_show_details" string="Register lots, packs, location" type="object" icon="fa-list" attrs="{'invisible': [('show_details_visible', '=', False)]}" options="{&quot;warn&quot;: true}"/>-->
+
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="process" string="_Apply" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="stock_partial_picking_action"
+        name="Confirmation des quantités en unité de stockage"
+        res_model="stock.partial.picking"
+        view_mode="form"
+        target="new"
+    />
+
+<!--    <menuitem id="menu_stock_partial_picking"-->
+<!--              parent="stock.menu_stock_warehouse_mgmt"-->
+<!--              action="stock_partial_picking_action"-->
+<!--              sequence="20" />-->
+
+    ---------------- Stock Picking ----------------
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">view.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <button name="do_print_picking" position="after">
+<!--                <button name="confirm_product_qty" string="Confirmer les quantités" type="object" states="confirmed,assigned"/>-->
+                <button name="action_get_account_moves" string="Pièces Comptable" type="object" states="done"/>
+            </button>
+
+            <button name="button_validate"  position="replace">
+                    <button name="button_validate_new"
+                            attrs="{'invisible': ['|', ('state', 'in', ('waiting','confirmed')), ('show_validate', '=', False)]}"
+                            string="Validate" type="object" class="o_btn_validate"
+                            groups="stock.group_stock_user"/>
+<!--                    <button name="button_validate_new"-->
+<!--                            attrs="{'invisible': ['|', ('state', 'not in', ('waiting', 'confirmed')), ('show_validate', '=', False)]}"-->
+<!--                            string="Validate" type="object" groups="stock.group_stock_user"-->
+<!--                            class="o_btn_validate"/>-->
+
+            </button>
+
+            <field name="move_ids_without_package" postion="attributes">
+                <attribute name="context">
+                    {'picking_type_code': picking_type_code, 'default_picking_id': id, 'form_view_ref':'smp_inventory.view_move_form', 'address_in_id': partner_id, 'default_picking_type_id': picking_type_id, 'default_location_id': location_id, 'default_location_dest_id': location_dest_id}
+                </attribute>
+
+            </field>
+
+        </field>
+    </record>
+
+
+    ---------- Action server - Get Account Move----------------
+    <record id="action_stock_picking_account_move_view" model="ir.actions.server">
+        <field name="name">Account Move</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="smp_inventory.model_stock_picking"/>
+        <field name="binding_model_id" ref="smp_inventory.model_stock_picking"/>
+        <field name="code">
+            records.action_get_account_moves()
+        </field>
+    </record>
+
+</odoo>

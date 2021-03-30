@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_salary_advance_officer,hr_salary_advance_officer,model_salary_advance,hr_payroll.group_hr_payroll_user,1,1,1,0
+hr_salary_advance_manager,hr_salary_advance_manager,model_salary_advance,hr_payroll.group_hr_payroll_manager,1,1,1,1
+hr_loan_officer,hr_loan_officer,model_hr_loan,hr_payroll.group_hr_payroll_user,1,1,1,0
+c_manager,hr_loan_manager,model_hr_loan,hr_payroll.group_hr_payroll_manager,1,1,1,1
+hr_loan_line_officer,model_hr_loan_line_officer,model_hr_loan_line,hr_payroll.group_hr_payroll_user,1,1,1,0
+hr_loan_line_manager,hr_loan_line_manager,model_hr_loan_line,hr_payroll.group_hr_payroll_manager,1,1,1,1
+hr_loan_type_officer,hr_loan_type_officer,model_hr_loan_type,hr_payroll.group_hr_payroll_user,1,0,0,0
+hr_loan_type_manager,hr_loan_type_manager,model_hr_loan_type,hr_payroll.group_hr_payroll_manager,1,1,1,1
+hr_allowance_officer,hr.allowance.officer,model_hr_allowance,hr_payroll.group_hr_payroll_user,1,0,0,0
+hr_allowance_manager,hr_allowance_manager,model_hr_allowance,hr_payroll.group_hr_payroll_manager,1,1,1,1
+hr_contract_allowance_line_officer,hr_contract_allowance_line_officer,model_hr_contract_allowance_line,hr_payroll.group_hr_payroll_user,1,0,0,0
+hr_contract_allowance_line_manager,hr_contract_allowance_line_manager,model_hr_contract_allowance_line,hr_payroll.group_hr_payroll_manager,1,1,1,1
+payslip_report_manager,payslip_report_manager,model_payslip_report,hr_payroll.group_hr_payroll_manager,1,1,1,1

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="uom_category_oil" model="uom.category">
+            <field name="name"> Carburant</field>
+            <field name="measure_type">oil</field>
+        </record>
+       <record id="uom_category_carb_litre_15°c" model="uom.uom">
+        <field name="name"> Litre 15°C</field>
+        <field name="category_id" ref="smp_inventory.uom_category_oil"/>
+        <field name="uom_type">reference</field>
+        <field name="factor">1</field>
+        <field name="rounding">1</field>
+    </record>
+
+    <!--    <record id="uom_category_carb_tonne" model="uom.uom">-->
+    <!--        <field name="name">Tonne(s)</field>-->
+    <!--        <field name="category_id" ref="smp_inventory.uom_category_oil"/>-->
+    <!--        <field name="uom_type">reference</field>-->
+    <!--        <field name="factor">1</field>-->
+    <!--        <field name="rounding">1</field>-->
+    <!--    </record>-->
+
+    </data>
+
+
+</odoo>

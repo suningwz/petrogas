@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="bulletin_main_configuration" model="bulletin.configuration">
+            <field name="dif_reconciliation_account"></field>
+            <field name="dif_reconciliation_journal"></field>
+        </record>
+    </data>
+</odoo>

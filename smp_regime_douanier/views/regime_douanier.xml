@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="regime_douanier_form">
+            <field name="name">regime.douanier.form</field>
+            <field name="model">regime.douanier</field>
+            <field name="arch" type="xml">
+                <form string="Custom Regime">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Name"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="regime_douanier_tree">
+            <field name="name">regime.douanier.tree</field>
+            <field name="model">regime.douanier</field>
+            <field name="arch" type="xml">
+                <tree string="Custom Regime List">
+                    <!--          <header></header>-->
+                        <field name="name" string="Name"/>
+                        <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="regime_douanier_search">
+            <field name="name">regime_douanier_search</field>
+            <field name="model">regime.douanier</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="code"/>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="regime_douanier_action">
+            <field name="name">Custom Duty</field>
+            <field name="res_model">regime.douanier</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the differents customs duties.</p>
+            </field>
+            </record>
+
+        <menuitem id="sale_charges_configuration_menu" name="Structured Price" parent="sale.menu_sale_config" sequence="6"/>
+        <menuitem id="regime_douanier_section_menu" name="Custom Duty" parent="sale_charges_configuration_menu" action="regime_douanier_action"/>
+
+    </data>
+</odoo>

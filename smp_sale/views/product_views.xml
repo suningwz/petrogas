@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+<!--        <record id="smp_sale_product_view_form" model="ir.ui.view">-->
+<!--            <field name="name">smp.sale.product.view.form</field>-->
+<!--            <field name="model">product.template</field>-->
+<!--            <field name="inherit_id" ref="product.product_template_form_view"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <field name="sale_price" position="after">-->
+<!--                    <field name="apply_price_structure" widget="boolean_button"/>-->
+<!--&lt;!&ndash;                    <field name="list_price" string="Sales Price" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}"/>&ndash;&gt;-->
+
+<!--                </field>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="product_template_form_smp_sale" model="ir.ui.view">
+            <field name="name">product.template.form.smp.sale</field>
+            <field name="model">product.template</field>
+<!--            <field name="inherit_id" ref="stock_account.view_template_property_form"/>-->
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <field name="list_price" position="before">
+                        <field name="apply_price_structure"/>
+                </field>
+
+                <field name="route_ids" position="before">
+                        <field name="unique_picking" attrs="{'invisible': [('type','=',('service'))]}"/>
+<!--                        <field name="apply_price_structure" attrs="{'invisible': [('type','=',('service'))]}"/>-->
+                </field>
+
+                <page name="sales" position="after">
+
+                    <page name="sale_price" string="Structured Product Sale Price" attrs="{'invisible': [('apply_price_structure','=', False)]}">
+<!--                    <page name="sale_price" string="Structure - Prix de vente">-->
+                        <field name="sale_price_ids">
+                            <tree edit="0" create="0" delete="0">
+<!--                            <tree>-->
+                                <field name="start_date"/>
+                                <field name="product_id"/>
+                                <field name="regime_id"/>
+                                <field name="location_id"/>
+                                <field name="value"/>
+                                <field name="quantity_to_confirm"/>
+                                <field name="end_date"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

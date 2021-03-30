@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="cash_bank_statement_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.user_id.lang)" />
+
+                    <div class="page" style="height:842px;">
+                        <div class="oe_structure"/>
+                        <div class="row " name="title">
+                            <h2 >Relevé - <span t-field="doc.journal_id"/></h2>
+                            <h3 >name</h3>
+
+                        </div>
+
+                        <br/>
+                        <div class="row " name="general_info">
+                            <div name="partner_info" class="col-6 ">
+                                <p><b>Du </b><span t-field="doc.date"/><b> Au </b><span t-field="doc.date_done"/></p>
+                                <p><b>Etat: </b> <span t-field="doc.state"/></p>
+                                <p><b>Responsable: </b> <span t-field="doc.user_id"/></p>
+<!--                                <p><span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.country_id"/></p>-->
+
+                            </div>
+                            <div name="transaction_info" class="col-6 ">
+                                <p><b>Solde d'ouverture: </b> <span t-field="doc.balance_start"/></p>
+                                <p><b>Solde de fermeture: </b> <span t-field="doc.balance_end"/></p>
+                                <p><b>Total des transaction: </b> <span t-field="doc.total_entry_encoding"/></p>
+                                <p><b>Perte/Gain: </b> <span t-field="doc.difference"/></p>
+                            </div>
+                            <br/>
+                        </div>
+
+                        <br/>
+                        <h4 ><b>Liste des opérations:</b></h4>
+                        <br/>
+                        <div class="row " name="payment_list">
+                            <table class="table table-sm">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Réf.</th>
+                                        <th>Libellé</th>
+                                        <th>Partenaire</th>
+                                        <th>Montant</th>
+<!--                                        <th>Rapproché ?</th>                                        -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="doc.line_ids" t-as="move" >
+                                        <td><span t-field="move.date" /></td>
+                                        <td><span t-field="move.ref" /></td>
+                                        <td><span t-field="move.name" /></td>
+                                        <td><span t-field="move.partner_id" /></td>
+                                        <td><span t-field="move.amount" /></td>
+<!--                                        <td>-->
+<!--                                            <t t-if="move.journal_entry_ids">Yes</t>-->
+<!--                                            <t t-if="move.journal_entry_ids">Yes</t>-->
+<!--                                        </td>-->
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <br/>
+                        <br/>
+
+
+                        <div class="row align-items-end " name="signature">
+<!--                            <div class="col-6"><h5>Le Client</h5></div>-->
+<!--                            <div class="col-6"><h5>-->
+<!--                                <t t-if="doc.partner_type == 'customer'"> Le Client</t>-->
+<!--                                <t t-if="doc.partner_type == 'supplier'"> Le bénéficiaire</t>-->
+<!--                            </h5></div>-->
+
+                            <div class="col-6"><h5>Le Responsable</h5></div>
+                        </div>
+
+                        <div class="oe_structure"/>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        string="Relevé de caisse"
+        id="cash_bank_statement_report_action"
+        model="account.bank.statement"
+        report_type="qweb-pdf"
+        name="smp_expense_cashier.cash_bank_statement_template"
+        print_report_name="'Relevé %s - %s' % (object.journal_id, object.name)"
+        paperformat="base.paperformat_euro"
+    />
+
+
+    <template id="report_expense_sheet_form_2" inherit_id="hr_expense.report_expense_sheet">
+        <xpath expr="//div[@class='row justify-content-end']/following-sibling::p" position="replace">
+            <div class="h-20 row" name="signature">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/><br/><br/>
+                <br/><br/><br/><br/>
+
+                <div class="col-6"><h5>Le Bénéficiaire</h5></div>
+                <div class="col-6"><h5>La Direction</h5></div>
+            </div>
+
+        </xpath>
+    </template>
+
+</odoo>

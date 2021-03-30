@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="bulletin_report_template">
+        <t t-call="web.html_container">
+            <t t-set="nbr_page" t-value="0"/>
+
+            <t t-foreach="docs" t-as="doc">
+<!--                <t t-set="lang" t-value="o.user_id.lang"/>-->
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=lang)" />
+<!--                    <t t-set="doc" t-value="doc.with_context(lang=doc.employee_id.address_id.lang)" />-->
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+<!--                            <h1 t-if="nbr_page==1">Original</h1>-->
+<!--                            <h1 t-if="nbr_page!=1">Copie</h1>-->
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+                                <h2><b>Bulletin: </b>: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+
+                               <div class="row">
+                                <div class="col-4"><p><b>Reference: </b> <span t-field="doc.reference"/></p></div>
+                                <div class="col-4"><p><b>Date: </b> <span t-field="doc.date_accounting"/></p></div>
+                            </div>
+
+                            <br/>
+
+                            <div class="row">
+                            <h4><b>Information Sur Le bulletin</b></h4>
+                            <line/>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-4"><p><b>Produit: </b> <span t-field="doc.product_id"/></p></div>
+                                <div class="col-4"><p><b>Location: </b> <span t-field="doc.location_id"/></p></div>
+                                <div class="col-4"><p><b>Regime: </b> <span t-field="doc.regime_id"/></p> </div>
+                            </div>
+                            <br/>
+
+                            <div class="row">
+                            <h4 ><b>Liste des opérations:</b></h4>
+                            <line/>
+                            </div>
+                        <br/>
+                        <div class="row " name="bulletin_line_ids">
+                            <table class="table table-sm">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Charges</th>
+                                        <th>Quantité</th>
+                                        <th>Montant régularisé</th>
+                                        <th>Montant Facturé</th>
+                                        <th>Facture</th>
+                                        <th>Partenaire</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="doc.bulletin_line_ids" t-as="move" >
+                                        <td><span t-field="move.rubrique_id" /></td>
+                                        <td><span t-field="move.product_qty" /></td>
+                                        <td><span t-field="move.regulated_amount" /></td>
+                                        <td><span t-field="move.invoiced_amount" /></td>
+                                        <td><span t-field="move.invoice_id" /></td>
+                                        <td><span t-field="move.partner_id" /></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                            <br/>
+                            <br/>
+
+                            <div class="h-20 row" name="signature">
+                                <div class="col-6"><h5>La Direction</h5></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+    id="bulletin_report_action"
+    name="smp_bulletin.bulletin_report_template"
+    model="bulletin.bulletin"
+    string="Bulletin"
+    report_type="qweb-pdf"
+    print_report_name="'Bulletin - %s' % (object.name)"
+    />
+
+</odoo>

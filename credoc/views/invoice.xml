@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="stock_picking_credoc_form">
+            <field name="name">account.invoice.credoc.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <field name="vendor_bill_purchase_id" position="after">
+                        <field name="credoc_id"
+                               invisible="context.get('hide_credoc',False)"
+                               option="{'no_open':True,'no_create':True}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

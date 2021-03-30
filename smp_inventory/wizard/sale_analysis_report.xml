@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+        <record  id="sale_analysis_report_form" model="ir.ui.view">
+            <field name="name">sale.analysis.report.form</field>
+            <field name="model">sale.analysis.report</field>
+            <field name="arch" type="xml">
+                <form string="Reporting des ventes">
+                    <div>
+                        <h3> Reporting des ventes</h3>
+                        <p> Veuillez paramétrer les éléments souhaités devant constituer le reporting des stocks</p>
+                    </div>
+                    <group options="{'no_create': True}">
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="partner_ids" widget="many2many_tags" />
+                        <field name="sale_team_ids" widget="many2many_tags" />
+                    </group>
+                    <footer>
+                        <button name="process" string="_Apply" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            id="sale_analysis_report_action"
+            name="Reporting des stocks"
+            res_model="sale.analysis.report"
+            view_mode="form"
+            target="new"
+        />
+
+        <menuitem id="sale_analysis_report_menu"
+                  name ="Reporting des Ventes"
+                  action="smp_inventory.sale_analysis_report_action"
+                  parent="sale.menu_sale_report"
+                  groups="sales_team.group_sale_salesman"
+        />
+
+</odoo>

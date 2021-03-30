@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_price_sale_admin,product_price_sale_admin,model_product_sale_price,price_structure_manager,1,1,1,1
+product_price_sale_read,product_price_sale_read,model_product_sale_price,price_structure_user,1,0,0,0
+sale_dma_manager,sale_dma_manager,model_sale_dma,price_structure_manager,1,1,1,1
+sale_dma_user,sale_dma_user,model_sale_dma,price_structure_user,1,0,0,0

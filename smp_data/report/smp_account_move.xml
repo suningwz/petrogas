@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="account_move_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+                                <h2 >Account Move: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="h-20 row" name="general_info">
+                                <div name="partner_info" class="col-6 ">
+                                    <p><b>Date: </b> <span t-field="doc.date"/></p>
+                                    <p><b>Ref.: </b> <span t-field="doc.ref"/></p>
+                                </div>
+                                <div name="partner_info" class="col-6 ">
+                                    <p><b>Journal: </b> <span t-field="doc.journal_id"/></p>
+                                    <p><b>State: </b> <span t-field="doc.state"/></p>
+<!--                                    <p><b>Confirmed by: </b> <span t-field="doc.journal_id"/></p>-->
+
+<!--                                </div>-->
+<!--                                <div name="transaction_info" class="col-6 ">-->
+<!--                                    <p><b>Bon de commande: </b> <span t-field="doc.origin"/></p>-->
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="h-50 row" name="lines" >
+                                <table class="table table-sm" >
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Account</th>
+                                            <th>Partner</th>
+                                            <th>Name</th>
+                                            <th>Currency Amount</th>
+                                            <th>Debit</th>
+                                            <th>Credit</th>
+<!--                                            <th>Balance</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="doc.line_ids" t-as="move" >
+                                            <td><span t-field="move.account_id" /></td>
+                                            <td><span t-field="move.partner_id" /></td>
+                                            <td><span t-field="move.name" /></td>
+                                            <td><span t-field="move.amount_currency"/> <span t-field="move.currency_id"/> </td>
+                                            <td><span t-field="move.debit" /></td>
+                                            <td><span t-field="move.credit" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report id="smp_account_move_report"
+    name="smp_data.account_move_template"
+    model="account.move"
+    string="Account Move"
+    report_type="qweb-pdf"
+    print_report_name="'Account Move - %s' % (object.name)"
+    />
+
+</odoo>

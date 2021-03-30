@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+
+    ------------------ Location  ---------------
+    <record id="smh_mepp_nouakchott" model="stock.location">
+        <field name="name">GAM PETROLEUM</field>
+        <field name="code">SOTGAMPET</field>
+        <field name="usage">internal</field>
+        <field name="location_id" ref="stock.warehouse0"/>
+    </record>
+
+
+    <record id="smp_transit" model="stock.location">
+        <field name="name">Inter-depot Transit deposit</field>
+        <field name="code">SOTGTRANS</field>
+        <field name="usage">transit</field>
+        <field name="location_id" ref="stock.warehouse0"/>
+    </record>
+
+    <record id="smp_reclassement" model="stock.location">
+        <field name="name">Inter-Product Reclassification Deposit</field>
+        <field name="code">SOTGPREC</field>
+        <field name="usage">reclassement</field>
+        <field name="location_id" ref="stock.warehouse0"/>
+    </record>
+
+<!--    <record id="smp_inventory" model="stock.location">-->
+<!--        <field name="name">Inventory Location</field>-->
+<!--        <field name="code">SMPREC</field>-->
+<!--        <field name="usage">inventory</field>-->
+<!--        <field name="location_id" ref="stock.warehouse0"/>-->
+<!--    </record>-->
+
+    </data>
+    
+
+</odoo>

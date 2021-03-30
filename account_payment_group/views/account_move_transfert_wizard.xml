@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="account_move_transfert_wizard_form" model="ir.ui.view">
+        <field name="name">account.move.transfert.wizard.form</field>
+        <field name="model">account.move.transfert.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="confirm" string="Confirm" class="oe_highlight" type="object"/>
+                </header>
+                <sheet>
+
+                    <group name="'General Info">
+                        <field name="date" />
+                        <field name="transfert_type" />
+                    </group>
+
+                    <group col="4" options="{'no_create': True,'no_open': True,'no_create_edit': True,}" name="Account Journal">
+                        <field name="journal_id_src" />
+                        <field name="journal_id_dest"/>
+                        <field name="account_ids" invisible="1"/>
+                        <field name="refresh" invisible="1"/>
+                        <field name="delete" invisible="1"/>
+                        <field name="amount"/>
+                    </group>
+                    <notebook>
+                        <page string="Account Move Lines">
+<!--                            <group>-->
+<!--                                <button name="delete_all" string="Delete All" class="oe_highlight" type="object"/>-->
+<!--                                <button name="refresh_all" string="Refresh All" class="oe_highlight" type="object"/>-->
+<!--                            </group>-->
+                            <field name="account_move_line_ids" widget="many2many" domain="[('account_id', 'in', account_ids),('full_reconcile_id', '=', None)]">
+                                <tree options="{'no_create': True,'no_open': True,'no_create_edit': True}">
+                                    <field name="date"/>
+                                    <field name="account_id"/>
+                                    <field name="ref"/>
+                                    <field name="name"/>
+                                    <field name="balance"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+            id="account_move_transfert_wizard_action"
+            name="Bank and Cash transferts"
+            res_model="account.move.transfert.wizard"
+            view_mode="form"
+            target="new"
+    />
+
+    <menuitem id="account_move_transfert_wizard_menu"
+              name="Bank and Cash transferts"
+              action="account_move_transfert_wizard_action"
+              parent="account_payment_fix.menu_finance_bank_and_cash"
+              sequence="40" groups="account.group_account_user"
+    />
+
+</odoo>

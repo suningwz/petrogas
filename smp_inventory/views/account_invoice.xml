@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+        <record model="ir.ui.view" id="invoice_supplier_form">
+            <field name="name">account.invoice.credoc.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <field name="currency_id" position="after">
+                    <field name="currency_rate_visible" invisible="1"/>
+                    <field name="currency_rate" attrs="{'invisible':[('currency_rate_visible','=',False)]}"/>
+                </field>
+            </field>
+        </record>
+</odoo>

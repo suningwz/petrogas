@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="smp_stock_move_charges_form" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.form</field>
+        <field name="model">stock.move.charges</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <group col="4"  colspan="2">
+                        <field name="date"/>
+                        <field name="product_id"/>
+                        <field name="location_id"/>
+                        <field name="rubrique_id"/>
+                        <field name="product_qty"/>
+                        <field name="cost"/>
+                        <field name="picking_type_id"/>
+                        <field name="stock_move_id"/>
+                    </group>
+                    <notebook>
+                        <page name="accounting" string="Comptabilité">
+                            <field name="account_move_line_ids">
+                                <tree edit="false" create="false" delete="false">
+                                    <field name="move_id"/>
+                                    <field name="ref"/>
+                                    <field name="name"/>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="account_id"/>
+                                    <field name="debit"/>
+                                    <field name="credit"/>
+                                    <field name="balance"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="smp_stock_move_charges_tree" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.tree</field>
+        <field name="model">stock.move.charges</field>
+        <field name="arch" type="xml">
+            <tree delete="true" create="true" edit="false">
+                <field name="date"/>
+                <field name="product_id"/>
+                <field name="location_id"/>
+                <field name="rubrique_id"/>
+                <field name="product_qty"/>
+                <field name="cost"/>
+                <field name="picking_type_id"/>
+                <field name="stock_move_id"/>
+                <field name="state"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="smp_stock_move_charges_pivot" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.pivot</field>
+        <field name="model">stock.move.charges</field>
+        <field name="arch" type="xml">
+            <pivot string="Analysis of logistics and commercial expenses">
+                <field name="date" interval="month" type="col"/>
+                <field name="product_id" type="col"/>
+                <field name="location_id" type="col"/>
+                <field name="rubrique_id" type="row"/>
+<!--                <field name="rubrique_id" type="row"/>-->
+                <field name="product_qty" type="measure"/>
+                <field name="cost" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="smp_stock_move_charges_graph" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.graph</field>
+        <field name="model">stock.move.charges</field>
+        <field name="arch" type="xml">
+            <graph string="Analyse des charges logistiques et commerciale"
+                type="bar" orientation="vertical" stacked="True">
+<!--                <field name="product_id" type="col"/>-->
+<!--                <field name="location_id" type="col"/>-->
+<!--                <field name="rubrique_id" type="row"/>-->
+<!--                <field name="picking_type_id" type="col"/>-->
+                <field name="date" type="row"/>
+<!--                <field name="vehicle_id" type="col"/>-->
+                <field name="rubrique_id" type="col"/>
+                <field name="cost" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="smp_stock_move_charges_search" model="ir.ui.view">
+        <field name="name">smp.stock.move.charges.search</field>
+        <field name="model">stock.move.charges</field>
+        <field name="arch" type="xml">
+            <search string="Filtre - Analyse des charges">
+                <field name="product_id" string="Product"/>
+                <field name="location_id" string="Location"/>
+                <field name="rubrique_id" string="Charge"/>
+<!--                <filter string="Operation" name="stock_move_id" domain="[('stock_move_id','ilike',self)]"/>-->
+                <field name="stock_move_id" string="Operation" filter_domain="[('stock_move_id','ilike',self)]"/>
+
+                <filter name="state" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="state" string="Accounting" domain="[('state', '=', 'open')]"/>
+                <filter name="state" string="Regularization in progress" domain="[('state', '=', 'ongoing')]"/>
+                <filter name="state" string="Regularized" domain="[('state', '=', 'done')]"/>
+
+                <group string="Group By">
+                    <filter string="Articles" name="product_id_group" domain="[]" context="{'group_by':'product_id'}"/>
+                    <filter string="Charges" name="rubrique_id_group" domain="[]" context="{'group_by':'rubrique_id'}"/>
+                    <filter string="Date" name="date_group" domain="[]" context="{'group_by':'date'}"/>
+                    <filter string="Statut" name="state_group" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Operation Type" name="operation_type_group" domain="[]" context="{'group_by':'picking_type_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <act_window id="smp_stock_move_charges_action"
+        res_model="stock.move.charges"
+        name="Charges Logistiques Générées"
+        view_mode="tree,form,pivot,graph"
+        context="{'search_default_state_group':1, 'search_default_product_id_group':1,'search_default_rubrique_id_group':1}"
+
+    />
+
+     ---------- Stock Move Charge - Update Account Entries -  Action server ----------------
+    <!-- <record id="smp_stock_move_charges_gennerate_accoutngl_move_action" model="ir.actions.server">
+        <field name="name">Generate account entries</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="smp_bulletin.model_stock_move_charges"/>
+        <field name="binding_model_id" ref="smp_bulletin.model_stock_move_charges"/>
+        <field name="code">
+            records.generate_move_charge_accounting_entry()
+        </field>
+    </record> -->
+
+
+
+</odoo>

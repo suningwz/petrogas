@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+
+        ---------------------------------------------------------------------------
+                    product_pricelist_items
+        ---------------------------------------------------------------------------
+<!--        <record model="ir.ui.view" id="smp_product_pricelist_item_form">-->
+<!--            <field name="name">smp.product.pricelist.item.form</field>-->
+<!--            <field name="model">pricelist.item"</field>-->
+<!--             <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="/form /group[1]" position="before">-->
+<!--                    <field name="regime_id" widget="many2many_tags" options="{'no_create': True}"/>-->
+<!--                    <field name="location_ids" widget="many2many_tags" options="{'no_create': True}"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record model="ir.actions.act_windows" id="smp_product_pricelist_item_action">-->
+<!--            <field name="name">smp.product.pricelist.item.action</field>-->
+<!--            <field name="model">product.pricelist.item</field>-->
+<!--            <field name="view_type">form</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="help" type="html">-->
+<!--                <p class="o_view_nocontent_smiling_face">Paramétrer les différentes politique de prix</p>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record model="ir.ui.view" id="smp_product_pricelist_item_search">-->
+<!--            <field name="name">smp.product.pricelist.item.search</field>-->
+<!--            <field name="model">regime.product.pricelist.item</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search>-->
+<!--                    <field name="pricelist_id"/>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <menuitem-->
+<!--                id="smp_product_pricelist_item_menu"-->
+<!--                name="Items des listes sde prix"-->
+<!--                parent="sale_charges_configuration_menu"-->
+<!--                action="smp_product_pricelist_item_action"-->
+<!--        />-->
+
+    </data>
+</odoo>

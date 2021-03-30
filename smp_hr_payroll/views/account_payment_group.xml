@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    ******************** Rglements aux employé *******************************
+    <record id="view_account_payment_group_form_employee" model="ir.ui.view">
+    <field name="name">Payment Multi</field>
+    <field name="model">account.payment.group</field>
+    <field name="mode">primary</field>
+    <field name="inherit_id" ref="account_payment_group.view_account_payment_group_form"/>
+    <field name="arch" type="xml">
+          <field name="partner_id" position="attributes">
+              <attribute name="context">{'default_is_company': False, 'default_supplier': partner_type == 'supplier', 'default_customer': partner_type == 'customer'}</attribute>
+              <attribute name="domain">[('employee', '=', True)]</attribute>
+          </field>
+    </field>
+    </record>
+
+
+    <record id="action_account_payments_group_employee" model="ir.actions.act_window">
+        <field name="name">Employee Payments</field>
+        <field name="res_model">account.payment.group</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'default_partner_type': 'supplier', 'search_default_not_cancelled': 1}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('account_payment_group.view_account_payment_group_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_account_payment_group_form_employee')})]"/>
+        <!-- <field name="context">{'default_payment_type': 'outbound', 'default_partner_type': 'supplier'}</field> -->
+        <!-- <field name="context">{'default_payment_type': 'outbound'}</field> -->
+        <field name="domain">[('partner_type', '=', 'supplier'),('employee', '=', True)]</field>
+        <!-- <field name="view_id" ref="view_account_supplier_payment_group_tree"/> -->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+              Click to register a payment
+            </p><p>
+              Payments are used to register liquidity movements (send or collect).
+              You can then process those payments by your own means or by using installed facilities.
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="action_account_payments_group_employee"  name="Employee Payments" id="menu_action_account_payments_group_employee" parent="hr_payroll.menu_hr_payroll_root" sequence="20"/>
+<!--    <menuitem action="action_account_payments_group_employee" id="menu_action_account_payments_group_employee" parent="account_payment_group.menu_finance_payables" sequence="20"/>-->
+
+        ******************** Rglements par les employés *******************************
+
+
+        <record id="action_account_payments_group_by_employee" model="ir.actions.act_window">
+            <field name="name">Employee Receipts</field>
+            <field name="res_model">account.payment.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'default_partner_type': 'customer', 'search_default_not_cancelled': 1}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('account_payment_group.view_account_payment_group_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_account_payment_group_form_employee')})]"/>
+            <field name="domain">[('partner_type', '=', 'customer'),('employee', '=', True)]</field>
+            <!-- <field name="view_id" ref="view_account_payment_group_tree"/> -->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                  Click to register a payment
+                </p><p>
+                  Payments are used to register liquidity movements (send or collect).
+                  You can then process those payments by your own means or by using installed facilities.
+                </p>
+            </field>
+        </record>
+
+    <menuitem action="action_account_payments_group_by_employee"  name="Employee Refund" id="menu_action_account_payments_group_by_employee" parent="hr_payroll.menu_hr_payroll_root" sequence="20"/>
+
+
+
+</odoo>

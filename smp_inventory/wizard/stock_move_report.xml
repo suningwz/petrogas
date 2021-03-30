@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+        <record  id="stock_move_report_wizard_form" model="ir.ui.view">
+            <field name="name">stock.move.report.wizard.form</field>
+            <field name="model">stock.move.report</field>
+            <field name="arch" type="xml">
+                <form string="Reporting des stock">
+                    <div>
+                        <h3> Reporting des stock</h3>
+                        <p> Veuillez paramétrer les éléments souhaités devant constituer le reporting des stocks</p>
+                    </div>
+                    <group options="{'no_create': True}">
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="product_ids" widget="many2many_tags" />
+                        <field name="location_ids" widget="many2many_tags"/>
+                        <field name="picking_type_ids" widget="many2many_tags"/>
+                    </group>
+                    <footer>
+                        <button name="process" string="_Apply" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window
+            id="stock_move_report_wizard_action"
+            name="Reporting des stocks"
+            res_model="stock.move.report"
+            view_mode="form"
+            target="new"
+        />
+
+        <menuitem id="stock_move_report_wizard_menu"
+                  name ="Reporting des stocks"
+                  action="smp_inventory.stock_move_report_wizard_action"
+                  parent="stock.menu_warehouse_report"
+                  groups="stock.group_stock_user"
+        />
+
+<!--            <record  id="stock_move_report_wizard_action" model="ir.actions.act_window">-->
+<!--            <field name="name">Reporting des stocks</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">stock.move.report</field>-->
+<!--            <field name="view_type">form</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="target">new</field>-->
+<!--        </record>-->
+
+        -------------------------- Stock Move Analysis ----------------------
+
+        <record id="stock_move_analysis_pivot" model="ir.ui.view">
+            <field name="name">stock.move.analysis.pivot</field>
+            <field name="model">stock.move.analysis</field>
+            <field name="arch" type="xml">
+                <pivot string="Analyse des stocks">
+                    <field name="date" interval="month" type="col"/>
+                    <field name="location_id" type="col"/>
+                    <field name="category" type="row"/>
+                    <field name="picking_type_id" type="row"/>
+                    <field name="product_id" type="row"/>
+                    <field name="product_qty" type="measure"/>
+                    <field name="value" type="measure"/>
+                    <field name="charge_value" type="measure"/>
+                    <field name="total_value" type="measure"/>
+                    <field name="charges_not_in_stock" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+<!--        <record id="stock_move_analysis_graph" model="ir.ui.view">-->
+<!--        <field name="name">stock.move.analysis.graph</field>-->
+<!--        <field name="model">stock.move.analysis</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <graph string="Analyse des stocks" type="bar" orientation="vertical" stacked="True">-->
+<!--                <field name="date" type="row"/>-->
+<!--&lt;!&ndash;                <field name="date" interval="month" type="row"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <field name="location_id" type="col"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <field name="category" type="row"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <field name="picking_type_id" type="row"/>&ndash;&gt;-->
+<!--                <field name="product_id" type="col"/>-->
+<!--&lt;!&ndash;                <field name="product_qty" type="measure"/>&ndash;&gt;-->
+<!--                <field name="value" type="measure"/>-->
+<!--                <field name="charge_value" type="measure"/>-->
+<!--                <field name="total_value" type="measure"/>-->
+<!--            </graph>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+        <act_window
+            id="stock_move_analysis_action"
+            name="Analyse des stocks"
+            res_model="stock.move.analysis"
+            view_mode="pivot"
+        />
+
+        <menuitem id="stock_move_analysis_menu"
+                  name ="Analyse des stocks"
+                  action="stock_move_analysis_action"
+                  parent="stock.menu_warehouse_report"
+                  groups="stock.group_stock_user"
+        />
+
+<!--    </data>-->
+</odoo>

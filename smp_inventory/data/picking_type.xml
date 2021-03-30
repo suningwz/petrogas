@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        ******************* Type d'opération : Inventory *********************
+        <record id="picking_type_inventory_out" model="stock.picking.type">
+            <field name="name">Outgoing Inventory</field>
+            <field name="code">internal</field>
+            <field name="internal_type">inventory</field>
+            <field name="default_location_dest_id" ref="stock.location_inventory"/>
+            <field name="no_picking" eval="False"/>
+<!--            <field name="return_picking_type_id" ref=""/>-->
+            <field name="sequence_id" ref="smp_inventory.seq_inventory"/>
+        </record>
+
+        <record id="picking_type_inventory_in" model="stock.picking.type">
+            <field name="name">Incomming Inventory</field>
+            <field name="code">internal</field>
+            <field name="internal_type">inventory</field>
+            <field name="trigger_cost_valuation" eval="True"/>
+            <field name="default_location_src_id" ref="stock.location_inventory"/>
+            <field name="no_picking" eval="False"/>
+<!--            <field name="return_picking_type_id" ref=""/>-->
+            <field name="sequence_id" ref="smp_inventory.seq_inventory"/>
+        </record>
+
+        ******************* Type d'opération : Reclassement *********************
+        <record id="picking_type_reclassement_out" model="stock.picking.type">
+            <field name="name">Outgoing Reclassemen</field>
+            <field name="code">internal</field>
+            <field name="internal_type">reclassement</field>
+            <field name="default_location_dest_id" ref="smp_inventory.smp_reclassement"/>
+            <field name="no_picking" eval="True"/>
+<!--            <field name="return_picking_type_id" ref=""/>-->
+            <field name="sequence_id" ref="smp_inventory.seq_reclassement_out"/>
+        </record>
+
+        <record id="picking_type_reclassement_in" model="stock.picking.type">
+            <field name="name">Incomming Reclassement</field>
+            <field name="code">internal</field>
+            <field name="internal_type">reclassement</field>
+            <field name="trigger_cost_valuation" eval="True"/>
+            <field name="no_picking" eval="True"/>
+            <field name="default_location_src_id" ref="smp_inventory.smp_reclassement"/>
+<!--            <field name="return_picking_type_id" ref=""/>-->
+            <field name="sequence_id" ref="smp_inventory.seq_reclassement_in"/>
+        </record>
+
+        ******************* Type d'opération : Transfert *********************
+        <record id="stock.picking_type_internal" model="stock.picking.type">
+            <field name="name">Incomming Transferts</field>
+            <field name="code">internal</field>
+            <field name="internal_type">transfert</field>
+            <field name="trigger_cost_valuation" eval="True"/>
+            <field name="default_location_src_id" ref="smp_inventory.smp_transit"/>
+            <field name="return_picking_type_id" ref=""/>
+            <field name="sequence_id" ref="seq_internal_picking_in"/>
+        </record>
+
+        <record id="picking_transfert_lost" model="stock.picking.type">
+            <field name="name">Transfert Loss</field>
+            <field name="code">internal</field>
+            <field name="internal_type">transfert</field>
+            <field name="default_location_dest_id" ref="stock.stock_location_scrapped"/>
+            <field name="default_location_src_id" ref="smp_inventory.smp_transit"/>
+            <field name="return_picking_type_id" ref=""/>
+            <field name="sequence_id" ref="seq_internal_picking_lost"/>
+        </record>
+
+        <record id="picking_transfert_out" model="stock.picking.type">
+            <field name="name">Outgoing Transferts</field>
+            <field name="code">internal</field>
+            <field name="internal_type">transfert</field>
+            <field name="default_location_dest_id" ref="smp_inventory.smp_transit"/>
+            <field name="return_picking_type_id" ref=""/>
+        <field name="sequence_id" ref="seq_internal_picking_out"/>
+
+        </record>
+
+    ******************* Type d'opération : Réception *********************
+        <record id="return_picking_type_in" model="stock.picking.type">
+            <field name="name">Receipt return</field>
+            <field name="code">incoming</field>
+            <field name="default_location_dest_id" ref="stock.stock_location_suppliers"/>
+            <field name="sequence_id" ref="seq_smp_picking_out"/>
+        </record>
+
+        <record id="stock.picking_type_in" model="stock.picking.type">
+            <field name="default_location_src_id" ref="stock.stock_location_suppliers"/>
+            <field name="return_picking_type_id" ref="return_picking_type_in"/>
+            <field name="sequence_id" ref="seq_smp_picking_in"/>
+            <field name="trigger_cost_valuation" eval="True"/>
+
+        </record>
+
+    ******************* Type d'opération : Livraison *********************
+        <record id="return_picking_type_out" model="stock.picking.type">
+            <field name="name">Return delivery</field>
+            <field name="code">outgoing</field>
+            <field name="default_location_src_id" ref="stock.stock_location_customers"/>
+            <field name="sequence_id" ref="seq_smp_picking_in"/>
+        </record>
+
+        <record id="stock.picking_type_out" model="stock.picking.type">
+            <field name="name">Delivery</field>
+            <field name="code">outgoing</field>
+            <field name="default_location_dest_id" ref="stock.stock_location_customers"/>
+            <field name="sequence_id" ref="seq_smp_picking_out"/>
+            <field name="return_picking_type_id" ref="return_picking_type_out"/>
+        </record>
+
+    </data>
+
+</odoo>

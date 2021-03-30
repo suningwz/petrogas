@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="smp_view_inventory_form_inherit" model="ir.ui.view">
+            <field name="name">ssmp.tock.inventory.form.inherit</field>
+            <field name="model">stock.inventory</field>
+            <field name="inherit_id" ref="stock.view_inventory_form"/>
+            <field name="arch" type="xml">
+                <button name="action_cancel_draft" position="after">
+                    <button name="action_cancel_done" string="Cancel" groups="stock.group_stock_manager" states="done" type="object"/>
+                </button>
+                <field name="date" position="attributes">
+                    <attribute name="readonly">False</attribute>
+                </field>
+                <xpath expr="//field[@name='theoretical_qty']" position="after">
+                    <field name="product_theoretical_value" string="Theorical Value" readonly="0"/>
+                </xpath>
+                <xpath expr="//field[@name='product_qty']" position="after">
+                    <field name="product_value" string="Value" readonly="0"/>
+                </xpath>
+            </field>
+        </record>
+
+                        ---------- stock.inventory.picking.type Action server ----------------
+        <record id="smp_inventory_update_picking_type_action" model="ir.actions.server">
+            <field name="name">Update Inventory Picking Type</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="smp_inventory.model_stock_inventory"/>
+            <field name="binding_model_id" ref="smp_inventory.model_stock_inventory"/>
+            <field name="code">
+                records.update_picking_type()
+            </field>
+        </record>
+
+    </data>
+</odoo>

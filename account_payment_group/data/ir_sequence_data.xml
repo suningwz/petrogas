@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_rgt_customer_group" model="ir.sequence">
+            <field name="name">Reçu Client Réglement Grouper</field>
+            <field name="code">payment.group.customer</field>
+            <field name="prefix">RGT/CLT/%(year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_rgt_supplier_group" model="ir.sequence">
+            <field name="name">Reçu Fournisseurs Réglement Grouper</field>
+            <field name="code">payment.group.supplier</field>
+            <field name="prefix">RGT/FRS/%(year)s/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+    </data>
+</odoo>

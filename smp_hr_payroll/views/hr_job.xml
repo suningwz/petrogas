@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+        <menuitem id="hr_job_menu" name="Jobs" action="hr.action_hr_job" parent="hr.menu_hr_root" sequence="5"/>
+    </data>
+</odoo>

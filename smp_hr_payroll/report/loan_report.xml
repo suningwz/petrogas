@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="hr_loan_report_template">
+        <t t-call="web.html_container">
+            <t t-set="nbr_page" t-value="0"/>
+
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="lang" t-value="o.user_id.lang if not doc.employee_id.address_id.lang else doc.employee_id.address_id.lang"/>
+                <t t-call="web.external_layout" t-lang="lang">
+                    <t t-set="doc" t-value="doc.with_context(lang=lang)" />
+<!--                    <t t-set="doc" t-value="doc.with_context(lang=doc.employee_id.address_id.lang)" />-->
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+<!--                            <h1 t-if="nbr_page==1">Original</h1>-->
+<!--                            <h1 t-if="nbr_page!=1">Copie</h1>-->
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+                                <h2><b>Rapport de Prêt</b>: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+
+                             <div class="row">
+                                <h4><b>Information Sur L'Employé</b></h4>
+                                <line/>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><p><b>Employé: </b> <span t-field="doc.employee_id.name"/></p></div>
+                                <div class="col-4"><p><b>Poste: </b> <span t-field="doc.job_position"/></p></div>
+                                <div class="col-4"><p><b>Department: </b> <span t-field="doc.department_id"/></p> </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <h4><b>Information Sur Le Prêt</b></h4>
+                                <line/>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><p><b>Type de Prêt: </b> <span t-field="doc.loan_type"/></p></div>
+                                <div class="col-4"><p><b>Montant du Prêt: </b> <span t-field="doc.loan_amount"/></p></div>
+                                <div class="col-4"><p><b>Accordé le: </b> <span t-field="doc.date"/></p> </div>
+                            </div>
+                            <br/>
+
+                              <div class="row">
+                                <h4><b>Echéances du  Prêt</b></h4>
+                                <line/>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><p><b>Nombre d'échéance: </b> <span t-field="doc.installment"/></p></div>
+                                <div class="col-4"><p><b>Premier versement le: </b> <span t-field="doc.loan_lines[0].date"/></p></div>
+                                <div class="col-4"><p><b>Dernier versement le: </b> <span t-field="doc.loan_lines[-1].date"/></p> </div>
+                            </div>
+                            <br/>
+                          <div class="row">
+                                <h4><b>Etat du  Prêt</b></h4>
+                                <line/>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><p><b>Montant Remboursé: </b> <span t-field="doc.total_paid_amount"/></p></div>
+                                <div class="col-4"><p><b>Solde du prêt: </b> <span t-field="doc.balance_amount"/></p></div>
+                            </div>
+
+                            <br/>
+                            <br/>
+
+                            <div class="h-20 row" name="signature">
+                                <div class="col-6"><h5>La Direction</h5></div>
+                                <div class="col-6"><h5>L'Employé</h5></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report id="hr_loan_report"
+    name="smp_hr_payroll.hr_loan_report_template"
+    model="hr.loan"
+    string="Loan Form"
+    report_type="qweb-pdf"
+    print_report_name="'Loan - %s' % (object.name)"
+    />
+
+</odoo>

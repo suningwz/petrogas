@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="sale_dma_form">
+        <field name="name">sale.dma.form</field>
+        <field name="model">sale.dma</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="confirm" string="Confirm"  class="oe_highlight" states="draft"   type="object"/>
+                    <field name="state" widget="statusbar"/>
+
+                </header>
+                <sheet>
+                    <group col="4">
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="partner_id"/>
+                        <field name="value"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_dma_tree">
+        <field name="name">sale.dma.tree</field>
+        <field name="model">sale.dma</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="start_date"/>
+                <field name="partner_id"/>
+                <field name="end_date"/>
+                <field name="value"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_dma_search">
+        <field name="name">sale_dma_search</field>
+        <field name="model">sale.dma</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id"/>
+<!--                <filter string="Valide" name="state" domain="[('state','=','done)]" help="Filtre les lignes valides"/>-->
+<!--                <filter string="Brouillon" name="state" domain="[('state','=','done)]" help="Filtre les lignes en statut brouillon"/>-->
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sale_dma_action">
+        <field name="name">sale.dma.action</field>
+        <field name="res_model">sale.dma</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Mettre à jour la limite de crédit d'un client.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale_dma_menu" name="Découvert Client" parent="smp_regime_douanier.sale_charges_configuration_menu" action="sale_dma_action"/>
+
+</odoo>

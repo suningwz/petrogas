@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="advance_salary_report_template">
+        <t t-call="web.html_container">
+            <t t-set="nbr_page" t-value="0"/>
+
+            <t t-foreach="docs" t-as="doc">
+
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.employee_id.address_id.lang)" />
+
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+<!--                            <h1 t-if="nbr_page==1">Original</h1>-->
+<!--                            <h1 t-if="nbr_page!=1">Copie</h1>-->
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+                                <h2>Salary Advance: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="h-20 row" name="general_info">
+                                <div name="employe_id" class="col-6 ">
+                                    <p><b>Employee: </b> <span t-field="doc.employee_id"/></p>
+                                    <p><span t-field="doc.employee_id.address_id.city"/>, <span t-field="doc.employee_id.address_id.country_id"/></p>
+                                    <p><b>Job Position: </b> <span t-field="doc.job_position"/></p>
+                                    <p><b>Department: </b> <span t-field="doc.department"/></p>
+                                </div>
+                                <div name="transaction_info" class="col-6 ">
+                                    <p><b>Date: </b> <span t-field="doc.date"/></p>
+                                    <p><b>Journal: </b> <span t-field="doc.journal"/></p>
+                                    <p><b>Montant: </b> <span t-field="doc.advance"/> <span t-field="doc.currency_id"/></p>
+
+                                </div>
+
+                            </div>
+                            <br/>
+                            <br/>
+                            <div id="letter" class="row">
+<!--                                <h3>Salary advance on the month of <span t-esc="doc.date.month"/>/<span t-esc="doc.date.year"/> </h3>-->
+                                <h3>Salary advance on the month of <span t-esc='doc.date.strftime("%B %Y")'/> </h3>
+                            </div>
+                            <br/>
+
+                            <div class="h-20 row" name="signature">
+    <!--                        <div class="row align-items-end " name="signature">-->
+                                <div class="col-6"><h5>La Direction</h5></div>
+<!--                                <div class="col-6"><h5>L'Employé</h5></div>-->
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report id="salary_advance_report"
+    name="smp_hr_payroll.advance_salary_report_template"
+    model="salary.advance"
+    string="Salary Advance"
+    report_type="qweb-pdf" />
+
+</odoo>

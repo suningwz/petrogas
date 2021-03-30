@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="product_reclassement_form">
+        <field name="name">Reclasssement de produit</field>
+        <field name="model">reclassement</field>
+        <field name="arch" type="xml">
+            <form string="Transferts Inter Dépôt">
+                <header>
+                    <button string="Confirmer" type="object" name="sent" states="draft" class="oe_highlight" />
+                    <button string="Reclasser" type="object" name="done" states="sent" class="oe_highlight" />
+                <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group name="title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </group>
+                    <group col="4" name="info">
+                        <field name="location_id"/>
+                        <field name="date_sent"/>
+                        <field name="date_done"/>
+                    </group>
+                    <group>
+                        <notebook>
+                            <page string="Lignes de reclassement">
+                                <field name="reclassement_line_ids">
+                                    <tree editable="top">
+                                        <field name="product_src_id"/>
+                                        <field name="product_src_uom" invisible="1"/>
+                                        <field name="quantity_src"/>
+                                        <field name="cmp_out_amount"/>
+<!--                                        <field name="charge_out_amount"/>-->
+                                        <field name="product_dest_id"/>
+                                        <field name="product_dest_uom" invisible="1"/>
+                                        <field name="quantity_dest"/>
+                                        <field name="cmp_in_amount"/>
+                                        <field name="charge_in_amount"/>
+<!--                                        <field name="product_uom"/>-->
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="product_reclassement_tree">
+        <field name="name">Reclasssement de produit</field>
+        <field name="model">reclassement</field>
+        <field name="arch" type="xml">
+            <tree string="Transferts Inter Dépôt" decoration-warning="state=='draft'" decoration-info="state=='done'">
+                <field name="name"/>
+                <field name="location_id"/>
+                <field name="date_sent"/>
+                <field name="date_done"/>
+                <field name="state"/>
+            </tree>
+        </field>
+</record>
+
+    <record model="ir.actions.act_window" id="product_reclassement_action">
+      <field name="name">Reclassement de produits</field>
+      <field name="res_model">reclassement</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="product_reclassement_menu"
+              name="Reclassements"
+              parent="smp_inventory.reclassement_menu"
+              action="product_reclassement_action"
+              sequence="0"
+    />
+
+                       <!-- Action server -->
+        <record id="action_reclassement_charges_confirm" model="ir.actions.server">
+            <field name="name">Confirmer les frais de reclassement</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="smp_inventory.model_reclassement_charges"/>
+            <field name="binding_model_id" ref="smp_inventory.model_reclassement_charges"/>
+            <field name="code">
+                records.confirm()
+            </field>
+        </record>
+
+---------------------- Lignes  de classement -----------------
+<!--    <record model="ir.ui.view" id="product_reclassement_form">-->
+<!--    <field name="name">Reclasssement de produit</field>-->
+<!--    <field name="model">reclassement.line</field>-->
+<!--    <field name="arch" type="xml">-->
+<!--        <form string="Transferts Inter Dépôt">-->
+<!--            <sheet>-->
+
+<!--                <group col="4" name="info">-->
+<!--                    <field name="location_id"/>-->
+<!--                    <field name="date_sent"/>-->
+<!--                    <field name="date_done"/>-->
+<!--                </group>-->
+<!--                <group>-->
+<!--                    <notebook>-->
+<!--                        <page string="Lignes de reclassement">-->
+<!--                            <field name="product_reclassement_line_ids">-->
+<!--                                <tree editable="top">-->
+<!--                                    <field name="product_src_id" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+<!--                                    <field name="quantity_src" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+<!--                                    <field name="cmp_out_amount" readonly="1"/>-->
+<!--                                    <field name="charge_out_amount" readonly="1"/>-->
+<!--                                    <field name="product_dest_id" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+<!--                                    <field name="quantity_dest" attrs="{'readonly':[('state','!=','sent')]}"/>-->
+<!--                                    <field name="cmp_in_amount" readonly="1"/>-->
+<!--                                    <field name="charge_in_amount" readonly="1"/>-->
+<!--                                    <field name="product_uom"/>-->
+<!--                                    <field name="state"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
+<!--                </group>-->
+<!--            </sheet>-->
+<!--        </form>-->
+<!--    </field>-->
+<!--</record>-->
+
+<!--    <record model="ir.ui.view" id="product_reclassement_tree">-->
+<!--        <field name="name">Reclasssement de produit</field>-->
+<!--        <field name="model">reclassement</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Transferts Inter Dépôt">-->
+<!--                <field name="name"/>-->
+<!--                <field name="location_id"/>-->
+<!--                <field name="date_sent"/>-->
+<!--                <field name="date_done"/>-->
+<!--                <field name="state"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--</record>-->
+
+<!--    <record model="ir.actions.act_window" id="product_reclassement_action">-->
+<!--      <field name="name">Reclassement de produits</field>-->
+<!--      <field name="res_model">reclassement</field>-->
+<!--      <field name="view_type">form</field>-->
+<!--      <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+<!--    <menuitem id="product_reclassement_menu"-->
+<!--              name="Reclassement"-->
+<!--              parent="reclassement_menu"-->
+<!--              action="product_reclassement_action"-->
+<!--              sequence="0"-->
+<!--    />-->
+
+</odoo>

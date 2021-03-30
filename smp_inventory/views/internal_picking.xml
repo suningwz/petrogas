@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="internal_picking_form">
+        <field name="name">Transfert Inter Dépôt</field>
+        <field name="model">internal.picking</field>
+        <field name="arch" type="xml">
+            <form string="Transferts Inter Dépôt">
+                <header>
+                    <button string="Emettre" type="object" name="sent" states="draft" class="oe_highlight" />
+                    <button string="Charger" type="object" name="load" states="sent" class="oe_highlight" />
+                    <button string="Réceptionner" type="object" name="done" states="open" class="oe_highlight" />
+                    <button string="Annuler" type="object" name="action_cancel"  class="oe_highlight" />
+<!--                    <button string="Annuler" type="object" name="action_cancel" attrs="'invisible':[('state','in',('draft'))]" class="oe_highlight" />-->
+                <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group name="title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </group>
+                    <group col="4" name="info">
+                        <field name="location_src_id"/>
+                        <field name="location_dest_id"/>
+                        <field name="date_sent"/>
+                        <field name="date_load"/>
+                        <field name="date_done"/>
+                    </group>
+                    <group>
+                        <notebook>
+                            <page string="Lignes de transfert">
+                                <field name="internal_picking_line_ids">
+                                    <tree editable="top">
+                                        <field name="product_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                        <field name="quantity_ask" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                        <field name="quantity_load" attrs="{'readonly':[('state','!=','sent')]}"/>
+                                        <field name="quantity_done" attrs="{'readonly':[('state','!=','open')]}"/>
+                                        <field name="cmp_out_amount" readonly="1"/>
+                                        <field name="cmp_in_amount" readonly="1"/>
+                                        <field name="charge_out_amount" readonly="1"/>
+                                        <field name="charge_in_amount" readonly="1"/>
+                                        <field name="product_uom"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="internal_picking_tree">
+        <field name="name">Transfert Inter Dépôt</field>
+        <field name="model">internal.picking</field>
+        <field name="arch" type="xml">
+            <tree string="Transferts Inter Dépôt">
+                <field name="name"/>
+                <field name="location_src_id"/>
+                <field name="location_dest_id"/>
+                <field name="date_sent"/>
+                <field name="date_load"/>
+                <field name="date_done"/>
+                <field name="state"/>
+            </tree>
+        </field>
+</record>
+
+    <record model="ir.actions.act_window" id="internal_picking_action">
+      <field name="name">Transfert Inter Dépôt</field>
+      <field name="res_model">internal.picking</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="internal_picking_menu"
+              name="Transfert Interne"
+              parent="transfert_menu"
+              action="internal_picking_action"
+              sequence="0"
+    />
+
+
+
+</odoo>

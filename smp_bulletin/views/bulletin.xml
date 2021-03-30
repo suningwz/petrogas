@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    ---------------- Bulletin Stock Move Views  ----------------
+    <record id="smp_bulletin_stock_move_tree" model="ir.ui.view">
+        <field name="name">smp.bulletin.stock.move.tree</field>
+        <field name="model">stock.move</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="origin"/>
+                <field name="reference"/>
+                <field name="product_qty"/>
+<!--                <field name="product_qty"/>-->
+            </tree>
+
+        </field>
+    </record>
+
+    ---------------- Bulletin Views  ----------------
+    <record id="view_bulletin_form" model="ir.ui.view">
+        <field name="name">bulletin.form</field>
+        <field name="model">bulletin.bulletin</field>
+        <field name="arch" type="xml">
+            <form string="Bulletin de déclaration en douane " >
+                <header>
+                    <button string="Open" type="object" name="open" states="draft" class="oe_highlight" />
+                    <button string="Done" type="object" name="done" states="open" class="oe_highlight" confirm="Attention: Vous allez valider définitivent le bulletin!!"/>
+                    <button string="Cancel" type="object" name="bulletin_cancel" states="open,done" class="oe_highlight" confirm="Attention: Vous allez annuler définitivent le bulletin!!"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <h2><field name="name"/></h2>
+                    </group>
+                    <group col="4">
+                        <field name="date_accounting"/>
+                        <field name="product_id"/>
+                        <field name="reference"/>
+                    </group>
+                    <group>
+                        <field name="picking_type_ids" widget="many2many_tags" options="{'no_create': True}" string="Types d'opération"/>
+                    </group>
+                    <group col="4">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="location_id"/>
+                        <field name="regime_id"/>
+                        <field name="product_qty"/>
+                    </group>
+                    <notebook>
+                        <page string="Opérations">
+                                <button string="Select stock operations" type="object" name="open_wizard" class="oe_highlight" />
+                                <button string="Recompute Charges" type="object" name="compute_rule_all_bulletin_line" states="open" class="oe_highlight" />
+
+                                <field name="stock_move_ids" widget="many2many" option='{"no_open": True, "no_create": True, "no_create_edit": True}'>
+                                    <tree create="0" delete="true"  edit="0" >
+                                        <field name="origin"/>
+                                        <field name="reference"/>
+                                        <field name="product_qty"/>
+                                        <field name="picking_type_id"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="origin"/>
+                                            <field name="reference"/>
+                                            <field name="product_qty"/>
+                                            <field name="charges_ids"/>
+                                        </group>
+                                    </form>
+                            </field>
+                        </page>
+                        <page string="Charges">
+                            <field name="bulletin_line_ids">
+                                <tree editable="bottom">
+                                    <field name="rubrique_id"/>
+                                    <field name="product_qty"/>
+                                    <field name="value"/>
+                                    <field name="regulated_amount"/>
+                                    <field name="invoiced_amount"/>
+                                    <field name="to_invoice"/>
+                                    <field name="invoice_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="charge_rule_category_id"/>
+                                    <button icon="fa-cogs"  name="open_wizard" type="object" string="Calculer" options="{}"/>
+                                </tree>
+                            </field>
+                         </page>
+                        <page string="Liste des élements calculés">
+<!--                            <field name="charge_slip_line_ids" context="{'tree_view_ref': 'view_charge_slip_line_tree','form_view_ref': 'view_charge_slip_line_form'}"/>-->
+                            <field name="charge_slip_line_ids" context="{'form_view_ref': 'view_charge_slip_line_form'}">
+                                <tree create="false" delete="false" editable="bottom">
+    <!--                                <field name="bulletin_id "/>-->
+                                    <field name="bulletin_line_id" readonly="1"/>
+                                    <field name="charge_rule_id" readonly="1"/>
+                                    <field name="charge_rule_category_id" readonly="1"/>
+                                    <field name="sequence" readonly="1"/>
+                                    <field name="amount" attrs="{'readonly':[('is_mandatory_input','!=',True)]}"/>
+                                    <field name="is_mandatory_input" readonly="1"/>
+                                    <field name="is_mandatory_output" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+<!--                       <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>-->
+                       <field name="message_ids" widget="mail_thread"/>
+                    </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_bulletin_tree" model="ir.ui.view">
+        <field name="name">bulletin.tree</field>
+        <field name="model">bulletin.bulletin</field>
+        <field name="arch" type="xml">
+            <tree string="Bulletin de déclaration en douane ">
+                <field name="name"/>
+                <field name="date_accounting"/>
+                <field name="product_id"/>
+    <!--                <field name="date_start"/>-->
+    <!--                <field name="date_end"/>-->
+                <field name="location_id"/>
+                <field name="regime_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <act_window
+        id="action_bulletin"
+        name="Bulletin de régularisation"
+        res_model="bulletin.bulletin"
+        view_mode="tree,form"
+    />
+
+    <menuitem id="smp_stock_accounting_charge" name="Audit des charges" parent="smp_bulletin.smp_stock_accounting_menu" sequence="10"/>
+    <menuitem id="menu_bulletin" name="Bulletin" action="action_bulletin" parent="smp_bulletin.smp_stock_accounting_charge" />
+
+        ---------------- Bulletin Line Views  ----------------
+    <record id="view_bulletin_line_form" model="ir.ui.view">
+        <field name="name">bulletin.line.form</field>
+        <field name="model">bulletin.line</field>
+        <field name="arch" type="xml">
+            <form string="Lignes de bulletin">
+    <!--            <header>-->
+    <!--                <button string="Open" type="object" name="open" states="draft" class="oe_highlight" />-->
+    <!--                <button string="Opérations" type="object" name="open_wizard" class="oe_highlight" />-->
+    <!--                <button string="Done" type="object" name="done" states="open" class="oe_highlight" confirm="Attention: Vous allez valider définitivent le bulletin!!"/>-->
+    <!--                <field name="state" widget="statusbar"/>-->
+    <!--            </header>-->
+                <sheet>
+                    <group col="4">
+                        <field name="bulletin_id"/>
+                        <field name="product_qty"/>
+                        <field name="value"/>
+                        <field name="regulated_amount"/>
+                        <field name="partner_id"/>
+                        <field name="invoice_id"/>
+                        <field name="write_off_line_move_id"/>
+                        <field name="charge_rule_category_id"/>
+<!--                        <button class="oe_highlight" name="put_in_pack" type="object" string="Put in Pack" invisible="1" modifiers="{'invisible':true}" options="{}"/>-->
+                    </group>
+
+                    <notebook>
+                        <page string="Charges">
+                            <field name="stock_move_charge_ids">
+    <!--                            <tree edit="false" create="false" delete="false">-->
+    <!--                                -->
+    <!--                            </tree>-->
+                            </field>
+                        </page>
+                        <page string="Elément de charges">
+                            <field name="charge_slip_line_ids" context="{'tree_view_ref':'view_charge_slip_line_tree',
+                            'form_view_ref': 'view_charge_slip_line_form'}"/>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_bulletin_line_tree" model="ir.ui.view">
+        <field name="name">bulletin.line.tree</field>
+        <field name="model">bulletin.line</field>
+        <field name="arch" type="xml">
+            <tree string="Lignes de bulletin" create="false" delete="false" edit="false">
+                <field name="bulletin_id"/>
+                <field name="product_id"/>
+                <field name="rubrique_id"/>
+                <field name="charge_rule_category_id"/>
+                <field name="product_qty"/>
+                <field name="value"/>
+                <field name="regulated_amount"/>
+                <field name="partner_id"/>
+                <field name="invoice_id"/>
+<!--                <field name="charge_rule_category_id" attrs="{'':[('charge_rule_id.rubrique_id','=',rubrique_id)]}"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <act_window
+        id="action_bulletin_line"
+        name="Lignes de bulletin de régularisation"
+        res_model="bulletin.line"
+        view_mode="tree,form"
+    />
+
+    <menuitem id="menu_bulletin_line" name="Ligne Bulletin" action="action_bulletin_line" parent="smp_bulletin.smp_stock_accounting_charge" />
+
+
+    ---------------- Charge Slip Line ----------------
+    <record id="view_charge_slip_line_form" model="ir.ui.view">
+        <field name="name">charge.slip.line.form</field>
+        <field name="model">charge.slip.line</field>
+        <field name="arch" type="xml">
+            <form string="Ligne de règle recalculé">
+                <sheet>
+                    <group>
+                    <field name="bulletin_id"/>
+                    <field name="bulletin_line_id"/>
+                    <field name="charge_rule_id"/>
+                    <field name="charge_rule_category_id"/>
+                    <field name="sequence"/>
+                    <field name="amount"/>
+                    <field name="is_mandatory_input"/>
+                    <field name="is_mandatory_output"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_charge_slip_line_tree" model="ir.ui.view">
+        <field name="name">charge.slip.line.tree</field>
+        <field name="model">charge.slip.line</field>
+        <field name="arch" type="xml">
+            <tree string="Ligne de règle recalculé">
+                <field name="bulletin_id"/>
+                <field name="bulletin_line_id"/>
+                <field name="charge_rule_id"/>
+                <field name="charge_rule_category_id"/>
+                <field name="sequence"/>
+                <field name="amount"/>
+                <field name="is_mandatory_input"/>
+                <field name="is_mandatory_output"/>
+            </tree>
+        </field>
+    </record>
+
+    <act_window id="view_charge_slip_line_action"
+                 res_model="charge.slip.line"
+                 name="charge.slip.line.action"
+                 view_mode="tree,form"
+                 target="new"
+    />
+
+    <menuitem id="menu_charge_slip_line" name="Rubriques Calculées" action="view_charge_slip_line_action" parent="smp_bulletin.smp_stock_accounting_charge" />
+
+
+    ---------------- Charge Slip Line Wizard  ----------------
+
+    <record id="view_charge_slip_line_wizard" model="ir.ui.view">
+        <field name="name">view.charge.slip.line.wizard</field>
+        <field name="model">charge.slip.line.wizard</field>
+        <field name="arch" type="xml">
+            <form string="_Charge Slip Line - Mandatory Input Entry">
+                <group>
+                    <p><b>Veuillez Saisir les entrée nécessaire à la revalorisation des charges</b></p>
+                </group>
+
+                <field name="charge_slip_line_ids">
+                    <tree create="false" editable="bottom">
+                        <field name="sequence" readonly="1"/>
+                        <field name="charge_rule_id" readonly="1"/>
+                        <field name="amount"/>
+                    </tree>
+                </field>
+
+                <footer>
+                    <button name="process" string="_Apply" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="view_charge_slip_line_wizard_action"
+        name="Charge Slip Line - Mandatory Input Entry"
+        res_model="charge.slip.line.wizard"
+        view_mode="form"
+        domain="[('is_mandatory_input','=',True)]"
+        target="new"
+    />
+
+    ---------------- Bulletin Wizard  ----------------
+
+    <record id="view_bulletin_wizard" model="ir.ui.view">
+        <field name="name">view.bulletin.wizard</field>
+        <field name="model">bulletin.wizard</field>
+        <field name="arch" type="xml">
+            <form string="_Stock Move Selection">
+                <group>
+                    <p><b>Veuillez sélectionner les opérations souhaitées!!!</b></p>
+                </group>
+                <field name="stock_move_ids" widget="many2many" option='{"no_open": True, "no_create": True, "no_create_edit": True}'>
+                    <tree create="1" delete="1"  edit="0" >
+                        <field name="origin"/>
+                        <field name="reference"/>
+                        <field name="product_qty"/>
+                        <field name="picking_type_id"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="process" string="_Apply" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+        id="view_charge_slip_line_wizard_action"
+        name="Charge Slip Line - Mandatory Input Entry"
+        res_model="charge.slip.line.wizard"
+        view_mode="form"
+        domain="[('is_mandatory_input','=',True)]"
+        target="new"
+    />
+
+        **************  Bulletin Configuration **************
+    <record model="ir.ui.view" id="smp_bulletin.bulletin_conf_form">
+        <field name="name">General Configuration</field>
+        <field name="model">bulletin.configuration</field>
+        <field name="arch" type="xml">
+            <form create="true">
+                <sheet>
+                    <group name="bulletin_conf" string="Configuration des comptes">
+                        <field name="dif_reconciliation_account"/>
+                        <field name="dif_reconciliation_journal"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="bulletin_conf_action">
+        <field name="name">bulletin_conf_action</field>
+        <field name="res_model">bulletin.configuration</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" eval="ref('smp_bulletin.bulletin_conf_form')"/>
+        <field name="res_id" eval="ref('smp_bulletin.bulletin_main_configuration')"/>
+
+    </record>
+
+    <menuitem id="bulletin_conf_menu" name="Account Configuration" action="bulletin_conf_action" parent="smp_bulletin.smp_stock_accounting_menu_conf" />
+
+</odoo>

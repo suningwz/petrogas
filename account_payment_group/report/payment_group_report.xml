@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="payment_group_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+
+                    <div class="page" style="height:842px;">
+                        <div class="oe_structure"/>
+                        <div class="row " name="title">
+                            <h2 >Reçu De Réglement
+                                <t t-if="doc.partner_type == 'customer'"> Client</t>
+                                <t t-if="doc.partner_type == 'supplier'"> Fournisseur</t>
+<!--                                <t t-if="doc.partner_type == 'customer'" t-esc="doc.name"/>-->
+                            </h2>
+                        </div>
+
+                        <br/>
+                        <div class="row " name="general_info">
+                            <div name="partner_info" class="col-6 ">
+                                <p><b>Client: </b> <span t-field="doc.partner_id"/></p>
+                                <p><span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.country_id"/></p>
+                                <p><b>N° Réglement: </b> <span t-field="doc.name"/></p>
+<!--                                <p><span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.country_id"/></p>-->
+
+                            </div>
+                            <div name="transaction_info" class="col-6 ">
+                                <p><b>Date de réglement: </b> <span t-field="doc.payment_date"/></p>
+                                <p><b>Agent de saisie: </b> <span t-field="doc.write_uid.name"/></p>
+                                <p><b>Montant du réglement: </b> <span t-field="doc.matched_amount"/></p>
+<!--                                <p><b>Solde Client: </b> <span t-field="doc.partner_id.credit"/></p>-->
+
+                            </div>
+                            <br/>
+                        </div>
+
+                        <br/>
+                        <h4 >Liste des réglements:</h4>
+                        <div class="row " name="payment_list">
+                            <table class="table table-sm">
+                                <thead class="thead-light">
+                                    <tr>
+<!--                                        <th>Sequence</th>-->
+                                        <th>Journal</th>
+                                        <th>Memo</th>
+                                        <th>Montant</th>
+                                        <th>Montant (MRU)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="doc.payment_ids" t-as="move" >
+<!--                                        <td><span t-field="move.name" /></td>-->
+                                        <td><span t-field="move.journal_id" /></td>
+                                        <td><span t-field="move.communication" /></td>
+                                        <td><span t-field="move.amount" /></td>
+                                        <td><span t-field="move.amount_company_currency" /></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td><span t-field="doc.matched_amount" /></td>
+                                        <td><span t-field="doc.matched_amount" /></td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <br/>
+
+                        <t t-if="doc.matched_move_line_ids">
+                            <br/>
+                            <h4>Liste des factures et avoirs reconciliés:</h4>
+                            <div class="row" name="invoice_list">
+                                <table class="table table-sm">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Date d'échéance</th>
+                                            <th>Référence</th>
+                                            <th>Montant à Payer</th>
+<!--                                            <th>Montant Payé</th>-->
+<!--                                            <th>Montant en Devise</th>-->
+<!--                                            <th>Montant Résiduel</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-set="amount_to_pay" t-value="0"/>
+<!--                                        <t t-set="amount_paid" t-value="0"/>-->
+<!--                                        <t t-set="amount_currency" t-value="0"/>-->
+<!--                                        <t t-set="amount_residuel" t-value="0"/>-->
+<!--                                        <t t-set="amount_residual" t-value="0"/>-->
+
+                                        <tr t-foreach="doc.matched_move_line_ids" t-as="move" >
+
+                                            <t t-set="amount_to_pay" t-value="amount_to_pay + move.balance"/>
+<!--                                            <t t-set="amount_paid" t-value="amount_paid + move.payment_group_matched_amount"/>-->
+<!--                                            <t t-set="amount_currency" t-value="amount_currency + move.amount_currency"/>-->
+<!--                                            <t t-set="amount_residual" t-value="amount_residual + move.amount_residual"/>-->
+
+                                            <td><span t-field="move.date" /></td>
+                                            <td><span t-field="move.date_maturity" /></td>
+                                            <td><span t-field="move.invoice_id" /></td>
+                                            <td><span t-field="move.balance" /></td>
+<!--                                            <td><span t-field="move.payment_group_matched_amount" /></td>-->
+<!--                                            <td><span t-field="move.amount_currency" /></td>-->
+<!--                                            <td><span t-field="move.amount_currency" /></td>-->
+                                            <t t-if="move_last">
+                                                <tr >
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td><strong><span t-esc="amount_to_pay"
+                                                    t-options='{"widget": "monetary", "display_currency": doc.company_id.currency_id}'/></strong></td>
+<!--                                                    <td><strong><span t-esc="amount_paid" /></strong></td>-->
+<!--                                                    <td><strong><span t-esc="amount_currency" /></strong></td>-->
+<!--                                                    <td><strong><span t-esc="financial_amount_residual" /></strong></td>-->
+                                                </tr>
+
+                                            </t>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br/><br/><br/>
+                        </t>
+
+
+                        <div class="row align-items-end " name="signature">
+<!--                            <div class="col-6"><h5>Le Client</h5></div>-->
+                            <div class="col-6"><h5>
+<!--                                <t t-if="doc.partner_type == 'customer'"> Le Client</t>-->
+                                <t t-if="doc.partner_type == 'supplier'"> Le bénéficiaire</t>
+                            </h5></div>
+
+                            <div class="col-6"><h5>Le Caissier</h5></div>
+                        </div>
+
+                        <div class="oe_structure"/>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        string="Paiement Grouper"
+        id="payment_group_report"
+        model="account.payment.group"
+        report_type="qweb-pdf"
+        name="account_payment_group.payment_group_template"
+        print_report_name="'Reçu %s - %s' % (object.partner_type, object.name)"
+        paperformat="base.paperformat_euro"
+    />
+</odoo>

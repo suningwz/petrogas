@@ -1,0 +1,2005 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* smp_inventory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-26 10:54+0000\n"
+"PO-Revision-Date: 2019-12-26 11:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:184
+#, python-format
+msgid ""
+"\n"
+"\n"
+"%s --> Product UoM is %s (%s) - Move UoM is %s (%s)"
+msgstr ""
+"\n"
+"\n"
+"%s --> UdM de l'article %s (%s) - UdM du mouvement %s (%s)"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:185
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Blocking: %s"
+msgstr ""
+"\n"
+"\n"
+"Bloquant: %s"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__reclassement_charge_id
+msgid "   Reclassement Fees"
+msgstr "Frais de reclassement"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:129
+#, python-format
+msgid " (%s reserved)"
+msgstr " (%s réservé)"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:132
+#, python-format
+msgid " (reserved)"
+msgstr " (réservé)"
+
+#. module: smp_inventory
+#: model:uom.category,name:smp_inventory.uom_category_oil
+msgid " Carburant"
+msgstr " Carburant"
+
+#. module: smp_inventory
+#: model:uom.uom,name:smp_inventory.uom_category_carb_litre_15°c
+msgid " Litre 15°C"
+msgstr " Litre 15°C"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:333
+#: code:addons/smp_inventory/models/stock_landing_cost.py:337
+#: code:addons/smp_inventory/models/stock_landing_cost.py:354
+#: code:addons/smp_inventory/models/stock_landing_cost.py:358
+#, python-format
+msgid " already out"
+msgstr "Déjà fait"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_location__usage
+msgid ""
+"* Vendor Location: Virtual location representing the source location for products coming from your vendors\n"
+"* View: Virtual location used to create a hierarchical structures for your warehouse, aggregating its child locations ; can't directly contain products\n"
+"* Internal Location: Physical locations inside your own warehouses,\n"
+"* Customer Location: Virtual location representing the destination location for products sent to your customers\n"
+"* Inventory Loss: Virtual location serving as counterpart for inventory operations used to correct stock levels (Physical inventories)\n"
+"* Procurement: Virtual location serving as temporary counterpart for procurement operations when the source (vendor or production) is not known yet. This location should be empty when the procurement scheduler has finished running.\n"
+"* Production: Virtual counterpart location for production operations: this location consumes the raw material and produces finished products\n"
+"* Transit Location: Counterpart location that should be used in inter-company or inter-warehouses operations"
+msgstr ""
+"* Emplacement fournisseur : un emplacement virtuel qui correspond à l'emplacement d'origine des produits issus de vos fournisseurs.\n"
+"* Vue : emplacement virtuel utilisé pour créer des structures hiérarchiques pour votre entrepôt, en agrégeant ses emplacements enfants ; ne peut pas directement contenir de produits.\n"
+"* Emplacement interne : l'emplacement physique dans votre entrepôt.\n"
+"* Emplacement client : un emplacement virtuel qui correspond à l'emplacement de destination des produits envoyés à vos clients.\n"
+"* Perte de stock : emplacement virtuel servant de contre-valeur aux opérations d'inventaire utilisées pour corriger les niveaux de stock (inventaires physiques).\n"
+"* Approvisionnement : emplacement virtuel servant de contre-valeur temporaire pour les opérations d'approvisionnement lorsque la source (fournisseur ou fabrication) n'est pas encore connue. Normalement, cet emplacement est vide une fois que le planificateur d'approvisionnement a fini de s'exécuter.\n"
+"* Fabrication : emplacement de contre-valeur virtuel pour les opérations de fabrication. Cet emplacement consomme des matières premières et fabrique des produits finis.\n"
+"* Emplacement de transit : emplacement de contre-valeur à utiliser pour les opérations inter-entreprises et inter-entrepôts"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "<b>Créer par: </b>"
+msgstr "<b>Créer par:</b>"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "<b>Date d'émission: </b>"
+msgstr "<b>Date d'émission:</b>"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "<b>Dépôt: </b>"
+msgstr "<b>Dépôt:</b>"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_stock_partial_picking
+msgid "<b>Please confirm the quantities moved in storage unit.</b>"
+msgstr "<b>Veuillez confirmer les quantités déplacées en unité de stockage.</b>"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "<u>Destination</u>"
+msgstr "<u>Destination</u>"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "<u>Source</u>"
+msgstr "<u>Source</u>"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_product_product__type
+#: model:ir.model.fields,help:smp_inventory.field_product_template__type
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+"Un produit stockable est un produit dont on gère le stock. L'application \"Inventaire\" doit être installée. \n"
+"Un produit consommable, d'un autre côté, est un produit pour lequel le stock n'est pas géré.\n"
+"Un service est un produit immatériel que vous fournissez."
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__account_id
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__account_id
+msgid "Account"
+msgstr "Compte"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__account_move_line_ids
+msgid "Account Move Line"
+msgstr "Ligne d'écriture"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_picking_type__internal_type
+msgid "Allows to differentiate the types of internal operations."
+msgstr "Permet de différencier les types d'opérations internes."
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_graph
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_pivot
+msgid "Analyse des charges logistiques et commerciale"
+msgstr "Analyse des charges logistiques et commerciales"
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.stock_move_analysis_action
+#: model:ir.model,name:smp_inventory.model_stock_move_analysis
+#: model:ir.ui.menu,name:smp_inventory.stock_move_analysis_menu
+#: model_terms:ir.ui.view,arch_db:smp_inventory.stock_move_analysis_pivot
+msgid "Analyse des stocks"
+msgstr "Analyse des stocks"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__product_id
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "Article"
+msgstr "Article"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+msgid "Articles"
+msgstr "Articles"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.reclassement_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.transfert_charges_form
+msgid "Articles et frais"
+msgstr "Articles et frais"
+
+#. module: smp_inventory
+#: selection:product.template,type:0
+msgid "Asset"
+msgstr "Actifs"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:636
+#, python-format
+msgid ""
+"Attention !!! Afin d'appliquer les charges liée à une structure de prix, un régime de vente doit\n"
+"                     être indiqué sur le bon de livraison "
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+#: selection:stock.move.charges,state:0
+msgid "Audit en cours"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "Bon De Reclassement:"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:purchase.order.cost,split_method:0
+msgid "By Current Cost"
+msgstr "par Coût actuel "
+
+#. module: smp_inventory
+#: selection:purchase.order.cost,split_method:0
+msgid "By Quantity"
+msgstr "Par quantité"
+
+#. module: smp_inventory
+#: selection:purchase.order.cost,split_method:0
+msgid "By Volume"
+msgstr "Par volume"
+
+#. module: smp_inventory
+#: selection:purchase.order.cost,split_method:0
+msgid "By Weight"
+msgstr "par poids "
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.purchase_order_cost_wizard_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_wizard_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.sale_analysis_report_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.stock_move_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_stock_partial_picking
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:584
+#, python-format
+msgid "Cannot find a stock input account for the product %s. You must define one on the product category, or on the location, before processing this operation."
+msgstr "Impossible de trouver un compte d'entrée de stock pour le produit %s. Vous devez en définir un sur la catégorie de produit, ou sur l'emplacement, avant de traiter cette opération."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:588
+#, python-format
+msgid "Cannot find a stock output account for the product %s. You must define one on the product category, or on the location, before processing this operation."
+msgstr "Impossible de trouver un compte de sortie de stock pour le produit %s. Vous devez en définir un sur la catégorie de produit, ou sur l'emplacement, avant de traiter cette opération."
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__category
+msgid "Catégorie d'opération"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__rubrique_id
+msgid "Charge"
+msgstr "Charge"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.internal_picking_form
+msgid "Charger"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__uom_id
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__uom_id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__charges_ids
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+msgid "Charges"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_account_move_line__charge_id
+msgid "Charges Logistique"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.smp_stock_move_charges_action
+msgid "Charges Logistiques Générées"
+msgstr "Côut Logistique Générée"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.purchase_order_cost_form
+msgid "Charges Réparties"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_location__code
+msgid "Code"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__company_id
+msgid "Compagny"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_quant__company_currency_id
+msgid "Company Currency"
+msgstr "Devise de la société"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+#: selection:stock.move.charges,state:0
+msgid "Comptabilisé"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_form
+msgid "Comptabilité"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_product_product__property_stock_account_inventory
+#: model:ir.model.fields,help:smp_inventory.field_product_template__property_stock_account_inventory
+msgid "Compte d'inventaire de stock"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_product_product__property_stock_account_loss
+#: model:ir.model.fields,help:smp_inventory.field_product_template__property_stock_account_loss
+msgid "Compte de perte de stock."
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_product_product__property_stock_account_transit
+#: model:ir.model.fields,help:smp_inventory.field_product_template__property_stock_account_transit
+msgid "Compte de transit utliser lors des transferts."
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.purchase_order_form
+msgid "Compute"
+msgstr "Calculer"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.purchase_order_cost_wizard_form
+msgid "Confim"
+msgstr "Confirmer"
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.stock_partial_picking_action
+msgid "Confirmation des quantités en unité de stockage"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__finisher_id
+msgid "Confirmed by"
+msgstr "Confirmée par"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.product_reclassement_form
+msgid "Confirmer"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.server,name:smp_inventory.action_reclassement_charges_confirm
+msgid "Confirmer les frais de reclassement"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.server,name:smp_inventory.action_transfert_charges_confirm
+msgid "Confirmer les frais de transfert"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.server,name:smp_inventory.action_sale_charges_confirm
+msgid "Confirmer les frais de vente"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:product.template,type:0
+msgid "Consumable"
+msgstr "Consommable"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_product__inter_uom_factor
+#: model:ir.model.fields,field_description:smp_inventory.field_product_template__inter_uom_factor
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__inter_uom_factor
+msgid "Conversion Factor"
+msgstr "Facteur de conversion"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__inter_uom_factor
+msgid "Conversion factor"
+msgstr "Facteur de conversion"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_line__inter_uom_factor
+msgid "Convesion factor"
+msgstr "Facteur de convesion"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__po_cost_id
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__value
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_quant__cost
+msgid "Cost"
+msgstr "Coût"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_move_charges
+#: model_terms:ir.ui.view,arch_db:smp_inventory.purchase_order_form
+msgid "Cost Landing"
+msgstr "Coût analytique"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order__cost_visible
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_line__cost_visible
+msgid "Cost Visible"
+msgstr "Coûts visibles"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:94
+#, python-format
+msgid "Cost and adjustments lines do not match. You should maybe recompute the landed costs."
+msgstr "Les lignes de coût et d'ajustement ne correspondent pas. Vous devriez peut-être recalculer les coûts au débarquement."
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_line__cost_landing_value
+msgid "Cost landing"
+msgstr "Coût Logistiques"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_quant__cost
+msgid "Cost unit per unit and location"
+msgstr "Unité de coût par unité et emplacement"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_picking.py:104
+#: code:addons/smp_inventory/models/stock_picking.py:185
+#, python-format
+msgid "Could not reserve all requested products. Please use the 'Mark as Todo' button to handle the reservation manually."
+msgstr "Impossible de réserver tous les produits demandés. Utilisez le bouton 'Marquer comme à faire' pour gérer la réservation manuellement."
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__cost
+msgid "Coût Total"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__cost_unit
+msgid "Coût Unitaire"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__cmp_in_amount
+msgid "Coût unitare d'entrée"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__cmp_out_amount
+msgid "Coût unitare de sortie"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__creater_id
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__creater_id
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__create_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__create_date
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__date_sent
+msgid "Creation date"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.actions.act_window,help:smp_inventory.reclassement_charges_action
+msgid "Créer les différentes rubrtiques de frais de reclassement possibles."
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.actions.act_window,help:smp_inventory.transfert_charges_action
+msgid "Créer les différentes rubrtiques de frais de transfert possibles."
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.actions.act_window,help:smp_inventory.sale_charges_action
+msgid "Créer les différentes rubrtiques de frais de ventes et d'achat possibles."
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_account_invoice__currency_rate
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order__currency_rate
+msgid "Currency rate"
+msgstr "Taux de change"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_account_invoice__currency_rate_visible
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order__currency_rate_visible
+msgid "Currency rate visible"
+msgstr "Taux de change visible"
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "Customer Location"
+msgstr "Emplacement Client"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__regime_id
+msgid "Customs regime"
+msgstr "Régime douanier"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__date
+#: model_terms:ir.ui.view,arch_db:smp_inventory.reclassement_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+#: model_terms:ir.ui.view,arch_db:smp_inventory.transfert_charges_form
+msgid "Date"
+msgstr "Date "
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__start_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__start_date
+msgid "Date de départ"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__end_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__end_date
+msgid "Date de fin"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__date_done
+msgid "Date de reclassement"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__date_end_validity
+msgid "Date fin de validité"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_move__ref_uom_id
+msgid "Default unit of measure used for all stock operations."
+msgstr "Unité de mesure par défaut utilisée pour toutes les opérations de stock"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__name
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__name
+msgid "Description"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__display_name
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: smp_inventory
+#: selection:reclassement,state:0 selection:reclassement.charges,state:0
+#: selection:sale.charges,state:0 selection:transfert.charges,state:0
+msgid "Done"
+msgstr "Fait"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__data
+msgid "Download Report"
+msgstr "Télécharger le rapport"
+
+#. module: smp_inventory
+#: selection:internal.picking,state:0 selection:reclassement,state:0
+#: selection:reclassement.charges,state:0 selection:sale.charges,state:0
+#: selection:transfert.charges,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__location_id
+msgid "Dépot"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__location_id
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__location_id
+msgid "Dépôt"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.internal_picking_form
+msgid "Emettre"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__location_id
+msgid "Emplacement"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.reclassement_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.transfert_charges_form
+msgid "Emplacements"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__end_date
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__end_date
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__charge_in_amount
+msgid "Entry Fees Unit"
+msgstr "Frais d'entrée unitaire"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__cmp_in_amount
+msgid "Entry cost unit"
+msgstr "Coût d'entrée unitaire"
+
+#. module: smp_inventory
+#: selection:reclassement.charges,type:0
+msgid "Entrée"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:purchase.order.cost,split_method:0
+msgid "Equal"
+msgstr "Égale"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__charge_out_amount
+msgid "Exit Fees Unit"
+msgstr "Frais de sortie unitaire"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__cmp_out_amount
+msgid "Exit cost unit"
+msgstr "Coût de sortie unitaire"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_wizard_form
+msgid "Export Complete"
+msgstr "Export Complet"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__name
+msgid "File Name"
+msgstr "Nom de Fichier"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+msgid "Filtre - Analyse des charges"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.report,name:smp_inventory.action_report_reclassement
+msgid "Formulaire de Reclassement"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.purchase_order_weight_vol_setting_form
+msgid "Formulaire de saisie des poids et volume pour répartiions des charges"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.transfert_charges_action
+msgid "Frais de Transfert"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.reclassement_charges_action
+#: model:ir.ui.menu,name:smp_inventory.reclassement_charges_menu
+msgid "Frais de reclassement"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.reclassement_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.reclassement_charges_tree_view
+msgid "Frais de reclassements"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.ui.menu,name:smp_inventory.transfert_charges_menu
+#: model_terms:ir.ui.view,arch_db:smp_inventory.transfert_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.transfert_charges_tree_view
+msgid "Frais de transferts"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.ui.menu,name:smp_inventory.sale_charges_menu
+msgid "Frais de vente"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.sale_charges_action
+msgid "Frais de ventes"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__charge_in_amount
+msgid "Frais unitare d'entrée"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_wizard_form
+msgid "Here is the exported translation file:"
+msgstr "Voici le fichier de traduction exporté:"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__id
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__id
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__id
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__id
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__id
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__id
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__id
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__id
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__id
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__id
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__id
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__id
+msgid "ID"
+msgstr "ID"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_immediate_transfer
+msgid "Immediate Transfer"
+msgstr "Transfert immédiat"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_stock_partial_picking
+msgid "Immediate transfer?"
+msgstr "Transfert immédiat ?"
+
+#. module: smp_inventory
+#: selection:transfert.charges,type:0
+msgid "In"
+msgstr "Entrée"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__quantity_ask
+msgid "Initial Quantity"
+msgstr "Quantité initiale"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_internal_picking
+msgid "Inter Location transfert"
+msgstr "Transfert Inter Location"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_internal_picking_line
+msgid "Inter Location transfert Line"
+msgstr "Ligne de transfert Inter Location"
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "Internal Location"
+msgstr "Emplacement interne"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Ligne d'inventaire"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_location
+msgid "Inventory Locations"
+msgstr "Emplacements de stock"
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "Inventory Loss"
+msgstr "Perte d'inventaire"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "La Direction"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__landed_cost_value
+msgid "Landed Cost"
+msgstr "Prix ​​au débarquement"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line____last_update
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__write_uid
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_report_wizard__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__write_date
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: smp_inventory
+#: sql_constraint:reclassement.charges:0
+msgid "Le couple dates, article source, article destination location et rubrique doit-être unique !!"
+msgstr ""
+
+#. module: smp_inventory
+#: sql_constraint:sale.charges:0
+msgid "Le couple dates, article, location et rubrique doit-être unique !!"
+msgstr ""
+
+#. module: smp_inventory
+#: sql_constraint:transfert.charges:0
+msgid "Le couple dates, article, location source, location destination et rubrique doit-être unique !!"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:uom.category,measure_type:0
+msgid "Length"
+msgstr "Longueur"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__po_cost_line_ids
+msgid "Ligne de charges"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__internal_picking_line_ids
+msgid "Lignes de Transferts"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.product_reclassement_form
+msgid "Lignes de reclassement"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.internal_picking_form
+msgid "Lignes de transfert"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:internal.picking,state:0
+msgid "Loaded"
+msgstr "Chargé"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__quantity_load
+msgid "Loaded Quantity"
+msgstr "Quantité chargée"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__location_id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__location_ids
+msgid "Location"
+msgstr "Emplacement"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__location_dest_id
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__location_dest_id
+msgid "Location Destination"
+msgstr "Emplacement de destination"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__location_src_id
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__location_src_id
+msgid "Location Source"
+msgstr "Emplacement source"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_location__usage
+msgid "Location Type"
+msgstr "Type d'emplacement"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_picking_type__no_picking
+msgid "Makes generation of pickings not mandatory such as for reclassification"
+msgstr "Rend la génération de cueillettes non obligatoire comme pour le reclassement"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__stock_move_id
+msgid "Move"
+msgstr "Mouvement"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:25
+#: code:addons/smp_inventory/models/stock_landing_cost.py:65
+#, python-format
+msgid "New"
+msgstr "Nouveau"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move_line.py:93
+#, python-format
+msgid "No negative quantities allowed"
+msgstr "Les quantités négatives ne sont pas autorisées"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_picking_return.py:51
+#, python-format
+msgid "No products to return (only lines in Done state and not fully returned yet can be returned)."
+msgstr "Pas de produits à retourner (seules les lignes avec le statut \"fait\" et pas complètement retournées peuvent être retournées). "
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:92
+#, python-format
+msgid "No valuation adjustments lines. You should maybe recompute the landed costs."
+msgstr "Aucune ligne d'ajustement d'évaluation. Vous devriez peut-être recalculer les coûts au débarquement."
+
+#. module: smp_inventory
+#: selection:stock.move.charges,state:0
+msgid "Non Comptabilisé"
+msgstr ""
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:90
+#, python-format
+msgid "Only draft landed costs can be validated"
+msgstr "Seuls les projets de coûts au débarquement peuvent être validés"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__product_uom_id
+msgid "Operating Uom"
+msgstr "Unité d'opération"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__stock_move_id
+msgid "Operation"
+msgstr "Opération"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__picking_type_id
+msgid "Operation type"
+msgstr "Type d'opération"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__po_line_id
+msgid "Order Line"
+msgstr "Ligne de commande"
+
+#. module: smp_inventory
+#: selection:transfert.charges,type:0
+msgid "Out"
+msgstr "Sortie"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_partial_picking
+msgid "Partial Picking Processing Wizard"
+msgstr "Assistant de traitement de prélèvement partiel"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_analysis_report__partner_ids
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_sale_charges__partner_id
+msgid "Permet d'identifier à quel fournisseur cette charge sera due."
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_immediate_transfer__pick_ids
+msgid "Pick"
+msgstr "Préparer"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__picking_id
+msgid "Picking"
+msgstr "Opération de manutention"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_picking_type
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__picking_type_ids
+msgid "Picking Type"
+msgstr "Type de préparation"
+
+#. module: smp_inventory
+#: model:ir.actions.server,name:smp_inventory.action_stock_picking_account_move_view
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_picking_form
+msgid "Pièces Comptable"
+msgstr ""
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:301
+#, python-format
+msgid "Please configure Stock Expense Account for product: %s."
+msgstr "Veuillez configurer le compte de dépenses de stock pour le produit:% s."
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__po_id
+msgid "Po"
+msgstr "Bon d'achat"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_line__po_cost_line_ids
+msgid "Po Cost Line"
+msgstr "Charge répartie lié une ligne de bon d'achat"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__po_line_ids
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_wizard__po_line_ids
+msgid "Po Line"
+msgstr "Ligne de bon d'achat"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__price_unit
+msgid "Prix Unitaire"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "Procurement"
+msgstr "Approvisionnement"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__product_id
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__rubrique_id
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__rubrique_id
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__product_id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__product_id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_report__product_ids
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__product_id
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__product_dest_id
+msgid "Product Destination"
+msgstr "Destination du produit "
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__line_ids
+msgid "Product Moves"
+msgstr "Mouvements de produits"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Mouvements d'articles (Ligne de mouvement de stock)"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__product_src_id
+msgid "Product Source"
+msgstr "Source du produit"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_product__type
+#: model:ir.model.fields,field_description:smp_inventory.field_product_template__type
+msgid "Product Type"
+msgstr "Type d'article"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_uom_uom
+msgid "Product Unit of Measure"
+msgstr "Unité de mesure d'article"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_uom_category
+msgid "Product UoM Categories"
+msgstr "Catégorie d'UdM"
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "Production"
+msgstr "Fabrication"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__product_dest_id
+msgid "Produit Destination"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__product_src_id
+msgid "Produit Source"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_purchase_order
+msgid "Purchase Order"
+msgstr "Commande fournisseur"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__po_id
+msgid "Purchase Order "
+msgstr "Commande fournisseur"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order__purchase_order_cost_ids
+msgid "Purchase Order Cost"
+msgstr "Charges liés à une commande fournisseur"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_purchase_order_cost
+msgid "Purchase Order Landed Cost "
+msgstr "Charges liés à une commande fournisseur"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_purchase_order_cost_line
+msgid "Purchase Order Landed Cost Line"
+msgstr "Charges réparties liés à une commande fournisseur"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Ligne de commande d'achat"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__purchase_charge_id
+msgid "Purchase fees"
+msgstr "Frais d'achat unitaire"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__product_uom_qty
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__product_uom_qty
+msgid "Quantity Operated"
+msgstr "Quantité opérée"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_move_charges__product_qty
+msgid "Quantity in the default UoM of the product"
+msgstr "Quantité dans l'UdM par défaut de l'article"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__product_qty
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_reclassement
+msgid "Quantité"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__quantity_dest
+msgid "Quantité Destination"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__quantity_src
+msgid "Quantité Source"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_quant
+msgid "Quants"
+msgstr "Quants (Quants)"
+
+#. module: smp_inventory
+#: selection:internal.picking,state:0
+msgid "Received"
+msgstr "Reçue"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__quantity_done
+msgid "Received Quantity"
+msgstr "Quantité reçue :"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__finisher_id
+msgid "Received by"
+msgstr "Reçue par"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_reclassement
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__reclassement_id
+#: model:ir.ui.menu,name:smp_inventory.reclassement_menu
+#: selection:stock.location,usage:0
+#: selection:stock.picking.type,internal_type:0
+msgid "Reclassement"
+msgstr ""
+
+#. module: smp_inventory
+#: model:stock.picking.type,name:smp_inventory.picking_type_reclassement_in
+msgid "Reclassement Entrant"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_reclassement_line
+msgid "Reclassement Line"
+msgstr "Ligne de reclassement"
+
+#. module: smp_inventory
+#: model:stock.picking.type,name:smp_inventory.picking_type_reclassement_out
+msgid "Reclassement Sortant"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.product_reclassement_action
+msgid "Reclassement de produits"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__reclassement_line_id
+msgid "Reclassement lines"
+msgstr "Lignes de reclassement"
+
+#. module: smp_inventory
+#: model:ir.ui.menu,name:smp_inventory.product_reclassement_menu
+msgid "Reclassements"
+msgstr "Reclassements"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__reclassement_line_ids
+msgid "Reclassements Lines"
+msgstr "Lignes de reclassements"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.product_reclassement_form
+msgid "Reclasser"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: smp_inventory
+#: model:ir.ui.menu,name:smp_inventory.sale_analysis_report_menu
+msgid "Reporting des Ventes"
+msgstr "Reportage des Ventes"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_move_report
+msgid "Reporting des mouvement de stocks"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.stock_move_report_wizard_form
+msgid "Reporting des stock"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.sale_analysis_report_action
+#: model:ir.actions.act_window,name:smp_inventory.stock_move_report_wizard_action
+#: model:ir.ui.menu,name:smp_inventory.stock_move_report_wizard_menu
+msgid "Reporting des stocks"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_sale_analysis_report
+#: model_terms:ir.ui.view,arch_db:smp_inventory.report_wizard_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.sale_analysis_report_form
+msgid "Reporting des ventes"
+msgstr ""
+
+#. module: smp_inventory
+#: model:stock.picking.type,name:smp_inventory.return_picking_type_out
+msgid "Retour de Livraison"
+msgstr ""
+
+#. module: smp_inventory
+#: model:stock.picking.type,name:smp_inventory.return_picking_type_in
+msgid "Retour de Réception"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_return_picking
+msgid "Return Picking"
+msgstr "Retour de marchandise"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_return_picking_line
+msgid "Return Picking Line"
+msgstr "Ligne de Bon de Retour"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__rubrique_id
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__rubrique_id
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__rubrique_id
+msgid "Rubriques"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.internal_picking_form
+msgid "Réceptionner"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+#: selection:stock.move.charges,state:0
+msgid "Régularisé"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__sale_charge_id
+msgid "Sale Fees"
+msgstr "Frais de vente"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_line__date_planned
+msgid "Scheduled Date"
+msgstr "Date prévue"
+
+#. module: smp_inventory
+#: selection:internal.picking,state:0 selection:reclassement,state:0
+msgid "Sent"
+msgstr "Emis"
+
+#. module: smp_inventory
+#: selection:product.template,type:0
+msgid "Service"
+msgstr "Service"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_warehouse__code
+msgid "Short Name"
+msgstr "Nom court"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_location__code
+msgid "Short name used to identify your location"
+msgstr "Nom court utilisé pour identifier votre entrepôt"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_warehouse__code
+msgid "Short name used to identify your warehouse"
+msgstr "Nom court utilisé pour identifier votre entrpôt"
+
+#. module: smp_inventory
+#: selection:reclassement.charges,type:0
+msgid "Sortie"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__split_method
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__split_method
+msgid "Split Method"
+msgstr "Méthode de répartition"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__start_date
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__start_date
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__start_date
+msgid "Start Date"
+msgstr "Date de départ"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__state
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__state
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__state
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__state
+msgid "State"
+msgstr "État"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__state
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__state
+msgid "Status"
+msgstr "État"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__state
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__state
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__state
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_stock_move_charges_search
+msgid "Statut"
+msgstr "Statut"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_product__property_stock_account_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_template__property_stock_account_inventory
+msgid "Stock Inventory Account"
+msgstr "Inventaire du stock"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_move_form
+msgid "Stock Landing Charges"
+msgstr "Côut Logistique"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_product__property_stock_account_loss
+#: model:ir.model.fields,field_description:smp_inventory.field_product_template__property_stock_account_loss
+msgid "Stock Loss Account"
+msgstr "Compte de perte"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__stock_move_ids
+msgid "Stock Move Lines"
+msgstr "Lignes de mouvement de stock"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_product__property_stock_account_transit
+#: model:ir.model.fields,field_description:smp_inventory.field_product_template__property_stock_account_transit
+msgid "Stock Transit Account"
+msgstr "Compte de stock de transit"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_product__property_stock_account_valuation
+#: model:ir.model.fields,field_description:smp_inventory.field_product_template__property_stock_account_valuation
+msgid "Stock Valuation Account"
+msgstr "Compte de valorisation de stock"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__stock_move_ids
+msgid "Stock move lines"
+msgstr "Lignes de mouvement de stock"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_account_move_line__stock_move_id
+msgid "Stock moves"
+msgstr "Mouvements de stocks"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__product_qty
+msgid "Stock quantity"
+msgstr "Quantité en stock"
+
+#. module: smp_inventory
+#: selection:product.template,type:0
+msgid "Storable Product"
+msgstr "Produit stockable"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__ref_uom_id
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__product_qty
+msgid "Storage Unit"
+msgstr "Unité de stockage"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__uom_id
+msgid "Storage unit"
+msgstr "Unité de stockage"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.sale_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.sale_charges_tree_view
+msgid "Structure des frais"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__partner_id
+msgid "Supplier"
+msgstr "Fournisseur"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__name
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement__name
+msgid "Séquence"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_report_wizard
+msgid "Table d'enregistrement des rapport téléchargeable"
+msgstr ""
+
+#. module: smp_inventory
+#: sql_constraint:product.template:0
+msgid "The code must be unique"
+msgstr "Le code doit être unique !"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:733
+#, python-format
+msgid "The cost of %s is currently equal to 0. Change the cost or the configuration of your product to avoid an incorrect valuation."
+msgstr "Le coût de %s est actuellement égal à 0. Modifiez le coût ou la configuration de votre produit pour éviter une évaluation incorrecte."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/product.py:44
+#, python-format
+msgid "The default Unit of Measure and the purchase Unit of Measure must be in the same category."
+msgstr "L'unité de mesure par défaut et l'unité de mesure d'achat doivent être dans la même catégorie."
+
+#. module: smp_inventory
+#: sql_constraint:stock.location:0
+msgid "The location code must be unique!!!"
+msgstr "Le code de localisation doit être unique!!!"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_product_product__is_uom_inter_category
+#: model:ir.model.fields,field_description:smp_inventory.field_product_template__is_uom_inter_category
+msgid "The measurement unit categories are different"
+msgstr "Les catégories d'unité de mesure sont différentes"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:1042
+#, python-format
+msgid "The move lines are not in a consistent state: some are entering and other are leaving the company."
+msgstr "Les lignes de mouvement ne sont pas dans un état cohérent: certains entrent et d'autres quittent l'entreprise."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:1053
+#, python-format
+msgid "The move lines are not in a consistent states: they are doing an intercompany in a single step while they should go through the intercompany transit location."
+msgstr "Les lignes de mouvement ne sont pas dans un état cohérent : elles font une intersociété en une seule étape alors qu'elles devraient passer par l'emplacement de transit intersociétés."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:1051
+#, python-format
+msgid "The move lines are not in a consistent states: they do not share the same origin or destination company."
+msgstr "Les lignes de mouvements ne sont pas dans un état cohérent : elles ne partagent pas la même origine ou la même compagnie de destination."
+
+#. module: smp_inventory
+#: sql_constraint:product.template:0
+msgid "The name must be unique"
+msgstr "Le nom doit être unique !"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move_line.py:62
+#, python-format
+msgid "The quantity done for the product \"%s\" doesn't respect the rounding precision                                   defined on the unit of measure \"%s\". Please change the quantity done or the                                   rounding precision of your unit of measure."
+msgstr "La quantité effectuée pour le produit \"%s\" ne respecte pas la précision d'arrondi                                   définie sur l'unité de mesure \"%s\". Veuillez modifier la quantité effectuée ou la précision                                   d'arrondi de votre unité de mesure."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/uom.py:35
+#, python-format
+msgid "The unit of measure %s defined on the order line doesn't belong to the same category than the unit of measure %s defined on the product. Please correct the unit of measure defined on the order line or on the product, they should belong to the same category."
+msgstr "L'unité de mesure %s définie sur la ligne de commande n'appartient pas à la même catégorie que l'unité de mesure %s définie sur le produit. S'il vous plaît corriger l'unité de mesure définie sur la ligne de commande ou sur le produit, ils doivent appartenir à la même catégorie."
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_inventory_line__product_theoretical_value
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_inventory_line__product_value
+msgid "Theoretical Quantity"
+msgstr "Quantité théorique"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.smp_view_inventory_form_inherit
+msgid "Theorical Value"
+msgstr "Valeur théorique"
+
+#. module: smp_inventory
+#: selection:uom.category,measure_type:0
+msgid "Time"
+msgstr "Heure"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__to_invoice
+msgid "To Invoice"
+msgstr "À facturer"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_return_picking_line__to_refund
+msgid "To Refund (update SO/PO)"
+msgstr "À rembourser (mettre à jour l'ordre de vente/le bon de commande)"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_picking_type__no_picking
+msgid "To not generate picking"
+msgstr "Pour ne pas générer de bon de livraison ou réception"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_quant__total_amount
+#: model_terms:ir.ui.view,arch_db:smp_inventory.purchase_order_cost_form
+msgid "Total"
+msgstr "Total"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_line__price_total_all_cost
+msgid "Total with cost"
+msgstr "Total avec charges"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_picking
+msgid "Transfer"
+msgstr "Transfert"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__internal_picking_id
+#: model:ir.ui.menu,name:smp_inventory.internal_picking_menu
+#: selection:stock.picking.type,internal_type:0
+msgid "Transfert"
+msgstr "Transfert"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_charges__transfert_charge_id
+msgid "Transfert Fees"
+msgstr "Frais de transfert"
+
+#. module: smp_inventory
+#: model:ir.actions.act_window,name:smp_inventory.internal_picking_action
+msgid "Transfert Inter Dépôt"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking__transfert_wizard_id
+msgid "Transfert Wizard"
+msgstr "Assistant de transfert"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__internal_picking_line_id
+msgid "Transfert lines"
+msgstr "Lignes de transfert"
+
+#. module: smp_inventory
+#: model:ir.ui.menu,name:smp_inventory.transfert_menu
+msgid "Transferts"
+msgstr "Transferts"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.internal_picking_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.internal_picking_tree
+#: model_terms:ir.ui.view,arch_db:smp_inventory.product_reclassement_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.product_reclassement_tree
+msgid "Transferts Inter Dépôt"
+msgstr ""
+
+#. module: smp_inventory
+#: model:stock.picking.type,name:smp_inventory.picking_transfert_lost
+msgid "Transferts Pertes"
+msgstr ""
+
+#. module: smp_inventory
+#: model:stock.picking.type,name:smp_inventory.picking_transfert_out
+msgid "Transferts Sortants"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "Transit Location"
+msgstr "Emplacement de transit"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_return_picking_line__to_refund
+msgid "Trigger a decrease of the delivered/received quantity in the associated Sale Order/Purchase Order"
+msgstr "Déclencher une réduction de la quantité livrée/reçue dans la commande client/fournisseur associée"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_picking_type__internal_type
+msgid "Type Interne"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__picking_type_id
+msgid "Type d'Operation"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__type
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__type
+msgid "Type de frais"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_uom_category__measure_type
+msgid "Type of Measure"
+msgstr "Type de Mesure"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__uom_id
+msgid "Unit"
+msgstr "Unité"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_move_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_move_picking_form
+msgid "Unit Of Measure"
+msgstr "Unité de mesure"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking_line__product_uom
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__product_dest_uom
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_line__product_src_uom
+msgid "Unit of Measure"
+msgstr "Unité de mesure"
+
+#. module: smp_inventory
+#: selection:uom.category,measure_type:0
+msgid "Units"
+msgstr "Unités"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_stock_quant__company_currency_id
+msgid "Utility field to express amount currency"
+msgstr "Champ utile pour indiquer le montant de la monnaie"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__value
+msgid "Valeur Hors Charges"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__total_value
+msgid "Valeur Total"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move_analysis__charge_value
+msgid "Valeur des Charges"
+msgstr ""
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.reclassement_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.transfert_charges_form
+msgid "Valeurs et Unités"
+msgstr ""
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:84
+#, python-format
+msgid "Validated landed costs cannot be cancelled, but you could create negative landed costs to reverse them"
+msgstr "Les charges logistiques validés ne peuvent pas être annulés, mais vous pourriez créer des charges logistiques négatives pour les inverser"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.reclassement_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.sale_charges_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.transfert_charges_form
+msgid "Valider"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost__value
+#: model:ir.model.fields,field_description:smp_inventory.field_reclassement_charges__value
+#: model:ir.model.fields,field_description:smp_inventory.field_sale_charges__value
+#: model:ir.model.fields,field_description:smp_inventory.field_transfert_charges__value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "Vendor Location"
+msgstr "Adresse du vendeur"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.sale_analysis_report_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.stock_move_report_wizard_form
+msgid "Veuillez paramétrer les éléments souhaités devant constituer le reporting des stocks"
+msgstr ""
+
+#. module: smp_inventory
+#: selection:stock.location,usage:0
+msgid "View"
+msgstr "Vue"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__volume
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_line__volume
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__volume
+#: selection:uom.category,measure_type:0
+msgid "Volume"
+msgstr "Volume"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move_charges.py:197
+#, python-format
+msgid "Vérifier que les comptes de provisions et de dépenses sont bien paramétrés au niveau de la charge"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_warehouse
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_cost_line__weight
+#: model:ir.model.fields,field_description:smp_inventory.field_purchase_order_line__weight
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_move__weight
+#: selection:uom.category,measure_type:0
+msgid "Weight"
+msgstr "Poids"
+
+#. module: smp_inventory
+#: model:ir.model.fields,help:smp_inventory.field_product_product__property_stock_account_valuation
+#: model:ir.model.fields,help:smp_inventory.field_product_template__property_stock_account_valuation
+msgid "When real-time inventory valuation is enabled on a product, this account will hold the current value of the products."
+msgstr "Quand la valorisation en temps réel est activée sur un article, ce compte donnera la valorisation actuelle des articles."
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_stock_partial_picking_line__wizard_id
+msgid "Wizard"
+msgstr "Assistant"
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_landing_cost.py:164
+#, python-format
+msgid "You cannot apply landed costs on the chosen transfer(s). Landed costs can only be applied for products with automated inventory valuation and FIFO costing method."
+msgstr "Vous ne pouvez pas appliquer les frais d'atterrissage sur le transfert choisi. Les coûts de débarquement ne peuvent être appliqués que pour les produits dont l'évaluation automatisée des stocks et la méthode d'établissement des coûts FIFO."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:1024
+#: code:addons/smp_inventory/models/stock_move.py:1112
+#, python-format
+msgid "You cannot move the same package content more than once in the same transfer or split the same package into two location."
+msgstr "Vous ne pouvez pas transférer le même contenu d'emballage plus d'une fois pour un même transfert ou diviser le même emballage sur deux emplacements."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:182
+#, python-format
+msgid "You cannot perform the move because the unit of measure has a different category as the product unit of measure."
+msgstr "Vous ne pouvez pas faire ce transfert car l'unité de mesure est d'un autre type que l'unité de mesure de l'article."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:1150
+#, python-format
+msgid "You cannot split a draft move. It needs to be confirmed first."
+msgstr "Impossible de diviser un mouvement en état \"brouillon\". Il doit d'abord être confirmé."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:1146
+#, python-format
+msgid "You cannot split a stock move that has been set to 'Done'."
+msgstr "Vous ne pouvez pas diviser un mouvement de stock  l'état est \"Terminé."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:581
+#, python-format
+msgid "You don't have any stock journal defined on your product category, check if you have installed a chart of accounts."
+msgstr "Vous n'avez pas de journal de stock défini sur votre catégorie de produits, vérifiez si vous avez installé un tableau des comptes."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move.py:592
+#, python-format
+msgid "You don't have any stock valuation account defined on your product category. You must define one before processing this operation."
+msgstr "Vous n'avez pas de compte d'évaluation des actions défini sur votre catégorie de produits. Vous devez en définir un avant de traiter cette opération."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_picking_return.py:35
+#, python-format
+msgid "You may only return Done pickings."
+msgstr "Vous ne pouvez renvoyer que des préparations terminées."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_picking_return.py:26
+#, python-format
+msgid "You may only return one picking at a time."
+msgstr "Vous ne pouvez renvoyer qu'une seule préparation à la fois."
+
+#. module: smp_inventory
+#: code:addons/smp_inventory/models/stock_move_line.py:91
+#, python-format
+msgid "You need to supply a Lot/Serial number for product %s."
+msgstr "Vous devez fournir un numéro de Lot/de Série pour l'article %s."
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.sale_analysis_report_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.stock_move_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:smp_inventory.view_stock_partial_picking
+msgid "_Apply"
+msgstr "_Appliquer"
+
+#. module: smp_inventory
+#: model_terms:ir.ui.view,arch_db:smp_inventory.purchase_order_form
+msgid "cost_landing"
+msgstr "Coût Logistiques"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__date_sent
+msgid "date of issue"
+msgstr "date d'émission"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__date_load
+msgid "date of loading"
+msgstr "date de chargement"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__date_done
+msgid "date of receipt"
+msgstr "date de réception"
+
+#. module: smp_inventory
+#: model:ir.model.fields,field_description:smp_inventory.field_internal_picking__loader_id
+msgid "loaded by"
+msgstr "chargé par"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_reclassement_charges
+#: model:ir.model,name:smp_inventory.model_sale_charges
+#: model:ir.model,name:smp_inventory.model_transfert_charges
+msgid "management of price structures"
+msgstr "gestion des structures de prix"
+
+#. module: smp_inventory
+#: selection:uom.category,measure_type:0
+msgid "oil"
+msgstr "Pétrole"
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_purchase_order_cost_wizard
+msgid "purchase.order.cost.wizard"
+msgstr ""
+
+#. module: smp_inventory
+#: model:ir.model,name:smp_inventory.model_stock_partial_picking_line
+msgid "stock.partial.picking.line"
+msgstr ""

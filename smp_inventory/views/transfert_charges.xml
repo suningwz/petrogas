@@ -1,0 +1,107 @@
+<odoo>s
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="transfert_charges_form">
+            <field name="name">Frais de transfert</field>
+            <field name="model">transfert.charges</field>
+            <field name="arch" type="xml">
+                <form string="Frais de transferts">
+                    <header>
+                        <button string="Valider" type="object" name="confirm" states="draft" class="oe_highlight" />
+<!--                    <button string="Mark as done" type="object" name="action_done"-->
+<!--                            states="confirmed" class="oe_highlight"/>-->
+<!--                    <button string="Reset to draft" type="object" name="action_draft"-->
+<!--                            states="confirmed,done" />-->
+                    <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="Date" col="4">
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
+                            <group string="Emplacements">
+                                <field name="location_src_id"/>
+                                <field name="location_dest_id"/>
+                            </group>
+                            <group string="Articles et frais">
+                                <field name="product_id"/>
+                                <field name="rubrique_id"/>
+                                <field name="type"/>
+                            </group>
+                            <group string="Valeurs et Unités">
+                                <field name="value"/>
+                                <field name="uom_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="transfert_charges_tree_view">
+            <field name="name">transfert.charges.tree.view</field>
+            <field name="model">transfert.charges</field>
+            <field name="arch" type="xml">
+                <tree string="Frais de transferts" decoration-warning="state=='draft'" decoration-info="state=='done'">
+
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="product_id"/>
+                            <field name="location_src_id"/>
+                            <field name="location_dest_id"/>
+                            <field name="rubrique_id"/>
+                            <field name="value"/>
+                            <field name="uom_id"/>
+                            <field name="type"/>
+                            <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="transfert_charges_search">
+        <field name="name">transfert_charges_search</field>
+        <field name="model">transfert.charges</field>
+        <field name="arch" type="xml">
+        <search>
+            <field name="product_id"/>
+            <field name="location_src_id"/>
+            <field name="location_dest_id"/>
+            <field name="rubrique_id"/>
+            <field name="type"/>
+<!--            <group expand="0" string="Group by">-->
+<!--                <filter name="group_product" String="Product" domain="[]" context="{'group_by':'product_id'}"/>-->
+<!--                <filter name="group_location_from" String="location source" domain="[]" context="{'group_by':'location_src_id'}"/>-->
+<!--                <filter name="group_location_to" String="location destination" domain="[]" context="{'group_by':'location_dest_id'}"/>-->
+<!--                <filter name="group_rubrique" String="Rubriques" domain="[]" context="{'group_by':'rubrique_id'}"/>-->
+<!--                <filter name="group_type" String="Type" domain="[]" context="{'group_by':'type'}"/>-->
+<!--            </group>-->
+<!--            <filter string="My Department Leaves" name="department" domain="[('department_id.member_ids.user_id', '=', uid)]" help="My Department Leaves"/>-->
+        </search>
+        </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="transfert_charges_action">
+            <field name="name">Frais de Transfert</field>
+            <field name="res_model">transfert.charges</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Créer les différentes rubrtiques de frais de transfert possibles.</p>
+            </field>
+        </record>
+
+        <menuitem id="transfert_menu" name="Transferts" parent="stock.menu_stock_warehouse_mgmt" sequence="6"/>
+        <menuitem id="transfert_charges_menu" name="Frais de transferts" parent="transfert_menu" action="transfert_charges_action"/>
+
+                   <!-- Action server -->
+        <record id="action_transfert_charges_confirm" model="ir.actions.server">
+            <field name="name">Confirmer les frais de transfert</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="smp_inventory.model_transfert_charges"/>
+            <field name="binding_model_id" ref="smp_inventory.model_transfert_charges"/>
+            <field name="code">
+                records.confirm()
+            </field>
+        </record>
+</odoo>

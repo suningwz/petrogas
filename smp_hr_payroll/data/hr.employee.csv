@@ -1,0 +1,24 @@
+id,name,manager,code,department_id/id,job_id/id,mobile_phone,work_email,work_location,user_id/id
+smp_hr_employee_001,SALKA DAH,TRUE,,smp_hr_payroll.smp_hr_department_010,smp_hr_payroll.smp_hr_job_001,43000093,salkacdh@gmail.com,Nouakchott,smp_hr_payroll.smp_res_user_salkadah
+smp_hr_employee_002,SIDI MOHAMED LEMRABOTT,TRUE,2000006,smp_hr_payroll.smp_hr_department_001,smp_hr_payroll.smp_hr_job_002,46414821,loutt1989@yahoo.fr,Nouakchott,smp_hr_payroll.smp_res_user_mlemrabott
+smp_hr_employee_003,MED ABDALLAHI O MED SAID,TRUE,2001004,smp_hr_payroll.smp_hr_department_002,smp_hr_payroll.smp_hr_job_003,41041999,aomouchtaba@yahoo.fr,Nouakchott,smp_hr_payroll.smp_res_user_mabdallahi
+smp_hr_employee_004,LAMINE IDRISSA COULIBALY,TRUE,2001005,smp_hr_payroll.smp_hr_department_003,smp_hr_payroll.smp_hr_job_004,42304103,coulibalylamine01@yahoo.fr,Nouakchott,smp_hr_payroll.smp_res_user_licoulibaly
+smp_hr_employee_005,MOHAMEDEN O MOHAMED,,2001010,smp_hr_payroll.smp_hr_department_004,smp_hr_payroll.smp_hr_job_005,42304137,beibih@yahoo.fr,Nouadhibou,smp_hr_payroll.smp_res_user_mmohamed
+smp_hr_employee_006,MOHAMED LAMINE O ZAMEL,,2001016,smp_hr_payroll.smp_hr_department_005,smp_hr_payroll.smp_hr_job_006,42304117,,Nouakchott,
+smp_hr_employee_007,HAMMADY SOW,,2002012,smp_hr_payroll.smp_hr_department_006,smp_hr_payroll.smp_hr_job_007,42304125,,Nouakchott,
+smp_hr_employee_008,MOHAMED EL HEIBA O CHEIKH,,2003008,smp_hr_payroll.smp_hr_department_006,smp_hr_payroll.smp_hr_job_008,47222333,,Nouakchott,
+smp_hr_employee_009,MOKTAR NECH O AHMED BEZEID,,2003011,smp_hr_payroll.smp_hr_department_002,smp_hr_payroll.smp_hr_job_009,42304120,,Nouakchott,
+smp_hr_employee_010,MADANE DIONNE,,2003017,smp_hr_payroll.smp_hr_department_005,smp_hr_payroll.smp_hr_job_010,42304106,,Nouakchott,
+smp_hr_employee_011,MEYLOUD O VALL,,2003028,smp_hr_payroll.smp_hr_department_005,smp_hr_payroll.smp_hr_job_011,42304114,,Nouakchott,
+smp_hr_employee_012,ABDALLAHI O EYMANE,,2005013,smp_hr_payroll.smp_hr_department_006,smp_hr_payroll.smp_hr_job_007,42304116,,Nouakchott,
+smp_hr_employee_013,DIALLO BOUBACAR,,2010020,smp_hr_payroll.smp_hr_department_001,smp_hr_payroll.smp_hr_job_017,46454720,,Nouakchott,smp_hr_payroll.smp_res_user_boudiallo
+smp_hr_employee_014,FATIMETOU MINT SIDI MOHAMED,,2012018,smp_hr_payroll.smp_hr_department_007,smp_hr_payroll.smp_hr_job_012,42304127,,Nouakchott,smp_hr_payroll.smp_res_user_fmohamed
+smp_hr_employee_015,EBBATT MOHAMED NEJAH ZEINI,TRUE,2012019,smp_hr_payroll.smp_hr_department_008,smp_hr_payroll.smp_hr_job_013,42304105,bbb.zeini@yahoo.fr,Nouadhibou,smp_hr_payroll.smp_res_user_ezeini
+smp_hr_employee_016,AHMED SALEM,,2013026,smp_hr_payroll.smp_hr_department_005,smp_hr_payroll.smp_hr_job_014,49225062,,Nouakchott,
+smp_hr_employee_017,MOHAMED SALEM O MOHAMED YAHYA,,2013027,smp_hr_payroll.smp_hr_department_005,smp_hr_payroll.smp_hr_job_015,49225062,,Nouakchott,
+smp_hr_employee_018,JIDDAHA MOHAMED DEMBA,,2014021,smp_hr_payroll.smp_hr_department_009,smp_hr_payroll.smp_hr_job_016,47763439,jedahadebma@gmail.com,Nouakchott,smp_hr_payroll.smp_res_user_jdemba
+smp_hr_employee_019,ABDOULAYE AMADOU,,2015004,smp_hr_payroll.smp_hr_department_005,smp_hr_payroll.smp_hr_job_014,42304116,,Nouakchott,
+smp_hr_employee_020,MOHAMED SAID  ,,2015014,smp_hr_payroll.smp_hr_department_005,smp_hr_payroll.smp_hr_job_014,42304102,,Nouakchott,
+smp_hr_employee_021,AHMED  ELY KHEIRY,,,smp_hr_payroll.smp_hr_department_004,smp_hr_payroll.smp_hr_job_005,43649999,,Nouadhibou,smp_hr_payroll.smp_res_user_akheiry
+smp_hr_employee_022,BENINA NEMED,,,smp_hr_payroll.smp_hr_department_001,smp_hr_payroll.smp_hr_job_017,42304109,beninanmd@gmail.com,Nouakchott,smp_hr_payroll.smp_res_user_bnemed
+smp_hr_employee_023,SIDI SALECK,,,smp_hr_payroll.smp_hr_department_001,smp_hr_payroll.smp_hr_job_017,42304113,sidisalek88@gmail.com,Nouakchott,smp_hr_payroll.smp_res_user_sisaleck

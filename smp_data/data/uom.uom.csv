@@ -1,0 +1,4 @@
+id,name,category_id,rounding,uom_type,factor,active
+uom_6_kg_bottle,6kg Bottle,Weight,0.01,Bigger than the reference Unit of Measure,6,True
+uom_12_kg_bottle,12kg Bottle,Weight,0.02,Bigger than the reference Unit of Measure,12,True
+uom_25_kg_bottle,25kg Bottle,Weight,0.03,Bigger than the reference Unit of Measure,25,True

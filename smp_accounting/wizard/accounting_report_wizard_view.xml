@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    
+    <record id="accounting_report_wizard_form" model="ir.ui.view">
+        <field name="name">Accounting Report</field>
+        <field name="model">accounting.report.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Report Options">
+                <header>
+<!--                    <button name="action_view_lines" string="View Lines" type="object"/>-->
+<!--                    <button name="print_pdf_report" string="Print PDF" type="object" default_focus="1" class="oe_highlight"/>-->
+                    <button name="print_excel_report" string="Excel File" type="object" default_focus="1" class="oe_highlight"/>
+                    <button name="print_pdf_report" string="PDF File" type="object"/>
+<!--                    <button name="print_html_report" string="PDF File" type="object"/>-->
+                </header>
+                <group col="4" string="Report Type">
+                    <field name="accounting_chart"/>
+                    <field name="report_type" widget="selection"/>
+<!--                    <field name="report_type" widget="radio"/>-->
+                    <field name="summary"/>
+                </group>
+                
+                <group col="4" name="report_type">
+                    <field name="target_move"/>
+                    <field name="reconciled" attrs="{'readonly': [('report_type', 'not in', ('partner', 'aged',))]}"/>
+                    <field name="partner_type" attrs="{'invisible': [('report_type', 'not in', ('partner', 'aged',))]}"/>
+                </group>
+
+                <group col="4" name="period" string="Account Period">
+                    <field name="fiscalyear_id"/>
+                    <field name="period_id" attrs="{'invisible':[('fiscalyear_id','=',True)]}" options="{'no_create': True}" domain="[('fiscalyear_id','=',fiscalyear_id)]"/>
+                    <field name="date_from" attrs="{'invisible':[('fiscalyear_id','=',True)]}" options="{'no_create': True}"/>
+                    <field name="date_to" attrs="{'invisible':[('fiscalyear_id','=',True)]}" options="{'no_create': True}"/>
+                </group>
+
+                <group col="4">
+                    <field name="company_currency_id" options="{'no_create': True}" readonly="1"/>
+                    <field name="company_id" options="{'no_create': True}" readonly="1"/>
+                </group>
+
+                <notebook>
+
+                    <page name="journal_ids" string="Account Journals">
+                        <field name="journal_ids" widget="many2many" options="{'no_create': True}"/>
+                    </page>
+                    <page name="partner_ids" string="Partners">
+                        <field name="partner_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </page>
+                    <page name="account_ids" string="Accounts">
+                        <field name="account_ids" widget="many2many_tags" options="{'no_create': True}" domain="[('user_type_id.type', '!=', 'view')]"/>
+<!--                        <field name="account_ids" widget="many2many_tags" options="{'no_create': True}">-->
+                    </page>
+                    <page name="analytic_ids" string="Analytics">
+                        <field name="analytic_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </page>
+                </notebook>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="accounting_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Accounting Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">accounting.report.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="accounting_report_wizard_form"/>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem id="accounting_report_wizard_menu"
+              name="Accounting Report"
+              sequence="0"
+              parent="account.menu_finance_reports"
+              action="accounting_report_wizard_action"
+              groups="account.group_account_user"
+    />
+
+
+    
+</odoo>

@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="purchase_order_credoc_form">
+            <field name="name">purchase.order.credoc.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="date_order" position="after">
+                        <field name="credoc_id"
+                               invisible="context.get('hide_credoc',False)"
+                               option="{'no_open':True,'no_create':True}"/>
+
+                        <field name="location_dest_id" option="{'no_open':True,'no_create':True}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

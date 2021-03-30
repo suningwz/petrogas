@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="res_config_settings_view_form_smp_payroll" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.smp.payroll</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="51"/>
+            <field name="inherit_id" ref="hr_payroll.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='hr_payroll_accountant']" position="before">
+<!--                <xpath expr="//div[@data-key='hr_payroll']/field[@name='module_account_accountant']" position="after">-->
+                    <div class="row mt16 o_settings_container" id="loan_sal_adv_sep">
+                        <div class="col-xs-12 col-md-6 o_setting_box" id="loan_sal_adv_account_move_separation">
+                            <div class="o_setting_left_pane">
+                                <field name="loan_sal_adv_account_move_separation" />
+    <!--                            <field name="salary_advance_account"/>-->
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="loan_sal_adv_account_move_separation" string="Loans Entries"/>
+                                <div class="text-muted">
+                                     Separate loan and salary advance's entry move constation from the paymen.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 o_setting_box" id="salary_journam">
+                            <label for="salary_journal" string="Salary Journal"/>
+                            <field name="salary_journal" />
+                                <div class="text-muted">
+                                     Salary journal for accounting entries.
+                                </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 o_setting_box" id="employee_payable_account">
+                            <label for="employee_payable_account" string="Employee asset provision account"/>
+                            <field name="employee_payable_account"/>
+                            <div class="text-muted">
+                                     Employee asset provision account.
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box" id="loan_account">
+                            <label for="loan_account" string="Loans Entries"/>
+                            <field name="loan_account"/>
+                            <div class="text-muted">
+                                     Loan account corresponding to the counterpart account of the payment or to the request's confirmation.
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" id="salary_advance_account">
+                            <label for="salary_advance_account" string="Salary Advance Account"/>
+                            <field name="salary_advance_account"/>
+                            <div class="text-muted">
+                                Salary advance account corresponding to the counterpart account of the payment or to the request's confirmation.
+                            </div>
+
+                        </div>
+                    </div>
+
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="smp_view_stock_picking_form">
+            <field name="name">smp.view.stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+
+                <field name ="state" position="before">
+                    <button name="split_process"
+                            states="draft,confirmed,assigned"
+                            string="Split"
+                            confirm="Are you sure you want to split current picking?"
+                            groups="stock.group_stock_user"
+                            type="object"/>
+                </field>
+
+                <button name="%(stock.action_report_delivery)d" position="replace">
+<!--                    <button name="%(stock.action_report_delivery)d" string="Print to delete"-->
+<!--                            attrs="{'invisible': ['|', ('state', '!=', 'done'), ('is_locked', '=', False)]}"-->
+<!--                            type="action" groups="base.group_user"/>-->
+                </button>
+
+                <button name="do_print_picking" position="replace">
+                    <button name="do_print_picking" string="Print" groups="stock.group_stock_user" type="object"
+                            attrs="{'invisible': ['|', ('state', 'not in', ('assigned', 'partially_available','done')), ('is_locked', '=', False)]}"/>
+<!--                            attrs="{'invisible': ['|', ('state', 'not in', ('assigned', 'partially_available','done')), ('is_locked', '=', False)]}"/>-->
+                </button>
+
+
+                <field name="origin" position="after">
+                    <field name="regime_id" attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}"/>
+                </field>
+
+            </field>
+
+
+        </record>
+
+
+    ---------- Stock Picking - Confirmation -  Action server  ----------------
+    <record id="stock_picking_assign_action_server" model="ir.actions.server">
+        <field name="name">Confirmer</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="smp_sale.model_stock_picking"/>
+        <field name="binding_model_id" ref="smp_sale.model_stock_picking"/>
+        <field name="code">
+            records.assign_stock_picking_action_server()
+        </field>
+    </record>
+
+
+    ---------- Stock Picking - Réservé -  Action server  ----------------
+    <record id="stock_picking_confirm_action_server" model="ir.actions.server">
+        <field name="name">Reserver</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="smp_sale.model_stock_picking"/>
+        <field name="binding_model_id" ref="smp_sale.model_stock_picking"/>
+        <field name="code">
+            records.confirm_stock_picking_action_server()
+        </field>
+    </record>
+
+    ---------- Stock Picking -Mise à jours des charges  ----------------
+    <record id="stock_picking_update_charges_server" model="ir.actions.server">
+        <field name="name">Update sale charges</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="smp_sale.model_stock_picking"/>
+        <field name="binding_model_id" ref="smp_sale.model_stock_picking"/>
+        <field name="code">
+            records.update_sale_charge_with_regime()
+        </field>
+    </record>
+
+    </data>
+</odoo>

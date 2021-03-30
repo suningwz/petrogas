@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+credoc_reader,credoc_reader,model_credoc_credoc,group_credoc_reader,1,0,0,0
+credoc_deposit_reader,credoc_deposit_reader,model_credoc_deposit,group_credoc_reader,1,0,0,0
+credoc_retrocession_reader,credoc_retrocession_reader,model_credoc_retrocession,group_credoc_reader,1,0,0,0
+credoc_manager,credoc_manager,model_credoc_credoc,group_credoc_manager,1,1,1,1
+credoc_deposit_manager,credoc_deposit_manager,model_credoc_deposit,group_credoc_manager,1,1,1,1
+credoc_retrocession_manager,credoc_retrocession_manager,model_credoc_retrocession,group_credoc_manager,1,1,1,1
+credoc_config_manager,credoc_config_manager,model_credoc_configuration,group_credoc_manager,1,1,1,1

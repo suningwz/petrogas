@@ -1,0 +1,18 @@
+code,name,type,default_debit_account_id/id,default_credit_account_id/id
+SAL,Journal des salaires,general,,
+RAN,Carried Forward,general,,
+GTB01,Guaranty Trust Bank (GTB GMD),bank,l10n_petrogas.petrogas_coa_191001,l10n_petrogas.petrogas_coa_191001
+ECO01,ECOBANK GAMBIA LTD,bank,l10n_petrogas.petrogas_coa_191002,l10n_petrogas.petrogas_coa_191002
+ZEN01,ZENITH BANK (GAMBIA) LTD - PETROGAS,bank,l10n_petrogas.petrogas_coa_191003,l10n_petrogas.petrogas_coa_191003
+FIB01,FIRST INTERNATIONAL BANK (PETROGAS) - GMD,bank,l10n_petrogas.petrogas_coa_191004,l10n_petrogas.petrogas_coa_191004
+AGIB01,AGIB BANK LTD - (GMD),bank,l10n_petrogas.petrogas_coa_191005,l10n_petrogas.petrogas_coa_191005
+SKY01,SKYE BANK,bank,l10n_petrogas.petrogas_coa_191006,l10n_petrogas.petrogas_coa_191006
+ECO02,ECO BANK GAMBIA LTD (USD),bank,l10n_petrogas.petrogas_coa_192001,l10n_petrogas.petrogas_coa_192001
+GTB02,GUARANTY TRUST BANK (USD),bank,l10n_petrogas.petrogas_coa_192002,l10n_petrogas.petrogas_coa_192002
+ZEN02,ZENITH BANK GAMBIA (USD),bank,l10n_petrogas.petrogas_coa_192003,l10n_petrogas.petrogas_coa_192003
+GTB03,Guaranty Trust Bank (EUR),bank,l10n_petrogas.petrogas_coa_192004,l10n_petrogas.petrogas_coa_192004
+ECO03,ECO BANK GAMBIA LTD (EUR),bank,l10n_petrogas.petrogas_coa_192005,l10n_petrogas.petrogas_coa_192005
+SKY02,SKYE BANK (USD),bank,l10n_petrogas.petrogas_coa_192006,l10n_petrogas.petrogas_coa_192006
+CASH01,Office Petty Cash,cash,l10n_petrogas.petrogas_coa_193020,l10n_petrogas.petrogas_coa_193020
+CHQ01,Cheque to be cashed,bank,l10n_petrogas.petrogas_coa_191998,l10n_petrogas.petrogas_coa_191998
+CHQ02,Cheque to be disbursed,bank,l10n_petrogas.petrogas_coa_191999,l10n_petrogas.petrogas_coa_191999

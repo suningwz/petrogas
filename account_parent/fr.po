@@ -1,0 +1,357 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-31 11:54+0000\n"
+"PO-Revision-Date: 2019-12-31 11:58+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "<strong>Company:</strong>"
+msgstr "<strong>Société :</strong>"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "<strong>Date from :</strong>"
+msgstr "<strong>Date de :</strong>"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "<strong>Date to :</strong>"
+msgstr "<strong>Date à :</strong>"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "<strong>Target Moves:</strong>"
+msgstr "<strong>Pièces cibles :</strong>"
+
+#. module: account_parent
+#: model:ir.model,name:account_parent.model_account_account
+msgid "Account"
+msgstr "Compte"
+
+#. module: account_parent
+#: model:ir.model,name:account_parent.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "Modèle de plan comptable"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Account Currency"
+msgstr "Devise du compte"
+
+#. module: account_parent
+#: model:ir.model,name:account_parent.model_account_open_chart
+msgid "Account Open chart"
+msgstr ""
+
+#. module: account_parent
+#: model:ir.model,name:account_parent.model_account_account_type
+msgid "Account Type"
+msgstr "Type de compte"
+
+#. module: account_parent
+#: model:ir.ui.menu,name:account_parent.menu_action_account_type_form
+msgid "Account Types"
+msgstr "Types de compte"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.view_account_chart
+msgid "Account charts"
+msgstr "Plan comptable"
+
+#. module: account_parent
+#: selection:account.open.chart,target_move:0
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "All Entries"
+msgstr "Toutes les écritures"
+
+#. module: account_parent
+#: selection:account.open.chart,target_move:0
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "All Posted Entries"
+msgstr "Toutes les écritures validées"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__balance
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Balance"
+msgstr "Balance"
+
+#. module: account_parent
+#: code:addons/account_parent/controllers/main.py:84
+#, python-format
+msgid "Binary fields can not be exported to Excel unless their content is base64-encoded. That does not seem to be the case for %s."
+msgstr "Les champs binaires ne peuvent pas être exportés vers Excel à moins que leur contenu ne soit codé par base64. Cela ne semble pas être le cas pour les %s."
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.view_account_chart
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Chart Of Account Not Loaded."
+msgstr "Plan comptable non chargé."
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "Chart of Account"
+msgstr "Plan comptable"
+
+#. module: account_parent
+#: model:ir.actions.client,name:account_parent.open_view_account_tree
+msgid "Chart of Account Heirarchy"
+msgstr "Plan comptable hierarchique."
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Chart of Account:"
+msgstr "Plan comptable:"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__child_ids
+msgid "Child Accounts"
+msgstr "Comptes enfants"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Code"
+msgstr "Code"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__credit
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Credit"
+msgstr "Crédit"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+msgid "Currency"
+msgstr "Devise"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.view_account_chart
+msgid "Date(s)"
+msgstr "Date(s)"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__debit
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Debit"
+msgstr "Débit"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__date_to
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: account_parent
+#. openerp-web
+#: code:addons/account_parent/static/src/xml/account_parent_backend.xml:15
+#, python-format
+msgid "Error"
+msgstr "Erreur"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_parent
+#: model:ir.model,name:account_parent.model_account_journal
+msgid "Journal"
+msgstr "Journal"
+
+#. module: account_parent
+#: model:ir.model,name:account_parent.model_account_move
+msgid "Journal Entries"
+msgstr "Pièces comptables"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__move_line_ids
+msgid "Journal Entry Lines"
+msgstr "Lignes d'entrée de journal"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: account_parent
+#: selection:account.account.type,type:0
+msgid "Liquidity"
+msgstr "Liquidités"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Name"
+msgstr "Nom"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.view_account_chart
+msgid "Note: If there is no parent accounts set, then No heirarchical view will be displayed."
+msgstr "Remarque : S'il n'y a pas de compte parent établi, aucune vue archiarchique ne s'affiche."
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.view_account_chart
+msgid "Open Charts"
+msgstr ""
+
+#. module: account_parent
+#. openerp-web
+#: code:addons/account_parent/static/src/xml/account_parent_backend.xml:6
+#, python-format
+msgid "PRINT PDF"
+msgstr "IMPRIMER PDF"
+
+#. module: account_parent
+#. openerp-web
+#: code:addons/account_parent/static/src/xml/account_parent_backend.xml:7
+#, python-format
+msgid "PRINT XLS"
+msgstr "IMPRIMER XLS"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__parent_id
+#: model:ir.model.fields,field_description:account_parent.field_account_account_template__parent_id
+msgid "Parent Account"
+msgstr "Compte parent"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__parent_needed
+msgid "Parent Grouping Needed"
+msgstr "Groupement de parents nécessaire"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__parent_path
+msgid "Parent Path"
+msgstr "Chemin parent"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account__partner_required
+msgid "Partenaire Requis"
+msgstr "Partenaire Requis"
+
+#. module: account_parent
+#: selection:account.account.type,type:0
+msgid "Payable"
+msgstr "Payable"
+
+#. module: account_parent
+#: model:ir.actions.act_window,name:account_parent.action_account_chart
+#: model:ir.ui.menu,name:account_parent.menu_action_account_chart
+msgid "Plan Comptable"
+msgstr "Plan Comptable"
+
+#. module: account_parent
+#: code:addons/account_parent/models/account.py:135
+#, python-format
+msgid "Please enter a partner name for the following accounts: %s"
+msgstr "Veuillez entrer un nom de partenaire pour les comptes suivants : %s"
+
+#. module: account_parent
+#: selection:account.account.type,type:0
+msgid "Receivable"
+msgstr "Recevable"
+
+#. module: account_parent
+#: selection:account.account.type,type:0
+msgid "Regular"
+msgstr "Régulier"
+
+#. module: account_parent
+#: model:res.groups,name:account_parent.group_coas_user
+msgid "Show Chart of Account Structure"
+msgstr "Afficher la structure du plan comptable"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__date_from
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_open_chart__target_move
+msgid "Target Moves"
+msgstr "Pièces Cibles"
+
+#. module: account_parent
+#: model:ir.model,name:account_parent.model_account_account_template
+msgid "Templates for Accounts"
+msgstr "Modèles pour les comptes"
+
+#. module: account_parent
+#: model:ir.model.fields,help:account_parent.field_account_account_type__type
+msgid "The 'Internal Type' is used for features available on different types of accounts: liquidity type is for cash or bank accounts, payable/receivable is for vendor/customer accounts."
+msgstr "Le \"Type interne\" est utilisé pour des caractéristiques disponibles sur différents types de comptes : le type liquidité est pour l'argent cash ou les comptes banquaires, payabls/recevables par les comptes des vendeurs/clients"
+
+#. module: account_parent
+#: code:addons/account_parent/controllers/main.py:54
+#, python-format
+msgid "There are too many rows (%s rows, limit: 65535) to export as Excel 97-2003 (.xls) format. Consider splitting the export."
+msgstr "Il y a trop de lignes (%s lignes, limite: 65535) à exporter sous forme de format Excel 97-2003 (.xls). Envisagez de diviser l'exportation."
+
+#. module: account_parent
+#: model:ir.model.fields,field_description:account_parent.field_account_account_type__type
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_body_pdf
+#: model_terms:ir.ui.view,arch_db:account_parent.report_coa_heirarchy
+msgid "Type"
+msgstr "Type"
+
+#. module: account_parent
+#: model:account.account.type,name:account_parent.data_account_type_view
+#: selection:account.account.type,type:0
+msgid "View"
+msgstr "Vue"
+
+#. module: account_parent
+#: model_terms:ir.ui.view,arch_db:account_parent.view_account_chart
+msgid "or"
+msgstr "ou"

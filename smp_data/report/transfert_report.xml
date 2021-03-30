@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_internal_picking">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.creater_id.lang)" />
+
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+                                <h2 >Stock Transfert Note: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="h-20 row" style="margin:5px" name="general_info">
+                                <div class="col-6" name="general_infos">
+                                    <p><b>Emitted Date: </b> <span t-field="doc.date_sent"/></p>
+                                    <p><b>Created by: </b> <span t-field="doc.creater_id"/> </p>
+                                </div>
+                                <div class="col-6" style="margin:5px" name="transaction_info">
+                                    <p><b>Depot from: </b> <span t-esc="doc.location_src_id.name"/> </p>
+                                    <p><b>Depot destination: </b> <span t-esc="doc.location_dest_id.name"/> </p>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="h-50 row" style="margin:5px" name="lines">
+                                <table class="table table-sm">
+                                    <thead class="thead-light">
+                                        <tr >
+                                            <th style="text-align:left"><u>Product</u></th>
+                                            <th style="text-align:left"><u>Quantity</u></th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr t-foreach="doc.internal_picking_line_ids" t-as="move" >
+                                            <td><span t-field="move.product_id" /></td>
+                                            <td><span t-esc="move.quantity_ask"/> <span t-field="move.product_id.uom_id" /></td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+
+                            <div class="h-20 row" name="signature">
+                                <div class="col-6"><h5>The Direction</h5></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+    <report
+        string="Stock Transfert Form"
+        id="action_report_transfert"
+        model="internal.picking"
+        report_type="qweb-pdf"
+        name="smp_data.report_internal_picking"
+        file="smp_data.internal_picking_report"
+        print_report_name="'Stock Transfert Form - %s' % (object.name)"
+    />
+
+</odoo>

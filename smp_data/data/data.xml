@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data noupdate="0">
+
+        <record model="res.company" id="base.main_company" >
+            <field name="name">SMP-ATLAS</field>
+            <field name="logo" type="base64" file="smp_data/static/img/logo_smp_atlas.png"/>
+            <field name="company_registry">RC:8422</field>
+            <field name="report_header">Société Mauritanienne de Pétrole - ATLAS</field>
+            <field name="report_footer">Heures d'ouvertures:
+                Lundi - Jeudi : 08:00-18:00
+                Vendredi : 08:00-12:00
+            </field>
+        </record>
+
+        <record model="res.partner" id="base.main_partner" >
+            <field name="street">4916 Ksar ZEG 22</field>
+            <field name="city">Nouakchott</field>
+            <field name="country_id" ref="base.mr"/>
+            <field name="phone">+222.45.29.83.18</field>
+            <field name="email">smpatlas@mauritel.mr</field>
+        </record>
+
+<!--        <function model="res.company" name="execute">-->
+<!--            <value model="res.company"-->
+<!--                   search="[('id', '=', ref('main_company'))]"/>-->
+<!--        </function>-->
+
+    </data>
+</odoo>

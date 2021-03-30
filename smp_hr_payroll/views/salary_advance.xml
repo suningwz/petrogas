@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+        <record id="view_salary_advance_form" model="ir.ui.view">
+            <field name="name">salary.advance.form</field>
+            <field name="model">salary.advance</field>
+            <field name="arch" type="xml">
+                <form string="Salary Advance">
+                    <header>
+                        <button name="confirm" string="Confirm" type="object" states="draft" class="oe_highlight"/>
+                        <button name="cancel" string="Cancel" type="object" states="draft"/>
+<!--                        <button name="refund" string="Refund" type="object" states="paid"/>-->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,paid,refund,cancel"/>
+                    </header>
+                	<sheet >
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" name="action_get_account_moves"
+                                string="Journal Items" type="object"
+                                groups="" icon="fa-bars"/>
+                        </div>
+                        <div class="oe_title oe_left">
+                            <h2>
+                            <field name="name" class="oe_inline" readonly="1"/>
+                            </h2>
+                        </div>
+
+                        <group string="Employee information" col="4" attrs="{'readonly': [('state', '!=', 'draft')]}" >
+                            <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="job_position" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="department" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="company_id"  groups="base.group_multi_currency" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="reason" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="employee_contract_id"  attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': ['|', ('state', '=', 'draft'), ('state', '=', 'approve')]}" groups="hr.group_hr_manager,hr.group_hr_user"/>
+
+                            <field name="exceed_condition" invisible="1"/>
+                        </group>
+                        <group string="Salary advance Amount and Payslip Deduction" col="4">
+                            <field name="date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="payslip_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+
+                            <field name="advance" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="currency_id" groups="base.group_multi_currency" readonly="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+<!--                            <field name="payslip_id"  groups="base.group_multi_currency"/>-->
+                        </group>
+<!--                            <notebook>-->
+<!--                        <group name="accounting" string="Accounting"  groups="account.group_account_manager" >-->
+                        <group name="accounting" string="Accounting">
+                            <group>
+
+                                <field name="journal" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <line/>
+                                <field name="credit" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="debit" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </group>
+                        </group>
+<!--                            </notebook>-->
+
+
+		            </sheet>
+                    <div class="oe_chatter">
+                       <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                       <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_salary_advance_tree">
+            <field name="name">salary.advance.tree</field>
+            <field name="model">salary.advance</field>
+            <field name="arch" type="xml">
+                <tree string="Salary Advance">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="advance"/>
+                    <field name="payslip_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_salary_advance_filter" model="ir.ui.view">
+        <field name="name">salary.advance.select</field>
+        <field name="model">salary.advance</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="name" string="Salary Advance" filter_domain="['|',('name','ilike',self)]"/>
+                <field name="employee_id"/>
+                <field name="state"/>
+<!--                    <filter string="My Requests" domain="[('employee_id.user_id.id','=',uid)]" name="my_requests_filter"/>-->
+                 <filter domain="[('state', '=', 'draft')]" string="Draft" name="draft" help="Drafted Requests"/>
+                <filter domain="[('state','in',('confirmed'))]" string="To Approve" name="confirmed" help="Confirmed Requests"/>
+                <filter domain="[('state', '=', 'paid')]" string="Paid" name="paid" help="Paid Requests"/>
+                <filter domain="[('state', '=', 'refund')]" string="Refund" name="refund" help="Refund Requests"/>
+                <separator/>
+                    <filter string="Employee" name="employee_id" domain="[]" context="{'group_by':'employee_id'}"/>
+                    <filter name="State" string="State" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Date" domain="[]" name="date" context="{'group_by':'date'}"/>
+           </search>
+        </field>
+        </record>
+
+        <record id="action_salary_advance_" model="ir.actions.act_window">
+            <field name="name">Salary Advance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">salary.advance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_salary_advance_filter"/>
+<!--                <field name="context">{'search_default_my_requests_filter':1}</field>-->
+<!--                <field name="domain">[('employee_id.user_id', '=', uid)]</field>-->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create Requests.
+                </p>
+            </field>
+        </record>
+
+<!--            <menuitem id="parent_menu_salary_advance" name="Advance" parent="ohrms_loan.menu_hr_loans_and_advances" sequence="7"/>-->
+        <menuitem id="menu_salary_advance_" action="action_salary_advance_" parent="hr_payroll.menu_hr_payroll_root" name="Salary Advance" sequence="4" />
+
+
+
+</odoo>

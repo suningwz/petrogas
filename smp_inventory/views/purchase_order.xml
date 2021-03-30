@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+        <record id="purchase_order_cost_form" model="ir.ui.view">
+        <field name="name">purchase.order.cost.form</field>
+        <field name="model">purchase.order.cost</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <group colspan="4">
+                        <field name="rubrique_id"/>
+                        <field name="value"/>
+                        <field name="split_method"/>
+                        <field name="account_id"/>
+                        <field name="to_invoice"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <notebook>
+                        <page name="po_cost_line_ids" string="Charges Réparties">
+                            <field name="po_cost_line_ids">
+                                <tree>
+                                    <field name="po_line_id"/>
+                                    <field name="rubrique_id"/>
+                                    <field name="value"  sum="Total"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+
+            <field name="currency_id" position="after">
+                <field name="currency_rate_visible" invisible="1"/>
+                <field name="currency_rate" attrs="{'invisible':[('currency_rate_visible','=',False)]}"/>
+            </field>
+
+            <field name="price_subtotal" position="after">
+                <field name="cost_visible" invisible="1"/>
+                <field name="cost_landing_value" attrs="{'invisible':[('cost_visible','=',False)]}"/>
+                <field name="price_total_all_cost"  attrs="{'invisible':[('cost_visible','=',False)]}"/>
+            </field>
+
+            <page name="purchase_delivery_invoice" position="after">
+                <page name="compute_charges" string="cost_landing">
+                    <button name="get_weight_volume" string="Compute" type="object"/>
+<!--                    <field name="purchase_order_cost_ids" attrs="{'readonly': [('state', 'in', ('done', 'cancel'))]}">-->
+                    <field name="purchase_order_cost_ids" context="{'form_view_ref':'smp_inventory.purchase_order_cost_form'}">
+                        <tree string="Cost Landing" editable="bottom" create="1" delete="1"  edit="1" >
+                            <field name="rubrique_id"/>
+                            <field name="po_id" invisible="1"/>
+                            <field name="name"/>
+                            <field name="value"/>
+                            <field name="split_method"/>
+                            <field name="account_id"/>
+                            <field name="po_line_ids" widget="many2many_tags" domain="[('order_id','=',po_id)]"/>
+<!--                            <field name="po_line_ids" widget="many2many_tags" context="{'po_cost_line_ids': parent.order_line}"/>-->
+                        </tree>
+
+                        <!--                                    <field name="packaging_ids" nolabel="1" context="{'tree_view_ref':'product.product_packaging_tree_view2', 'form_view_ref':'product.product_packaging_form_view2'}"/>-->
+
+
+<!--                        <form editable="top" create="0" delete="0"  edit="0"> -->
+<!--                            -->
+<!--                        </form>-->
+
+                    </field>
+                </page>
+            </page>
+
+        </field>
+    </record>
+
+
+    <record id="purchase_order_cost_wizard_form" model="ir.ui.view">
+        <field name="name">purchase.order.cost.wizard.form</field>
+        <field name="model">purchase.order.cost.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="po_line_ids"  widget="many2many"
+                           option='{"no_open": True, "no_create": Tru, "no_create_edit": True}'>
+                        <tree editable="top"  create="1" delete="1"  edit="0" >
+                            <field name="product_id"/>
+                            <field name="product_uom_qty"/>
+                            <field name="weight"/>
+                            <field name="volume"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button name="process" string="Confim" class='btn-primary' type='object'/>
+                    <button string='Cancel' class='btn-default' special='cancel'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window
+            id="purchase_order_weight_vol_setting_form"
+            name="Formulaire de saisie des poids et volume pour répartiions des charges"
+            res_model="purchase.order.cost.wizard"
+            view_mode ="form"
+            target="new"
+    />
+
+</odoo>
+
+
+

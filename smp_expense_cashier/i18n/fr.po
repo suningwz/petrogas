@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* smp_expense_cashier
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-24 01:25+0000\n"
+"PO-Revision-Date: 2019-12-24 01:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b> Au </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b>Du </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b>Etat: </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b>Perte/Gain: </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b>Responsable: </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b>Solde d'ouverture: </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b>Solde de fermeture: </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "<b>Total des transaction: </b>"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model:ir.model,name:smp_expense_cashier.model_account_bank_statement
+msgid "Bank Statement"
+msgstr "Relevé bancaire"
+
+#. module: smp_expense_cashier
+#: model:ir.model,name:smp_expense_cashier.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Ligne de relevé bancaire"
+
+#. module: smp_expense_cashier
+#: model:ir.ui.menu,name:smp_expense_cashier.hr_action_account_payments_group_payable_menu
+msgid "Cash Receipt"
+msgstr "Reçu de réglement"
+
+#. module: smp_expense_cashier
+#: model:ir.ui.menu,name:smp_expense_cashier.hr_action_view_bank_menu
+msgid "Cash Register"
+msgstr "Caisses"
+
+#. module: smp_expense_cashier
+#: model:ir.ui.menu,name:smp_expense_cashier.action_view_bank_statement_menu
+#: model:ir.ui.menu,name:smp_expense_cashier.hr_action_view_bank_statement_menu
+msgid "Cash Registers"
+msgstr "Caisses"
+
+#. module: smp_expense_cashier
+#: model:ir.model.fields,field_description:smp_expense_cashier.field_hr_expense__bank_statement_line_id
+msgid "Cashier"
+msgstr "Caissier"
+
+#. module: smp_expense_cashier
+#: selection:account.bank.statement,state:0
+msgid "Closed"
+msgstr "Fermé"
+
+#. module: smp_expense_cashier
+#: selection:hr.expense,payment_mode:0
+msgid "Company"
+msgstr "Société"
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.bank_statement_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Date"
+msgstr "Date "
+
+#. module: smp_expense_cashier
+#: selection:account.bank.statement,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: smp_expense_cashier
+#: selection:hr.expense,payment_mode:0
+msgid "Employee (to reimburse)"
+msgstr "Employé (à rembourser)"
+
+#. module: smp_expense_cashier
+#: model:ir.model,name:smp_expense_cashier.model_hr_expense
+msgid "Expense"
+msgstr "Dépense"
+
+#. module: smp_expense_cashier
+#: model:ir.model,name:smp_expense_cashier.model_hr_expense_sheet
+msgid "Expense Report"
+msgstr "Note de frais"
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Le Responsable"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Libellé"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Liste des réglements:"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Montant"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: code:addons/smp_expense_cashier/models/hr_expense.py:78
+#, python-format
+msgid "No credit account found for the %s journal, please configure one."
+msgstr "Aucun compte de crédit trouvé pour le journal %s, s'il vous plaît configurer un."
+
+#. module: smp_expense_cashier
+#: selection:account.bank.statement,state:0
+msgid "Open"
+msgstr "Ouvert"
+
+#. module: smp_expense_cashier
+#: model:ir.model.fields,field_description:smp_expense_cashier.field_hr_expense__payment_mode
+msgid "Paid By"
+msgstr "Payé par"
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Partenaire"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model:ir.model,name:smp_expense_cashier.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Relevé -"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model:ir.model.fields,field_description:smp_expense_cashier.field_hr_expense_sheet__bank_statement_id
+msgid "Relevé Bancaire"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model:ir.actions.report,name:smp_expense_cashier.cash_bank_statement_report_action
+msgid "Relevé de caisse"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "Réf."
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model:ir.model.fields,field_description:smp_expense_cashier.field_account_bank_statement__state
+msgid "Status"
+msgstr "État"
+
+#. module: smp_expense_cashier
+#: code:addons/smp_expense_cashier/models/account_bank_statement.py:27
+#, python-format
+msgid "You must close all previous bank statement concerning the journal %s."
+msgstr "Vous devez fermer tous les relevés bancaires précédents concernant le journal %s."
+
+#. module: smp_expense_cashier
+#: model:ir.model.fields,field_description:smp_expense_cashier.field_account_bank_statement_line__expense_id
+msgid "expense_id"
+msgstr ""
+
+#. module: smp_expense_cashier
+#: model_terms:ir.ui.view,arch_db:smp_expense_cashier.cash_bank_statement_template
+msgid "name"
+msgstr "nom"

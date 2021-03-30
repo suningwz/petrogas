@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    #
+    # Mauritanian : Définition des taux de TVA GAmbia
+    # Auteur : Star Oil Group
+    # Version du fichier : 1.0 
+    # Date : 09/2020
+    # 
+    #
+    -->    
+    <record id="TVA_achat_15" model="account.account.tag">
+        <field name="name">VAT 15% (Purchase)</field>
+        <field name="applicability">taxes</field>
+    </record>
+
+    <record id="TVA_vente_15" model="account.account.tag">
+        <field name="name">VAT 15% (Sales)</field>
+        <field name="applicability">taxes</field>
+    </record>
+
+    <record id="TVA_vente_exempt_0" model="account.account.tag">
+        <field name="name">Exempted VAT (Sale)</field>
+        <field name="applicability">taxes</field>
+    </record>
+
+    <record id="TVA_achat_exempt_0" model="account.account.tag">
+        <field name="name">Exempted VAT (Purchase)</field>
+        <field name="applicability">taxes</field>
+    </record>
+
+    <record model="account.tax.template" id="tva_sale_15">
+        <field name="name">VAT 15% - Sales</field>
+        <field name="chart_template_id" ref="gambian_chart_template"/>
+        <field name="amount">15</field>
+        <field name="amount_type">percent</field>
+        <field name="account_id" ref="coa_vat_sale"/>
+        <field name="refund_account_id" ref="coa_vat_sale"/>
+        <field name="type_tax_use">sale</field>
+        <field name="tag_ids" eval="[(6,0,[ref('TVA_vente_15')])]"/>
+        <field name="tax_group_id" ref="tax_group_15"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_purchase_15">
+        <field name="name">VAT 15% - Purchase</field>
+        <field name="chart_template_id" ref="gambian_chart_template"/>
+        <field name="amount">15</field>
+        <field name="amount_type">percent</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="account_id" ref="coa_vat_purchase"/>
+        <field name="refund_account_id" ref="coa_vat_purchase"/>
+        <field name="tag_ids" eval="[(6,0,[ref('TVA_achat_15')])]"/>
+        <field name="tax_group_id" ref="tax_group_15"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_exonere">
+        <field name="name">Exempted VAT (Sale)</field>
+        <field name="chart_template_id" ref="gambian_chart_template"/>
+        <field name="amount">0</field>
+        <field name="type_tax_use">sale</field>
+        <field name="tag_ids" eval="[(6,0,[ref('TVA_vente_exempt_0')])]"/>
+        <field name="tax_group_id" ref="tax_group_0"/>
+    </record>
+
+    <record model="account.tax.template" id="tva_achat_exonere">
+        <field name="name">Exempted VAT (Purchase)</field>
+        <field name="chart_template_id" ref="gambian_chart_template"/>
+        <field name="amount">0</field>
+        <field name="type_tax_use">purchase</field>
+        <field name="tag_ids" eval="[(6,0,[ref('TVA_achat_exempt_0')])]"/>
+        <field name="tax_group_id" ref="tax_group_0"/>
+    </record>
+
+</odoo>

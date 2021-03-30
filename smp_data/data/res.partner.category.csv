@@ -1,0 +1,19 @@
+id,name,parent_id,active
+partner_cat_customer,CUSTOMER,,True
+partner_cat_gas_station,GAS STATION,CUSTOMER,True
+partner_cat_coco,COCO,GAS STATION,True
+partner_cat_codo,CODO,GAS STATION,True
+partner_cat_dodo,DODO,GAS STATION,True
+partner_cat_b2b,B2B,CUSTOMER,True
+partner_cat_transport,Transport,B2B,True
+partner_cat_hotel,Hotel,B2B,True
+partner_cat_government,Government,B2B,True
+partner_cat_industry,Industry,B2B,True
+partner_cat_mining,Mining,B2B,True
+partner_cat_energy,ENERGY,CUSTOMER,True
+partner_cat_others_customer,OTHERS CUSTOMER,CUSTOMER,True
+partner_cat_supplier,SUPPLIER,,True
+partner_cat_supplier_01,Oil Product Supplier,SUPPLIER,True
+partner_cat_supplier_02,Transport Equipement,SUPPLIER,True
+partner_cat_supplier_03,Construction Service,SUPPLIER,True
+partner_cat_supplier_04,IT Equipment,SUPPLIER,True

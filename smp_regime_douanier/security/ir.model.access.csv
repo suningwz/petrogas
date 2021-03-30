@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+regime_douanier_admin,regime_douanier_admin,model_regime_douanier,stock.group_stock_manager,1,1,1,1
+regime_douanier_read,regime_douanier_read,model_regime_douanier,stock.group_stock_user,1,0,0,0

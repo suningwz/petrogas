@@ -1,0 +1,611 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* smp_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-12 17:57+0000\n"
+"PO-Revision-Date: 2019-12-12 17:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: smp_sale
+#: model:ir.module.category,description:smp_sale.group_smp_sale
+msgid " Droits d'accès aaux fonctionnalités de Vente "
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.module.category,name:smp_sale.group_smp_sale
+msgid " SMP vente  "
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,help:smp_sale.field_product_product__unique_picking
+#: model:ir.model.fields,help:smp_sale.field_product_template__unique_picking
+msgid " Si cochez généra un bon de livraison séparé \n"
+"    pour ce produit à chaque fois que ce produit se trouvera sur un bon de comande. "
+msgstr ""
+
+#. module: smp_sale
+#: model:res.groups,name:smp_sale.price_structure_manager
+msgid " Structure/ Responsable des frais"
+msgstr ""
+
+#. module: smp_sale
+#: model:res.groups,name:smp_sale.price_structure_user
+msgid " Structure/ Utilisateur "
+msgstr ""
+
+#. module: smp_sale
+#: model:res.groups,name:smp_sale.bc_validation_control
+msgid " Validation BC "
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "<b>Bon de commande: </b>"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "<b>Client: </b>"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "<b>Date de commande: </b>"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "<b>Dépôt: </b>"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "<b>Regime Douanier: </b>"
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/wizard/sale_make_invoice_advance.py:50
+#, python-format
+msgid "Advance: %s"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_view_stock_picking_form
+msgid "Are you sure you want to split current picking?"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "Article"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "Bon De Livraison:"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.actions.report,name:smp_sale.smp_picking_report
+msgid "Bon de livraison - SMP"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_product__unique_picking
+#: model:ir.model.fields,field_description:smp_sale.field_product_template__unique_picking
+msgid "Bon de livraison Unique"
+msgstr ""
+
+#. module: smp_sale
+#: selection:sale.dma,state:0
+msgid "Brouillon"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Catégories"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__partner_id
+msgid "Client"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_res_partner__code
+#: model:ir.model.fields,field_description:smp_sale.field_res_users__code
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Code"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.sale_dma_form
+msgid "Confirmer"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.actions.server,name:smp_sale.action_product_sale_price_confirm
+msgid "Confirmer les prix de vente"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.ui.menu,name:smp_sale.action_partner_category_form
+msgid "Contact Tags"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_product_sale_price
+msgid "Correspond à la matrice des prix de vente"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__create_uid
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__create_date
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.actions.act_window,help:smp_sale.product_sale_price_action
+msgid "Créer les différentes prix de ventes et d'achat possibles."
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__display_name
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: smp_sale
+#: selection:product.sale.price,state:0
+msgid "Done"
+msgstr ""
+
+#. module: smp_sale
+#: selection:product.sale.price,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.ui.menu,name:smp_sale.sale_dma_menu
+msgid "Découvert Client"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_sale_dma
+msgid "Découvert client autorisé"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__end_date
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__end_date
+msgid "End date"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__inter_uom_factor
+msgid "Facteur de conversion"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__id
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__id
+msgid "ID"
+msgstr ""
+
+#. module: smp_sale
+#: selection:sale.dma,state:0
+msgid "Invalide"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_account_invoice
+#: model_terms:ir.ui.view,arch_db:smp_sale.view_picking_form
+msgid "Invoice"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_account_invoice_line
+#: model:ir.model.fields,field_description:smp_sale.field_stock_move__invoice_line_id
+msgid "Invoice Line"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_stock_picking__invoice_ids
+msgid "Invoices"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "La Direction"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price____last_update
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__write_uid
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__write_date
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "Le Client"
+msgstr ""
+
+#. module: smp_sale
+#: sql_constraint:product.sale.price:0
+msgid "Le couple date, article, location et regime doit-être unique !!"
+msgstr ""
+
+#. module: smp_sale
+#: sql_constraint:sale.dma:0
+msgid "Le couple start_date et partner_id doit-être unique !!"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.actions.act_window,name:smp_sale.product_sale_price_action
+msgid "Liste de Prix de vente appliquer à la structure"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_pricelist_item__location_ids
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__location_id
+#: model:ir.model.fields,field_description:smp_sale.field_res_partner__location_ids
+#: model:ir.model.fields,field_description:smp_sale.field_res_users__location_ids
+#: model:ir.model.fields,field_description:smp_sale.field_sale_order__location_id
+msgid "Location"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Location De Vente Autorisée"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_res_partner__default_location_id
+#: model:ir.model.fields,field_description:smp_sale.field_res_users__default_location_id
+msgid "Location par défault"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Location par défaut"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Locationst"
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/stock_picking.py:73
+#, python-format
+msgid "Mark as todo this picking please."
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.product_sale_price_form
+#: model_terms:ir.ui.view,arch_db:smp_sale.product_sale_price_tree_view
+msgid "Matrice des prix de vente"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.actions.act_window,help:smp_sale.sale_dma_action
+msgid "Mettre à jour la limite de crédit d'un client."
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,help:smp_sale.field_product_product__apply_price_structure
+#: model:ir.model.fields,help:smp_sale.field_product_template__apply_price_structure
+msgid "Permet de faire remonte les prix \n"
+"    et frais de vente à partir de structure de prix"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.invoice_form
+msgid "Pickings"
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/stock_picking.py:52
+#, python-format
+msgid "Pour un paiement au comtpant veuillez que le montant total des factures \n"
+"                    correspond au montant du bon de commande. "
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/stock_picking.py:46
+#, python-format
+msgid "Pour un paiement au comtpant,  veuillez créer les factures et générer les \n"
+"                    réglements correspondantes afin de pouvoir imprimer le bordereau de livraison liée au bon de commande. "
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_sale_order__product_domain
+msgid "Prduct Domain"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_product_pricelist
+msgid "Pricelist"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_product_pricelist_item
+msgid "Pricelist Item"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_view_stock_picking_form
+msgid "Print"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.ui.menu,name:smp_sale.product_sale_price_menu
+msgid "Prix de vente"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_product__sale_price_ids
+#: model:ir.model.fields,field_description:smp_sale.field_product_template__sale_price_ids
+msgid "Prix de vente selon la structure de prix"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_product_product
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__product_id
+msgid "Product"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_picking_template
+msgid "Quantité"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__quantity_to_confirm
+msgid "Quantité Livrée à confirmer"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_pricelist_item__regime_ids
+#: model:ir.model.fields,field_description:smp_sale.field_res_partner__regime_ids
+#: model:ir.model.fields,field_description:smp_sale.field_res_users__regime_ids
+msgid "Regime"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_stock_picking__regime_id
+msgid "Regime Douanier"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_account_invoice__picking_ids
+msgid "Related Pickings"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_account_invoice_line__move_line_ids
+msgid "Related Stock Moves"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,help:smp_sale.field_account_invoice__picking_ids
+msgid "Related pickings (only when the invoice has been generated from a sale order)."
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,help:smp_sale.field_account_invoice_line__move_line_ids
+msgid "Related stock moves (only when the invoice has been generated from a sale order)."
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_stock_return_picking
+msgid "Return Picking"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_sale_order__regime_id
+msgid "Régime"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Régime & Location"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__regime_id
+msgid "Régime Douanier"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Régime Douanier Autorisé"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Régime par défaut"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_res_partner_form
+msgid "Régimes"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_sale_order
+msgid "Sale Order"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,help:smp_sale.field_product_sale_price__quantity_to_confirm
+msgid "Si coché le champs \n"
+"        le champs quantité livré sera éditable sur les bons de livraison généré à partir \n"
+"        de bon de commande et dont la facturation de l'article est configuré sur les quantités commandées."
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.smp_view_stock_picking_form
+msgid "Split"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__start_date
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__state
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__state
+msgid "State"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_stock_move
+msgid "Stock Move"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_stock_rule
+msgid "Stock Rule"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.product_template_form_smp_sale
+msgid "Structure - Prix de vente"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_product__apply_price_structure
+#: model:ir.model.fields,field_description:smp_sale.field_product_template__apply_price_structure
+msgid "Structure de prix"
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/stock_picking.py:58
+#, python-format
+msgid "Tentative de reimpression: Seul un utlisateur possédant les droits d'accèes \n"
+"                spécifiques peuvent réimprimé le documents"
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/stock_picking.py:116
+#, python-format
+msgid "The backorder <a href=\"#\" data-oe-model=\"stock.picking\" data-oe-id=\"%d\">%s</a> has been created."
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/wizard/sale_make_invoice_advance.py:39
+#, python-format
+msgid "The product used to invoice a down payment should be of type 'Service'. Please use another product or update this product."
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/wizard/sale_make_invoice_advance.py:37
+#, python-format
+msgid "The product used to invoice a down payment should have an invoice policy set to \"Ordered quantities\". Please update your deposit product to be able to create a deposit invoice."
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/sale_order.py:284
+#: code:addons/smp_sale/models/sale_order.py:289
+#, python-format
+msgid "There is no invoiceable line. If a product has a Delivered quantities invoicing policy, please make sure that a quantity has been delivered."
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model,name:smp_sale.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__uom_id
+msgid "Unité"
+msgstr ""
+
+#. module: smp_sale
+#: selection:sale.dma,state:0
+msgid "Valide"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.product_sale_price_form
+msgid "Valider"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_product_sale_price__value
+#: model:ir.model.fields,field_description:smp_sale.field_sale_dma__value
+msgid "Value"
+msgstr ""
+
+#. module: smp_sale
+#: model_terms:ir.ui.view,arch_db:smp_sale.view_picking_form
+msgid "View Invoice"
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/sale_order.py:401
+#, python-format
+msgid "Warning for %s"
+msgstr ""
+
+#. module: smp_sale
+#: code:addons/smp_sale/models/stock_picking.py:76
+#, python-format
+msgid "You must enter done quantity in order to split your picking in several ones."
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.model.fields,field_description:smp_sale.field_res_partner__default_regime_id
+#: model:ir.model.fields,field_description:smp_sale.field_res_users__default_regime_id
+msgid "régime Par défaut"
+msgstr ""
+
+#. module: smp_sale
+#: model:ir.actions.act_window,name:smp_sale.sale_dma_action
+msgid "sale.dma.action"
+msgstr ""
+

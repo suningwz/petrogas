@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <menuitem id="action_view_bank_statement_menu" action="account.action_view_bank_statement_tree" parent="account_payment_fix.menu_finance_bank_and_cash"/>
+
+    <menuitem id="hr_action_view_bank_menu" name="Cash Register" parent="hr_expense.menu_hr_expense_root" sequence="3" groups="hr_expense.group_hr_expense_manager"/>
+    <menuitem id="hr_action_view_bank_statement_menu" action="account.action_view_bank_statement_tree" parent="smp_expense_cashier.hr_action_view_bank_menu"/>
+    <menuitem id="hr_action_account_payments_group_payable_menu" name="Cash Receipt" action="account_payment_group.action_account_payments_group_payable" parent="smp_expense_cashier.hr_action_view_bank_menu"/>
+
+    ----------------------- Bank Statement --------------------------------
+    <record id="bank_statement_form" model="ir.ui.view">
+        <field name="name">bank.statement.form</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_draft']" position="after">
+                <button name="button_open" string="Confirm" states="draft" type="object" class="oe_highlight"/>
+                <button name="excel_report" string="Excel" type="object" class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="replace">
+                <field name="state" widget="statusbar" statusbar_visible="draft,open,confirm"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_bank_statement_tree" model="ir.ui.view">
+        <field name="name">account.bank.statement.tree</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='balance_end']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    ----------------------- Account Journal --------------------------------
+
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="name">account.journal.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <field name="post_at_bank_rec" position="after">
+                <field name="is_bank_statement"/>
+            </field>
+        </field>
+    </record>
+
+
+</odoo>

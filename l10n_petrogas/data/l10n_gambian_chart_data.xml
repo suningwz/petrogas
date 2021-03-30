@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- Chart Template -->
+    <record id="gambian_chart_template" model="account.chart.template">
+        <field name="name">Account Of Chart - Gambia</field>
+        <field name="bank_account_code_prefix">191</field>
+        <field name="cash_account_code_prefix">1913</field>
+        <field name="transfer_account_code_prefix">199</field>
+        <field name="code_digits">0</field>
+        <field name="currency_id" ref="base.GMD"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="purchase_order_line_weight_volume_form" model="ir.ui.view">
+        <field name="name">purchase.order.line.weight.volume.form</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+
+                </group>
+                <field name="product_id" readonly="1"/>
+                <field name="weight"/>
+                <field name="volume"/>
+            </form>
+        </field>
+
+    </record>
+
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="credoc_main_configuration" model="credoc.configuration">
+            <field name="deposit_account"></field>
+            <field name="commission_account"></field>
+        </record>
+    </data>
+</odoo>

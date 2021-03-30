@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <data noupdate="1">
+        <record id="seq_inventory" model="ir.sequence">
+            <field name="name">Inventory</field>
+            <field name="code">product.inventory</field>
+            <field name="prefix">INV/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_reclassement" model="ir.sequence">
+            <field name="name">Reclassement</field>
+            <field name="code">product.reclassement</field>
+            <field name="prefix">REC/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_reclassement_out" model="ir.sequence">
+            <field name="name">Outgoing Reclassement</field>
+            <field name="code">product.reclassement.out</field>
+            <field name="prefix">REC/OUT/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_reclassement_in" model="ir.sequence">
+            <field name="name">Incomming Reclassement</field>
+            <field name="code">product.reclassement.in</field>
+            <field name="prefix">REC/IN/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        ----------------- Transfert -------------------
+        <record id="seq_internal_picking" model="ir.sequence">
+            <field name="name">Transferts</field>
+            <field name="code">internal.picking</field>
+            <field name="prefix">TI/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_internal_picking_out" model="ir.sequence">
+            <field name="name">Outgoing Transferts</field>
+            <field name="code">internal.picking.out</field>
+            <field name="prefix">INT-OUT/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_internal_picking_in" model="ir.sequence">
+            <field name="name">Incomming Transferts</field>
+            <field name="code">internal.picking.in</field>
+            <field name="prefix">INT-IN/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_internal_picking_lost" model="ir.sequence">
+            <field name="name">Transfert Loss</field>
+            <field name="code">internal.picking.lost</field>
+            <field name="prefix">INT-LST/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_smp_picking_in" model="ir.sequence">
+            <field name="name">Receipt</field>
+            <field name="code">smp.picking.in</field>
+            <field name="prefix">RC/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_smp_picking_out" model="ir.sequence">
+            <field name="name">Delivery</field>
+            <field name="code">smp.picking.out</field>
+            <field name="prefix">DL/</field>
+            <field eval="1" name="number_next"/>
+            <field eval="1" name="number_increment"/>
+            <field name="padding">6</field>
+        </record>
+
+    </data>
+</odoo>
+

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_smp_expense_cashier_smp_expense_cashier,smp_expense_cashier.smp_expense_cashier,model_smp_expense_cashier_smp_expense_cashier,,1,0,0,0

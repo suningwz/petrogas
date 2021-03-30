@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_invoice_form_inherit" model="ir.ui.view">
+            <field name="name">account_image_product.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="before">
+                    <field height="50" name="image_small" widget="image"/>
+                </xpath>
+                <field name="tax_line_ids" position="before">
+                    <group name="print_image" string="Print Image">
+                        <field name="print_image"/>
+                        <field name="image_sizes"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

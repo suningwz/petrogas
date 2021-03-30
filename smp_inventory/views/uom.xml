@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="uom_conversion_form">
+            <field name="name">uom.conversion.form</field>
+            <field name="model">uom.conversion</field>
+            <field name="arch" type="xml">
+                <form string="Facteur de conversion entre catégorie d'unité">
+                    <header>
+                        <button string="Valider" type="object" name="confirm" states="draft" class="oe_highlight" />
+                    <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="product_tmpl_id"/>
+                            <field name="location_id"/>
+                            <field name="factor"/>
+                            <field name="uom_id"/>
+                            <field name="uom_po_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="uom_conversion_tree_view">
+            <field name="name">uom.conversion.tree.view</field>
+            <field name="model">uom.conversion</field>
+            <field name="arch" type="xml">
+                <tree string="Conversion d'unité inter-catégorie">
+
+                   <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="product_tmpl_id"/>
+                    <field name="location_id"/>
+                    <field name="factor"/>
+                    <field name="uom_id"/>
+                    <field name="uom_po_id"/>
+                    <field name="state"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="uom_conversion_search">
+        <field name="name">uom_conversion_search</field>
+        <field name="model">uom.conversion</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_tmpl_id"/>
+                <field name="location_id"/>
+                <field name="start_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="uom_conversion_action">
+        <field name="name">Conversion d'unité inter-catégorie</field>
+        <field name="res_model">uom.conversion</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Créer les différentes conversion d'unité inter-catégories".</p>
+        </field>
+        </record>
+
+        <menuitem id="uom_conversion_stock_menu" name="Conversion inter-catégorie" parent="stock.menu_stock_config_settings" action="uom_conversion_action"/>
+        <menuitem id="uom_conversion_sale_menu" name="Conversion inter-catégorie" parent="sale.prod_config_main" action="uom_conversion_action"/>
+        <menuitem id="uom_conversion_purchase_menu" name="Conversion inter-catégorie" parent="purchase.menu_product_in_config_purchase" action="uom_conversion_action"/>
+
+    </data>
+</odoo>

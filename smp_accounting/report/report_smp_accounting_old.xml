@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_smp_accounting_wizard">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2><span t-esc="res_company.name"/> <span t-esc="data['report_type']"/></h2>
+
+                    <div class="row mt32">
+
+                        <div class="col-4">
+                            <p>
+                                <t t-if="data['date_from']"><strong>Date from :</strong> <span t-esc="data['date_from']"/><br/></t>
+                                <t t-if="data['date_to']"><strong>Date to :</strong> <span t-esc="data['date_to']"/></t>
+                            </p>
+                        </div>
+
+                        <div class="col-4">
+                            <strong>Target Moves:</strong>
+                            <p>
+                                <span t-if="data['target_move'] == 'all'">All Entries</span>
+                                <span t-if="data['target_move'] == 'posted'">All Posted Entries</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <t t-foreach="tables" t-as="table">
+
+                        <t t-set="initial_total" t-value="0" />
+                        <t t-set="debit_total" t-value="0" />
+                        <t t-set="credit_total" t-value="0" />
+                        <t t-set="balance" t-value="0" />
+
+                        <table class="table table-sm table-reports" style="font-size: 10px;">
+                            <thead style="background-color: #4F81BD;">
+                                <tr>
+                                    <th t-foreach="col_name" t-as="col">
+                                        <span t-esc="col"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="table" t-as="row">
+<!--                    <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">-->
+
+                                    <td t-foreach="col_name" t-as="col">
+                                        <span><t t-esc="row[col]"/></span>
+                                    </td>
+                                </tr>
+<!--                                </tr>-->
+                            </tbody>
+                    <tfoot>
+                        <tr>
+
+                        </tr>
+<!--                        <tr class="border-black">-->
+<!--                            <t t-foreach="get_months_tol" t-as="t">-->
+<!--                                <td><strong>Total</strong></td>-->
+<!--                                <t t-foreach="t" t-as="tdata">-->
+<!--                                    <td class="text-right">-->
+<!--                                        <strong><span t-esc="tdata" t-options="{'widget': 'monetary', 'display_currency': o.category_id.company_id.currency_id}"/></strong>-->
+<!--                                    </td>-->
+<!--                                </t>-->
+<!--                                <td class="text-right"><strong><span t-esc="get_total" t-options="{'widget': 'monetary', 'display_currency': o.category_id.company_id.currency_id}"/></strong></td>-->
+<!--                            </t>-->
+<!--                        </tr>-->
+                    </tfoot>
+                        </table>
+                        <br/>
+                        <br/>
+                    </t>
+
+
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="action_report_smp_accounting_wizard"
+        model="accounting.report.wizard"
+        string="Accounting Report"
+        report_type="qweb-html"
+        name="smp_accounting.report_smp_accounting_wizard"
+        file="smp_accounting.report_smp_accounting_wizard"
+
+    />
+</odoo>
+<!--        paperformat="paperformat_euro_landscape"-->
+<!--        report_type="qweb-pdf"-->
+

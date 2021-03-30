@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    ---------- HR Employee - set partner_id ----------------
+    <record id="smp_hr_employee_set_res_partner" model="ir.actions.server">
+        <field name="name">Configurer un partenaire pour l'employé</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="hr_payroll.model_hr_employee"/>
+        <field name="binding_model_id" ref="hr_payroll.model_hr_employee"/>
+        <field name="code">
+            records.link_employee_to_res_partner()
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Loan Tree view-->
+    <record id="hr_loan_type_tree_view" model="ir.ui.view">
+        <field name="name">hr.loan.type.tree</field>
+        <field name="model">hr.loan.type</field>
+        <field name="arch" type="xml">
+            <tree string="Loan Types">
+                <field name="name"/>
+                <field name="installment"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_loan_type_form_view" model="ir.ui.view">
+        <field name="name">hr.loan.type.form</field>
+        <field name="model">hr.loan.type</field>
+        <field name="arch" type="xml">
+            <form string="Loan Types">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="installment"/>
+                        <field name="is_salary_advance"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_loan_type" model="ir.actions.act_window">
+            <field name="name">Type de prêts</field>
+            <field name="res_model">hr.loan.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref=""/>
+             <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Loan Type.
+                </p><p>
+                    Use this menu to create loan type.
+                </p>
+            </field>
+    </record>
+
+    <menuitem id="menu_hr_loan_type" action="action_hr_loan_type"
+              parent="hr_payroll.menu_hr_payroll_configuration"
+              name="Loan Type" sequence="1" />
+
+
+</odoo>

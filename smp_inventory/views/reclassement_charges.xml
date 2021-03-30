@@ -1,0 +1,95 @@
+<odoo>s
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="reclassement_charges_form">
+            <field name="name">Frais de reclassement</field>
+            <field name="model">reclassement.charges</field>
+            <field name="arch" type="xml">
+                <form string="Frais de reclassements">
+                    <header>
+                        <button string="Valider" type="object" name="confirm" states="draft" class="oe_highlight" />
+<!--                    <button string="Mark as done" type="object" name="action_done"-->
+<!--                            states="confirmed" class="oe_highlight"/>-->
+<!--                    <button string="Reset to draft" type="object" name="action_draft"-->
+<!--                            states="confirmed,done" />-->
+                    <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="Date" col="4">
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
+                            <group string="Emplacements">
+                                <field name="location_id"/>
+                            </group>
+                            <group string="Articles et frais">
+                                <field name="product_src_id"/>
+                                <field name="product_dest_id"/>
+                                <field name="rubrique_id"/>
+                                <field name="type" invisible="1"/>
+                            </group>
+                            <group string="Valeurs et Unités">
+                                <field name="value"/>
+                                <field name="uom_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="reclassement_charges_tree_view">
+            <field name="name">reclassement.charges.tree.view</field>
+            <field name="model">reclassement.charges</field>
+            <field name="arch" type="xml">
+                <tree string="Frais de reclassements" decoration-warning="state=='draft'" decoration-info="state=='done'">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="product_src_id"/>
+                            <field name="product_dest_id"/>
+                            <field name="location_id"/>
+                            <field name="rubrique_id"/>
+                            <field name="value"/>
+                            <field name="uom_id"/>
+                            <field name="type" invisible="1"/>
+                            <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="reclassement_charges_search">
+            <field name="name">reclassement_charges_search</field>
+            <field name="model">reclassement.charges</field>
+            <field name="arch" type="xml">
+            <search>
+                <field name="product_src_id"/>
+                <field name="product_dest_id"/>
+                <field name="location_id"/>
+                <field name="rubrique_id"/>
+<!--                <field name="type"/>-->
+    <!--            <group expand="0" string="Group by">-->
+    <!--                <filter name="group_product" String="Product" domain="[]" context="{'group_by':'product_id'}"/>-->
+    <!--                <filter name="group_location_from" String="location source" domain="[]" context="{'group_by':'location_src_id'}"/>-->
+    <!--                <filter name="group_location_to" String="location destination" domain="[]" context="{'group_by':'location_dest_id'}"/>-->
+    <!--                <filter name="group_rubrique" String="Rubriques" domain="[]" context="{'group_by':'rubrique_id'}"/>-->
+    <!--                <filter name="group_type" String="Type" domain="[]" context="{'group_by':'type'}"/>-->
+    <!--            </group>-->
+    <!--            <filter string="My Department Leaves" name="department" domain="[('department_id.member_ids.user_id', '=', uid)]" help="My Department Leaves"/>-->
+            </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="reclassement_charges_action">
+            <field name="name">Frais de reclassement</field>
+            <field name="res_model">reclassement.charges</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Créer les différentes rubrtiques de frais de reclassement possibles.</p>
+            </field>
+        </record>
+
+        <menuitem id="reclassement_menu" name="Reclassement" parent="stock.menu_stock_warehouse_mgmt" sequence="6"/>
+        <menuitem id="reclassement_charges_menu" name="Frais de reclassement" parent="reclassement_menu" action="reclassement_charges_action"/>
+
+</odoo>

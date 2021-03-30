@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+            <xpath expr="//table[@name='invoice_line_table']/thead/tr/th[1]" position="before">
+                <t t-if="o.print_image and o.image_sizes in ('image', 'image_medium', 'image_small')">
+                    <th>Product Image</th>
+                </t>
+            </xpath>
+
+            <xpath expr="//table[@name='invoice_line_table']/tbody/t[@t-foreach='o.invoice_line_ids']/tr[1]/t/td[1]" position="before">
+                <t t-if="o.print_image and o.image_sizes in ('image', 'image_medium', 'image_small')">
+                    <t t-if="o.image_sizes == 'image' and o.print_image">
+                        <td>
+                            <span t-field="line.product_id.image" t-options="{'widget': 'image'}"/>
+                        </td>
+                    </t>
+                    <t t-if="o.image_sizes == 'image_medium' and o.print_image">
+                        <td>
+                            <span t-field="line.product_id.image_medium" t-options="{'widget': 'image'}"/>
+                        </td>
+                    </t>
+                    <t t-if="o.image_sizes == 'image_small' and o.print_image">
+                        <td>
+                            <span t-field="line.product_id.image_small" t-options="{'widget': 'image'}"/>
+                        </td>
+                    </t>
+                </t>
+            </xpath>
+
+        </template>
+    </data>
+</odoo>

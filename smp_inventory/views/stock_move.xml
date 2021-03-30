@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+         -------------- stock.picking.type ------------
+        <record id="view_stock_picking_type_smp_form" model="ir.ui.view">
+                <field name="name">Operation Types</field>
+                <field name="model">stock.picking.type</field>
+                <field name="inherit_id" ref="stock.view_picking_type_form"/>
+                <field name="arch" type="xml">
+                    <field name="code" position="after">
+<!--                        <field name="internal_type"  attrs="{'invisible':[('code','!=','internal')],'required':[('code','=','internal')]}"/>-->
+                        <field name="internal_type" attrs="{'invisible':[('code','!=','internal')]}"/>
+                        <field name="no_picking" attrs="{'invisible':[('code','!=','internal')]}"/>
+                        <field name="trigger_cost_valuation" attrs="{'invisible':[('code','=','outgoing')]}"/>
+                    </field>
+                </field>
+        </record>
+
+
+
+         -------------- stock.move Correct Return Move Value ------------
+        <record id="smp_stock_move_correct_return_move_value_action" model="ir.actions.server">
+            <field name="name">Correct return move value</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="smp_inventory.model_stock_move"/>
+            <field name="binding_model_id" ref="smp_inventory.model_stock_move"/>
+            <field name="code">
+                records.update_stock_move_value()
+            </field>
+        </record>
+<!--                records.correct_stock_move()-->
+
+         -------------- stock.move ------------
+
+        <record id="view_move_picking_form" model="ir.ui.view">
+                <field name="name">stock.move.form</field>
+                <field name="model">stock.move</field>
+                <field name="inherit_id" ref="stock.view_move_picking_form"/>
+                <field name="arch" type="xml">
+                    <field name="product_tmpl_id" position="before">
+                       <label for="product_qty"/>
+                        <div>
+                            <field name="product_qty" />
+                            <field name="ref_uom_id" options="{'no_open': True, 'no_create': True}" string="Unit Of Measure" groups="uom.group_uom" class="oe_inline"/>
+                        </div>
+                    </field>
+                </field>
+        </record>
+
+        <record id="view_move_form" model="ir.ui.view">
+                <field name="name">stock.move.form</field>
+                <field name="model">stock.move</field>
+                <field name="inherit_id" ref="stock.view_move_form"/>
+                <field name="arch" type="xml">
+                    <div name="button_box" position="inside">
+                            <button name="action_get_charges" icon="fa-usd" class="oe_stat_button" string="Stock Landing Charges" type="object" modifiers="{}" options="{}"/>
+                    </div>
+                    <field name="name" position="before">
+                       <label for="product_qty"/>
+                        <div class="o_row">
+                            <field name="product_qty" />
+                            <field name="ref_uom_id" options="{'no_open': True, 'no_create': True}" string="Unit Of Measure" groups="uom.group_uom" class="oe_inline"/>
+                        </div>
+                        <field name="price_unit"/>
+                        <field name="value"/>
+                        <field name="landed_cost_value"/>
+                        <label for="reserved_availability"/>
+                        <div class="o_row">
+<!--                            <span><field name="quantity_done" readonly="1" nolabel="1"/></span>-->
+<!--                            <span attrs="{'invisible': [('state', '=', 'done')]}"> / </span>-->
+                            <span><field name="reserved_availability" nolabel="1"/></span>
+                            <span><field name="product_uom" readonly="1" nolabel="1"/></span>
+                        </div>
+
+                    </field>
+                </field>
+        </record>
+
+    </data>
+</odoo>

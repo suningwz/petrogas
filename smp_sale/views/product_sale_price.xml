@@ -1,0 +1,102 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="product_sale_price_form">
+            <field name="name">product.sale.price.form</field>
+            <field name="model">product.sale.price</field>
+            <field name="arch" type="xml">
+                <form string="Structured Product Sale Price">
+                    <header>
+                        <button string="Confirm" type="object" name="confirm" states="draft" class="oe_highlight" />
+                        <button string="Draft" type="object" name="reopen" states="done" />
+                    <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="product_id"/>
+                            <field name="location_id"/>
+                            <field name="regime_id"/>
+                            <field name="value"/>
+                            <field name="uom_id"/>
+                            <field name="inter_uom_factor"/>
+                        </group>
+                        <group>
+                            <field name="quantity_to_confirm"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_sale_price_tree_view">
+            <field name="name">product.sale.price.tree.view</field>
+            <field name="model">product.sale.price</field>
+            <field name="arch" type="xml">
+                <tree string="Structured Product Sale Price" decoration-warning="state=='draft'" decoration-info="state=='done'" >
+<!--                <tree string="Matrice des prix de vente" decoration-muted="state=='draft'" decoration-success="state=='done'">-->
+
+                    <field name="start_date"/>
+                    <field name="product_id"/>
+                    <field name="location_id"/>
+                    <field name="regime_id"/>
+                    <field name="value"/>
+                    <field name="state"/>
+                    <field name="end_date"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_sale_price_search">
+        <field name="name">product_sale_price_search</field>
+        <field name="model">product.sale.price</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="product_id"/>
+                <field name="location_id"/>
+                <field name="regime_id"/>
+                <field name="start_date"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="product_sale_price_action">
+        <field name="name">Structured Product Sale Price</field>
+        <field name="res_model">product.sale.price</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Set product sale proce according to structure.</p>
+        </field>
+        </record>
+
+        <menuitem id="product_sale_price_menu" name="Structured Sale Price" parent="smp_regime_douanier.sale_charges_configuration_menu" action="product_sale_price_action"/>
+
+                               <!-- Action server -->
+        <record id="action_product_sale_price_confirm" model="ir.actions.server">
+            <field name="name">Confirm Lines</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="smp_sale.model_product_sale_price"/>
+            <field name="binding_model_id" ref="smp_sale.model_product_sale_price"/>
+            <field name="code">
+                records.confirm()
+            </field>
+        </record>
+
+        <record id="action_product_sale_price_reopen" model="ir.actions.server">
+            <field name="name">Put In Drat</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="smp_sale.model_product_sale_price"/>
+            <field name="binding_model_id" ref="smp_sale.model_product_sale_price"/>
+            <field name="code">
+                records.reopen()
+            </field>
+        </record>
+
+    </data>
+</odoo>
