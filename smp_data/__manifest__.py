@@ -33,15 +33,14 @@
         "data/product.category.csv",
         "data/account.journal.csv",
         "data/res.partner.category.csv",
-        "data/res.partner.csv",
-        "data/product.product.csv",
+        # "data/res.partner.csv",
+        # "data/product.product.csv",
         # "data/data.xml",
 
         "report/smp_picking_report.xml",
         "report/reclassement_report.xml",
         "report/transfert_report.xml",
         "report/smp_account_move.xml",
-
 
     ],
     'installable': True,
