@@ -205,8 +205,7 @@ class SaleOrder(models.Model):
                 for move in picking.move_lines.filtered(lambda m: m.state not in ['done', 'cancel']):
                     for move_line in move.move_line_ids:
                         move_line.qty_done = move_line.product_uom_qty
-                picking.action_done()
-
+                # picking.action_done()
 
         if self.order_line.filtered(lambda line: line.invoice_status != 'to_invoice'):
             invoice_ids = self.action_invoice_create(False, False)

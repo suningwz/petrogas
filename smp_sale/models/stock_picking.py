@@ -50,8 +50,7 @@ class StockPicking(models.Model):
             if record.sale_id and record.sale_id.payment_term_id and record.sale_id.payment_term_id.line_ids[0].days == 0:
                 if not self.user_has_groups('smp_sale.bc_validation_control'):
                     if not record.sale_id.invoice_ids:
-                        raise  UserError(_("""Pour un paiement au comtpant,  veuillez créer les factures et générer les 
-                        réglements correspondantes afin de pouvoir imprimer le bordereau de livraison liée au bon de commande. """))
+                        raise  UserError(_("""For an immediate payment, the invoice must be paid before to grant access to the delivery order printing. """))
                     states = all([i.state == 'done' for i in record.sale_id.invoice_ids])
                     invoice_amount = sum([i.amount_total for i in record.sale_id.invoice_ids if i.state =='paid'])
                     ordered_amount = record.sale_id.amount_total
@@ -72,8 +71,8 @@ class StockPicking(models.Model):
                 if no_limit_print_group_id and self.user_has_groups(no_limit_print_group_id):
                     pass
                 else:
-                    raise UserError(_("""Tentative de reimpression: Seul un utlisateur possédant les droits d'accèes 
-                    spécifiques peut réimprimer le document"""))
+                    raise UserError(_("""Attempted re-printing: Only a user with specific access rights
+                     can reprint the document."""))
 
         self.write({'printed': True})
         return report_id.report_action(self)
@@ -89,7 +88,7 @@ class StockPicking(models.Model):
                 raise UserError(_('Mark as todo this picking please.'))
             if all([x.qty_done == 0.0 for x in picking.move_line_ids]):
                 raise UserError(
-                    _('You must enter done quantity in order to split your '
+                    _('You must enter the final quantity delivered in order to split your '
                       'picking in several ones.'))
 
             # Split moves considering the qty_done on moves
