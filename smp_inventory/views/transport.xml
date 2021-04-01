@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        ------------------ Stock Picking --------------------------
+        <record id="smp_view_picking_form_inherit" model="ir.ui.view">
+            <field name="name">smp.view.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='move_type']" position="after">
+                    <field name="transport_type"/>
+                    <field name="transportor" attrs="{'invisible': [('transport_type','=',True)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        ------------------ Res Partner --------------------------
+        <record id="smp_view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">smp.view.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='supplier']" position="after">
+                    <field name="is_transportor"/>
+                </xpath>
+            </field>
+        </record>
+
+<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; stock Location &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+<!--        <record id="smp_stock_location_form_inherit" model="ir.ui.view">-->
+<!--            <field name="name">smp_stock_location.form</field>-->
+<!--            <field name="model">stock.location</field>-->
+<!--            <field name="inherit_id" ref="stock.view_location_form"/>-->
+<!--            <field name="priority" eval="8"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='partner_id']" position="after">-->
+<!--                    <field name="city_id"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+        --------------------- Transport Picking ----------------------
+
+        <record model="ir.ui.view" id="transport_picking_type_form">
+            <field name="name">Transport Picking Type</field>
+            <field name="model">transport.picking.type</field>
+            <field name="arch" type="xml">
+                <form string="Transport Picking Type">
+                    <sheet>
+                        <group>
+                                <field name="name"/>
+                                <field name="charge"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="transport_picking_type_tree_view">
+            <field name="name">Transport Picking Type List</field>
+            <field name="model">transport.picking.type</field>
+            <field name="arch" type="xml">
+                <tree string="Transport Picking Type List" >
+                            <field name="name"/>
+                            <field name="charge"/>
+                </tree>
+            </field>
+        </record>
+
+       <record model="ir.actions.act_window" id="transport_picking_type_action">
+            <field name="name">Transport Picking Type</field>
+            <field name="res_model">transport.picking.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="transport_picking_type_menu" name="Transport Picking Type" parent="stock.menu_stock_warehouse_mgmt"
+          action="transport_picking_type_action" sequence="6"/>
+
+        --------------------- Transport Picking ----------------------
+        <record model="ir.ui.view" id="transport_picking_form">
+            <field name="name">Transport Picking Cost</field>
+            <field name="model">transport.picking</field>
+            <field name="arch" type="xml">
+                <form string="Transport Picking Cost">
+                    <header>
+                        <button string="Confirm" type="object" name="confirm" states="draft" class="oe_highlight" />
+                        <button string="Draft" type="object" name="draft" states="done" class="oe_highlight" />
+                    <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                                <field name="city_src"/>
+                                <field name="city_dest"/>
+                                <field name="type_id"/>
+                                <field name="value"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="transport_picking_tree_view">
+            <field name="name">Transport Picking Cost List</field>
+            <field name="model">transport.picking</field>
+            <field name="arch" type="xml">
+                <tree string="Transport Picking Cost List" decoration-warning="state=='draft'" decoration-info="state=='done'">
+                            <field name="type_id"/>
+                            <field name="city_src"/>
+                            <field name="city_dest"/>
+                            <field name="value"/>
+                            <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="transport_picking_search">
+            <field name="name">transport_picking_search</field>
+            <field name="model">transport.picking</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="type_id"/>
+                    <field name="city_src"/>
+                    <field name="city_dest"/>
+                </search>
+            </field>
+        </record>
+
+       <record model="ir.actions.act_window" id="transport_picking_action">
+            <field name="name">Transport Picking Cost</field>
+            <field name="res_model">transport.picking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="transport_picking_menu" name="Transport Picking Cost" parent="stock.menu_stock_warehouse_mgmt"
+                  action="transport_picking_action"
+                  sequence="6"/>
+
+                   <!-- Action server -->
+        <record id="action_transport_picking_confirm" model="ir.actions.server">
+            <field name="name">Confirm lines</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="smp_inventory.model_transport_picking"/>
+            <field name="binding_model_id" ref="smp_inventory.model_transport_picking"/>
+            <field name="code">
+                records.confirm()
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -116,11 +116,17 @@ class StockMoveCharges(models.Model):
                     'rubrique_id': charge.rubrique_id.id,
                     'sale_charge_id': charge.id,
                     'cost': facteur * cost,
-                }])
+                 }])
                 account_move_lines = charge.get_account_move_line(quantity, stock_move_id._is_out(), ref)
                 for line in account_move_lines:
                     line['charge_id'] = charge_id.id
                 res += [(0, 0, line_vals) for line_vals in account_move_lines]
+
+        # Create charge of transport
+        if stock_move_id.has_transport_charge():
+            transport_aml_dict = stock_move_id.create_transport_account_move_line()
+            if transport_aml_dict:
+                res += [(0, 0, v) for k, v in transport_aml_dict.items()]
         return res
 
     @api.multi
@@ -137,7 +143,6 @@ class StockMoveCharges(models.Model):
             line[0]['charge_id'] = charge.id
             res += [(0, 0, line_vals) for line_vals in line]
         return res
-
 
     def prepare_reclassement_charges_account_move_line(self, quantity,  stock_move_id):
         stock_move_id.ensure_one()

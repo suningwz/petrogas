@@ -9,10 +9,12 @@
             <field  name="arch" type="xml">
                 <field name="name" position="before">
                     <field name="code"/>
-                     /
                 </field>
             </field>
         </record>
     </data>
 
 </odoo>
+
+
+

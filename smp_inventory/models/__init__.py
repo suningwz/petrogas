@@ -18,3 +18,4 @@ from . import stock_move_charges
 from . import stock_picking_return
 from . import account_invoice
 from . import cmp_stock_valuation
+from . import transport

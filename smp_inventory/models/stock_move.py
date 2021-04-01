@@ -190,10 +190,9 @@ class StockMove(models.Model):
     def name_get(self):
         result = []
         for s in self:
-            if s.reference:
-                name = s.origin + ' - ' + s.reference
-            else:
-                name = s.origin
+            ref = s.reference and s.reference or ''
+            origin = s.origin and s.origin or ''
+            name = origin + ' - ' + ref
             result.append((s.id, name))
         return result
 

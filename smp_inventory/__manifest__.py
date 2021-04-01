@@ -24,7 +24,7 @@
 
     # any module necessary for this one to work correctly
     # 'depends': ['account','smp_regime_douanier','stock_account', 'stock', 'purchase'],
-    'depends': ['base_setup', 'smp_regime_douanier', 'stock_account', 'purchase'],
+    'depends': ['base', 'base_setup', 'smp_regime_douanier', 'stock_account', 'purchase', 'base_address_city'],
 
     # always loaded
     'data': [
@@ -53,6 +53,8 @@
         "views/purchase_order.xml",
         "views/account_invoice.xml",
         "views/cmp_stock_valuation_views.xml",
+        "views/transport.xml",
+        "views/stock_location.xml",
 
         'wizard/stock_move_report.xml',
         "wizard/report_wizard.xml",

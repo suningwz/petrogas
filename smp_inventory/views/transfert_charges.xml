@@ -6,11 +6,7 @@
             <field name="arch" type="xml">
                 <form string="Frais de transferts">
                     <header>
-                        <button string="Valider" type="object" name="confirm" states="draft" class="oe_highlight" />
-<!--                    <button string="Mark as done" type="object" name="action_done"-->
-<!--                            states="confirmed" class="oe_highlight"/>-->
-<!--                    <button string="Reset to draft" type="object" name="action_draft"-->
-<!--                            states="confirmed,done" />-->
+                        <button string="Confirm" type="object" name="confirm" states="draft" class="oe_highlight" />
                     <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -19,16 +15,16 @@
                                 <field name="start_date"/>
                                 <field name="end_date"/>
                             </group>
-                            <group string="Emplacements">
+                            <group string="Location">
                                 <field name="location_src_id"/>
                                 <field name="location_dest_id"/>
                             </group>
-                            <group string="Articles et frais">
+                            <group string="Product and Charges">
                                 <field name="product_id"/>
                                 <field name="rubrique_id"/>
                                 <field name="type"/>
                             </group>
-                            <group string="Valeurs et Unités">
+                            <group string="Price Unit and Unit">
                                 <field name="value"/>
                                 <field name="uom_id"/>
                             </group>
@@ -42,7 +38,7 @@
             <field name="name">transfert.charges.tree.view</field>
             <field name="model">transfert.charges</field>
             <field name="arch" type="xml">
-                <tree string="Frais de transferts" decoration-warning="state=='draft'" decoration-info="state=='done'">
+                <tree string="Transfert Charges" decoration-warning="state=='draft'" decoration-info="state=='done'">
 
                             <field name="start_date"/>
                             <field name="end_date"/>
@@ -81,7 +77,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="transfert_charges_action">
-            <field name="name">Frais de Transfert</field>
+            <field name="name">Transfert Charges</field>
             <field name="res_model">transfert.charges</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
@@ -91,11 +87,11 @@
         </record>
 
         <menuitem id="transfert_menu" name="Transferts" parent="stock.menu_stock_warehouse_mgmt" sequence="6"/>
-        <menuitem id="transfert_charges_menu" name="Frais de transferts" parent="transfert_menu" action="transfert_charges_action"/>
+        <menuitem id="transfert_charges_menu" name="Transfert Charges" parent="transfert_menu" action="transfert_charges_action"/>
 
                    <!-- Action server -->
         <record id="action_transfert_charges_confirm" model="ir.actions.server">
-            <field name="name">Confirmer les frais de transfert</field>
+            <field name="name">Confirm Charges</field>
             <field name="type">ir.actions.server</field>
             <field name="state">code</field>
             <field name="model_id" ref="smp_inventory.model_transfert_charges"/>
