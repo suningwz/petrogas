@@ -18,14 +18,14 @@ class BulletinBulletin(models.Model):
 
     _description = "Bulletin de régularisation"
 
-    name = fields.Char('Séquence', default="/", readonly=True)
+    name = fields.Char('Sequence', default="/", readonly=True)
     reference = fields.Char(string="Reference")
-    date_accounting = fields.Date('Date de comptabilisation', default=fields.Date.today())
-    date_start = fields.Date('Date de départ', default=fields.Date.today())
-    date_end = fields.Date('Date de fin', default=fields.Date.today())
+    date_accounting = fields.Date('Accounting Date', default=fields.Date.today())
+    date_start = fields.Date('Date From', default=fields.Date.today())
+    date_end = fields.Date('Date To', default=fields.Date.today())
     product_id = fields.Many2one('product.product', 'Product', domain=[('type', '=', 'product')])
-    regime_id = fields.Many2one('regime.douanier', 'Customs regime')
-    product_qty = fields.Float("Quantité de stockage", compute='_compute_product_qty', store=True, readonly=True)
+    regime_id = fields.Many2one('regime.douanier', 'Customs Duties')
+    product_qty = fields.Float("Storage Quantity", compute='_compute_product_qty', store=True, readonly=True)
     location_id = fields.Many2one('stock.location', 'location_id', domain=[('usage', '=', 'internal')])
     # stock_move_ids = fields.Many2one('stock.move', 'bulletin_id', 'Opération', domain=[('state', '=', 'done')])
     stock_move_ids = fields.Many2many('stock.move', 'rel_bulletin_stock_move', 'bulletin_id', 'stock_move_id',domain=[('state', '=', 'done')])
@@ -33,7 +33,7 @@ class BulletinBulletin(models.Model):
                              default='draft')
     picking_type_ids = fields.Many2many('stock.picking.type', 'rel_bulletin_picking_type', 'bulletin_id',
                                         'picking_type_id')
-    bulletin_line_ids = fields.One2many('bulletin.line', 'bulletin_id', 'Element de Régularisable', copy=False)
+    bulletin_line_ids = fields.One2many('bulletin.line', 'bulletin_id', 'Regularizable Charges', copy=False)
     charge_slip_line_ids = fields.One2many('charge.slip.line', 'bulletin_id', 'Charge Slip Line', copy=False)
 
 
@@ -232,7 +232,7 @@ class BulletinLine(models.Model):
     value = fields.Float("Current cost", digits=dp.get_precision('Product Price'), readonly=True)
     regulated_amount = fields.Float('Computed cost', digits=dp.get_precision('Product Price'), readonly=True)
     invoiced_amount = fields.Float('Invoiced cost', digits=dp.get_precision('Product Price'))
-    to_invoice = fields.Boolean('A facturé')
+    to_invoice = fields.Boolean('To Invoice')
     invoice_id = fields.Many2one('account.invoice', 'Invoice', readonly=True , ondelete="set null")
     invoice_line_id = fields.Many2one('account.invoice.line', 'Invoice Line', readonly=True , ondelete="set null")
     partner_id = fields.Many2one('res.partner', 'Supplier', domain=[('supplier', '=', 'true')])
@@ -254,20 +254,14 @@ class BulletinLine(models.Model):
     @api.multi
     def get_charge_slip_line(self):
         self.ensure_one()
-        print('dsdjkls:', self.charge_rule_category_id.name)
-        print('dsdjkls:', self.charge_slip_line_ids)
 
         # if self.charge_slip_line_ids:
         self.charge_slip_line_ids.unlink()
-        # self.regulated_amount = 0.0
         charge_slip_line_ids = self.charge_rule_category_id.charge_rule_ids
         line_ids = [{'bulletin_line_id': self.id,
                      'bulletin_id': self.bulletin_id.id,
                      'charge_rule_id': rule.id} for rule in charge_slip_line_ids]
         charge_slip_line_ids = self.charge_slip_line_ids.create(line_ids)
-        print(charge_slip_line_ids)
-        # input_line = self.charge_slip_line_ids.filtered(lambda x: x.is_mandatory_input == True)
-        # self.open_table(input_line)
         return charge_slip_line_ids
 
     def open_table(self, input_line):
@@ -307,7 +301,6 @@ class BulletinLine(models.Model):
                 'charge_slip_line_ids': [(4, p.id) for p in charge_slip_line_ids],
                 'amount': 0.0,
             })
-            print('wiz_id: ', wiz.id)
             return {
                 'name': _('Charge Slip Line - Mandatory Input Entry?'),
                 'type': 'ir.actions.act_window',

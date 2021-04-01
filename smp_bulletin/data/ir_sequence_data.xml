@@ -5,7 +5,7 @@
     <data noupdate="1">
 
         <record id="seq_bulletin" model="ir.sequence">
-            <field name="name">Bulletin de régularisation</field>
+            <field name="name">Control And Invoicing Bulletin</field>
             <field name="code">bulletin.bulletin</field>
             <field name="prefix">BUL/</field>
             <field eval="1" name="number_next"/>

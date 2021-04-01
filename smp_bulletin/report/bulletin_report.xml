@@ -33,14 +33,14 @@
                             </div>
                             <br/>
                             <div class="row">
-                                <div class="col-4"><p><b>Produit: </b> <span t-field="doc.product_id"/></p></div>
+                                <div class="col-4"><p><b>Product: </b> <span t-field="doc.product_id"/></p></div>
                                 <div class="col-4"><p><b>Location: </b> <span t-field="doc.location_id"/></p></div>
-                                <div class="col-4"><p><b>Regime: </b> <span t-field="doc.regime_id"/></p> </div>
+                                <div class="col-4"><p><b>Custom Duty: </b> <span t-field="doc.regime_id"/></p> </div>
                             </div>
                             <br/>
 
                             <div class="row">
-                            <h4 ><b>Liste des opérations:</b></h4>
+                            <h4 ><b>Operation List:</b></h4>
                             <line/>
                             </div>
                         <br/>
@@ -49,11 +49,11 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <th>Charges</th>
-                                        <th>Quantité</th>
-                                        <th>Montant régularisé</th>
-                                        <th>Montant Facturé</th>
-                                        <th>Facture</th>
-                                        <th>Partenaire</th>
+                                        <th>Quantity</th>
+                                        <th>Computed amount</th>
+                                        <th>Invoiced Amount</th>
+                                        <th>Invoice</th>
+                                        <th>Supplier</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,7 +76,7 @@
                             <br/>
 
                             <div class="h-20 row" name="signature">
-                                <div class="col-6"><h5>La Direction</h5></div>
+                                <div class="col-6"><h5>The Responsible</h5></div>
                             </div>
                         </div>
 

@@ -71,8 +71,8 @@ class StockMoveCharges(models.Model):
     charge_rule_category_id = fields.Many2one('charge.rule.category', 'Modèle de régularisation')
     bulletin_line_id = fields.Many2one('bulletin.line', 'Ligne de charge', ondelete="set null")
     bulletin_id = fields.Many2one('bulletin.bulletin', 'Bulletin', related='bulletin_line_id.bulletin_id', store=True, ondelete='set null')
-    regulated_amount = fields.Float(string="Valeur Régularisé")
-    previous_amount = fields.Float(string="Valeur Précédente")
+    regulated_amount = fields.Float(string="Regularized Value")
+    previous_amount = fields.Float(string="Previous value")
     invoiced = fields.Boolean(string='Invoiced')
     state = fields.Selection([('draft', 'Draft'),
                               ('open', 'Accounting'),
