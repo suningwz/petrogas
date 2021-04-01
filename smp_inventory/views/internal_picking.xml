@@ -8,10 +8,10 @@
         <field name="arch" type="xml">
             <form string="Transferts Inter Dépôt">
                 <header>
-                    <button string="Emettre" type="object" name="sent" states="draft" class="oe_highlight" />
-                    <button string="Charger" type="object" name="load" states="sent" class="oe_highlight" />
-                    <button string="Réceptionner" type="object" name="done" states="open" class="oe_highlight" />
-                    <button string="Annuler" type="object" name="action_cancel"  class="oe_highlight" />
+                    <button string="Emit" type="object" name="sent" states="draft" class="oe_highlight" />
+                    <button string="Load" type="object" name="load" states="sent" class="oe_highlight" />
+                    <button string="Receipt" type="object" name="done" states="open" class="oe_highlight" />
+                    <button string="Cancel" type="object" name="action_cancel"  class="oe_highlight" />
 <!--                    <button string="Annuler" type="object" name="action_cancel" attrs="'invisible':[('state','in',('draft'))]" class="oe_highlight" />-->
                 <field name="state" widget="statusbar"/>
                 </header>
@@ -52,10 +52,10 @@
     </record>
 
     <record model="ir.ui.view" id="internal_picking_tree">
-        <field name="name">Transfert Inter Dépôt</field>
+        <field name="name">Internal Warehouse Transfert</field>
         <field name="model">internal.picking</field>
         <field name="arch" type="xml">
-            <tree string="Transferts Inter Dépôt">
+            <tree string="Internal Warehouse Transfert">
                 <field name="name"/>
                 <field name="location_src_id"/>
                 <field name="location_dest_id"/>
@@ -68,14 +68,14 @@
 </record>
 
     <record model="ir.actions.act_window" id="internal_picking_action">
-      <field name="name">Transfert Inter Dépôt</field>
+      <field name="name">Internal Warehouse Transfert</field>
       <field name="res_model">internal.picking</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="internal_picking_menu"
-              name="Transfert Interne"
+              name="Internal Warehouse Transfert"
               parent="transfert_menu"
               action="internal_picking_action"
               sequence="0"

@@ -8,8 +8,8 @@
         <field name="arch" type="xml">
             <form string="Transferts Inter Dépôt">
                 <header>
-                    <button string="Confirmer" type="object" name="sent" states="draft" class="oe_highlight" />
-                    <button string="Reclasser" type="object" name="done" states="sent" class="oe_highlight" />
+                    <button string="Confirm" type="object" name="sent" states="draft" class="oe_highlight" />
+                    <button string="Reclassify" type="object" name="done" states="sent" class="oe_highlight" />
                 <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -23,7 +23,7 @@
                     </group>
                     <group>
                         <notebook>
-                            <page string="Lignes de reclassement">
+                            <page string="Reclassification">
                                 <field name="reclassement_line_ids">
                                     <tree editable="top">
                                         <field name="product_src_id"/>
@@ -49,10 +49,10 @@
     </record>
 
     <record model="ir.ui.view" id="product_reclassement_tree">
-        <field name="name">Reclasssement de produit</field>
+        <field name="name">Product Reclassification</field>
         <field name="model">reclassement</field>
         <field name="arch" type="xml">
-            <tree string="Transferts Inter Dépôt" decoration-warning="state=='draft'" decoration-info="state=='done'">
+            <tree string="Product Reclassification" decoration-warning="state=='draft'" decoration-info="state=='done'">
                 <field name="name"/>
                 <field name="location_id"/>
                 <field name="date_sent"/>
@@ -63,14 +63,14 @@
 </record>
 
     <record model="ir.actions.act_window" id="product_reclassement_action">
-      <field name="name">Reclassement de produits</field>
+      <field name="name">Product Reclassification</field>
       <field name="res_model">reclassement</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem id="product_reclassement_menu"
-              name="Reclassements"
+              name="Product Reclassification"
               parent="smp_inventory.reclassement_menu"
               action="product_reclassement_action"
               sequence="0"
@@ -78,7 +78,7 @@
 
                        <!-- Action server -->
         <record id="action_reclassement_charges_confirm" model="ir.actions.server">
-            <field name="name">Confirmer les frais de reclassement</field>
+            <field name="name">Confirm Lines</field>
             <field name="type">ir.actions.server</field>
             <field name="state">code</field>
             <field name="model_id" ref="smp_inventory.model_reclassement_charges"/>

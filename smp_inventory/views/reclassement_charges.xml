@@ -4,9 +4,9 @@
             <field name="name">Frais de reclassement</field>
             <field name="model">reclassement.charges</field>
             <field name="arch" type="xml">
-                <form string="Frais de reclassements">
+                <form string="Product Reclassification Charge">
                     <header>
-                        <button string="Valider" type="object" name="confirm" states="draft" class="oe_highlight" />
+                        <button string="Confirm" type="object" name="confirm" states="draft" class="oe_highlight" />
 <!--                    <button string="Mark as done" type="object" name="action_done"-->
 <!--                            states="confirmed" class="oe_highlight"/>-->
 <!--                    <button string="Reset to draft" type="object" name="action_draft"-->
@@ -19,16 +19,16 @@
                                 <field name="start_date"/>
                                 <field name="end_date"/>
                             </group>
-                            <group string="Emplacements">
+                            <group string="Location">
                                 <field name="location_id"/>
                             </group>
-                            <group string="Articles et frais">
+                            <group string="Product and Charges">
                                 <field name="product_src_id"/>
                                 <field name="product_dest_id"/>
                                 <field name="rubrique_id"/>
                                 <field name="type" invisible="1"/>
                             </group>
-                            <group string="Valeurs et Unités">
+                            <group string="Cost Unit and Unit">
                                 <field name="value"/>
                                 <field name="uom_id"/>
                             </group>
@@ -42,7 +42,7 @@
             <field name="name">reclassement.charges.tree.view</field>
             <field name="model">reclassement.charges</field>
             <field name="arch" type="xml">
-                <tree string="Frais de reclassements" decoration-warning="state=='draft'" decoration-info="state=='done'">
+                <tree string="Product Reclassification Charges" decoration-warning="state=='draft'" decoration-info="state=='done'">
                             <field name="start_date"/>
                             <field name="end_date"/>
                             <field name="product_src_id"/>
@@ -80,16 +80,13 @@
         </record>
 
         <record model="ir.actions.act_window" id="reclassement_charges_action">
-            <field name="name">Frais de reclassement</field>
+            <field name="name">Product Reclassification Charges</field>
             <field name="res_model">reclassement.charges</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Créer les différentes rubrtiques de frais de reclassement possibles.</p>
-            </field>
         </record>
 
-        <menuitem id="reclassement_menu" name="Reclassement" parent="stock.menu_stock_warehouse_mgmt" sequence="6"/>
-        <menuitem id="reclassement_charges_menu" name="Frais de reclassement" parent="reclassement_menu" action="reclassement_charges_action"/>
+        <menuitem id="reclassement_menu" name="Product Reclassification" parent="stock.menu_stock_warehouse_mgmt" sequence="6"/>
+        <menuitem id="reclassement_charges_menu" name="Product Reclassification Charges" parent="reclassement_menu" action="reclassement_charges_action"/>
 
 </odoo>

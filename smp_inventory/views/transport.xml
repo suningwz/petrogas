@@ -29,21 +29,6 @@
             </field>
         </record>
 
-<!--        &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; stock Location &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-
-<!--        <record id="smp_stock_location_form_inherit" model="ir.ui.view">-->
-<!--            <field name="name">smp_stock_location.form</field>-->
-<!--            <field name="model">stock.location</field>-->
-<!--            <field name="inherit_id" ref="stock.view_location_form"/>-->
-<!--            <field name="priority" eval="8"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//field[@name='partner_id']" position="after">-->
-<!--                    <field name="city_id"/>-->
-<!--                </xpath>-->
-<!--            </field>-->
-<!--        </record>-->
-
-
         --------------------- Transport Picking ----------------------
 
         <record model="ir.ui.view" id="transport_picking_type_form">

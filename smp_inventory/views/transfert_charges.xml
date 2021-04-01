@@ -1,10 +1,10 @@
 <odoo>s
         <!-- explicit list view definition -->
         <record model="ir.ui.view" id="transfert_charges_form">
-            <field name="name">Frais de transfert</field>
+            <field name="name">Transfer Charges</field>
             <field name="model">transfert.charges</field>
             <field name="arch" type="xml">
-                <form string="Frais de transferts">
+                <form string="Transfer Charges">
                     <header>
                         <button string="Confirm" type="object" name="confirm" states="draft" class="oe_highlight" />
                     <field name="state" widget="statusbar"/>
@@ -81,9 +81,6 @@
             <field name="res_model">transfert.charges</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Créer les différentes rubrtiques de frais de transfert possibles.</p>
-            </field>
         </record>
 
         <menuitem id="transfert_menu" name="Transferts" parent="stock.menu_stock_warehouse_mgmt" sequence="6"/>

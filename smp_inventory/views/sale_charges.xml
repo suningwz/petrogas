@@ -5,9 +5,9 @@
             <field name="name">sale.charges.form</field>
             <field name="model">sale.charges</field>
             <field name="arch" type="xml">
-                <form string="Structure des frais">
+                <form string="Sale Charges">
                     <header>
-                        <button string="Valider" type="object" name="confirm" states="draft" class="oe_highlight" />
+                        <button string="Confir" type="object" name="confirm" states="draft" class="oe_highlight" />
 <!--                    <button string="Mark as done" type="object" name="action_done"-->
 <!--                            states="confirmed" class="oe_highlight"/>-->
 <!--                    <button string="Reset to draft" type="object" name="action_draft"-->
@@ -36,7 +36,7 @@
             <field name="name">sale.charges.tree.view</field>
             <field name="model">sale.charges</field>
             <field name="arch" type="xml">
-                <tree string="Structure des frais" decoration-warning="state=='draft'" decoration-info="state=='done'">
+                <tree string="Sale Charges" decoration-warning="state=='draft'" decoration-info="state=='done'">
                     <field name="start_date"/>
                     <field name="reference"/>
                     <field name="rubrique_id"/>
@@ -66,19 +66,16 @@
         </record>
 
         <record model="ir.actions.act_window" id="sale_charges_action">
-            <field name="name">Frais de ventes</field>
+            <field name="name">Sale Charges</field>
             <field name="res_model">sale.charges</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
 <!--            <field name="domain">[('invoice_id.state', 'not in', ('draft', 'cancel')),('asset_category_id','!=',False),('invoice_id.journal_id.type', 'in',('purchase','purchase_refund'))]</field>-->
             <field name="context">{'search_default_end_date': False}</field>
-            <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Créer les différentes rubrtiques de frais de ventes et d'achat possibles.</p>
-            </field>
         </record>
 
 <!--        <menuitem id="sale_charges_configuration_menu" name="Structure de Prix" parent="sale.menu_sale_config" sequence="6"/>-->
-        <menuitem id="sale_charges_menu" name="Frais de vente" parent="smp_regime_douanier.sale_charges_configuration_menu" action="sale_charges_action"/>
+        <menuitem id="sale_charges_menu" name="Sale Charges" parent="smp_regime_douanier.sale_charges_configuration_menu" action="sale_charges_action"/>
 
         ---------- Action server ----------------
         <record id="action_sale_charges_confirm" model="ir.actions.server">
