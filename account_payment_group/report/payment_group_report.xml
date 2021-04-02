@@ -10,9 +10,9 @@
                     <div class="page" style="height:842px;">
                         <div class="oe_structure"/>
                         <div class="row " name="title">
-                            <h2 >Reçu De Réglement
-                                <t t-if="doc.partner_type == 'customer'"> Client</t>
-                                <t t-if="doc.partner_type == 'supplier'"> Fournisseur</t>
+                            <h2 >Receipt Bank Voucher
+                                <t t-if="doc.partner_type == 'customer'"> Customer</t>
+                                <t t-if="doc.partner_type == 'supplier'"> Vendor</t>
 <!--                                <t t-if="doc.partner_type == 'customer'" t-esc="doc.name"/>-->
                             </h2>
                         </div>
@@ -20,16 +20,16 @@
                         <br/>
                         <div class="row " name="general_info">
                             <div name="partner_info" class="col-6 ">
-                                <p><b>Client: </b> <span t-field="doc.partner_id"/></p>
+                                <p><b>Customer: </b> <span t-field="doc.partner_id"/></p>
                                 <p><span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.country_id"/></p>
-                                <p><b>N° Réglement: </b> <span t-field="doc.name"/></p>
+                                <p><b>Receipt #: </b> <span t-field="doc.name"/></p>
 <!--                                <p><span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.country_id"/></p>-->
 
                             </div>
                             <div name="transaction_info" class="col-6 ">
-                                <p><b>Date de réglement: </b> <span t-field="doc.payment_date"/></p>
-                                <p><b>Agent de saisie: </b> <span t-field="doc.write_uid.name"/></p>
-                                <p><b>Montant du réglement: </b> <span t-field="doc.matched_amount"/></p>
+                                <p><b>Date: </b> <span t-field="doc.payment_date"/></p>
+                                <p><b>Cashier: </b> <span t-field="doc.write_uid.name"/></p>
+                                <p><b>Amount: </b> <span t-field="doc.matched_amount"/></p>
 <!--                                <p><b>Solde Client: </b> <span t-field="doc.partner_id.credit"/></p>-->
 
                             </div>
@@ -37,7 +37,7 @@
                         </div>
 
                         <br/>
-                        <h4 >Liste des réglements:</h4>
+                        <h4 >List of transactions:</h4>
                         <div class="row " name="payment_list">
                             <table class="table table-sm">
                                 <thead class="thead-light">
@@ -45,8 +45,8 @@
 <!--                                        <th>Sequence</th>-->
                                         <th>Journal</th>
                                         <th>Memo</th>
-                                        <th>Montant</th>
-                                        <th>Montant (MRU)</th>
+                                        <th>Amount</th>
+                                        <th>Amount (GMD)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,38 +74,38 @@
 
                         <t t-if="doc.matched_move_line_ids">
                             <br/>
-                            <h4>Liste des factures et avoirs reconciliés:</h4>
+                            <h4>LIst of reconcilied invoices:</h4>
                             <div class="row" name="invoice_list">
                                 <table class="table table-sm">
                                     <thead class="thead-light">
                                         <tr>
                                             <th>Date</th>
-                                            <th>Date d'échéance</th>
-                                            <th>Référence</th>
-                                            <th>Montant à Payer</th>
-<!--                                            <th>Montant Payé</th>-->
+                                            <th>Due Date</th>
+                                            <th>Invoices</th>
+                                            <th>Amount to Paid</th>
+                                            <th>Residual Amount</th>
 <!--                                            <th>Montant en Devise</th>-->
 <!--                                            <th>Montant Résiduel</th>-->
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <t t-set="amount_to_pay" t-value="0"/>
+                                        <t t-set="amount_residual" t-value="0"/>
 <!--                                        <t t-set="amount_paid" t-value="0"/>-->
 <!--                                        <t t-set="amount_currency" t-value="0"/>-->
-<!--                                        <t t-set="amount_residuel" t-value="0"/>-->
-<!--                                        <t t-set="amount_residual" t-value="0"/>-->
 
                                         <tr t-foreach="doc.matched_move_line_ids" t-as="move" >
 
                                             <t t-set="amount_to_pay" t-value="amount_to_pay + move.balance"/>
 <!--                                            <t t-set="amount_paid" t-value="amount_paid + move.payment_group_matched_amount"/>-->
 <!--                                            <t t-set="amount_currency" t-value="amount_currency + move.amount_currency"/>-->
-<!--                                            <t t-set="amount_residual" t-value="amount_residual + move.amount_residual"/>-->
+                                            <t t-set="amount_residual" t-value="amount_residual + move.amount_residual"/>
 
                                             <td><span t-field="move.date" /></td>
                                             <td><span t-field="move.date_maturity" /></td>
                                             <td><span t-field="move.invoice_id" /></td>
                                             <td><span t-field="move.balance" /></td>
+                                            <td><span t-field="move.amount_residual" /></td>
 <!--                                            <td><span t-field="move.payment_group_matched_amount" /></td>-->
 <!--                                            <td><span t-field="move.amount_currency" /></td>-->
 <!--                                            <td><span t-field="move.amount_currency" /></td>-->
@@ -115,6 +115,8 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td><strong><span t-esc="amount_to_pay"
+                                                    t-options='{"widget": "monetary", "display_currency": doc.company_id.currency_id}'/></strong></td>
+                                                    <td><strong><span t-esc="amount_residual"
                                                     t-options='{"widget": "monetary", "display_currency": doc.company_id.currency_id}'/></strong></td>
 <!--                                                    <td><strong><span t-esc="amount_paid" /></strong></td>-->
 <!--                                                    <td><strong><span t-esc="amount_currency" /></strong></td>-->
@@ -136,10 +138,10 @@
 <!--                            <div class="col-6"><h5>Le Client</h5></div>-->
                             <div class="col-6"><h5>
 <!--                                <t t-if="doc.partner_type == 'customer'"> Le Client</t>-->
-                                <t t-if="doc.partner_type == 'supplier'"> Le bénéficiaire</t>
+                                <t t-if="doc.partner_type == 'supplier'"> The beneficiary</t>
                             </h5></div>
 
-                            <div class="col-6"><h5>Le Caissier</h5></div>
+                            <div class="col-6"><h5>The Cashier</h5></div>
                         </div>
 
                         <div class="oe_structure"/>
@@ -151,12 +153,12 @@
     </template>
 
     <report
-        string="Paiement Grouper"
+        string="Payments"
         id="payment_group_report"
         model="account.payment.group"
         report_type="qweb-pdf"
         name="account_payment_group.payment_group_template"
-        print_report_name="'Reçu %s - %s' % (object.partner_type, object.name)"
+        print_report_name="'Voucher %s - %s' % (object.partner_type, object.name)"
         paperformat="base.paperformat_euro"
     />
 </odoo>

@@ -18,7 +18,6 @@
     # 'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'tools',
     'version': '0.1',
@@ -29,13 +28,7 @@
 
     # always loaded
     'data': [
-        "data/uom.uom.csv",
-        "data/product.category.csv",
-        "data/account.journal.csv",
-        "data/res.partner.category.csv",
-        # "data/res.partner.csv",
-        # "data/product.product.csv",
-        # "data/data.xml",
+        "data/data.xml",
 
         "report/smp_picking_report.xml",
         "report/reclassement_report.xml",
