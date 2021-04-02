@@ -251,8 +251,9 @@ class HrExpenseSheet(models.Model):
     def action_sheet_move_create(self):
         res = super(HrExpenseSheet, self).action_sheet_move_create()
         bank_statement_id = self.mapped('expense_line_ids.bank_statement_line_id.statement_id')
-        bank_statement_id.ensure_one()
-        self.bank_statement_id = bank_statement_id
+        if bank_statement_id:
+            bank_statement_id.ensure_one()
+            self.bank_statement_id = bank_statement_id
         return res
 
 
