@@ -194,8 +194,9 @@ class PurchaseOrderLine(models.Model):
         for line in self:
             if line.product_id.uom_id != line.product_uom:
                 if line.product_id.is_uom_inter_category and line.product_uom.category_id == line.product_id.uom_po_id.category_id:
-                    product_uom_qty = line.product_uom._compute_quantity(line.product_qty, line.product_id.uom_po_id)
-                    line.product_uom_qty = line.product_id.inter_uom_factor * product_uom_qty
+                    product_uom_qty = line.product_uom.with_context(inter_uom_factor=line.product_id.inter_uom_factor)._compute_quantity(line.product_qty, line.product_id.uom_po_id)
+                    line.product_uom_qty = product_uom_qty
+                    # line.product_uom_qty = line.product_id.inter_uom_factor * product_uom_qty
                 else:
                     line.product_uom_qty = line.product_uom._compute_quantity(line.product_qty, line.product_id.uom_id)
             else:

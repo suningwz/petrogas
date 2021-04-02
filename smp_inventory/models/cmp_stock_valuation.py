@@ -95,11 +95,21 @@ class ProductCostRevaluation(models.TransientModel):
     _name = 'product.cost.revaluation'
     _description = 'Product Cost Revaluation'
 
-    date_from = fields.Date('Date from', default=fields.Date.today())
-    date_to = fields.Date('Date to', default=fields.Date.today())
+    period_id = fields.Many2one('account.period', string="Account Period", domain=[('state','=','open')])
+    date_from = fields.Date('Date from', default=fields.Date.today(), required=True)
+    date_to = fields.Date('Date to', default=fields.Date.today(), required=True)
     # product_id = fields.Many2one('product.product', 'Product', ondelete='cascade', required=True)
     # location_id = fields.Many2one('stock.location', 'Location', ondelete='cascade', required=True)
 
+
+    @api.onchange('period_id')
+    def onchange_period(self):
+        if self.period_id:
+            self.update({
+                'date_from': self.period_id.date_from,
+                'date_to': self.period_id.date_to,
+            })
+            # return True
 
     def get_location_to_value(self):
         location_ids = self.env['stock.location'].search([]).filtered(lambda x: x._should_be_valued())
@@ -329,7 +339,6 @@ class ProductCostRevaluation(models.TransientModel):
         tree.set_trajet()
         return tree
 
-
     def compute_cmp(self):
         _logger.info('Stock Product Average Cost starting')
         start = timeit.timeit()
@@ -354,11 +363,11 @@ class ProductCostRevaluation(models.TransientModel):
                 sm_in_ids -= returned_in_move_ids['return_move_ids']
 
                 product_qty_in = sum(sm_in_ids.mapped('product_qty')) + product_qty_init
-                product_value_in= sum(sm_in_ids.mapped('value')) + product_value_init
+                product_value_in= sum(sm_in_ids.mapped('value') + sm_in_ids.mapped('landed_cost_value')) + product_value_init
                 rounding = self.env.user.company_id.currency_id.rounding
-                if float_is_zero(product_value_in / product_qty_in, precision_rounding=rounding):
-                    price_unit = 0
                 if float_is_zero(product_qty_in, precision_rounding=rounding):
+                    price_unit = 0
+                elif float_is_zero(product_value_in / product_qty_in, precision_rounding=rounding):
                     price_unit = 0
                 else:
                     price_unit = product_value_in / product_qty_in
@@ -383,8 +392,8 @@ class ProductCostRevaluation(models.TransientModel):
                 """sm out - Mise à jour des mouvements qui ont été retourné"""
                 for sm_out_id in returned_out_move_ids['returned_move_ids']:
                     sm_out_id.write({'price_unit': price_unit, 'value': price_unit*sm_out_id.product_qty})
-                    sm_out_id.update_stock_move_value()
-                    sm_out_id.update_account_entry_move()
+                    sm_out_id._update_stock_move_value()
+                    # sm_out_id.update_account_entry_move()
 
                 ###################################### Mise à jour historique des coût  ############################################
 
@@ -395,7 +404,7 @@ class ProductCostRevaluation(models.TransientModel):
 
                 _logger.info('cmp: %s  qty_end: %s' % (price_unit, end_qty))
 
-                sm_out_ids.update_stock_move_value()
+                sm_out_ids._update_stock_move_value()
                 sm_out_ids.update_account_entry_move()
 
         _logger.info('%s second to finalize the product cost average revaluation' % (timeit.timeit() - start))

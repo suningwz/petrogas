@@ -30,7 +30,7 @@ class InternalPicking (models.Model):
     finisher_id = fields.Many2one('res.users', 'Received by', readonly=True)
     company_id = fields.Many2one('res.company', 'Compagny', default=lambda self: self.env.user.company_id.id,
                                  readonly=True)
-    state = fields.Selection([('draft', 'Draft'), ('sent', 'Sent'), ('open', 'Loaded'), ('done', 'Received')],
+    state = fields.Selection([('draft', 'Draft'), ('sent', 'Sent'), ('open', 'Loaded'), ('done', 'Received'), ('cancel', 'cancel')],
                              'Status', default='draft', required=True)
     internal_picking_line_ids = fields.One2many('internal.picking.line','internal_picking_id',
                                                 string= "Lignes de Transferts")

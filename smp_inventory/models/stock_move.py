@@ -48,12 +48,29 @@ class AccountMoveLine(models.Model):
 class StockMove(models.Model):
     _inherit = "stock.move"
 
+
+
+            # r.update_account_entry_move()
+            # if r.charges_ids:
+            #     r.landed_cost_value = sum(r.charges_ids.filtered(lambda r: r.state != 'draft').mapped('cost'))
+            # else:
+            #     r.landed_cost_value = 0.0
+
+    # @api.depends('charges_ids', 'charges_ids.cost')
+    @api.depends('charges_ids.account_move_line_ids')
+    def _get_landed_cost_value(self):
+        for r in self:
+            r._update_stock_move_value()
+        # self.update_account_entry_move()
+
+
+
     internal_picking_line_id = fields.Many2one('internal.picking.line', string='Transfert lines',copy=False)
     reclassement_line_id = fields.Many2one('reclassement.line', string='Reclassement lines',copy=False)
     inter_uom_factor = fields.Float(string="Conversion factor", digits=(10, 4), default=lambda self: self.product_uom.factor)
     ref_uom_id = fields.Many2one('uom.uom', 'Storage Unit', related='product_id.uom_id')
-    landed_cost_value = fields.Float('Landed Cost', compute='get_cost_landing', store=True)
-    charges_ids = fields.One2many("stock.move.charges", 'stock_move_id')
+    landed_cost_value = fields.Float('Landed Cost', compute='_get_landed_cost_value', readonly=True, store=True)
+    charges_ids = fields.One2many("stock.move.charges", 'stock_move_id', copy=False)
     volume = fields.Float('Volume', required=True, digits=dp.get_precision('Product UoS'), default=lambda self: self.product_id.volume)
     weight = fields.Float('Weight', required=True, digits=dp.get_precision('Product UoS'), default=lambda self: self.product_id.weight)
 
@@ -139,14 +156,14 @@ class StockMove(models.Model):
                     info += _(' (reserved)')
             move.string_availability_info = info
 
-    @api.multi
-    @api.depends('charges_ids', 'charges_ids.cost')
-    def get_cost_landing(self):
-        for r in self:
-            r.update_stock_move_value()
+    # @api.multi
+    # @api.depends('charges_ids', 'charges_ids.cost')
+    # def get_cost_landing(self):
+    #     for r in self:
+    #         r._update_stock_move_value()
 
     @api.multi
-    def update_stock_move_value(self):
+    def _update_stock_move_value(self):
         for move in self:
             # _logger.debug('Stock Move %s with id: %s, value update' % (move.name, move.id))
             if move.charges_ids:
@@ -164,7 +181,7 @@ class StockMove(models.Model):
                     # _logger.debug('Stock Move Destination  %s with id: %s, value update' % (move_dest_id.name, move_dest_id.id))
                     dest_value = price_unit * move_dest_id.product_qty
                     move_dest_id.write({'price_unit': price_unit, 'value': dest_value})
-                    move_dest_id.update_stock_move_value()
+                    move_dest_id._update_stock_move_value()
                     move_dest_id.update_account_entry_move()
                     # TODO: Fonction mettant à jour la pièce comptable de stock
 
@@ -1185,6 +1202,7 @@ class StockMove(models.Model):
     def _action_done(self):
 
         res = self.action_done_stock_move_new()
+        self._get_landed_cost_value()
         # res = self.action_done_stock_move()
         # res = super(StockMove, self)._action_done()
 
@@ -1352,10 +1370,11 @@ class StockMove(models.Model):
     def update_account_entry_move(self):
         # if self.mapped('account_move_ids'):
         """On post toutes les pièces comptable"""
-        self.mapped('account_move_ids').button_cancel()
+        self.sudo().mapped('account_move_ids').button_cancel()
         am_pool = self.env['account.move']
         aml_pool = self.env['account.move.line']
         start = timeit.timeit()
+
         for move in self:
 
             # TODO Identifie pièce comptable
@@ -1383,41 +1402,28 @@ class StockMove(models.Model):
 
                 # TODO Récupère les écriture comptable de stock
                 src_value = move.value
-                dest_value = move.value + sum(move.charges_ids.mapped('cost'))
+                dest_value = move.value
+                #
 
                 trigger_cost_valuation = move.picking_type_id.trigger_cost_valuation
+                if trigger_cost_valuation:
+                    dest_value = move.value + sum(move.charges_ids.filtered(lambda r: r.account_move_line_ids).mapped('cost'))
 
-                debit = src_value
-                credit = src_value
-
-                debit_line, credit_line = move.get_debit_credit_line()
-                assert debit_line.ensure_one() and credit_line.ensure_one()
-
-                # # TODO Identifie les écritures concerné
-                # stock_account_move_line = stock_account_move.line_ids.filtered(lambda x: x.stock_move_id and not x.charge_id)
-                # assert len(stock_account_move_line) == 2
-                # assert 1 <= len(stock_account_move_line.mapped('stock_move_id')) <= 2
-                # assert move in stock_account_move_line.mapped('stock_move_id')
-
-                # TODO Identifie ligne de débit et crédit
-                journal_id, acc_src, acc_dest, acc_valuation = move._get_accounting_data_for_valuation()
-
+                src_line, dest_line = move.get_debit_credit_line()
+                assert src_line.ensure_one() and dest_line.ensure_one()
 
 
                 # -------------------------------  Mise à jour -----------------------------------------------
 
-                if trigger_cost_valuation:
-                    debit = dest_value
-
-                to_update.append((1, debit_line.id, {'debit': abs(debit)}))
-                to_update.append((1, credit_line.id, {'credit': abs(credit)}))
+                to_update.append((1, dest_line.id, {'debit': abs(dest_value)}))
+                to_update.append((1, src_line.id, {'credit': abs(src_value)}))
 
                 if move.picking_type_id.code == 'incoming' and move.purchase_line_id:
                     if move.purchase_line_id.order_id.currency_id != move.purchase_line_id.order_id.company_id.currency_id :
                         invoice_line_id = move.invoice_line_id
                         currency_amount = move.quantity_done * move.invoice_line_id.price_unit
-                        to_update.append((1, debit_line.id, {'amount_currency': currency_amount}))
-                        to_update.append((1, credit_line.id, {'amount_currency': -currency_amount}))
+                        to_update.append((1, dest_line.id, {'amount_currency': currency_amount}))
+                        to_update.append((1, src_line.id, {'amount_currency': -currency_amount}))
 
                 debit_value = str([(x[1], x[2].get('debit')) for x in to_update if x[2].get('debit')])[1:-1]
                 credit_value = str([(x[1], x[2].get('credit')) for x in to_update if x[2].get('credit')])[1:-1]
@@ -1455,19 +1461,32 @@ class StockMove(models.Model):
 
                     # stock_account_move.line_ids = [(4, x.id) for x in created_ids]
 
+                balance = sum(stock_account_move.line_ids.mapped('debit')) - sum(stock_account_move.line_ids.mapped('credit'))
+                print("*"*100)
 
+                print("To_create: ", to_create)
+                print("""PC: %s , PC_id: %s, Balance: %s""" % (stock_account_move.ref, stock_account_move.id, balance))
+                _logger.debug("""PC: %s , Balance: %s""" % (stock_account_move.ref, balance))
                 for aml in stock_account_move.line_ids:
                     print("name: %s, account : %s, debit: %s, credit: %s" % (aml.name, aml.account_id.name, aml.debit, aml.credit,))
-                balance = sum(stock_account_move.line_ids.mapped('debit')) - sum(stock_account_move.line_ids.mapped('credit'))
-                print("To_create: ", to_create)
-                print("*"*100)
-                print("""PC: %s , Balance: %s""" % (stock_account_move.ref, balance))
-                _logger.debug("""PC: %s , Balance: %s""" % (stock_account_move.ref, balance))
+
+                try:
+                    stock_account_move.action_post()
+                except:
+                    # print(self.mapped('account_move_ids.id'))
+                    raise UserError('Verifier PC avec ID: %s' % stock_account_move.id)
+        # try:
+        #     self.mapped('account_move_ids').action_post()
+        # except:
+        #     print(self.mapped('account_move_ids.id'))
+        #     raise UserError('Verifier PC avec ID: %s' % move.id)
+
         end1 = timeit.timeit()
         _logger.info("""%s second to write %s stock move account move""" % ((end1 - start), len(self)))
 
         # """On post toutes les pièces comptable"""
-        self.mapped('account_move_ids').action_post()
+        print('*********---------')
+
         end2 = timeit.timeit()
         _logger.info("""%s second to post %s stock move account move""" % ((end1 - start), len(self)))
 
@@ -1491,21 +1510,23 @@ class StockMove(models.Model):
         journal_id, acc_src, acc_dest, acc_valuation = self._get_accounting_data_for_valuation()
 
         if self._is_out():
-            credit_line = stock_account_move_line.filtered(lambda x: x.account_id.id == acc_valuation)
+            src_line = stock_account_move_line.filtered(lambda x: x.account_id.id == acc_valuation)
             credit = self.value
-            debit_line = stock_account_move_line - credit_line
+            dest_line = stock_account_move_line - src_line
             if len(stock_account_move_line.mapped('stock_move_id')) == 1:
                 debit = abs(self.value)
             else:
                 debit = abs(self.value) + sum(self.charges_ids.mapped('cost'))
         elif self._is_in():
-            debit_line = stock_account_move_line.filtered(lambda x: x.account_id.id == acc_valuation)
-            credit_line = stock_account_move_line - debit_line
+            dest_line = stock_account_move_line.filtered(lambda x: x.account_id.id == acc_valuation)
+            src_line = stock_account_move_line - dest_line
         elif self._is_scrapped():
-            debit_line = stock_account_move_line.filtered(lambda x: x.account_id.id == acc_src)
-            credit_line = stock_account_move_line - debit_line
+            src_line = stock_account_move_line.filtered(lambda x: x.account_id.id == acc_src)
+            dest_line = stock_account_move_line - src_line
+        else:
+            raise UserError(_('The stock move operation direction %s is unknow.') % self.id)
 
-        return debit_line, credit_line
+        return src_line, dest_line
 
     @api.multi
     def create_charges(self):
@@ -1516,7 +1537,8 @@ class StockMove(models.Model):
         :return: True
         """
         for move in self.filtered(lambda r: r.state == 'done'):
-            move.charges_ids.filtered(lambda r: r.state not in ('done')).unlink()
+            if move.charges_ids:
+                move.charges_ids.filtered(lambda r: r.state not in ('done')).unlink()
 
 
             if move.picking_type_id.code == 'outgoing':
@@ -1538,7 +1560,7 @@ class StockMove(models.Model):
                                 'cost': cost,
                             }])
 
-                    move.update_stock_move_value()
+                    move._update_stock_move_value()
                     move.update_account_entry_move()
 
             return True

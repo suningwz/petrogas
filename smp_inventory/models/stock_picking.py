@@ -131,6 +131,21 @@ class StockPicking(models.Model):
                 pick.action_assign()
 
     @api.multi
+    def update_cost_landing(self):
+        """
+        Mais a jours les charges de vente.
+        :return: None
+        """
+        for r in self:
+            # picking_ids = self.search([]).filtered(lambda r: r.state == 'done')
+            # r.mapped('move_ids_without_package').filtered(lambda x: x.landed_cost_value == 0)._get_landed_cost_value()
+            for move in r.mapped('move_ids_without_package'):
+                if move.charges_ids:
+                    move.landed_cost_value = sum(move.charges_ids.filtered(lambda r: r.account_move_line_ids).mapped('cost'))
+                else:
+                    move.landed_cost_value = 0.0
+
+    @api.multi
     def update_sale_charge_with_regime(self):
         """
         Mais a jours les charges de vente.

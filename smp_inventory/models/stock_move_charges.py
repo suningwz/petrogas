@@ -47,6 +47,7 @@ class StockMoveCharges(models.Model):
 
     # @api.multi
 
+    _sql_constraints = [('check_cost_charge', 'CHECK(cost > 0)', 'Cost is required and must be greater than 0.')]
 
     @api.multi
     @api.depends('stock_move_id')
@@ -73,7 +74,7 @@ class StockMoveCharges(models.Model):
         if not user in group.users:
             raise UserError(_("""You are not allowed to delete stock charges! Please contact your supervisor!"""))
 
-        if self.account_move_line_ids.reconciled:
+        if all(self.mapped('account_move_line_ids.reconciled')):
             raise UserError(_("""Please cancel the reconcilliation before deleting a stock charge."""))
 
         stock_move_id = self.mapped('stock_move_id')
@@ -116,7 +117,7 @@ class StockMoveCharges(models.Model):
                     'rubrique_id': charge.rubrique_id.id,
                     'sale_charge_id': charge.id,
                     'cost': facteur * cost,
-                 }])
+                }])
                 account_move_lines = charge.get_account_move_line(quantity, stock_move_id._is_out(), ref)
                 for line in account_move_lines:
                     line['charge_id'] = charge_id.id
@@ -143,6 +144,7 @@ class StockMoveCharges(models.Model):
             line[0]['charge_id'] = charge.id
             res += [(0, 0, line_vals) for line_vals in line]
         return res
+
 
     def prepare_reclassement_charges_account_move_line(self, quantity,  stock_move_id):
         stock_move_id.ensure_one()
