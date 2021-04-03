@@ -2,6 +2,21 @@
 <odoo>
     <data>
 
+
+
+
+        ------------------ Transport Configuration --------------------------
+        <menuitem id="transport_configuration_menu"
+                  name="Transport Configuration"
+                  parent="stock.menu_stock_config_settings"
+                  sequence="6"/>
+
+        <menuitem id="res_city_view_tree"
+                  name="Cities"
+                  parent="transport_configuration_menu"
+                  action="base_address_city.action_res_city_tree"
+                  sequence="90"/>
+
         ------------------ Stock Picking --------------------------
         <record id="smp_view_picking_form_inherit" model="ir.ui.view">
             <field name="name">smp.view.picking.form.inherit</field>
@@ -9,7 +24,7 @@
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='move_type']" position="after">
+                <xpath expr="//field[@name='origin']" position="after">
                     <field name="transport_type"/>
                     <field name="transportor" attrs="{'invisible': [('transport_type','=',True)]}"/>
                 </xpath>
@@ -64,7 +79,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="transport_picking_type_menu" name="Transport Picking Type" parent="stock.menu_stock_warehouse_mgmt"
+        <menuitem id="transport_picking_type_menu" name="Transport Picking Type" parent="transport_configuration_menu"
           action="transport_picking_type_action" sequence="6"/>
 
         --------------------- Transport Picking ----------------------
@@ -123,9 +138,9 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem id="transport_picking_menu" name="Transport Picking Cost" parent="stock.menu_stock_warehouse_mgmt"
+        <menuitem id="transport_picking_menu" name="Transport Picking Cost" parent="transport_configuration_menu"
                   action="transport_picking_action"
-                  sequence="6"/>
+                  sequence="10"/>
 
                    <!-- Action server -->
         <record id="action_transport_picking_confirm" model="ir.actions.server">
