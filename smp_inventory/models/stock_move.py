@@ -1380,10 +1380,10 @@ class StockMove(models.Model):
             # TODO Identifie pièce comptable
             stock_account_move = move.account_move_ids
             if not stock_account_move:
-                raise UserError(""" Aucune pièce comptable trouvée pour l'opération %s avec l'id %s !!""" % (
+                raise UserError(""" Any account move found for the stock operation %s with th following ID  %s !!""" % (
                 move.reference, move.id))
             if len(stock_account_move) > 1 :
-                raise UserError(""" Plusieurs pièces comptable pour une ligne d'article ont été trouvées avec les ID suivant: %s !!""" % ', '.join([str(id) for id in stock_account_move.ids]))
+                raise UserError(""" Several accounting documents for an article line were found with the following IDs: %s !!""" % ', '.join([str(id) for id in stock_account_move.ids]))
             stock_account_move.ensure_one()
             _logger.debug("""PC: %s""" % stock_account_move.ref)
 
@@ -1474,7 +1474,7 @@ class StockMove(models.Model):
                     stock_account_move.action_post()
                 except:
                     # print(self.mapped('account_move_ids.id'))
-                    raise UserError('Verifier PC avec ID: %s' % stock_account_move.id)
+                    raise UserError('Check Account Move with the following ID: %s' % stock_account_move.id)
         # try:
         #     self.mapped('account_move_ids').action_post()
         # except:

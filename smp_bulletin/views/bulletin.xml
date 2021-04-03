@@ -22,7 +22,7 @@
         <field name="name">bulletin.form</field>
         <field name="model">bulletin.bulletin</field>
         <field name="arch" type="xml">
-            <form string="Bulletin de déclaration en douane " >
+            <form string="Charges Controlling And Invoicing Form" >
                 <header>
                     <button string="Open" type="object" name="open" states="draft" class="oe_highlight" />
                     <button string="Done" type="object" name="done" states="open" class="oe_highlight" confirm="Attention: Vous allez valider définitivent le bulletin!!"/>
@@ -49,7 +49,7 @@
                         <field name="product_qty"/>
                     </group>
                     <notebook>
-                        <page string="Opérations">
+                        <page string="Operations">
                                 <button string="Select stock operations" type="object" name="open_wizard" class="oe_highlight" />
                                 <button string="Recompute Charges" type="object" name="compute_rule_all_bulletin_line" states="open" class="oe_highlight" />
 
@@ -86,7 +86,7 @@
                                 </tree>
                             </field>
                          </page>
-                        <page string="Liste des élements calculés">
+                        <page string="Computed Charges">
 <!--                            <field name="charge_slip_line_ids" context="{'tree_view_ref': 'view_charge_slip_line_tree','form_view_ref': 'view_charge_slip_line_form'}"/>-->
                             <field name="charge_slip_line_ids" context="{'form_view_ref': 'view_charge_slip_line_form'}">
                                 <tree create="false" delete="false" editable="bottom">
@@ -116,7 +116,7 @@
         <field name="name">bulletin.tree</field>
         <field name="model">bulletin.bulletin</field>
         <field name="arch" type="xml">
-            <tree string="Bulletin de déclaration en douane ">
+            <tree string="Charges Controlling And Invoicing Form">
                 <field name="name"/>
                 <field name="date_accounting"/>
                 <field name="product_id"/>
@@ -131,12 +131,12 @@
 
     <act_window
         id="action_bulletin"
-        name="Bulletin de régularisation"
+        name="Charges Controlling And Invoicing"
         res_model="bulletin.bulletin"
         view_mode="tree,form"
     />
 
-    <menuitem id="smp_stock_accounting_charge" name="Audit des charges" parent="smp_bulletin.smp_stock_accounting_menu" sequence="10"/>
+    <menuitem id="smp_stock_accounting_charge" name="Charges Controlling And Invoicing" parent="smp_bulletin.smp_stock_accounting_menu" sequence="10"/>
     <menuitem id="menu_bulletin" name="Bulletin" action="action_bulletin" parent="smp_bulletin.smp_stock_accounting_charge" />
 
         ---------------- Bulletin Line Views  ----------------
@@ -187,7 +187,7 @@
         <field name="name">bulletin.line.tree</field>
         <field name="model">bulletin.line</field>
         <field name="arch" type="xml">
-            <tree string="Lignes de bulletin" create="false" delete="false" edit="false">
+            <tree string="Controled Lines" create="false" delete="false" edit="false">
                 <field name="bulletin_id"/>
                 <field name="product_id"/>
                 <field name="rubrique_id"/>
@@ -204,7 +204,7 @@
 
     <act_window
         id="action_bulletin_line"
-        name="Lignes de bulletin de régularisation"
+        name="Controled Lines"
         res_model="bulletin.line"
         view_mode="tree,form"
     />
@@ -217,7 +217,7 @@
         <field name="name">charge.slip.line.form</field>
         <field name="model">charge.slip.line</field>
         <field name="arch" type="xml">
-            <form string="Ligne de règle recalculé">
+            <form string="Computed Line">
                 <sheet>
                     <group>
                     <field name="bulletin_id"/>
@@ -238,7 +238,7 @@
         <field name="name">charge.slip.line.tree</field>
         <field name="model">charge.slip.line</field>
         <field name="arch" type="xml">
-            <tree string="Ligne de règle recalculé">
+            <tree string="Computed Line">
                 <field name="bulletin_id"/>
                 <field name="bulletin_line_id"/>
                 <field name="charge_rule_id"/>
@@ -258,7 +258,7 @@
                  target="new"
     />
 
-    <menuitem id="menu_charge_slip_line" name="Rubriques Calculées" action="view_charge_slip_line_action" parent="smp_bulletin.smp_stock_accounting_charge" />
+    <menuitem id="menu_charge_slip_line" name="Computed Charges" action="view_charge_slip_line_action" parent="smp_bulletin.smp_stock_accounting_charge" />
 
 
     ---------------- Charge Slip Line Wizard  ----------------
@@ -269,7 +269,7 @@
         <field name="arch" type="xml">
             <form string="_Charge Slip Line - Mandatory Input Entry">
                 <group>
-                    <p><b>Veuillez Saisir les entrée nécessaire à la revalorisation des charges</b></p>
+                    <p><b>Please enter the entries necessary to recompute the charges.</b></p>
                 </group>
 
                 <field name="charge_slip_line_ids">
@@ -305,7 +305,7 @@
         <field name="arch" type="xml">
             <form string="_Stock Move Selection">
                 <group>
-                    <p><b>Veuillez sélectionner les opérations souhaitées!!!</b></p>
+                    <p><b>Select operations to control!!!</b></p>
                 </group>
                 <field name="stock_move_ids" widget="many2many" option='{"no_open": True, "no_create": True, "no_create_edit": True}'>
                     <tree create="1" delete="1"  edit="0" >
@@ -316,7 +316,7 @@
                     </tree>
                 </field>
                 <footer>
-                    <button name="process" string="_Apply" type="object" class="btn-primary"/>
+                    <button name="process" string="Confirm" type="object" class="btn-primary"/>
                     <button string="Cancel" class="btn-default" special="cancel" />
                 </footer>
             </form>

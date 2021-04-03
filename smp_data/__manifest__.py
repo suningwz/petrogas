@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': "smp_data",
+    'name': "Petrogas Company Data",
 
     'summary': """
         Importation des données initiaux pour  Star Oil Gambia:

@@ -1,0 +1,106 @@
+code	name	country_id	city	category_id	property_payment_term_id	default_regime_id	company_type	customer	supplier	property_account_receivable_id/id	property_account_payable_id/id
+1	ABC LOGISTICS	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+2	Adams Agency	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+3	Ahmed Saad	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+4	ALIEU JALLOW CONSTRUCTION	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+5	ALIEU JARJU	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+6	ATRIUM CONSULTING	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+7	AYK LIMITED	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+8	B.B ELECTRICAL CONSTRUCTION CO 11	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+9	BABEL WASTE SERVICE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+10	BALA MUSA MANNEH Transporter	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+11	Banjul City Council	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+12	Batimat	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+13	BLACK HAWK SECURITY SOLUTIONS	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+14	BOLLORE TRANSPORT & LOGISTICS	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+15	BOURGI SPARE PARTS	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+16	BUBACARR JOBARTEH TRANSPORTER	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+17	CAPITAL GAS GAMBIA LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+18	CASC A SEARLE & CO	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+19	CHALLY JATTA	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+20	CLEAN G COMPANY	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+21	Colenzo Grant	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+22	CORE BROADCASTING & MULTIMEDIA	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+23	COSETAM	Gambia	Banjul	IT Equipment	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+24	DAKAR-INDUSTRIE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+25	DAROU MOUSTI METAL WORKSHOP	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+26	DELTA SECURITY COMPANY LIMITED	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+27	DHF	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+28	DIRECTOR OF CUSTOMS AND EXCISE	Gambia	Banjul	ADMINISTRATION	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+29	DJIBI DIALLO	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+30	EBRIMA & SONS	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+31	EBRIMA CEESAY Transporter	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+32	EBRIMA SANYANG	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+33	EURAFRICAINE DINDUSTRIES	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+34	FLEVOTRADING LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+35	FOAM MANUFACTURING & GENERAL ENTERPRISES	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+36	FUTURE TRANSPORT 	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+37	G4S Security Services (Gambia) Ltd.	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+38	Gambia Civil Aviation Authority	Gambia	Banjul	ADMINISTRATION	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+39	GAMBIA ELECTRICAL CO.	Gambia	Banjul	ELECTRIC	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+40	GAMBIA PORTS AUTHORITY	Gambia	Banjul	TELECOM	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+41	GAMBIA RADIO AND TELEVISION SERVICES	Gambia	Banjul	TELECOM	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+42	GAMBIA TELECOMMUNICATION	Gambia	Banjul	TELECOM	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+43	GAMCEL COMPANY LIMITED	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+44	Gampetroleum Storage Facility Limited	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+45	GEOGAS TRADING S.A.	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+46	Geotour Viagens E Turismo, S.A	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+47	GLOBALVINTAF - COMERCIO INTERNATIONAL, LDA	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+48	HOME CHOICE GAMBIA LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+49	IDEAL HOME	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+50	IDEAL TECHNICAL AND CONSTRUCTION CO (ITAC)	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+51	INSPIRON	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+52	JABEL TOURAY TRANSPORT	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+53	JAH OIL COMPANY LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+54	JAPAN AUTO PARTS	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+55	JOBREK	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+56	Kairawan Bridge Oil - Transporter	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+57	KALILU TOURAY	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+58	Kanifing Municipal Council	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+59	KANTEH JULA AUTO WORKSHOP	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+60	Karroum Trading	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+61	KUNTAUR AREA COUNCIL	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+62	Laico Atlantic Hotel	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+63	Lang suwareh & Sons	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+64	LAUNA VACATION AND BRAND TRADING LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+65	M.P. TRADING COMPANY LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+66	M.S. MECHANICAL WORKSHOP	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+67	MADINA TOLMUNAWOR HOUSE OF TECHNICAL WORKSHOP	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+68	MARTIN'S SIGNS AND GRAPHICS	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+69	MAURIA UDYOG LIMITED	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+70	MFH Group	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+71	MICROTECH (GAMBIA)	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+72	MODOU JAMMEH	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+73	MOMODOU JOOF	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+74	Moriba Trawally	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+75	MotionGraphics	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+76	MUSTAPHA NJIE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+77	NARO COMPANY LIMITED	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+78	NATIONAL WATER AND ELECTRICITY COMPANY	Gambia	Banjul	WATER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+79	NETPAGE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+80	OUSAINOU MAHANERA	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+81	OUSMAN SOHNA	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+82	PABOY JATTA	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+83	Papermart-Printmart	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+84	PETROGAS TRANSPORT	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+85	PKF	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+86	Primavera Business Software Solutions	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+87	PRIME STATIONERY LIMITED	Gambia	Banjul	STATIONERY	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+88	QCELL COMPANY  LTDD	Gambia	Banjul	TELECOM	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+89	RIS2048-Sistemas Informáticos e Comunicações, S.A.	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+90	ROYAL INSURANCE GAMBIA LIMITED	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+91	S&P GLOBAL PLATTS	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+92	SAHO DARBOE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+93	SARJO JARJU	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+94	SATGURU TRAVEL & TOURS SERVICE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+95	SHYBEN MADI AND SONS LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+96	SOFEMA	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+97	STAR TEX ENTERPRISE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+98	Structures Ltd	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+99	T.K. Motors	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+100	TAKAFUL GAMBIA LTD	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+101	Thomex Enterprise	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+102	TOUBA AKC ENTERPRISE	Gambia	Banjul	SUPPLIER	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+103	TOUBA MATERIELE PETROBER (TMP SURL)	Gambia	Banjul	IT Equipment	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+104	TRAFIGURA PTE LTD	Gambia	Banjul	Oil Product Supplier	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier
+105	TRUST TRANSPORT COMPANY LTD	Gambia	Banjul	TRANSPORT	Immediate Payment	D.P	company	False	True	l10n_petrogas.coa_supplier	l10n_petrogas.coa_supplier

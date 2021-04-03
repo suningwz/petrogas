@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
 
 {
     'name': "Petrogas Production Data",
@@ -36,6 +35,8 @@
         "data/product.product.csv",
         "data/res.partner.category.csv",
         "data/res.partner.csv",
+        "data/res.city.csv",
+        "data/supplier/res.partner.csv",
     ],
     'installable': True,
     'application': False,

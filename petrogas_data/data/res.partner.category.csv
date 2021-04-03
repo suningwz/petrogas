@@ -17,3 +17,9 @@ partner_cat_supplier_01,Oil Product Supplier,SUPPLIER,True
 partner_cat_supplier_02,Transport Equipement,SUPPLIER,True
 partner_cat_supplier_03,Construction Service,SUPPLIER,True
 partner_cat_supplier_04,IT Equipment,SUPPLIER,True
+partner_cat_supplier_05,TRANSPORT,SUPPLIER,True
+partner_cat_supplier_06,ADMINISTRATION,SUPPLIER,True
+partner_cat_supplier_07,ELECTRIC,SUPPLIER,True
+partner_cat_supplier_08,TELECOM,SUPPLIER,True
+partner_cat_supplier_09,WATER,SUPPLIER,True
+partner_cat_supplier_10,STATIONERY,SUPPLIER,True
