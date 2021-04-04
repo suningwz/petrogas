@@ -136,7 +136,6 @@ class ReportAccountingWizard(models.AbstractModel):
             'print_journal': codes,
         }
 
-
     @api.model
     def _get_report_values(self, docids, data=None):
         if not data.get('form') or not self.env.context.get('active_model'):
@@ -149,8 +148,9 @@ class ReportAccountingWizard(models.AbstractModel):
         tables = []
 
         # generate_full_account_chart = False
-        generate_full_account_chart = docs.report_type == 'general' and docs.summary
-        generate_full_account_chart = False
+
+        generate_full_account_chart = docs.report_type == 'general' and docs.summary and not docs.account_ids and not docs.partner_ids
+        # generate_full_account_chart = False
 
         if generate_full_account_chart:
 
@@ -188,6 +188,7 @@ class ReportAccountingWizard(models.AbstractModel):
                         # df_sub.rename(columns={col: header_table[col] for col in df_sub.columns})
                         tables += [df_sub.to_dict('records')]
                 else:
+
                     df.rename(columns={col: header_table[col] for col in df.columns})
                     tables += [df.to_dict('records')]
 
@@ -196,6 +197,9 @@ class ReportAccountingWizard(models.AbstractModel):
                 for couple in aml_grouped_dict:
                     group = ' & '.join([key + ' == "' + str(couple[key][1]) + '"' for key in group_by])
                     df_sub = df.query(group)
+                    if docs.report_type in ('general', 'partner', 'journal'):
+                        df_sub['cumul'] = df_sub['balance'].expanding().sum()
+                        header_table['cumul'] = _('Cumul')
                     # df_sub.rename(columns={col: header_table[col] for col in df_sub.columns}, inplace=True)
                     tables += [df_sub.to_dict('records')]
 
@@ -203,7 +207,7 @@ class ReportAccountingWizard(models.AbstractModel):
         col_name = header_table.keys()
         header_table = docs._get_header_field_type(header_table)
 
-        print('hjghjg')
+        # print('hjghjg')
         return {
             'doc_ids': docids,
             'doc_model': self.model,

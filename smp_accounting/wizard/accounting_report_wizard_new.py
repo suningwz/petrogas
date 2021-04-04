@@ -279,7 +279,7 @@ class AccountingReportWizard(models.TransientModel):
 
         def get_general_balance(accounting_chart):
             res = {}
-            print(accounting_chart.name, ' **', accounting_chart.child_ids.ids)
+            # print(accounting_chart.name, ' **', accounting_chart.child_ids.ids)
             for child in accounting_chart.child_ids:
                 if child.child_ids and child.user_type_id.type is 'view':
                     res[child.id] = get_general_balance(child)
@@ -423,7 +423,6 @@ class AccountingReportWizard(models.TransientModel):
         # decimals = pd.Series([self.env.user.company_id.currency_id.decimal_places or 2 for c in col_to_round], index=col_to_round)
         df[col_to_round] = df[col_to_round].round(decimals).fillna(0)
         # df[col_to_round] = df[col_to_round].style.format('${0:,.2f}')
-        # del df['id']
         # df.to_excel('/home/disruptsol/Desktop/test.xls')
 
         return header_table, df
@@ -457,6 +456,7 @@ class AccountingReportWizard(models.TransientModel):
         return dff
 
     def sheet_column_format(self, df, header_table, format_table, writer, sheet_name):
+
 
         worksheet = writer.sheets[sheet_name]
         # _header_sheet(worksheet)
@@ -507,6 +507,8 @@ class AccountingReportWizard(models.TransientModel):
 
             if key is 'initial':
                 ht[key] = {'name': _('Initial'), 'type': 'monetary'}
+            elif key is 'cumul':
+                ht[key] = {'name': _('Cumul'), 'type': 'monetary'}
             elif fields_dict.get(key, False):
                 ht[key] = {'name': ht[key], 'type': fields_dict[key]['type']}
             else:
@@ -605,6 +607,13 @@ class AccountingReportWizard(models.TransientModel):
             for couple in aml_grouped_dict:
                 group = ' & '.join([key + ' == "' + str(couple[key][1]) + '"' for key in group_by])
                 df_sub = df.query(group)
+                del df_sub['id']
+                if self.report_type in ('general','partner','journal'):
+                    df_sub['cumul'] = df_sub['balance'].expanding().sum()
+                    header_table['cumul'] = {'name': _('Cumul'), 'type': 'monetary'}
+
+                # df_sub['cumul'] = df_sub['balance'].shift(1)
+                # df_sub['cumul'] = df_sub['cumul'] + df_sub['balance']
                 row = self.print_excel_dataframe(df_sub, header_table, writer, row, col, sheet_name)
             worksheet = writer.sheets[sheet_name]
             _header_sheet(worksheet)

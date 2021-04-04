@@ -190,7 +190,7 @@
 
                                 <td t-foreach="col_name" t-as="col">
 
-                                    <t t-if="col not in ['initial', 'debit', 'credit', 'balance']"><span><t t-esc="row[col]"/></span></t>
+                                    <t t-if="col not in ['initial', 'debit', 'credit', 'balance','cumul']"><span><t t-esc="row[col]"/></span></t>
                                     <t t-if="col == 'initial'">
                                         <span  style="text-align: right;"><t t-esc="row[col]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
                                         <t t-set="total_initial" t-value="total_initial + row[col]"/>
@@ -207,6 +207,10 @@
                                         <span  style="text-align: right;"><t t-esc="row[col]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
                                         <t t-set="total_balance" t-value="total_balance + row[col]"/>
                                     </t>
+                                    <t t-if="col == 'cumul'">
+                                        <span  style="text-align: right;"><t t-esc="row[col]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                    </t>
+
 
                                 </td>
 
@@ -236,7 +240,7 @@
 
 <!--            <script type="text/javascript" src="/smp_accounting/static/src/js/accounting_report_widget.js"/>-->
 
-          <link type="text/css" rel="stylesheet" href="/smp_accounting/static/src/css/smp_accounting_report.css"/>
+<!--          <link type="text/css" rel="stylesheet" href="/smp_accounting/static/src/css/smp_accounting_report.css"/>-->
 
 
             </t>

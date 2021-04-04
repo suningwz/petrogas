@@ -13,7 +13,7 @@ from odoo.tools import safe_eval
 from dateutil.relativedelta import relativedelta
 
 
-    
+
 
 class AccountAccount(models.Model):
     _inherit = "account.account"
@@ -90,7 +90,7 @@ class AccountAccount(models.Model):
             date_from = fiscalyear_id.date_from
             date_to = fiscalyear_id.date_to
         child_ids = self.child_ids
-        print('child_id: ', self.child_ids.ids)
+        # print('child_id: ', self.child_ids.ids)
         if self.user_type_id.type == 'view':
             if self.child_ids:
                 profondeur += 1
@@ -201,10 +201,33 @@ class AccountAccount(models.Model):
                 t1_initial_balance = t1_initial_balance_dict[0]['balance']
         else:
             previous_fiscayear_id = fiscalyear_id.find(fiscalyear_id.date_from - relativedelta(days=-1))
-            previous_fy_opening_balance = self.get_opening_value(previous_fiscayear_id)
+            # previous_fy_opening_balance = self.get_opening_value(previous_fiscayear_id)
             previous_fy_debit, previous_fy_credit = self.get_accounting_debit_credit_value(previous_fiscayear_id.date_from, previous_fiscayear_id.date_to)
 
-            t1_initial_balance = previous_fy_opening_balance + previous_fy_debit - previous_fy_credit
+            t1_initial_balance = previous_fy_debit - previous_fy_credit
+            # t1_initial_balance = previous_fy_opening_balance + previous_fy_debit - previous_fy_credit
+
+        return t1_initial_balance
+
+    @api.multi
+    def get_fiscal_year_opening_value_new(self, date_from, group_by=['account_id'], domain=[]):
+        fiscalyear_id = self.env['account.fiscal.year'].find(date_from)
+        opening_move_ids = fiscalyear_id.opening_move_ids
+        t1_initial_balance = 0
+        # if opening_move_ids:
+        t1_domain = domain + [('account_id', '=', self.id), ('journal_id', '=', fiscalyear_id.opening_journal_id.id)]
+        t1_initial_balance_dict = self.env['account.move.line'].read_group(domain=t1_domain, fields=['balance'],
+                                                                           groupby=group_by, lazy=False)
+        if t1_initial_balance_dict:
+            assert len(t1_initial_balance_dict) == 1
+            t1_initial_balance = t1_initial_balance_dict[0]['balance']
+        # else:
+        #     previous_fiscayear_id = fiscalyear_id.find(fiscalyear_id.date_from - relativedelta(days=-1))
+        #     # previous_fy_opening_balance = self.get_opening_value(previous_fiscayear_id)
+        #     previous_fy_debit, previous_fy_credit = self.get_accounting_debit_credit_value(previous_fiscayear_id.date_from, previous_fiscayear_id.date_to)
+        #
+        #     t1_initial_balance = previous_fy_debit - previous_fy_credit
+        #     # t1_initial_balance = previous_fy_opening_balance + previous_fy_debit - previous_fy_credit
 
         return t1_initial_balance
 
@@ -217,7 +240,8 @@ class AccountAccount(models.Model):
 
 
         # report à nouveau au début de l'année N
-        t1_initial_balance = self.get_fiscal_year_opening_value(date_from, domain=domain)
+        # t1_initial_balance = self.get_fiscal_year_opening_value(date_from, domain=domain)
+        t1_initial_balance = self.get_fiscal_year_opening_value_new(date_from, domain=domain)
 
         t2_debit, t2_credit = 0, 0
         if date_from != fiscalyear_id.date_from:
@@ -262,10 +286,17 @@ class AccountMove(models.Model):
                 code = ', '.join(move_ids.mapped('account_id').mapped('code'))
                 raise UserError(_("""Please enter a partner name for the following accounts: %s""") % (code))
 
+    def _check_account_type(self):
+       if 'view' in self.mapped('line_ids.account_id.user_type_id.type'):
+            raise UserError(_("""You cannot use a view type account"""))
+
+
 
     @api.multi
     def post(self, invoice=False):
         self._check_partner()
+        self._check_account_type()
+
         res = super(AccountMove,self).post(invoice)
 
 
