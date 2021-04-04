@@ -18,6 +18,12 @@
         <field name="location_id">WH</field>
     </record>
 
+    <record id="smh_gas_warehouse" model="stock.location">
+        <field name="name">LPG Warehouse</field>
+        <field name="code">LPGWH</field>
+        <field name="usage">internal</field>
+        <field name="location_id">WH</field>
+    </record>
 
     <record id="smp_transit" model="stock.location">
         <field name="name">Inter-depot Transit deposit</field>

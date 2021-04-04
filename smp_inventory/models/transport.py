@@ -152,7 +152,7 @@ class StockMoveCharges(models.Model):
         provision_aml = {
             'name': self.rubrique_id.name,
             'ref': ref + ' / ' + self.rubrique_id.name,
-            # 'partner_id': self.partner_id.id if self.partner_id else None,
+            'partner_id': self.partner_id.id if self.partner_id else None,
             'product_id': self.product_id.id,
             'quantity': self.product_qty,
             'product_uom_id': self.product_id.uom_id.id,
