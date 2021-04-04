@@ -19,7 +19,7 @@ class PurchaseOrder(models.Model):
         'cancel': [('readonly', True)],
     }
 
-    credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire', states=READONLY_STATES)
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit', states=READONLY_STATES)
     location_dest_id = fields.Many2one('stock.location', 'Location',
                                        domain=[('usage', '=', 'internal')], states=READONLY_STATES)
 
@@ -119,7 +119,7 @@ class PurchaseOrder(models.Model):
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
 
-    credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire', related='order_id.credoc_id')
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit', related='order_id.credoc_id')
 
     # @api.model
     # def create(self, values):

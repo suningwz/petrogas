@@ -16,7 +16,7 @@ READONLY_STATES = {
 
 class CredocConfiguration(models.Model):
     _name = 'credoc.configuration'
-    _description = "Configuration de la gestion de crédit documentaire"
+    _description = "Configuration de la gestion de Letter Credit"
 
     commission_account = fields.Many2one('account.account', 'Compte de commission')
     deposit_account = fields.Many2one('account.account', 'Compte de déposit')
@@ -61,35 +61,35 @@ class CredocCredoc(models.Model):
     currency_id = fields.Many2one('res.currency', string='Devise', readonly=True)
     opening_currency_rate = fields.Float(' Commission Currency rate', digits=(12, 6), default=1.0)
     opening_currency_rate_visible = fields.Boolean('Commission currency rate visible')
-    amount_credoc = fields.Monetary('Montant de la ligne de crédit', currency_field='currency_id', states=READONLY_STATES)
-    number_credoc = fields.Char("Numéro du crédit documentaire", states=READONLY_STATES, required=True)
-    code_domiciliation = fields.Char("Code de domiciliation", states=READONLY_STATES, required=True)
-    bank_id = fields.Many2one('account.journal', 'Banque', domain=[('type', '=', 'bank')], states=READONLY_STATES, required=True)
-    partner_id = fields.Many2one('res.partner', 'Fournisseur', states=READONLY_STATES, domain=[('supplier', '=', True)],
+    amount_credoc = fields.Monetary('Credit Letter Amount', currency_field='currency_id', states=READONLY_STATES)
+    number_credoc = fields.Char("Credit Letter Number", states=READONLY_STATES, required=True)
+    code_domiciliation = fields.Char("Bank domicile code", states=READONLY_STATES, required=True)
+    bank_id = fields.Many2one('account.journal', 'Bank', domain=[('type', '=', 'bank')], states=READONLY_STATES, required=True)
+    partner_id = fields.Many2one('res.partner', 'Supplier', states=READONLY_STATES, domain=[('supplier', '=', True)],
                                  required=True)
-    date_start = fields.Date("Date d'ouvertue", states=READONLY_STATES, default=fields.Date.today())
-    payment_term = fields.Many2one('account.payment.term', 'Délai de de réglement', states=READONLY_STATES,
+    date_start = fields.Date("Openning Date", states=READONLY_STATES, default=fields.Date.today())
+    payment_term = fields.Many2one('account.payment.term', 'Payment term', states=READONLY_STATES,
                                        required=True)
-    date_due = fields.Date("Date d'échéance", compute='_compute_date_due', readonly=True)
-    deposit_percentage = fields.Percent('Déposit en %', states=READONLY_STATES, required=True)
-    amount_deposit = fields.Monetary('Montant du déposit', compute='_get_deposit_amount', currency_field='currency_id', readonly=True)
+    date_due = fields.Date("Due Date", compute='_compute_date_due', readonly=True)
+    deposit_percentage = fields.Percent('Déposit in %', states=READONLY_STATES, required=True)
+    amount_deposit = fields.Monetary('Deposit Amount', compute='_get_deposit_amount', currency_field='currency_id', readonly=True)
 
-    company_currency_id = fields.Many2one('res.currency', string='Devise Locale', readonly=True, )
-    commission = fields.Monetary("Commision d'ouverture", currency_field='company_currency_id', states=READONLY_STATES, required=True)
+    company_currency_id = fields.Many2one('res.currency', string='Company Currency', readonly=True, )
+    commission = fields.Monetary("Commission", currency_field='company_currency_id', states=READONLY_STATES, required=True)
     commission_move_id = fields.Many2one('account.move', "Commission Account Move")
 
     state = fields.Selection([('draft', 'Draft'), ('open', 'En Cours'), ('closed', 'Fermé'), ('cancel', 'Annulé')],
-                              string="Statut", default='draft')
+                              string="Status", default='draft')
     deposit_ids = fields.One2many('credoc.deposit', 'credoc_id', 'Deposit')
 
     order_ids = fields.One2many('purchase.order.line', 'credoc_id', 'Commandes')
-    ordered_amount = fields.Monetary('Montant Des Commandes', currency_field='currency_id', compute='_get_ordered_amount')
+    ordered_amount = fields.Monetary('Orders Amount', currency_field='currency_id', compute='_get_ordered_amount')
 
-    stock_move_ids = fields.One2many('stock.move', 'credoc_id', 'Articles reçus')
+    stock_move_ids = fields.One2many('stock.move', 'credoc_id', 'Product Received')
 
     # TODO: domaine pour invoice lineids
-    invoice_ids = fields.One2many('account.invoice.line', 'credoc_id', 'Articles Facturés', domain=[('state', 'not in', ['draft', 'cancel'])])
-    invoiced_amount = fields.Monetary('Montant Des Factures', currency_field='currency_id', compute='_get_invoiced_amount')
+    invoice_ids = fields.One2many('account.invoice.line', 'credoc_id', 'Product Invoiced', domain=[('state', 'not in', ['draft', 'cancel'])])
+    invoiced_amount = fields.Monetary('Invoiced Amount', currency_field='currency_id', compute='_get_invoiced_amount')
 
     # payment_ids = fields.Many2many('account.payment', string='Payments', related='invoice_ids.invoice_id.payment_ids')
     payment_ids = fields.Many2many('account.payment', string='Payments', compute='_get_payment_ids')
@@ -304,7 +304,7 @@ class CredocDeposit(models.Model):
     _description = "Gestion des déposits"
 
     deposit_date = fields.Date('Date', required=True)
-    credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire', required=True)
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit', required=True)
     move_id = fields.Many2one('account.move', 'Pièce comptable')
     currency_id = fields.Many2one('res.currency', 'Devise', readonly=True)
     amount_credoc = fields.Monetary('Montant Crédit', currency_field='currency_id', required=True)
@@ -541,7 +541,7 @@ class CredocAdjustment(models.TransientModel):
     _description = "Interface d'ajustement de crédit"
 
     date_start = fields.Date(string='Date', required=True, help="""Accounting date""")
-    credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire', required=True, readonly=True)
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit', required=True, readonly=True)
 
     currency_id = fields.Many2one('res.currency', 'Devise', related='credoc_id.currency_id', readonly=True)
     currency_rate = fields.Float('Currency rate', digits=(12, 6), default=1.0)

@@ -14,7 +14,7 @@ from datetime import timedelta, date
 class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
-    credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire')
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit')
 
     @api.multi
     def set_hide_credo(self):
@@ -37,5 +37,5 @@ class AccountInvoice(models.Model):
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
 
-    credoc_id = fields.Many2one('credoc.credoc', 'Documentary Credoc', related='invoice_id.credoc_id')
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit', related='invoice_id.credoc_id')
     state = fields.Selection(related='invoice_id.state',string='state')

@@ -13,10 +13,10 @@ READONLY_STATES = {
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
-    credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire')
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit')
 
 
 class StockMove(models.Model):
     _inherit = 'stock.move'
 
-    credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire', related='picking_id.credoc_id')
+    credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit', related='picking_id.credoc_id')
