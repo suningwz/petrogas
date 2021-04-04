@@ -7,6 +7,7 @@
             <field name="name">Inventory</field>
             <field name="code">product.inventory</field>
             <field name="prefix">INV/</field>
+            <field name="suffix">/%(year)s</field>
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field name="padding">6</field>
@@ -16,6 +17,7 @@
             <field name="name">Reclassement</field>
             <field name="code">product.reclassement</field>
             <field name="prefix">REC/</field>
+            <field name="suffix">/%(year)s</field>
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field name="padding">6</field>
@@ -44,6 +46,7 @@
             <field name="name">Transferts</field>
             <field name="code">internal.picking</field>
             <field name="prefix">TI/</field>
+            <field name="suffix">/%(year)s</field>
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field name="padding">6</field>
@@ -52,7 +55,7 @@
         <record id="seq_internal_picking_out" model="ir.sequence">
             <field name="name">Outgoing Transferts</field>
             <field name="code">internal.picking.out</field>
-            <field name="prefix">INT-OUT/</field>
+            <field name="prefix">INT/OUT/</field>
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field name="padding">6</field>
@@ -79,7 +82,8 @@
         <record id="seq_smp_picking_in" model="ir.sequence">
             <field name="name">Receipt</field>
             <field name="code">smp.picking.in</field>
-            <field name="prefix">RC/</field>
+            <field name="prefix">RO/</field>
+            <field name="suffix">/%(year)s</field>
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field name="padding">6</field>
@@ -88,7 +92,8 @@
         <record id="seq_smp_picking_out" model="ir.sequence">
             <field name="name">Delivery</field>
             <field name="code">smp.picking.out</field>
-            <field name="prefix">DL/</field>
+            <field name="prefix">DO/</field>
+            <field name="suffix">/%(year)s</field>
             <field eval="1" name="number_next"/>
             <field eval="1" name="number_increment"/>
             <field name="padding">6</field>

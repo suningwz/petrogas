@@ -4,11 +4,18 @@
 
 
     ------------------ Location  ---------------
-    <record id="smh_mepp_nouakchott" model="stock.location">
+    <record id="stock.stock_location_stock" model="stock.location">
         <field name="name">GAM PETROLEUM</field>
-        <field name="code">SOTGAMPET</field>
+        <field name="code">GAMPET</field>
         <field name="usage">internal</field>
-        <field name="location_id" ref="stock.warehouse0"/>
+        <field name="location_id">WH</field>
+    </record>
+
+    <record id="smh_banjul_airport" model="stock.location">
+        <field name="name">Banjul Airport</field>
+        <field name="code">AIRPORT</field>
+        <field name="usage">internal</field>
+        <field name="location_id">WH</field>
     </record>
 
 
