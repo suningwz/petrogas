@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="my_config_settings" model="res.config.settings">
+    <data noupdate="1">
 
-        <!--        Génral -->
-        <field name="digest_emails" eval="False"/>
-<!--        <field name="auth_signup_uninvited">b2b</field>-->
-<!--        <field name="module_partner_autocomplete" eval="False"/>-->
-<!--        <field name="module_web_unsplash" eval="False"/>-->
+        <record id="my_config_settings" model="res.config.settings">
 
-        <!--        Inventaire -->
+            <!--        Génral -->
+            <field name="digest_emails" eval="False"/>
+            <!--        <field name="auth_signup_uninvited">b2b</field>-->
+            <!--        <field name="module_partner_autocomplete" eval="False"/>-->
+            <!--        <field name="module_web_unsplash" eval="False"/>-->
 
-        <field name="group_uom" eval="True"/>
-        <field name="group_stock_multi_warehouses" eval="True"/>
-        <field name="group_stock_multi_locations" eval="True"/>
-        <field name="module_stock_landed_costs" eval="False"/>
+            <!--        Inventaire -->
 
-        <!--        Vente -->
-        <field name="use_sale_note" eval="False"/>
-        <field name="multi_sales_price" eval="True"/>
-        <field name="multi_sales_price_method">formula</field>
-        <field name="module_delivery"  eval="False"/>
+            <field name="group_uom" eval="True"/>
+            <field name="group_stock_multi_warehouses" eval="True"/>
+            <field name="group_stock_multi_locations" eval="True"/>
+            <field name="module_stock_landed_costs" eval="False"/>
 
-        <!--        facturation -->
-        <field name="group_multi_currency" eval="True"/>
-        <field name="group_analytic_accounting" eval="False"/>
-        <field name="group_analytic_tags"  eval="False"/>
+            <!--        Vente -->
+            <field name="use_sale_note" eval="False"/>
+            <field name="multi_sales_price" eval="True"/>
+            <field name="multi_sales_price_method">formula</field>
+            <field name="module_delivery"  eval="False"/>
 
-        <!--        Général -->
-        <field name="user_default_rights" eval="True"/>
+            <!--        facturation -->
+            <field name="group_multi_currency" eval="True"/>
+            <field name="group_analytic_accounting" eval="False"/>
+            <field name="group_analytic_tags"  eval="False"/>
 
-    </record>
+            <!--        Général -->
+            <field name="user_default_rights" eval="True"/>
 
-    <function model="res.config.settings" name="execute">
-        <value model="res.config.settings"
-               search="[('id', '=', ref('my_config_settings'))]"/>
-    </function>
+        </record>
+
+        <function model="res.config.settings" name="execute">
+            <value model="res.config.settings"
+                   search="[('id', '=', ref('my_config_settings'))]"/>
+        </function>
+    </data>
 </odoo>

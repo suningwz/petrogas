@@ -55,10 +55,10 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">Mettre à jour la limite de crédit d'un client.</p>
+            <p class="o_view_nocontent_smiling_face">Update customer credit limit.</p>
         </field>
     </record>
 
-    <menuitem id="sale_dma_menu" name="Découvert Client" parent="smp_regime_douanier.sale_charges_configuration_menu" action="sale_dma_action"/>
+    <menuitem id="sale_dma_menu" name="Customer Credit Limit" parent="smp_regime_douanier.sale_charges_configuration_menu" action="sale_dma_action"/>
 
 </odoo>
