@@ -20,7 +20,7 @@ class PurchaseOrder(models.Model):
     }
 
     credoc_id = fields.Many2one('credoc.credoc', 'Crédit Documentaire', states=READONLY_STATES)
-    location_dest_id = fields.Many2one('stock.location', 'Entrepôt de destination',
+    location_dest_id = fields.Many2one('stock.location', 'Location',
                                        domain=[('usage', '=', 'internal')], states=READONLY_STATES)
 
 
