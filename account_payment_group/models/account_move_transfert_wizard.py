@@ -35,7 +35,7 @@ class AccountMoveTransfertWizard(models.TransientModel):
         account_move_line_ids = self.env['account.move.line'].search([('journal_id', '=', journal.id),
                                                                       ('account_id', 'in', account_ids.ids),
                                                                       ('full_reconcile_id', '=', None)],
-                                                                     limit=6, order="date desc")
+                                                                     limit=0, order="date desc")
 
         if account_move_line_ids:
             self.account_move_line_ids = [(4, x.id) for x in account_move_line_ids]
