@@ -37,6 +37,8 @@
         "data/res.partner.csv",
         "data/res.city.csv",
         "data/supplier/res.partner.csv",
+        "data/transport.picking.type",
+        "data/transport.picking",
     ],
     'installable': True,
     'application': False,

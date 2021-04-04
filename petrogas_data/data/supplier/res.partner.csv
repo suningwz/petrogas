@@ -1,106 +1,106 @@
-"code","name","country_id","city","category_id","property_payment_term_id","default_regime_id","company_type","customer","supplier","property_account_receivable_id/id","property_account_payable_id/id"
-2000,"ABC LOGISTICS","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2001,"Adams Agency","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2002,"Ahmed Saad","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2003,"ALIEU JALLOW CONSTRUCTION","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2004,"ALIEU JARJU","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2005,"ATRIUM CONSULTING","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2006,"AYK LIMITED","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2007,"B.B ELECTRICAL CONSTRUCTION CO 11","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2008,"BABEL WASTE SERVICE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2009,"BALA MUSA MANNEH Transporter","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2010,"Banjul City Council","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2011,"Batimat","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2012,"BLACK HAWK SECURITY SOLUTIONS","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2013,"BOLLORE TRANSPORT & LOGISTICS","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2014,"BOURGI SPARE PARTS","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2015,"BUBACARR JOBARTEH TRANSPORTER","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2016,"CAPITAL GAS GAMBIA LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2017,"CASC A SEARLE & CO","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2018,"CHALLY JATTA","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2019,"CLEAN G COMPANY","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2020,"Colenzo Grant","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2021,"CORE BROADCASTING & MULTIMEDIA","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2022,"COSETAM","Gambia","Banjul","IT Equipment","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2023,"DAKAR-INDUSTRIE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2024,"DAROU MOUSTI METAL WORKSHOP","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2025,"DELTA SECURITY COMPANY LIMITED","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2026,"DHF","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2027,"DIRECTOR OF CUSTOMS AND EXCISE","Gambia","Banjul","ADMINISTRATION","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2028,"DJIBI DIALLO","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2029,"EBRIMA & SONS","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2030,"EBRIMA CEESAY Transporter","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2031,"EBRIMA SANYANG","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2032,"EURAFRICAINE DINDUSTRIES","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2033,"FLEVOTRADING LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2034,"FOAM MANUFACTURING & GENERAL ENTERPRISES","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2035,"FUTURE TRANSPORT ","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2036,"G4S Security Services (Gambia) Ltd.","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2037,"Gambia Civil Aviation Authority","Gambia","Banjul","ADMINISTRATION","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2038,"GAMBIA ELECTRICAL CO.","Gambia","Banjul","ELECTRIC","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2039,"GAMBIA PORTS AUTHORITY","Gambia","Banjul","TELECOM","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2040,"GAMBIA RADIO AND TELEVISION SERVICES","Gambia","Banjul","TELECOM","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2041,"GAMBIA TELECOMMUNICATION","Gambia","Banjul","TELECOM","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2042,"GAMCEL COMPANY LIMITED","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2043,"Gampetroleum Storage Facility Limited","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2044,"GEOGAS TRADING S.A.","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2045,"Geotour Viagens E Turismo, S.A","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2046,"GLOBALVINTAF - COMERCIO INTERNATIONAL, LDA","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2047,"HOME CHOICE GAMBIA LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2048,"IDEAL HOME","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2049,"IDEAL TECHNICAL AND CONSTRUCTION CO (ITAC)","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2050,"INSPIRON","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2051,"JABEL TOURAY TRANSPORT","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2052,"JAH OIL COMPANY LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2053,"JAPAN AUTO PARTS","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2054,"JOBREK","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2055,"Kairawan Bridge Oil - Transporter","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2056,"KALILU TOURAY","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2057,"Kanifing Municipal Council","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2058,"KANTEH JULA AUTO WORKSHOP","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2059,"Karroum Trading","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2060,"KUNTAUR AREA COUNCIL","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2061,"Laico Atlantic Hotel","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2062,"Lang suwareh & Sons","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2063,"LAUNA VACATION AND BRAND TRADING LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2064,"M.P. TRADING COMPANY LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2065,"M.S. MECHANICAL WORKSHOP","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2066,"MADINA TOLMUNAWOR HOUSE OF TECHNICAL WORKSHOP","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2067,"MARTIN'S SIGNS AND GRAPHICS","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2068,"MAURIA UDYOG LIMITED","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2069,"MFH Group","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2070,"MICROTECH (GAMBIA)","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2071,"MODOU JAMMEH","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2072,"MOMODOU JOOF","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2073,"Moriba Trawally","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2074,"MotionGraphics","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2075,"MUSTAPHA NJIE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2076,"NARO COMPANY LIMITED","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2077,"NATIONAL WATER AND ELECTRICITY COMPANY","Gambia","Banjul","WATER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2078,"NETPAGE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2079,"OUSAINOU MAHANERA","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2080,"OUSMAN SOHNA","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2081,"PABOY JATTA","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2082,"Papermart-Printmart","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2083,"PETROGAS TRANSPORT","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2084,"PKF","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2085,"Primavera Business Software Solutions","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2086,"PRIME STATIONERY LIMITED","Gambia","Banjul","STATIONERY","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2087,"QCELL COMPANY  LTDD","Gambia","Banjul","TELECOM","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2088,"RIS2048-Sistemas Informáticos e Comunicações, S.A.","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2089,"ROYAL INSURANCE GAMBIA LIMITED","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2090,"S&P GLOBAL PLATTS","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2091,"SAHO DARBOE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2092,"SARJO JARJU","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2093,"SATGURU TRAVEL & TOURS SERVICE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2094,"SHYBEN MADI AND SONS LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2095,"SOFEMA","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2096,"STAR TEX ENTERPRISE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2097,"Structures Ltd","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2098,"T.K. Motors","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2099,"TAKAFUL GAMBIA LTD","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2100,"Thomex Enterprise","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2101,"TOUBA AKC ENTERPRISE","Gambia","Banjul","SUPPLIER","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2102,"TOUBA MATERIELE PETROBER (TMP SURL)","Gambia","Banjul","IT Equipment","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2103,"TRAFIGURA PTE LTD","Gambia","Banjul","Oil Product Supplier","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
-2104,"TRUST TRANSPORT COMPANY LTD","Gambia","Banjul","TRANSPORT","Immediate Payment","D.P","company","False","True","l10n_petrogas.coa_supplier","l10n_petrogas.coa_supplier"
+code,name,country_id,city_id,category_id,property_payment_term_id,default_regime_id,company_type,customer,supplier,property_account_receivable_id/id,property_account_payable_id/id
+2000,ABC LOGISTICS,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2001,Adams Agency,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2002,Ahmed Saad,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2003,ALIEU JALLOW CONSTRUCTION,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2004,ALIEU JARJU,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2005,ATRIUM CONSULTING,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2006,AYK LIMITED,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2007,B.B ELECTRICAL CONSTRUCTION CO 11,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2008,BABEL WASTE SERVICE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2009,BALA MUSA MANNEH Transporter,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2010,Banjul City Council,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2011,Batimat,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2012,BLACK HAWK SECURITY SOLUTIONS,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2013,BOLLORE TRANSPORT & LOGISTICS,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2014,BOURGI SPARE PARTS,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2015,BUBACARR JOBARTEH TRANSPORTER,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2016,CAPITAL GAS GAMBIA LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2017,CASC A SEARLE & CO,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2018,CHALLY JATTA,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2019,CLEAN G COMPANY,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2020,Colenzo Grant,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2021,CORE BROADCASTING & MULTIMEDIA,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2022,COSETAM,Gambia,Banjul,IT Equipment,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2023,DAKAR-INDUSTRIE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2024,DAROU MOUSTI METAL WORKSHOP,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2025,DELTA SECURITY COMPANY LIMITED,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2026,DHF,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2027,DIRECTOR OF CUSTOMS AND EXCISE,Gambia,Banjul,ADMINISTRATION,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2028,DJIBI DIALLO,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2029,EBRIMA & SONS,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2030,EBRIMA CEESAY Transporter,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2031,EBRIMA SANYANG,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2032,EURAFRICAINE DINDUSTRIES,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2033,FLEVOTRADING LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2034,FOAM MANUFACTURING & GENERAL ENTERPRISES,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2035,FUTURE TRANSPORT ,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2036,G4S Security Services (Gambia) Ltd.,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2037,Gambia Civil Aviation Authority,Gambia,Banjul,ADMINISTRATION,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2038,GAMBIA ELECTRICAL CO.,Gambia,Banjul,ELECTRIC,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2039,GAMBIA PORTS AUTHORITY,Gambia,Banjul,TELECOM,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2040,GAMBIA RADIO AND TELEVISION SERVICES,Gambia,Banjul,TELECOM,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2041,GAMBIA TELECOMMUNICATION,Gambia,Banjul,TELECOM,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2042,GAMCEL COMPANY LIMITED,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2043,Gampetroleum Storage Facility Limited,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2044,GEOGAS TRADING S.A.,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2045,"Geotour Viagens E Turismo, S.A",Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2046,"GLOBALVINTAF - COMERCIO INTERNATIONAL, LDA",Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2047,HOME CHOICE GAMBIA LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2048,IDEAL HOME,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2049,IDEAL TECHNICAL AND CONSTRUCTION CO (ITAC),Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2050,INSPIRON,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2051,JABEL TOURAY TRANSPORT,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2052,JAH OIL COMPANY LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2053,JAPAN AUTO PARTS,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2054,JOBREK,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2055,Kairawan Bridge Oil - Transporter,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2056,KALILU TOURAY,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2057,Kanifing Municipal Council,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2058,KANTEH JULA AUTO WORKSHOP,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2059,Karroum Trading,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2060,KUNTAUR AREA COUNCIL,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2061,Laico Atlantic Hotel,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2062,Lang suwareh & Sons,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2063,LAUNA VACATION AND BRAND TRADING LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2064,M.P. TRADING COMPANY LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2065,M.S. MECHANICAL WORKSHOP,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2066,MADINA TOLMUNAWOR HOUSE OF TECHNICAL WORKSHOP,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2067,MARTIN'S SIGNS AND GRAPHICS,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2068,MAURIA UDYOG LIMITED,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2069,MFH Group,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2070,MICROTECH (GAMBIA),Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2071,MODOU JAMMEH,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2072,MOMODOU JOOF,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2073,Moriba Trawally,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2074,MotionGraphics,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2075,MUSTAPHA NJIE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2076,NARO COMPANY LIMITED,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2077,NATIONAL WATER AND ELECTRICITY COMPANY,Gambia,Banjul,WATER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2078,NETPAGE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2079,OUSAINOU MAHANERA,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2080,OUSMAN SOHNA,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2081,PABOY JATTA,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2082,Papermart-Printmart,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2083,PETROGAS TRANSPORT,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2084,PKF,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2085,Primavera Business Software Solutions,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2086,PRIME STATIONERY LIMITED,Gambia,Banjul,STATIONERY,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2087,QCELL COMPANY  LTDD,Gambia,Banjul,TELECOM,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2088,"RIS2048-Sistemas Informáticos e Comunicações, S.A.",Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2089,ROYAL INSURANCE GAMBIA LIMITED,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2090,S&P GLOBAL PLATTS,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2091,SAHO DARBOE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2092,SARJO JARJU,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2093,SATGURU TRAVEL & TOURS SERVICE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2094,SHYBEN MADI AND SONS LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2095,SOFEMA,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2096,STAR TEX ENTERPRISE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2097,Structures Ltd,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2098,T.K. Motors,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2099,TAKAFUL GAMBIA LTD,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2100,Thomex Enterprise,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2101,TOUBA AKC ENTERPRISE,Gambia,Banjul,SUPPLIER,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2102,TOUBA MATERIELE PETROBER (TMP SURL),Gambia,Banjul,IT Equipment,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2103,TRAFIGURA PTE LTD,Gambia,Banjul,Oil Product Supplier,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier
+2104,TRUST TRANSPORT COMPANY LTD,Gambia,Banjul,TRANSPORT,Immediate Payment,D.P,company,False,True,l10n_petrogas.coa_supplier,l10n_petrogas.coa_supplier

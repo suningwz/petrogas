@@ -1,6 +1,6 @@
 code,name,type,default_debit_account_id/id,default_credit_account_id/id
-SAL,Journal des salaires,general,,
-RAN,Carried Forward,general,,
+SAL,Salary,general,,
+RAN,Carried Forward,open,,
 GTB01,Guaranty Trust Bank (GTB GMD),bank,l10n_petrogas.petrogas_coa_191001,l10n_petrogas.petrogas_coa_191001
 ECO01,ECOBANK GAMBIA LTD,bank,l10n_petrogas.petrogas_coa_191002,l10n_petrogas.petrogas_coa_191002
 ZEN01,ZENITH BANK (GAMBIA) LTD - PETROGAS,bank,l10n_petrogas.petrogas_coa_191003,l10n_petrogas.petrogas_coa_191003
