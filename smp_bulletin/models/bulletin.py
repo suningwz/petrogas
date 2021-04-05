@@ -96,7 +96,7 @@ class BulletinBulletin(models.Model):
         stock_move_ids = stock_move_charge_ids.mapped('stock_move_id')
 
         """ Maj à jours des champs value et des PC"""
-        stock_move_ids.update_stock_move_value()
+        stock_move_ids._update_stock_move_value()
         stock_move_ids.update_account_entry_move()
 
         # TODO Créer Facture

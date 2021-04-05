@@ -169,8 +169,6 @@ class Inventory(models.Model):
         return True
 
 
-
-
 class InventoryLine(models.Model):
     _inherit = "stock.inventory.line"
 

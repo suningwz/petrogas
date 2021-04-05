@@ -6,7 +6,7 @@
         <field name="name">Transfert Inter Dépôt</field>
         <field name="model">internal.picking</field>
         <field name="arch" type="xml">
-            <form string="Transferts Inter Dépôt">
+            <form string="Inter-Warehouse Transfert">
                 <header>
                     <button string="Emit" type="object" name="sent" states="draft" class="oe_highlight" />
                     <button string="Load" type="object" name="load" states="sent" class="oe_highlight" />

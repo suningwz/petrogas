@@ -13,10 +13,7 @@
                 </xpath>
             </field>
         </record>
+
     </data>
-
-<!--    <menuitem id="res_country_menu" name="Country" parent="transfert_menu" action="action"/>-->
-
-
 
 </odoo>

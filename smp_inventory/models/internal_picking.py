@@ -10,6 +10,7 @@ from odoo.tools.float_utils import float_compare, float_is_zero
 
 validity_date = 30
 
+
 class InternalPicking (models.Model):
 
     _name = "internal.picking"
@@ -385,3 +386,7 @@ class InternalPickingLine(models.Model):
     def action_cancel(self):
         for r in self.self.stock_move_ids:
             r._action_cancel()
+
+
+
+

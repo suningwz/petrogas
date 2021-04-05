@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 {
     'name': "Petrogas Production Data",
 
@@ -34,13 +32,15 @@
         "data/product.category.csv",
         "data/product.product.csv",
         "data/res.partner.category.csv",
-        "data/res.partner.csv",
         "data/res.city.csv",
+        "data/transport.picking.type.csv",
+        "data/transport.picking.csv",
+        "data/res.partner.csv",
         "data/supplier/res.partner.csv",
-        "data/transport.picking.type",
-        "data/transport.picking",
     ],
     'installable': True,
     'application': False,
     'auto_install': False,
 }
+# -*- coding: utf-8 -*-
+

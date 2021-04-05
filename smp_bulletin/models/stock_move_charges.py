@@ -100,7 +100,7 @@ class StockMoveCharges(models.Model):
             for charge_rule_id in record.bulletin_line_id.charge_rule_category_id.charge_rule_ids.sorted(lambda r: r.sequence):
                 charge_slip_line_id = record.bulletin_line_id.charge_slip_line_ids.filtered(lambda x: x.charge_rule_id == charge_rule_id)
                 charge_slip_line_id.ensure_one()
-                dict_value['cost_landing_ids'] = stock_move_ids.mapped('cost_landing_ids').filtered(lambda r: r.rubrique_id.id == charge_slip_line_id.charge_id.id).sum()
+                dict_value['charges_ids'] = stock_move_ids.mapped('charges_ids').filtered(lambda r: r.rubrique_id.id == charge_slip_line_id.charge_rule_id.charge_id.id)
                 # TODO: Check si element nécessaire au calcule sont dans le dict
                 if charge_rule_id.is_mandatory_input:
                     result = [charge_slip_line_id.amount]

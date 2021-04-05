@@ -4,12 +4,12 @@
 
     <data noupdate="1">
         <record model="res.country" id="base.gm" >
-            <field name="enforce_cities">True</field>
+            <field name="enforce_cities" eval="True"/>
         </record>
     </data>
 
 
-    <data noupdate="0">
+    <data noupdate="1">
 
         <record model="res.company" id="base.main_company" >
             <field name="name">PetroGas</field>
@@ -17,7 +17,7 @@
             <field name="company_registry">RC:8422</field>
             <field name="report_header">PETROGAS</field>
             <field name="report_footer">Opening Hours:
-                Monday - Friday : 08:00-17:00
+                Monday - Friday : 08:00 to 16:00
             </field>
         </record>
 

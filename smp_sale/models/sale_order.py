@@ -123,7 +123,6 @@ class SaleOrder(models.Model):
         if self.date_order:
             self.date_confirmation = self.date_order
 
-
     @api.multi
     def check_dma(self):
         self.ensure_one()
@@ -185,7 +184,7 @@ class SaleOrder(models.Model):
             # test_check = all([v for k,v in check_bc.items()])
             test = [v for k, v in check_bc.items()]
             if any([self.check_dma(), self.invoice_due()]):
-                message = """ *** CONTRÔLE  VALIDATION - BON DE COMMANDE **** \n\n """
+                message = """ *** SALE ORDER VALIDATION CHECKING **** \n\n """
                 for k, v in check_bc.items():
                     message += """ %s : %s \n""" % (k, v)
                 raise UserError(message)
@@ -200,7 +199,7 @@ class SaleOrder(models.Model):
                 for move in picking.move_lines.filtered(lambda m: m.state not in ['done', 'cancel']):
                     for move_line in move.move_line_ids:
                         move_line.qty_done = move_line.product_uom_qty
-                picking.action_done()
+                # picking.action_done()
             elif self.picking_policy == 'direct':
                 for move in picking.move_lines.filtered(lambda m: m.state not in ['done', 'cancel']):
                     for move_line in move.move_line_ids:
@@ -392,8 +391,6 @@ class SaleOrderLine(models.Model):
         for line in self:
             if line.order_id.state in ['sale', 'done']:
                 if line.product_id.invoice_policy == 'order':
-                    # sale_price_id = line.get_product_sale_price()
-                    # if sale_price_id and sale_price_id.quantity_to_confirm:
                     if line.qty_to_confirm:
                         line.qty_to_invoice = line.qty_delivered - line.qty_invoiced
                     else:
@@ -402,13 +399,6 @@ class SaleOrderLine(models.Model):
                     line.qty_to_invoice = line.qty_delivered - line.qty_invoiced
             else:
                 line.qty_to_invoice = 0
-
-    # @api.onchange('product_id')
-    # @api.model
-    # @api.model
-    # def create(self, values):
-    #     record = super(SaleOrderLine, self).create(values)
-    #     return record
 
     @api.model
     def get_product_domain(self):
@@ -554,14 +544,6 @@ class SaleOrderLine(models.Model):
     def invoice_line_create_vals(self, invoice_id, qty):
 
         domain = []
-        # domain = ['done']
-        # if self.product_id.invoice_policy == 'order':
-        #     sale_price_id = self.get_product_sale_price()
-        #     if sale_price_id and sale_price_id.quantity_to_confirm:
-        #         domain = ['done']
-        #     else:
-        #         domain = ['assigned', 'done']
-
 
         self.mapped('move_ids').filtered(lambda x: x.state in domain
                                                    and not x.invoice_line_id
@@ -575,13 +557,6 @@ class SaleOrderLine(models.Model):
         vals = super(SaleOrderLine, self)._prepare_invoice_line(qty)
 
         domain = []
-        # domain = ['done']
-        # if self.product_id.invoice_policy == 'order':
-        #     sale_price_id = self.get_product_sale_price()
-        #     if sale_price_id and sale_price_id.quantity_to_confirm:
-        #         domain = ['done']
-        #     else:
-        #         domain = ['assigned', 'done']
 
         move_ids = self.mapped('move_ids').filtered(
             lambda x: x.state in domain and

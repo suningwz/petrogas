@@ -120,8 +120,15 @@ class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
     transport_type = fields.Many2one('transport.picking.type', 'Transport Type')
-    # transportor = fields.Many2one('res.partner', 'Transportor', domain=[('is_transportor', '=', True)])
     transportor = fields.Many2one('res.partner', 'Transportor')
+    transportor_is_visible = fields.Boolean(default=False)
+
+    @api.onchange('transport_type')
+    def is_transport_visible(self):
+        visible = False
+        if self.transport_type:
+            visible = True
+        self.transportor_is_visible = visible
 
 
 class StockMoveCharges(models.Model):
@@ -152,7 +159,7 @@ class StockMoveCharges(models.Model):
         provision_aml = {
             'name': self.rubrique_id.name,
             'ref': ref + ' / ' + self.rubrique_id.name,
-            'partner_id': self.partner_id.id if self.partner_id else None,
+            'partner_id': self.supplier.id if self.supplier else None,
             'product_id': self.product_id.id,
             'quantity': self.product_qty,
             'product_uom_id': self.product_id.uom_id.id,
@@ -171,3 +178,19 @@ class StockMoveCharges(models.Model):
             expense_line['credit'] = abs(value) if value < 0 else 0
             res['expense'] = expense_line
         return res
+
+
+class InternalPicking (models.Model):
+
+    _inherit = "internal.picking"
+
+    transport_type = fields.Many2one('transport.picking.type', 'Transport Type')
+    transportor = fields.Many2one('res.partner', 'Transportor')
+    transportor_is_visible = fields.Boolean(default=False)
+
+    @api.onchange('transport_type')
+    def is_transport_visible(self):
+        visible = False
+        if self.transport_type:
+            visible = True
+        self.transportor_is_visible = visible

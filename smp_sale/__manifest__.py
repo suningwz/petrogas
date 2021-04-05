@@ -43,6 +43,7 @@
         'views/stock_picking.xml',
         # 'views/stock_rule_views.xml',
         'views/stock_view.xml',
+        'views/transport.xml',
 
     ],
     'installable': True,

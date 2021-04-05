@@ -1,6 +1,6 @@
 id,code,parent_id/id,name,user_type_id/id,chart_template_id/id,reconcile
 petrogas_coa_0,0,,Chart Of Account,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
-coa_balance_sheet,coa_1_to_3,petrogas_coa_0,Balance Sheet,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
+coa_balance_sheet,Class 1 to 3,petrogas_coa_0,Balance Sheet,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_1,1,coa_balance_sheet,Assets,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_11,11,petrogas_coa_1,"Property, plant and equipment",account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_111,111,petrogas_coa_11,Land,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
@@ -158,8 +158,8 @@ petrogas_coa_36,36,petrogas_coa_3,Other And Miscellaneous Liabilities,account_pa
 petrogas_coa_361,361,petrogas_coa_36,Government Grant Obligations,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_362,362,petrogas_coa_36,Liabilities Due To Central Banks,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_363,363,petrogas_coa_36,Other Liabilities,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
-coa_profit_loss,P&L,petrogas_coa_0,Profit & Loss,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
-coa_operating_profit_loss,Operating P&L,coa_profit_loss,Operating Profit & Loss,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
+coa_profit_loss,Class 4 to 7,petrogas_coa_0,Profit & Loss,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
+coa_operating_profit_loss,Class 4 to 5,coa_profit_loss,Operating Profit & Loss,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_4,4,coa_operating_profit_loss,Operating Income,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_41,41,petrogas_coa_4,Goods,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 product_oil_income,411,petrogas_coa_41,Oil Product Sales,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
@@ -174,6 +174,7 @@ coa_oil_product_income_lpg_6_kg,411008,product_oil_income,Liquid Propane Gas (LP
 coa_oil_product_income_lpg_12_kg,411009,product_oil_income,Liquid Propane Gas (LPG) 12.5 Kg,account.data_account_type_revenue,l10n_petrogas.gambian_chart_template,False
 coa_oil_product_income_lpg_25_kg,411010,product_oil_income,Liquid Propane Gas (LPG) 25 Kg,account.data_account_type_revenue,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_4198,4198,petrogas_coa_41,Discounts,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
+petrogas_coa_419800,419800,petrogas_coa_4198,Discounts,account.data_account_type_revenue,l10n_petrogas.gambian_chart_template,
 petrogas_coa_4199,4199,petrogas_coa_41,Adjustments,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_42,42,petrogas_coa_4,Services,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
 petrogas_coa_4298,4298,petrogas_coa_42,Discounts,account_parent.data_account_type_view,l10n_petrogas.gambian_chart_template,False
