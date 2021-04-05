@@ -44,13 +44,14 @@ class StockPicking(models.Model):
             else:
                 no_limit_print_group_id = None
 
-            reprinting_access = True
+            reprinting_access = False
 
             """ Contrôle paiement comptant"""
-            if record.sale_id and record.sale_id.payment_term_id and record.sale_id.payment_term_id.line_ids[0].days == 0:
+            if record.sale_id and record.sale_id.payment_term_id and \
+                    record.sale_id.payment_term_id.line_ids[0].days == 0:
                 if not self.user_has_groups('smp_sale.bc_validation_control'):
                     if not record.sale_id.invoice_ids:
-                        raise  UserError(_("""For an immediate payment, the invoice must be paid before to grant access to the delivery order printing. """))
+                        raise UserError(_("""For an immediate payment, the invoice must be paid before to grant access to the delivery order printing. """))
                     states = all([i.state == 'done' for i in record.sale_id.invoice_ids])
                     invoice_amount = sum([i.amount_total for i in record.sale_id.invoice_ids if i.state =='paid'])
                     ordered_amount = record.sale_id.amount_total
@@ -150,6 +151,7 @@ class StockPicking(models.Model):
             if move.sale_line_id.qty_to_confirm:
                 return True
         return False
+
 
 class StockReturnPicking(models.TransientModel):
     _inherit = "stock.return.picking"
