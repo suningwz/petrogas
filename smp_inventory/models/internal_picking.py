@@ -15,6 +15,8 @@ class InternalPicking (models.Model):
 
     _name = "internal.picking"
     _description = "Inter Location transfert"
+    _order = 'name'
+
 
     name = fields.Char('Séquence', default="/", copy=False)
     partner_id = ('res.partner', 'Partenaire')

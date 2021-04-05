@@ -134,26 +134,27 @@ class StockMoveCharges(models.Model):
     def prepare_transfert_charges_account_move_line(self, quantity, stock_move_id):
         stock_move_id.ensure_one()
         res = []
-        if stock_move_id._context.get('forced_ref'):
-            ref = stock_move_id._context['forced_ref']
-        else:
-            ref = stock_move_id.picking_id.name
+        ref = stock_move_id._context.get('forced_ref', False)
+        ref = ref and ref or stock_move_id.origin
 
         for charge in stock_move_id.charges_ids:
             line = charge.transfert_charge_id._get_account_move_line(quantity, ref)
             line[0]['charge_id'] = charge.id
             res += [(0, 0, line_vals) for line_vals in line]
-        return res
 
+        # Create charge of transport
+        if stock_move_id.has_transport_charge():
+            transport_aml_dict = stock_move_id.create_transport_account_move_line()
+            if transport_aml_dict:
+                res += [(0, 0, v) for k, v in transport_aml_dict.items()]
+        return res
 
     def prepare_reclassement_charges_account_move_line(self, quantity,  stock_move_id):
         stock_move_id.ensure_one()
 
         res = []
-        if stock_move_id._context.get('forced_ref'):
-            ref = stock_move_id._context['forced_ref']
-        else:
-            ref = stock_move_id.origin
+        ref = stock_move_id._context.get('forced_ref', False)
+        ref = ref and ref or stock_move_id.origin
 
         for charge in stock_move_id.charges_ids:
             line = charge.reclassement_charge_id._get_account_move_line(quantity, ref)
