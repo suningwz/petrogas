@@ -9,6 +9,8 @@
 		<field name="arch" type="xml">
 
 			<field name="deprecated" position="after">
+<!--				<field name="compacted"/>-->
+                <field name="type_third_parties"/>
 				<field name="partner_required"/>
 				<field name="debit"/>
 				<field name="credit"/>
