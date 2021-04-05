@@ -4,6 +4,8 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
+LIMIT_LINE = 0
+
 
 class AccountMoveTransfertWizard(models.TransientModel):
     _name = 'account.move.transfert.wizard'
@@ -24,23 +26,24 @@ class AccountMoveTransfertWizard(models.TransientModel):
 
     @api.onchange('journal_id_src')
     def get_account_move_line_ids(self):
-        journal = self.journal_id_src
+        if LIMIT_LINE:
+            journal = self.journal_id_src
 
-        account_ids = self.env['account.account']
-        if journal.default_debit_account_id.id:
-            account_ids += journal.default_debit_account_id
-        if journal.default_credit_account_id:
-            account_ids += journal.default_credit_account_id
+            account_ids = self.env['account.account']
+            if journal.default_debit_account_id.id:
+                account_ids += journal.default_debit_account_id
+            if journal.default_credit_account_id:
+                account_ids += journal.default_credit_account_id
 
-        account_move_line_ids = self.env['account.move.line'].search([('journal_id', '=', journal.id),
-                                                                      ('account_id', 'in', account_ids.ids),
-                                                                      ('full_reconcile_id', '=', None)],
-                                                                     limit=0, order="date desc")
+            account_move_line_ids = self.env['account.move.line'].search([('journal_id', '=', journal.id),
+                                                                          ('account_id', 'in', account_ids.ids),
+                                                                          ('full_reconcile_id', '=', None)],
+                                                                         limit=LIMIT_LINE, order="date desc")
 
-        if account_move_line_ids:
-            self.account_move_line_ids = [(4, x.id) for x in account_move_line_ids]
+            if account_move_line_ids:
+                self.account_move_line_ids = [(4, x.id) for x in account_move_line_ids]
 
-        self.account_ids = [(4, x.id) for x in account_ids]
+            self.account_ids = [(4, x.id) for x in account_ids]
 
     @api.onchange('account_move_line_ids')
     def _compute_amount(self):

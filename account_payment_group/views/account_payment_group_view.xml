@@ -231,7 +231,9 @@
     <field name="name">Customer Receipts</field>
     <field name="res_model">account.payment.group</field>
     <field name="view_type">form</field>
-    <field name="view_mode">tree,form,graph,pivot</field>
+    <field name="view_mode">tree,form</field>
+
+<!--    <field name="view_mode">tree,form,graph,pivot</field>-->
     <!-- <field name="context">{'default_payment_type': 'inbound'}</field> -->
     <field name="context">{'default_partner_type': 'customer', 'search_default_not_cancelled': 1}</field>
     <!-- <field name="context">{'default_payment_type': 'inbound', 'default_partner_type': 'customer'}</field> -->
