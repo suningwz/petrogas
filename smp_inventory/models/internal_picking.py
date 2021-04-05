@@ -35,6 +35,7 @@ class InternalPicking (models.Model):
                              'Status', default='draft', required=True)
     internal_picking_line_ids = fields.One2many('internal.picking.line','internal_picking_id',
                                                 string= "Lignes de Transferts")
+    printed = fields.Boolean('Printed')
 
     @api.multi
     def action_cancel(self):
@@ -52,7 +53,7 @@ class InternalPicking (models.Model):
     @api.multi
     def check_internal_picking(self, operation):
         if not self.internal_picking_line_ids:
-            raise UserError("""Veuillez saisir des lignes à transferer.""")
+            raise UserError("""Please enter lines to be transferred.""")
         self.internal_picking_line_ids.check_line(operation)
 
     @api.multi
@@ -69,15 +70,22 @@ class InternalPicking (models.Model):
     def load(self):
         self.ensure_one()
         self.check_internal_picking('load')
-        picking_ids = self._create_picking('out')
-        for picking in picking_ids.filtered(lambda x: x.state not in ('done', 'cancel')):
-            for move in picking.move_lines.filtered(lambda m: m.state not in ['done', 'cancel']):
-                for move_line in move.move_line_ids:
-                    move_line.qty_done = move_line.product_uom_qty
-            picking.action_done()
-        self.state = 'open'
-        for line in self.internal_picking_line_ids:
-            line.quantity_done = line.quantity_load
+        picking_ids = self.internal_picking_line_ids.mapped('stock_move_ids.picking_id')
+        if not picking_ids:
+            picking_ids = self._create_picking('out')
+            for picking in picking_ids.filtered(lambda x: x.state not in ('done', 'cancel')):
+                for move in picking.move_lines.filtered(lambda m: m.state not in ['done', 'cancel']):
+                    for move_line in move.move_line_ids:
+                        move_line.qty_done = move_line.product_uom_qty
+                picking.action_done()
+            for line in self.internal_picking_line_ids:
+                line.quantity_done = line.quantity_load
+
+        if picking_ids:
+            picking_ids.action_done()
+            if all([state != 'done' for state in picking_ids.mapped('state')]):
+                raise UserError(_("""Ensure you have enougth stock in the source warehouse"""))
+            self.state = 'open'
 
     @api.multi
     def done(self):
@@ -92,10 +100,6 @@ class InternalPicking (models.Model):
                     move_line.qty_done = move_line.product_uom_qty
         picking_ids.action_done()
         self.state = 'done'
-
-    @api.multi
-    def print(self):
-        print("Impression")
 
     @api.multi
     def _prepare_picking_out(self):
@@ -197,6 +201,30 @@ class InternalPicking (models.Model):
         if not picking.location_id._should_be_valued() and not picking.location_dest_id._should_be_valued():
             return 'loss'
 
+    @api.multi
+    def do_print_picking(self):
+        for record in self:
+            report_id = self.env.ref('smp_data.action_report_transfert')
+            print_limit = report_id.print_limit
+            no_limit_print_id = report_id.no_limit_print_id
+            if no_limit_print_id:
+                no_limit_print_group_id = list(no_limit_print_id.get_xml_id().values())[0]
+            else:
+                no_limit_print_group_id = None
+
+            reprinting_access = False
+
+            """ Contrôle limitation d'impression"""
+            if self.printed and print_limit:
+                if no_limit_print_group_id and self.user_has_groups(no_limit_print_group_id):
+                    pass
+                else:
+                    raise UserError(_("""Attempted re-printing: Only a user with specific access rights
+                     can reprint the document."""))
+
+        self.write({'printed': True})
+        return report_id.report_action(self)
+
 
 class InternalPickingLine(models.Model):
     _name = "internal.picking.line"
@@ -233,27 +261,21 @@ class InternalPickingLine(models.Model):
     internal_picking_id = fields.Many2one('internal.picking', 'Transfert', required=True, readonly=True)
     stock_move_ids = fields.One2many('stock.move', 'internal_picking_line_id', string="Stock Move Lines",readonly=True, copy=False)
 
-
-
-
-
-
-
     @api.multi
     def check_line(self, sens):
         for r in self:
             if sens == 'sent':
                 if not r.quantity_ask > 0:
-                    raise UserError("""Veuillez Saisir une quantité initiale prévue au chargement.""")
+                    raise UserError(_("""Please enter an initial quantity to load."""))
             elif sens == 'load':
                 if r.quantity_load <= 0  or  r.quantity_ask < r.quantity_load:
-                    raise UserError("""Veuillez Saisir une quantité chaegée non nulle ou négatif et non supérieur à la quantité prévue.""")
+                    raise UserError(_("""Please enter a quantity that is not zero or negative and is not greater than the expected amount."""))
             elif sens == 'done':
                 if r.quantity_done <= 0 or  r.quantity_load < r.quantity_done:
-                    raise UserError("""Veuillez Saisir une quantité récepttonnée non nulle ou négatif et non supérieur à la quantité prévue.""")
+                    raise UserError(_("""Please enter a non-zero or negative received amount and not greater than the expected amount."""))
             else:
-                raise UserError(
-                    """Ce type d'opération n'est pas prévue. Contacter votre administrateur.""")
+                raise UserError(_("""This type of operation is not planned. Contact your administrator."""))
+
 
     @api.multi
     @api.onchange('product_id')
@@ -384,7 +406,7 @@ class InternalPickingLine(models.Model):
 
     @api.multi
     def action_cancel(self):
-        for r in self.self.stock_move_ids:
+        for r in self.stock_move_ids:
             r._action_cancel()
 
 
