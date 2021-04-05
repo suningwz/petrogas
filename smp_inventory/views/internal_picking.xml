@@ -3,7 +3,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="internal_picking_form">
-        <field name="name">Transfert Inter Dépôt</field>
+        <field name="name">Inter-Warehouse Transfert</field>
         <field name="model">internal.picking</field>
         <field name="arch" type="xml">
             <form string="Inter-Warehouse Transfert">
@@ -11,8 +11,8 @@
                     <button string="Emit" type="object" name="sent" states="draft" class="oe_highlight" />
                     <button string="Load" type="object" name="load" states="sent" class="oe_highlight" />
                     <button string="Receipt" type="object" name="done" states="open" class="oe_highlight" />
-                    <button string="Cancel" type="object" name="action_cancel"  class="oe_highlight" />
-<!--                    <button string="Annuler" type="object" name="action_cancel" attrs="'invisible':[('state','in',('draft'))]" class="oe_highlight" />-->
+                    <button string="Cancel" type="object" name="action_cancel"  class="oe_highlight" groups="stock.group_stock_manager"/>
+                    <button string="Print" type="object" name="do_print_picking"  class="oe_highlight" states="sent" />
                 <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>

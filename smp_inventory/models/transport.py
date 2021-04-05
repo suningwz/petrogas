@@ -35,18 +35,9 @@ class TransportPicking(models.Model):
 
     def get_transport_cost(self, stock_move_id):
         stock_move_id.ensure_one()
-        if stock_move_id.picking_type_id.code == 'internal' \
-                and stock_move_id.picking_type_id.internal_type == 'transfert':
-            city_src = stock_move_id.origin_move_id.location_id
-            city_dest = stock_move_id.location_id
-        elif stock_move_id.picking_type_id.code == 'outgoing':
-            city_src = stock_move_id.location_id.city_id
-            city_dest = stock_move_id.picking_id.partner_id.city_id
-        else:
-            return False
+        city_src, city_dest = stock_move_id.get_cities()
 
-        transport_cost_id = self.search(
-            [('city_src', '=', city_src.id), ('city_dest', '=', city_dest.id)], limit=1)
+        transport_cost_id = self.search([('city_src', '=', city_src.id), ('city_dest', '=', city_dest.id)], limit=1)
         return transport_cost_id
 
     def create_transport_charge(self, stock_move_id):
@@ -54,15 +45,7 @@ class TransportPicking(models.Model):
         transport_cost_id = self.get_transport_cost(stock_move_id)
 
         if transport_cost_id:
-
-            if stock_move_id.picking_type_id.code == 'outgoing':
-                supplier_id = stock_move_id.picking_id.transportor.id
-            elif stock_move_id.picking_type_id.code == 'internal' \
-                    and stock_move_id.picking_type_id.internal_type == 'transfert':
-                supplier_id = stock_move_id.internal_picking.transportor.id
-            else:
-                supplier_id = False
-
+            supplier_id = stock_move_id.get_transportor()
             charge_id = self.env['stock.move.charges'].create([{
                 'stock_move_id': stock_move_id.id,
                 'rubrique_id': transport_cost_id.type_id.charge.id,
@@ -71,6 +54,7 @@ class TransportPicking(models.Model):
                 'supplier': supplier_id
             }])
             return charge_id
+        return False
 
     def create_account_move_line(self, stock_move_id):
         transport_charge_id = self.create_transport_charge(stock_move_id)
@@ -97,16 +81,58 @@ class StockMove(models.Model):
         self.ensure_one()
         return self.env['transport.picking'].create_account_move_line(self)
 
+    def is_sale_transport(self):
+        self.ensure_one()
+        if self.picking_type_id.code == 'outgoing' and self.picking_id.transport_type:
+            return True
+        return False
+
+    def is_internal_transport(self):
+        self.ensure_one()
+        stock_move_id = self
+        if stock_move_id.picking_type_id.code == 'internal' \
+                and stock_move_id.picking_type_id.internal_type == 'transfert' \
+                and stock_move_id.location_id.id == stock_move_id.internal_picking_line_id.internal_picking_id.location_src_id.id \
+                and stock_move_id.internal_picking_line_id.internal_picking_id.transport_type:
+            return True
+        return False
+
+    def get_transportor(self):
+        supplier_id = False
+        if self.is_sale_transport():
+            supplier_id = self.picking_id.transportor.id
+
+        if self.is_internal_transport():
+            supplier_id = self.internal_picking_line_id.internal_picking_id.transportor.id
+
+        if not supplier_id:
+            raise UserError(_("""Please set a transportor."""))
+
+        return supplier_id
+
+    def get_cities(self):
+        stock_move_id = self
+        stock_move_id.ensure_one()
+        city_src, city_dest = False, False
+        if stock_move_id.is_internal_transport():
+            city_src = stock_move_id.internal_picking_line_id.internal_picking_id.location_src_id.city_id
+            city_dest = stock_move_id.internal_picking_line_id.internal_picking_id.location_dest_id.city_id
+        if stock_move_id.is_sale_transport():
+            city_src = stock_move_id.location_id.city_id
+            city_dest = stock_move_id.picking_id.partner_id.city_id
+
+        if not city_src or not city_dest:
+            raise UserError(_("""No cities source or destination has been found."""))
+
+        return city_src, city_dest
+
     def has_transport_charge(self):
         self.ensure_one()
         res = False
-        if self.picking_type_id.code == 'outgoing':
-            if self.picking_id.transport_type:
-                res = True
-        if self.picking_type_id.code == 'internal' \
-                and self.picking_type_id.internal_type == 'transfert':
-            if self.internal_picking_id.transport_type:
-                res = True
+        if self.is_sale_transport():
+            res = True
+        if self.is_internal_transport():
+            res = True
         return res
 
 
@@ -122,6 +148,8 @@ class StockPicking(models.Model):
     transport_type = fields.Many2one('transport.picking.type', 'Transport Type')
     transportor = fields.Many2one('res.partner', 'Transportor')
     transportor_is_visible = fields.Boolean(default=False)
+    driver = fields.Char('Driver')
+    driver_contact = fields.Char('Driver Contact')
 
     @api.onchange('transport_type')
     def is_transport_visible(self):

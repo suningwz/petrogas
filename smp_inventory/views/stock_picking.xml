@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+
+<!--    <menuitem id="operations_stock_picking_menu"-->
+<!--          name="Stock Operations"-->
+<!--          parent="stock.menu_stock_warehouse_mgmt"-->
+<!--          sequence="10"-->
+<!--    />-->
+
+
+
     ---------------- Stock Partial picking ----------------
     <record id="view_stock_partial_picking" model="ir.ui.view">
         <field name="name">stock.partial.picking.view.form</field>
@@ -36,7 +45,7 @@
 
     <act_window
         id="stock_partial_picking_action"
-        name="Confirmation des quantités en unité de stockage"
+        name="Confirm quantity in storage unit"
         res_model="stock.partial.picking"
         view_mode="form"
         target="new"
@@ -80,6 +89,29 @@
         </field>
     </record>
 
+    <record model="ir.actions.act_window" id="outgoing_stock_picking_action">
+        <field name="name">Delivery Order</field>
+        <field name="res_model">stock.picking</field>
+        <field name="domain">[('picking_type_id.code','=','outgoing')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+
+
+    ---------- Incoming ----------------
+
+    <record model="ir.actions.act_window" id="incoming_stock_picking_action">
+        <field name="name">Receipt Order</field>
+        <field name="res_model">stock.picking</field>
+        <field name="domain">[('picking_type_id.code','=','incoming')]</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
 
     ---------- Action server - Get Account Move----------------
     <record id="action_stock_picking_account_move_view" model="ir.actions.server">
@@ -93,4 +125,22 @@
         </field>
     </record>
 
+    ---------- Stock Operation Menu ----------------
+    <menuitem id="main_operations_stock_picking_menu"
+              name="Stock Operations"
+              parent="stock.menu_stock_warehouse_mgmt"
+              sequence="5"/>
+
+    <menuitem id="outgoing_stock_picking_menu"
+              name="Delivery Order"
+              parent="main_operations_stock_picking_menu"
+              action="outgoing_stock_picking_action"
+              sequence="10"
+    />
+    <menuitem id="incoming_stock_picking_menu"
+              name="Receipt Order"
+              parent="main_operations_stock_picking_menu"
+              action="incoming_stock_picking_action"
+              sequence="120"
+        />
 </odoo>
