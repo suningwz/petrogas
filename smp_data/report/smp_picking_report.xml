@@ -13,8 +13,8 @@
                     <div class="page">
 
                         <div class="column" style="height:900px;">
-                            <h1 t-if="nbr_page==1">Original</h1>
-                            <h1 t-if="nbr_page!=1">Copy</h1>
+                            <h2 t-if="nbr_page==1">Original</h2>
+                            <h2 t-if="nbr_page!=1">Copy</h2>
                             <div class="oe_structure"/>
                             <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
 <!--                                <h2>Bon De Livraisons: <t t-esc="doc.name"/></h2>-->
@@ -25,11 +25,22 @@
                             <br/>
                             <div class="h-20 row" name="general_info">
                                 <div name="partner_info" class="col-6 ">
+                                    <h4 t-if="doc.picking_type_id.code=='outgoing'"><b>Customer Info:</b> </h4>
+                                    <h4 t-if="doc.picking_type_id.code=='incoming'"><b>Supplier Info:</b> </h4>
                                     <p><b>Customer: </b> <span t-field="doc.partner_id"/></p>
-                                    <p><span t-field="doc.partner_id.city"/>, <span t-field="doc.partner_id.country_id"/></p>
-
+                                    <p><span t-field="doc.partner_id.city_id"/>, <span t-field="doc.partner_id.country_id"/></p>
+<!--                                    <p><span t-field="doc.transport_type"/>, <span t-field="doc.partner_id.country_id"/></p>-->
+<!--                                    <div class="col-6" t-if="doc.picking_type_id.code=='outgoing'"><h5>The Customer</h5></div>-->
+                                    <div name="transportor">
+                                        <h4 t-if="doc.transportor_is_visible == True"><b>Transport Info:</b> </h4>
+                                        <p t-if="doc.transportor_is_visible == True"><b>Transport Type: </b> <span t-field="doc.transport_type"/></p>
+                                        <p t-if="doc.transportor_is_visible == True"><b>Transportor: </b> <span t-field="doc.transportor"/></p>
+<!--                                        <p t-if="doc.transportor_is_visible == True"><b>Driver: </b> <span t-field="doc.driver"/></p>-->
+<!--                                        <p t-if="doc.transportor_is_visible == True"><b>Driver Contact: </b> <span t-field="doc.driver_contact"/></p>-->
+                                    </div>
                                 </div>
                                 <div name="transaction_info" class="col-6 ">
+                                    <h4><b>Transaction Info</b></h4>
                                     <p><b>Sale Order: </b> <span t-field="doc.origin"/></p>
                                     <p><b>Order Date: </b> <span t-field="doc.scheduled_date"/></p>
                                     <p><b>Custom Duty: </b><span t-field="doc.regime_id"/></p>
