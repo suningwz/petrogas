@@ -26,27 +26,33 @@ class SaleOrderLine(models.Model):
 
     @api.onchange('product_id')
     def product_id_change(self):
+        vals = {}
         domain = super(SaleOrderLine, self).product_id_change()
         transport_cost_id = self.env['transport.picking'].get_transport_cost_from_sale_order_line(self)
         if transport_cost_id:
             price_unit = transport_cost_id.value
             if self.order_id.currency_id != self.order_id.pricelist_id.currency_id:
                 price_unit= price_unit * self.currency_rate
-            self.update({'price_unit': price_unit})
-
+            # self.update({'price_unit': price_unit})
+            vals['price_unit'] = price_unit
+            self.update(vals)
+            # self.price_unit = price_unit
+        return domain
 
 class TransportPicking(models.Model):
     _inherit = 'transport.picking'
 
     def get_transport_cost_from_sale_order_line(self, so_line_id):
         so_line_id.ensure_one()
-
+        order_id = so_line_id.order_id
         transport_cost_id = False
-        if so_line_id.order_id.transport_type and so_line_id.partner_id.city_id and so_line_id.location_id.city_id and \
-                so_line_id.product_id.id == so_line_id.order_id.transport_type.charge.id:
+        transport_type = order_id.transport_type and order_id.transport_type or False
+        partner_id = order_id.partner_id and order_id.partner_id or False
+        location_id = order_id.location_id and order_id.location_id or False
+        city_src = location_id.city_id and location_id.city_id or False
+        city_dest = (partner_id and partner_id.city_id) and partner_id.city_id or False
 
-            city_src = so_line_id.origin_move_id.location_id
-            city_dest = so_line_id.location_id.city_id
+        if city_src and city_dest and so_line_id.product_id.id == so_line_id.order_id.transport_type.charge.id:
 
             transport_cost_id = self.search([('city_src', '=', city_src.id), ('city_dest', '=', city_dest.id)], limit=1)
 
