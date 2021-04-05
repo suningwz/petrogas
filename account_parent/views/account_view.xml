@@ -12,12 +12,12 @@
 					groups="account_parent.group_coas_user"
 					context="{'show_parent_account':True}" />
 			</field>
-			<field name="deprecated" position="after">
-				<field name="partner_required"/>
-				<field name="debit"/>
-				<field name="credit"/>
-				<field name="balance"/>
-			</field>
+<!--			<field name="deprecated" position="after">-->
+<!--				<field name="partner_required"/>-->
+<!--				<field name="debit"/>-->
+<!--				<field name="credit"/>-->
+<!--				<field name="balance"/>-->
+<!--			</field>-->
 		</field>
 	</record>
 
