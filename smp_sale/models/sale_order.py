@@ -409,7 +409,7 @@ class SaleOrderLine(models.Model):
         product_domain = self.order_id.product_domain
         if product_domain:
             product_domain = tuple(int(x) for x in product_domain[1:-1].split(','))
-            self = self.with_context(product_domain= product_domain)
+            self = self.with_context(product_domain=product_domain)
             return {'domain': {'product_id': [('id', 'in', product_domain)]}}
 
     @api.onchange('product_id')
@@ -436,7 +436,8 @@ class SaleOrderLine(models.Model):
                 uom=self.product_uom.id,
                 regime=self.order_id.regime_id.id,
                 location=self.order_id.location_id.id,
-        )
+                transport_type=self.order_id.transport_type and self.order_id.transport_type.id or False,
+            )
 
         name = self.get_sale_order_line_multiline_description_sale(product)
 
@@ -448,6 +449,8 @@ class SaleOrderLine(models.Model):
         if all([self.order_id.pricelist_id, self.order_id.partner_id, not self.order_id.regime_id,
                not self.order_id.location_id]):
             price = self._get_display_price(product)
+            # price = 0.25
+
             vals['price_unit'] = self.env['account.tax']._fix_tax_included_price_company(price,
                                                                                          product.taxes_id,
                                                                                          self.tax_id,
@@ -481,9 +484,11 @@ class SaleOrderLine(models.Model):
 
     @api.onchange('product_uom', 'product_uom_qty')
     def product_uom_change(self):
-        res = super(SaleOrderLine, self).product_uom_change()
         self = self.with_context(regime_id= self.order_id.regime_id.id,
-                                 location_id= self.order_id.location_id.id)
+                                 location_id= self.order_id.location_id.id,
+                                 transport_type=self.order_id.transport_type and self.order_id.transport_type.id or False,)
+        res = super(SaleOrderLine, self).product_uom_change()
+
         # if not self.product_uom or not self.product_id:
         #     self.price_unit = 0.0
         #     return

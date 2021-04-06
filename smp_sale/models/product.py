@@ -39,17 +39,27 @@ class ProductProduct(models.Model):
             start_date = product._context.get('date', False)
             location_id = product._context.get('location_id', False)
             regime_id = product._context.get('regime_id', False)
+            partner_id = product._context.get('partner', False)
+            transport_type = product._context.get('transport_type', False)
+
             if location_id:
-                location_id = self.env['stock.location'].search([('id','=', product._context.get('location_id', False))])[0]
+                location_id = self.env['stock.location'].search([('id', '=', location_id)])[0]
             if regime_id:
-                regime_id = self.env['regime.douanier'].search([('id','=', product._context.get('regime_id', False))])[0]
+                regime_id = self.env['regime.douanier'].search([('id', '=', regime_id)])[0]
+            if transport_type:
+                transport_type = self.env['transport.picking.type'].search([('id', '=', transport_type)])[0]
+            # if partner_id:
+            #     partner_id = self.env['regime.douanier'].search([('id', '=', partner_id)])[0]
 
             # Récupère le prix de la matrice de prix structurelle.
             if all([product.apply_price_structure, start_date, location_id, regime_id]):
-                prices[product.id] = self.env['product.sale.price'].get_specific_records(start_date, product,location_id, regime_id).value
-
+                prices[product.id] = self.env['product.sale.price'].get_specific_records(start_date, product, location_id, regime_id).value
             else:
                 prices[product.id] = product[price_type] or 0.0
+
+            if transport_type and transport_type.charge.id == product.id:
+                transport_cost_id = self.env['transport.picking'].get_transport_cost_from_sale_order_line(transport_type, location_id, partner_id)
+                prices[product.id] = transport_cost_id and transport_cost_id.value or product[price_type] or 0.0
 
             if price_type == 'list_price':
                 prices[product.id] += product.price_extra
