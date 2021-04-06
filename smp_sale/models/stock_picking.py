@@ -40,9 +40,9 @@ class StockPicking(models.Model):
             print_limit = report_id.print_limit
             no_limit_print_id = report_id.no_limit_print_id
             if no_limit_print_id:
-                no_limit_print_group_id  = list(no_limit_print_id.get_xml_id().values())[0]
+                no_limit_print_group_id = list(no_limit_print_id.get_xml_id().values())[0]
             else:
-                no_limit_print_group_id = None
+                no_limit_print_group_id = False
 
             reprinting_access = False
 

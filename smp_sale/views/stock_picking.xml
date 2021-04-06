@@ -25,7 +25,7 @@
 
                 <button name="do_print_picking" position="replace">
                     <button name="do_print_picking" string="Print" groups="stock.group_stock_user" type="object"
-                            attrs="{'invisible': ['|', ('state', 'not in', ('assigned', 'partially_available','done')), ('is_locked', '=', False)]}"/>
+                            attrs="{'invisible': ['|', ('state', 'not in', ('done')), ('is_locked', '=', False)]}"/>
 <!--                            attrs="{'invisible': ['|', ('state', 'not in', ('assigned', 'partially_available','done')), ('is_locked', '=', False)]}"/>-->
                 </button>
 

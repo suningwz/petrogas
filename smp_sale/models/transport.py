@@ -21,6 +21,18 @@ class SaleOrder(models.Model):
         self.transportor_is_visible = visible
 
 
+class TransportPickingType(models.Model):
+    _inherit = 'transport.picking.type'
+
+    @api.multi
+    def get_account_for_sale_order(self, line_order):
+        self.ensure_one()
+        line_order.ensure_one()
+        if line_order.product_id == self.charge:
+            return self.charge.property_account_expense_id.id
+        return self.charge.property_account_income_id.id
+
+
 class TransportPicking(models.Model):
     _inherit = 'transport.picking'
 

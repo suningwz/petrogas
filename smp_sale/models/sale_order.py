@@ -204,6 +204,11 @@ class SaleOrder(models.Model):
                 for move in picking.move_lines.filtered(lambda m: m.state not in ['done', 'cancel']):
                     for move_line in move.move_line_ids:
                         move_line.qty_done = move_line.product_uom_qty
+
+            if self.transport_type:
+                picking.transport_type = self.transport_type
+                picking.transportor_is_visible = self.transportor_is_visible
+                picking.transportor = self.transportor
                 # picking.action_done()
 
         if self.order_line.filtered(lambda line: line.invoice_status != 'to_invoice'):
@@ -329,6 +334,12 @@ class SaleOrder(models.Model):
                     inv_line[0]['sequence'] = inv_line_sequence
                     if line.order_id.regime_id:
                         inv_line[0]['regime_id'] = line.order_id.regime_id.id
+
+
+                    # ###### Tansport Sale ####################
+                    if order.transport_type and line.product_id == order.transport_type.charge:
+                        inv_line[0]['account_id'] = order.transport_type.get_account_for_sale_order(line)
+
                     line_vals_list.extend(inv_line)
 
             if references.get(invoices.get(group_key)):
