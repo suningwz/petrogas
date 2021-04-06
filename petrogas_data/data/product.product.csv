@@ -35,3 +35,5 @@ Fire Fighting Equipment,FIRE FIGHTING EQUIPMENT,False,True,True,service,product.
 Uniforms ,UNIFORMS ,False,True,True,service,product.cat_expense,False,uom.product_uom_unit,uom.product_uom_unit,False,1,,,l10n_petrogas.petrogas_coa_521016,l10n_petrogas.petrogas_coa_521016,,,,,
 IT & Technical Services,IT & TECHNICAL SERVICES,False,True,True,service,product.cat_expense,False,uom.product_uom_unit,uom.product_uom_unit,False,1,,,l10n_petrogas.petrogas_coa_521017,l10n_petrogas.petrogas_coa_521017,,,,,
 Internet Services,INTERNET SERVICES,False,True,True,service,product.cat_expense,False,uom.product_uom_unit,uom.product_uom_unit,False,1,,,l10n_petrogas.petrogas_coa_521018,l10n_petrogas.petrogas_coa_521018,,,,,
+Witholding Taxe,WHTAX,True,False,False,service,product.cat_expense,False,uom.product_uom_unit,uom.product_uom_unit,False,1,,,l10n_petrogas.coa_vat_withhoding_taxe,l10n_petrogas.coa_vat_withhoding_taxe,,,,,
+Rental,RENTAL,True,False,False,service,product.cat_expense,False,uom.product_uom_unit,uom.product_uom_unit,False,1,,,l10n_petrogas.petrogas_coa_616000,l10n_petrogas.petrogas_coa_616000,,,,,
