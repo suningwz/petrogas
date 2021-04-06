@@ -65,9 +65,6 @@ class StockMoveCharges(models.Model):
             r.state = state
         return True
 
-
-
-
     charge_rule_category_id = fields.Many2one('charge.rule.category', 'Modèle de régularisation')
     bulletin_line_id = fields.Many2one('bulletin.line', 'Ligne de charge', ondelete="set null")
     bulletin_id = fields.Many2one('bulletin.bulletin', 'Bulletin', related='bulletin_line_id.bulletin_id', store=True, ondelete='set null')

@@ -13,15 +13,12 @@ class ChargeRule(models.Model):
     AMOUNT_PYTHON_COMPUTE_TEXT = """ 
     # Available variables:
     #----------------------
-    # payslip: object containing the payslips
-    # employee: hr.employee object
-    # contract: hr.contract object
-    # rules: object containing the rules code (previously computed)
-    # categories: object containing the computed salary rule categories (sum of amount of all rules belonging to that category).
-    # inputs: object containing the computed inputs.
-    
-    # Note: returned value have to be set in the variable 'result'
-    result = contract.wage * 0.10"""
+    # stock_move_ids': stock_move_ids,
+    # stock_move_id': record.mapped('stock_move_id'),
+    # product_qty': sum(record.mapped('product_qty'))}
+    # charges_ids: all stock move charges  
+    """
+
 
     # parent_path = fields.Char(index=True)
     charge_id = fields.Many2one('product.product', 'Charge', required=True)
