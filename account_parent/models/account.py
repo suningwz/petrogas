@@ -7,16 +7,15 @@
 #
 ##############################################################################
 from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo.exceptions import ValidationError
 import odoo.addons.decimal_precision as dp
 from odoo.tools import safe_eval
-from dateutil.relativedelta import relativedelta
 
 
 class AccountAccountType(models.Model):
     _inherit = "account.account.type"
     
-    type = fields.Selection(selection_add=[('view','View')])
+    type = fields.Selection(selection_add=[('view', 'View')])
     
 
 class AccountAccount(models.Model):
@@ -127,3 +126,17 @@ class AccountJournal(models.Model):
         if parent_id:
             res.update({'parent_id':parent_id.id})
         return res
+
+
+class AccountMoveLine(models.Model):
+    _inherit = 'account.move.line'
+    account_id = fields.Many2one('account.account', string='Account', required=True, index=True,
+                                 ondelete='restrict', domain=[('deprecated', '=', False), ('type', '!=', 'view')],
+                                 default=lambda self: self._context.get('account_id', False))
+
+    @api.constrains('account_id')
+    def check_account_type(self):
+        for record in self:
+            if record.account_id.type == 'view':
+                raise ValidationError(_("The account %s - %s is a view type account.") % (record.account_id.code, record.account_id.name,))
+
