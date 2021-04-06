@@ -131,12 +131,12 @@ class AccountJournal(models.Model):
 class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
     account_id = fields.Many2one('account.account', string='Account', required=True, index=True,
-                                 ondelete='restrict', domain=[('deprecated', '=', False), ('type', '!=', 'view')],
+                                 ondelete='restrict', domain=[('deprecated', '=', False), ('user_type_id', '!=', 'view')],
                                  default=lambda self: self._context.get('account_id', False))
 
     @api.constrains('account_id')
     def check_account_type(self):
         for record in self:
-            if record.account_id.type == 'view':
+            if record.account_id.user_type_id == 'view':
                 raise ValidationError(_("The account %s - %s is a view type account.") % (record.account_id.code, record.account_id.name,))
 
