@@ -5,7 +5,7 @@
     ------------------- Menu Audit Stock ------------------------
 
     <menuitem id="smp_stock_accounting_menu"
-              name="Audit des stocks"
+              name="Stock Audit"
               parent="account.menu_finance"/>
 
     <menuitem id="smp_stock_accounting_menu_conf"
