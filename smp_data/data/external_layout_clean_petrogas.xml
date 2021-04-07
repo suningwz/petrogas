@@ -1,0 +1,60 @@
+<t t-name="web.external_layout_clean">
+    <div class="header" style="border-top: 4px solid #7C7BAD; border-bottom: 4px solid #7C7BAD">
+        <div class="o_clean_header">
+<!--            <div class="row" style="height:140px">-->
+
+<!--                <div class="col-5" style="height:140px">-->
+<!--                    <div class="row" style="height:50%"><h3 class="mt0 mb0 text-uppercase">PETROGAS</h3></div>-->
+<!--                        <hr style="height:1px;border:none;color:#7C7BAD;background-color:#7C7BAD;margin-top:0px;margin-bottom:5px"/>-->
+<!--                    <div class="row" style="height:50%">-->
+<!--                        <p><b>Tél:</b><span t-field="company.phone"/><br/><b>Email:</b><span t-field="company.email"/><br/>-->
+<!--                            <span t-field="company.street"/> - <span t-field="company.city"/> - <span t-field="company.country_id"/>-->
+<!--                        </p>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+<!--                <div class="col-2 center">-->
+<!--                    <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo" align="middle"/>-->
+<!--                </div>-->
+
+<!--                <div class="col-5" style="height:140px">-->
+<!--                    <div class="row" style="height:50%"><h3 class="mt0 mb0 text-uppercase text-right">شركة النفط الموريتانية - أطلس</h3></div>-->
+<!--                    <hr style="height:1px;border:none;color:#7C7BAD;background-color:#7C7BAD;margin-top:0px;margin-bottom:0px"/>-->
+<!--                    <div class="row" style="height:50%">-->
+<!--                        <ul>-->
+<!--                            <li><b>Tél: </b> <span t-field="company.phone"/></li>-->
+<!--                            <li><b>Email: </b> <span t-field="company.email"/></li>-->
+<!--                            <li><span t-field="company.street"/> - <span t-field="company.city"/> - <span t-field="company.country_id"/></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+        </div>
+    </div>
+
+<!--    <div class="article o_report_layout_clean" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">-->
+<!--        <t t-call="web.address_layout"/>-->
+<!--        <t t-raw="0"/>-->
+<!--    </div>-->
+
+<!--    <div class="footer o_clean_footer" style="border-top: 4px solid #7C7BAD; border-bottom: 4px solid #7C7BAD">-->
+
+<!--        <div class="row mt8" >-->
+<!--            <div class="col-5">-->
+<!--                <p><span><b>Opening Hours:</b> Monday to Friday from 08:00 to 18:00</span></p>-->
+<!--            </div>-->
+
+<!--            <div class="col-1">-->
+<!--                <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-right text-center">-->
+<!--                    <li class="list-inline-item"><strong><span class="page"/></strong></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--    </div>-->
+
+</t>
+

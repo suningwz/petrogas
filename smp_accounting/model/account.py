@@ -56,9 +56,6 @@ class AccountAccount(models.Model):
     
     
     partner_required = fields.Boolean('Partenaire Requis')
-    # .# compacted = fields.Boolean('Compacte entries.',
-    #                            help='If flagged, no details will be displayed in the Standard report, only compacted amounts.',
-    #                            default=False)
     type_third_parties = fields.Selection([('no', 'No'), ('supplier', 'Supplier'), ('customer', 'Customer'), ('employee', 'Employee')], string='Third Partie', required=True, default='no')
 
     @api.model

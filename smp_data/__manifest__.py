@@ -29,6 +29,9 @@
     # always loaded
     'data': [
         "data/data.xml",
+        # "data/external_layout_clean_petrogas.xml",
+
+        # "report/external_layout_clean.xml",
 
         "report/smp_picking_report.xml",
         "report/reclassement_report.xml",

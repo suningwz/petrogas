@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="smp_picking_template">
+        <t t-call="web.html_container">
+            <t t-set="nbr_page" t-value="0"/>
+
+            <t t-foreach="docs" t-as="doc">
+                <t t-set="nbr_page" t-value="nbr_page+1"/>
+
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+                            <h1 t-if="nbr_page==1">Original</h1>
+                            <h1 t-if="nbr_page!=1">Copy</h1>
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+<!--                                <h2>Bon De Livraisons: <t t-esc="doc.name"/></h2>-->
+                                <h2 t-if="doc.picking_type_id.code=='outgoing'" >Delivery Order: <t t-esc="doc.name"/></h2>
+                                <h2 t-if="doc.picking_type_id.code=='outgoing'" >Happy: <t t-esc="doc.name"/></h2>
+                                <h2 t-if="doc.picking_type_id.code=='incoming'">Receipt Order: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="h-20 row" name="general_info">
+                                <div name="partner_info" class="col-6 ">
+                                    <p><b>Customer: </b> <span t-field="doc.partner_id"/></p>
+                                    <p><span t-field="doc.partner_id.city_id"/>, <span t-field="doc.partner_id.country_id"/></p>
+<!--                                    <p><span t-field="doc.transport_type"/>, <span t-field="doc.partner_id.country_id"/></p>-->
+<!--                                    <div class="col-6" t-if="doc.picking_type_id.code=='outgoing'"><h5>The Customer</h5></div>-->
+                                    <p>1Happy birthday!</p>
+                                    <p t-if="doc.transportor_is_visible == True">Happy birthday!</p>
+
+                                    <t t-if="doc.transport_type">
+                                        <p><span t-field="doc.transport_type"/></p>
+                                    </t>
+                                </div>
+                                <div name="transaction_info" class="col-6 ">
+                                    <p><b>Sale Order: </b> <span t-field="doc.origin"/></p>
+                                    <p><b>Order Date: </b> <span t-field="doc.scheduled_date"/></p>
+                                    <p><b>Custom Duty: </b><span t-field="doc.regime_id"/></p>
+                                    <p><b>Location: </b><t t-esc="doc.location_id.name"/></p>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="h-50 row" name="lines">
+                                <table class="table table-sm">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+            <!--                                <th>Unité</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="doc.move_lines" t-as="move" >
+                                            <td><span t-field="move.product_id" /></td>
+                                            <td>
+                                                <span><t t-esc="move.product_uom_qty"/></span>
+                                                <span t-field="move.product_uom"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="h-20 row" name="signature">
+    <!--                        <div class="row align-items-end " name="signature">-->
+                                <div class="col-6"><h5>The Direction</h5></div>
+                                <div class="col-6" t-if="doc.picking_type_id.code=='outgoing'"><h5>The Customer</h5></div>
+                                <div class="col-6" t-if="doc.picking_type_id.code=='incoming'"><h5>The Vendor</h5></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report id="smp_picking_report"
+    name="smp_data.smp_picking_template"
+    model="stock.picking"
+    string="Delivery Order - SO"
+    print_report_name="'%s' % (object.name)"
+    report_type="qweb-pdf" />
+
+</odoo>

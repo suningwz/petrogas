@@ -2,7 +2,7 @@
 <odoo>
     <data noupdate="1">
         <record id="seq_credoc" model="ir.sequence">
-            <field name="name">Credits Documentaires</field>
+            <field name="name">Credit Letter</field>
             <field name="code">credoc.credoc</field>
             <field name="prefix">CREDOC/%(range_year)s/</field>
             <field eval="1" name="number_next"/>

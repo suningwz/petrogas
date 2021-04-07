@@ -22,23 +22,6 @@
     </field>
 </record>
 
-<!-- <record id="view_account_supplier_payment_group_tree" model="ir.ui.view">
-    <field name="name">account.supplier.payment.tree</field>
-    <field name="model">account.payment.group</field>
-    <field name="arch" type="xml">
-        <tree decoration-info="state=='draft'" decoration-muted="state=='reconciled'" edit="false">
-            <field name="payment_date"/>
-            <field name="name"/>
-            <field name="partner_id" string="Vendor"/>
-            <field name="to_pay_amount"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="state"/>
-            <field name="currency_id" invisible="1"/>
-            <field name="partner_type" invisible="1"/>
-        </tree>
-    </field>
-</record> -->
-
 <record id="view_account_payment_group_search" model="ir.ui.view">
     <field name="name">account.payment.group.search</field>
     <field name="model">account.payment.group</field>
@@ -225,13 +208,11 @@
     </field>
 </record>
 
-
-
 <record id="action_account_payments_group" model="ir.actions.act_window">
     <field name="name">Customer Receipts</field>
     <field name="res_model">account.payment.group</field>
     <field name="view_type">form</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,form,pivot,graph</field>
 
 <!--    <field name="view_mode">tree,form,graph,pivot</field>-->
     <!-- <field name="context">{'default_payment_type': 'inbound'}</field> -->
@@ -249,12 +230,12 @@
     </field>
 </record>
 
-<record id="account_payment_group_action_view_pivot" model="ir.actions.act_window.view">
-    <field name="sequence" eval="5"/>
-    <field name="view_mode">pivot</field>
-    <field name="view_id" ref="account_payment_group.view_account_payment_group_pivot"/>
-    <field name="act_window_id" ref="account_payment_group.action_account_payments_group"/>
-</record>
+<!--<record id="account_payment_group_action_view_pivot" model="ir.actions.act_window.view">-->
+<!--    <field name="sequence" eval="5"/>-->
+<!--    <field name="view_mode">pivot</field>-->
+<!--    <field name="view_id" ref="account_payment_group.view_account_payment_group_pivot"/>-->
+<!--    <field name="act_window_id" ref="account_payment_group.action_account_payments_group"/>-->
+<!--</record>-->
 
 <!-- action to be called from invoice -->
 <!-- <record id="action_account_invoice_payment_group" model="ir.actions.act_window">
