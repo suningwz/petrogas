@@ -14,8 +14,7 @@ Countries that use this accounting chart is the following:
 -------------------------------------------
     Gambia .
     """,
-    'depends': [
-        'account', 'account_parent',
+    'depends': ['smp_accounting',
     ],
     'data': [
         'data/account_data.xml',
