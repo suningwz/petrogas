@@ -9,9 +9,9 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='location_id']" position="after">
-                    <field name="transport_type"/>
+                    <field name="transport_type" options="{'no_create': True}"/>
                     <field name="transportor_is_visible" invisible="True"/>
-                    <field name="transportor" attrs="{'invisible': [('transportor_is_visible','!=',True)]}"/>
+                    <field name="transportor" options="{'no_create': True}" attrs="{'required':[('transportor_is_visible','=',True)]}"/>
 
                 </xpath>
 

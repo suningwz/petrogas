@@ -21,11 +21,11 @@
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='origin']" position="after">
-                    <field name="transport_type"/>
+                <field name='origin' position="after">
+                    <field name="transport_type" options="{'no_create': True}"/>
                     <field name="transportor_is_visible" invisible="True"/>
-                    <field name="transportor" attrs="{'invisible': [('transportor_is_visible','!=',True)]}"/>
-                </xpath>
+                    <field name="transportor" options="{'no_create': True}" attrs="{'required':[('transportor_is_visible','=',True)]}"/>
+                </field>
             </field>
         </record>
 
@@ -37,23 +37,22 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='location_dest_id']" position="after">
-                    <field name="transport_type"/>
+                    <field name="transport_type" options="{'no_create': True}"/>
                     <field name="transportor_is_visible" invisible="True"/>
-                    <field name="transportor" attrs="{'invisible': [('transportor_is_visible','!=',True)]}"/>
+                    <field name="transportor" options="{'no_create': True}" attrs="{'required':[('transportor_is_visible','=',True)]}"/>
                 </xpath>
             </field>
         </record>
 
         ------------------ Res Partner --------------------------
-        <record id="smp_view_partner_form_inherit" model="ir.ui.view">
+        <record id="smp_view_transporter_partner_form_inherit" model="ir.ui.view">
             <field name="name">smp.view.partner.form.inherit</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='supplier']" position="after">
+                <field name='category_id' position="after">
                     <field name="is_transportor"/>
-                </xpath>
+                </field>
             </field>
         </record>
 
