@@ -36,7 +36,7 @@
         "data/transport.picking.type.csv",
         "data/transport.picking.csv",
         "data/res.partner.csv",
-        "data/supplier/res.partner.csv",
+        # "data/supplier/res.partner.csv",
     ],
     'installable': True,
     'application': False,
