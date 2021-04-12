@@ -1,55 +1,847 @@
-code,name,country_id,city_id,category_id,property_payment_term_id,default_regime_id,company_type,customer,supplier,default_location_id,property_account_receivable_id/id,property_account_payable_id/id
-37,African Commission on human and peoples right,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-8,African Princess Hotel,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-41,ALLUNHARI STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_supplier
-12,AS Transport,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-36,Asset Management Recovery,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-13,AYK Gambia Ltd,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-42,Bakoteh Station,Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_supplier
-43,BANSANG STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_supplier
-5,Bojang Ba Enterprise,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-44,Brikama Station,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_supplier
-45,Brusubi Station,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_supplier
-46,Dippakunda Station,Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_supplier
-4,Edward Francis Small Teaching Hospital,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-32,Emkay Stores Ltd.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-47,Farafenni Station,Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_supplier
-19,Gacem,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-21,Gambia Armed Forces,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-20,Gambia Civil Aviation,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-23,Gambia International Airlines,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-16,Gambia Police Force,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-31,Gambia Ports Authority,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-34,Gambia Transport ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-27,Gampetroleum,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-29,GMC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-48,Independence Drive,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_supplier
-22,JV Eiffage/ Elecnor/ OMVG/ Vinci,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-49,Kairaba Av Station,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_supplier
-40,Kanifing Muncipal Counsil,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-50,Kaur Station,Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_supplier
-51,Lamin Station,Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_supplier
-52,Latrikunda German,Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_supplier
-14,MAM Njagan Choi Sand Mining,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-35,Medicine Control Agency,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-17,Ministry of Interior,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-15,Ministry of Lands & Regional Govt,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-39,Modou Touray Darbo - Vision Development Foundation,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-1,MRC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-10,Mubarak Bakery,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-7,National Audit Office,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-3,National Food Security Processing and Marketing Corp.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-33,OBT Shipping ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-18,Office of the President,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-28,OIC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-26,Radville Farms Ltd.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-2,Riders for Heath,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-24,Royal Energy,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-25,Share and Care,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-11,SPCPL SPCIPL JV,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-53,Sukuta Station,Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_supplier
-6,Swami Gambia Ltd,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-30,Taf Africa Global,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-54,TALLINDING Station,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_supplier
-9,UN Environment EBA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
-38,Zion Enterprise,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_supplier
+code,name,country_id,city,category_id,property_payment_term_id,default_regime_id,company_type,customer,supplier,default_location_id,property_account_receivable_id/id,property_account_payable_id/id
+10001, ACTIVISTA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10002, M/V ACF-02,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10003, YMCA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10004,5C Energy The Gambia,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10005,A - PLUS THE GAMBIA ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10006,AA & CO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10007,ABC LOGISTIC SERVICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10008,ABDEN COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10009,ABDOU KARIM SALLAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10010,ABDOUKADIR JALLOW  (PREMIX DEALER),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10011,ABDUL LAWAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10012,ACCOUNTANT GENERAL DEPT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10013,ACE PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10014,Action Aid The Gambia.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10015,ADAMA SILLAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10016,AECOM Consultants Inc,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10017,AELP-DOSA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10018,AFPRC GENERAL HOSPITAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10019,AFRI OIL LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10020,AFRICAN ADVENTURES TOURS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10021,African centre for democracy& human rights studies,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10022,African Commission on Human and Peoples Rights,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10023,African Network for info & Action Against Drugs,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10024,AFRICAN QUEEN RESTAURANT LPG ACCOUNT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10025,AFRICAN TRADE CENTER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10026,AFRICELL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10027,AFRICMED CLINICAL SERVICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10028,AIR REP SERVICE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10029,Air Senegal International.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10030,AJA MARIAMA BOJANG CEESAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10031,AJI PENDA SANKAREH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10032,ALADINE RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10033,ALH. SANKUNG SILLAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10034,Ali Baba Restaurant,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10035,ALIEU JAMMEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10036,ALIMA CEESAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10037,ALKAMBA TOURS TRAVEL INT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10039,ALPHA JALLOW,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10040,Al-Rawshe Lebanese Restaurant $ Continental- LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10041,Alternative Dispute Resolution Secretariat,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10042,ALUMINIUM SYSTEM INSTALLERS - ALUTEK,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10043,Amaco Construction Company,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10044,AMADOU SOWE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10045,AMBIGROUP RESIDUOS_ODIVELAS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10046,AMBIL SPEED LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10047,AMEDOU JAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10048,AMIE B. JARJOU,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10049,AMINA HOLDING - LPG GAS ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10050,AMSTERDAM DOLPHIN RESTAURANT LPG A/C,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10051,ANGLICAN MISSION ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10052,ANTHONY BAHOUM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10053,APPROPIATE TECHNOLOGY CONSTRUCTION (ATC) ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10054,APRC SECRETARIAT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10055,Arab Gambian Islamic Bank (Ltd),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10056,ARBEITER SAMRITER BUND (ASB),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10057,Artisanal Fisheries Development Project.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10058,ASCOT GLOBAL (GAMBIA)LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10059,Assets Management & Recovery Corporation.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10060,ASSOCIATION FOR PEACE BUILDING & RURAL INPROVEMENT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10061,ATLAS ENERGY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10062,AUGUSTUS .E. SARR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10063,B & CO CASH AND CARRY - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10064,B.B. Electrical Company,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10065,BABOUCARR NYANG (PREMIX DEALER),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10066,BADALA PARK HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10067,BAFROW FOUNDATION FOR WOMEN,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10068,BAFROW MEDICAL CENTRE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10069,BAILO JALLOW,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10070,BAIMASS JANHA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10071,BAJAM ENTERPRISE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10072,BAKARY MANNEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10073,Bakary Marong,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10074,BAKARY TOURAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10076,BALLORE AFRICA LOGISTICS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10077,BAMBOO GARDEN HOTEL LPG A/C,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10078,BANJUL BREWERIES LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10079,BANJUL CITY COUNCIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10080,BANJUL SHIPYARD COMPANY LTD.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10081,Bank PHB,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10083,Barbeque Chilli's Resturant,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10084,BATIMAT LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10085,BAYBA Express,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10086,BENDULA RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10087,BESPOR GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10088,BIJILO BEACH HOTEL LPG ACCOUNT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10089,Binis Bar & Restaurant,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10090,BINTA JALLOW CEESAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10091,BLUE OCEAN PROPERTIES LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10092,BOABAB HOLIDAY  RESORT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10093,BOJANGBAA ENTERPRISE (C/O SHERIF K BOJAN) PREMIX,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10094,BOMINFLOT - LONDON,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10095,BONANZAWIN GAMBIA LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10096,BRECKWOLDT & CO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10098,BRITISH HIGH COMMISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10100,BUBACARR JOBARTEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10101,C.B.E.M.P.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10102,C.S.E,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10103,CAESAR'S RESTAURANT II WESTFIELD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10104,CAFE DENMARK - LPG ACCOUNT ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10105,CALYPSO BAR AND RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10106,CAMEL SAFARI,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10107,CAPE POINT HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10108,CAPITAL EXPRESS ASSURANCE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10109,CAPITAL GAS GAMBIA LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10110,CARAMEL BITE - LPG ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10111,CARE PLUS GAMBIA LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10112,CARIBE CANARIAS BAR & RESTAURANT LPG AC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10113,CARLOS JESUS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10114,Catholic Relief Service.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10115,CCF Kinderhilfswerk EV Project,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10116,CDDP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10117,CEDAG/WAN (Child and Environmental Development Ass,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10118,CEFDP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10119,CENTRAL BANK OF THE GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10120,CENTRAL MEDICAL STORES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10121,CENTRAL PROJECT COORDINATION UNIT (CPCU),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10122,CFAO GAMBIA LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10123,CHADI HAMIE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10124,CHARLES UCHENNA OKEKE - DIPPAKUNDA SHOP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10125,"Christian Children's Fund, INC.",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10126,CHURCH OF THE BLESSED SACRAMENT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10127,CHURCHILL'S TOWN SHOP NO 1,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10128,CILSS/P2RS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10129,CLAY OVEN RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10130,Climate Smart Rural Wash Dev. Project (CSRWASDEP),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10131,CLUB ONE BAR & RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10132,COCONUNT RESIDENCE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10133,COCO-OCEAN RESORT & SPA. LPG AC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10134,COMIUM GAMBIA LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10135,COMMISSION OF ENQUIRY - TAX EVASION & OTHR PRACTIC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10136,Community Intergrated Rehab Project,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10137,Community Skills Improvement Project,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10138,CONCERN UNIVERSAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10139,CONSTITUTIONAL REVIEW COMMISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10140,CONSULTING ENGINEERING CENTER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10141,COPRI CONSTRUCTION ENTERPRISE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10142,CORR KUNDA MARINE SERVIC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10143,D. SECKA CONSTRUCTION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10144,DARLJOE SPARES ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10145,DEBOUR  BAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10146,DEMISCO CONSTRUCTION AND ENGINEERING CO LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10147,Department of Community Developement,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10148,Department of Lands & Surveys,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10149,Department of Physical Planning & Housing (MOLGL),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10150,"Department of State For Youths, Sports & Religious",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10151,DEPMAC CONSULTANTS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10152,DEPOT HALF-DIE BANJUL/Supply,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10153,DETACHEMANT GENDARMERIE EN GAMBIE - ECOWAS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10154,DHL INTERNATIONAL GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10155,DING DING BANTABA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10157,DIRECTORATE INTERNAL AUDIT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10158,DIRECTORATE OF AGRICULTURE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10159,DIRECTORATE OF GOVERNANCE (MOLRG),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10160,DIRECTORATE OF NATIONAL TREASURY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10161,DJELIBA HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10162,D'Nubian Cateen,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10163,D'Nubian Seafood,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10164,DONOR CONFERENCE-MOHERST,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10165,DOS Education / ECD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10166,DOS Education / Planning,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10167,DOS ENERGY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10168,DOSH/DRF,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10169,DOSH-EPI UNIT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10170,DOSH-Global Fund - National Malaria Control Prog,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10171,DOSH-HSDP-2,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10172,DOSI IMMIGRATION SERVICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10173,DOSI PRISON SERVICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10174,Dr  Melville George - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10175,Dr K.S. Sanyang,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10176,DR. MAMADY CHAM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10177,"DRUG LAW ENFORCEMENT AGENCY, THE GAMBIA (DLEAG)",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10178,DT Associates,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10179,DUMA SANG SANG GAMBIA LTD ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10180,DUNES RESORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10181,E C SUPPORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10182,E. K. MARINE COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10183,EARLY CHILDHOOD DEVELPOMENT (MOBSE),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10184,EASTERN FONI FEDERATION (CHILD FUND),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10185,EBRIMA BAJAHA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10186,EBRIMA CEESAY ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10187,EBRIMA KASSEM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10188,EBRIMA NJIE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10189,EBS CONSTRUCTION LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10190,EC/RWSSSP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10191,ECOBANK,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10192,ECOMIG - PAE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10193,ECOSYSTEM BASED ADAPTATION(EBA) PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10194,EDC UNIT(MOH),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10195,EDDIS CAFÉ - LPG Account,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10196,EDF VILLAGE WATER SUPPLY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10197,EDF-NAOSU - TEMP ACCOUNT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10198,EDF-NAOSU (EDF FUNDED PROJECTS),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10199,EDWARD FRANCIS SMALL TEACHING HOSPITAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10200,EDY S.A,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10201,EFFICIENY NJIE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10202,EL- SOL RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10203,ELTON OIL GAMBIA LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10204,EM HOLDING COMPANY LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10205,EMBASSY OF GUINEA BISSAU,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10206,EMBASSY OF THE STATE OF QATAR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10207,EMKAY STORES LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10208,ENHANCED INTEGRATED FRAMEWORK(EIF) PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10209,ENSA CEESAY (PREMIX DEALER),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10210,ENTERPRISE LIFE ASSURANCE COMPANY (G) LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10211,EON LTD BEACH HOTEL LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10212,EON LTD KOMBO BEACH HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10213,EU/ECOWAS PSS PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10214,EURAFRICAINE  D'INDUSTRIES (G) LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10215,EURO AFRICAN GROUP LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10216,EUROPEAN COMMUNITY SUPPORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10217,EUROPEAN ECONOMIC COMMUNITY EEC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10218,EUROPEAN UNION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10219,EVER PURE SHOP LPG AC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10220,EXECUTIVE BUSINESS SOLUTIONS - LPG ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10221,Express Supermarket,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10222,F M K DRILLING COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10223,FALINKUTA INTERNATIONAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10224,FAO REPRESENTATIVE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10226,FARAGE & ANDREWS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10227,Farmer Manage Rice Irrigation,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10228,FATOU JAGNE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10229,FATOU JOBE TOURAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10230,FATOUMATA JAWARA - L/K GERMAN SHOP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10231,FEMALE LAWYERS ASSOCIATION - GAMBIA (FLAG),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10232,First International Bank.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10233,FIRST TRUST GAMING LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10234,FLOURISH WELLNESS RESORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10235,FLY MID AFRICA BULK PRODUCTS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10236,FONI DING DING FEDERATION (CHILD FUND),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10237,Food and agricultural Development Project (FASDEP),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10238,FRANCIS JONES ASSOCIATES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10239,Freedom From Hunger Campaign.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10240,FSQHED-MOHSW,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10241,FUTURE TRANSPORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10242,G.H.E.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10243,G.T.U.CO-OPERATIVE UNION LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10244,G4S SECURE SOLUTIONS(GAMBIA)LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10245,GACEM LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10246,GAF - HAPP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10247,GALAXY PROPERTIES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10248,GALDEP-DOSA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10249,GAM PETROLEUM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10250,GAM SENSE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10251,GAMBIA AGRIC.MKT COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10252,GAMBIA AIR FORCE 06,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10253,GAMBIA ARM FORCES CREDIT UNION.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10254,GAMBIA ARMED FORCES BUS SERVICE SCHEME,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10255,Gambia Bureau of Statistics.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10256,GAMBIA CCM SECRETARIAT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10257,GAMBIA CHAMBER OF COMMERCE AND INDUSTRY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10258,GAMBIA CIVIL AVIATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10259,GAMBIA DIVESTITURE AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10260,Gambia Electrical Company Limited,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10261,GAMBIA EMERGENCY AGRICULTURE PRODUCTION PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10262,GAMBIA FAMILY PLANNING ASSOCIATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10263,Gambia Financial Intelligence Unit,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10264,GAMBIA FIRE SERVICE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10265,GAMBIA FOOD & NUTRITION ASSOCIATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10266,GAMBIA FOOTBALL FEDERATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10267,GAMBIA INTERNATIONAL AIR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10268,Gambia Islamic Union.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10269,GAMBIA LAW SCHOOL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10270,GAMBIA LIVESTOCK MARKETING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10271,GAMBIA MARITIME ADMINISTRATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10272,GAMBIA MILLING CORPORATION LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10273,GAMBIA NATIONAL ARMY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10274,GAMBIA NATIONAL LIBRARY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10275,Gambia National Lottery (GNL),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10276,GAMBIA NATIONAL OLYMPIC COMMITTEE.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10277,Gambia National Petroleum Company Ltd.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10278,GAMBIA NAVY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10279,GAMBIA POLICE FORCE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10280,GAMBIA POLICE FORCE CREDIT UNION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10281,GAMBIA PORTS AUTHORITY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10282,Gambia Public Procurement Authority (GPPA),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10283,GAMBIA PUBLIC TRANSPORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10284,GAMBIA RADIO & TELEVISION (GRTS) - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10285,GAMBIA RADIO AND TV SERV,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10286,GAMBIA RED CROSS SOCIETY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10287,Gambia Revenue Authority,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10288,GAMBIA RICE PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10289,Gambia Shipping Agencies,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10290,GAMBIA TELECOMMUNICATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10291,GAMBIA TOURISM AND HOSPITALITY INSTITUTE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10292,GAMBIA TOURS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10293,GAMBIA TRANSPORT SERVICE COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10294,Gambia's Association of Teachers of English,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10295,GAMCEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10296,GAMNASS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10297,GAMPETROLEUM STORAGE FACILITY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10298,GAMPOST,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10299,GAMSAVINGS CO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10300,GAMTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10301,Gap Consultants Ltd.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10302,GAS GUINEA SA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10303,GATEWAY LEARNING ACCADEMY ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10304,GENERAL ENGINEERING CO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10305,GEOLOGICAL DEPARTMENT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10306,GERMANY EMBASSY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10307,"Ghatson Co Limited,",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10308,GIANT PROPERTIES ENTERPRISES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10309,GIGO CONSTRUCTION COMPANY LIMITED ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10310,GLOBAL ARTISTIC CULTURAL EXCHANGE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10311,GLOBAL CLIMATE CHANGE ALLIANCE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10312,GLOBAL FINANCE BUREAU DE CHANGE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10313,GLOBAL PROPERTIES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10314,Global Security Insurance Company Limited.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10315,GLOBAL TRADING / GOTG PARTNER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10316,GLOBAL TRADING GROUP N.V,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10317,GOLDEN LEAD FISH FACTORY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10318,Governor CRR-JJB.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10319,GOVERNOR URR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10320,GOVERNOR'S  OFFICE (WCR),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10321,GOVI,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10322,GPA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10323,GPF-CCU,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10324,GPPC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10325,GRAND'OR PASTRIES RESTURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10326,GREAT ALLIANCE INSURANCE COMPANY.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10327,GREEN IMPACT CO LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10328,GREEN INDUSTRIES LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10329,GUARANTY TRUST BANK,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10330,GUNJUR RADIO JANNEHKOTO FM 101.10,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10331,HADDY BITTAYE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10332,HADIM ENTERPRISE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10333,HAGGLERS BAR AND RESTAURANT LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10334,HALAL OIL COMPANY LTD - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10335,HAMEDOU SOWE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10336,Hands On Care.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10337,HARLEYS BAR & RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10338,Harry's Supermarket,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10339,HEALTH  FACILITIES  EXPANSION  PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10340,Health Promotion & Dev. Org.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10341,Health Service Development Project. ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10342,HEEWAL MINI MARKET,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10343,HI-TECH ENGINEERING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10344,HOL GAMBIA FISHING COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10345,HOLIDAY BEACH CLUB,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10346,Holiday Beach Hotel,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10347,HOME FINANCE COMPANY LTD.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10348,Hotel Management and Training,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10350,I. E.C.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10351,I.C.B.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10352,I.G. FINANCIAL SERVICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10353,I.G.A.R.D.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10354,IDB/GOTG RURAL WATER SUPPLY PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10355,IFMIS 11,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10356,IJ GENERAL MERCHADISE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10357,IMMEDI8 FIN. BUR. & MONEY TRANSFERS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10358,Imres Gambia Limited.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10359,INDIAN CONSUL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10360,INSIST GLOBAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10361,INSPIRON,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10362,INSTIT.  SUPPORT FOR ECO & FIN. PROJEC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10363,Integrated Education Programme - IEP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10364,INTEGRATED ENGINEERING MANAGEMENT ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10365,INTER AGRO & ENGINEERING ENTERPRISES (INTER DJ),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10366,INTERGRATED RICE DEV,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10367,INTERNATIONAL BUNKERING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10368,International Insurance Company,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10369,International Pelican Seafood,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10370,International Trypanotolerance Centre,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10371,INTERSTATE SHIPPING SERV,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10372,ISATOU JOBE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10373,ISLAMIC ONLINE UNIVERSITY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10374,ISMAILA TOURAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10375,ISTAMCO BANJUL LIMITED (SHIPPING AGENCY),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10376,J & B TRADING ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10377,JAH GAS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10378,JAH OIL COMPANY LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10379,JALUNG BORRY JAITEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10380,JAMBAR SECURITY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10381,JAMMEH FOUNDATION FOR PEACE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10382,JAPANS AUTOS SPARE PARTS SHOP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10383,JARRAI CEESAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10384,Jay's Restaurant & Catering Services,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10385,JET LAUNDRY SERVICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10386,JEWELS OF INDIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10387,JOINT OPERATIONS CENTER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10388,Jojo's Bistrol & Grill,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10389,JOKO ENTERPRISE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10390,JUDICIARY OF THE GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10391,JV Eiffage-Elecnor ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10392,JXYG AQUATIZ PRODUCTS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10393,KADDY SANYANG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10394,Kaira Nyining Programe Area.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10395,Kaira Suu Programme Area.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10396,KAIRABA BEACH HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10398,Kairawan Bridge Oil - Pumps / Machines,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10399,KAIRAWAN BRIDGE OIL COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10400,KALIDOU SOWE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10401,KALILU CONTEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10402,KAMANKA PETROL STATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10403,KANIFING MUNICIPAL COUNCIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10404,KANSALA FERRY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10405,KAPINTY BUSINESS VENTURES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10406,KAR POWER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10407,KARIM MAROUN - L.P.G ACCOUNT ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10409,KGI ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10410,KHALED BOUDIB,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10411,KING BAKER RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10412,Kobakunda Lower Basic School.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10413,KOKO CURY INDIAN CUISINE - LPG ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10414,KOMBO NORTH FEDERATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10415,KUNTAUR AREA COUNCIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10416,LAFICO GAMBIA LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10417,LAICO / Atlantic Hotel.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10418,LALA'S CLEANING & SUPPLIES SVCS CO LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10419,LAMIN DARBO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10420,LAMIN JANNEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10422,LANDING SONKO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10423,LANG M DIBBA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10424,LAPARISSIEN RESTAURANT - LPG ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10426,LE SECRETARIAT DE L'OCI EN GAMBIE ( OIC),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10427,LENA SARR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10428,LERR GROUP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10429,LIAISON OFFICE OF THE PEOPLE’S REPUBLIC OF CHINA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10430,LIBYAN AFRICAN INVESTMENT CO(LAICO),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10431,LIBYAN EMBASSY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10432,LIKAA’S BAR & RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10433,LILLAHI SUPPORT SOCIETY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10434,Livestock and Horticulture Development Project,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10435,LOS GAMOS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10436,LOVE 2 RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10437,LOYALTY HOUSE INTERNATIONAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10438,LPG & Items Customer Accounts ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10439,LUIGI'S COMPLEX,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10440,M A KHARAFI & SONS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10441,M V  KOZA ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10442,M. JOHN VENEAU,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10443,M.P TRADIND CO.LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10444,M/V SMILE BOAT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10445,MA FINISHED PROFILE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10446,MA KHARAFI & SONS LUBS.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10447,MACMILLAN PUBLISHERS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10448,MADDIES BEACH CLUB-LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10449,MALICK BAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10450,MALICK TADAN,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10451,MANAGEMENT DEVELOPMENT INSTITUTE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10452,MARIAMA & FATIMA RESTAURANT LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10453,MARIAMA SULAY NJIE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10454,MARITIME AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10455,MASTERPLAN ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10456,MATARR SAYE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10457,MATFORCE  GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10458,MATRIX SOLUTION COMPANY LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10459,MBOWEN CLINIC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10460,MEDICAL &HEALTH SERVICES CO-OPERATIVE CREDIT UNION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10461,MEDICAL RESEARCH COUNCIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10462,MEDICINE CONTROL AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10463,MEDITERRANEAN SHIPPING COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10464,METHODIST CHURCH ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10465,Methodist Mission Agricultural Programme,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10466,METRO SECURITY GAMBIA LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10467,MICHAEL SOCK,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10468,MIM GENERAL TRADING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10469,"Min. of Environment, Climate Change & Nat. Resourc",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10470,MINISTRY OF AGRICULTURE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10471,Ministry Of Basic & Secondary Education.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10472,"Ministry of Comm, Information Technology.",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10473,MINISTRY OF DEFENCE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10474,MINISTRY OF ENERGY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10475,Ministry of Finance & Economic Affairs,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10476,MINISTRY OF FISHERIES AND WATER RESOURCES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10477,MINISTRY OF FOREIGN AFFAIRS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10478,Ministry of Health and social welfare ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10479,MINISTRY OF INTERIOR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10480,MINISTRY OF JUSTICE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10481,Ministry of Local Government & Lands /DLS ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10482,MINISTRY OF PETROLEUM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10483,Ministry of Tertiary and Higher Education.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10484,MINISTRY OF TOURISM AND CULTURE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10485,"Ministry Of Trade, Industry and Employment.",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10486,"MINISTRY OF WOMEN, CHILDREN & SOCIAL WELFARE",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10487,"Ministry of Works, Construction & Infrastructure",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10488,MINISTRY OF YOUTHS AND SPORTS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10489,MISC. CUSTOMERS. CASH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10490,MISC. Duty Free,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10491,MISS 22nd JULY SCHOLARSHIP PAGEANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10492,MOBICELL BLUE OCEAN,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10493,MOBSE/EFA-FTI,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10494,MODOU JANNEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10495,MODOU JAWARA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10496,MODOU TURO DARBO - VISION DEVELOPMENT FOUNDATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10497,MODOU WARGE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10498,MOHAMAMADOU MUSTAPHA  GUEYE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10499,MOHAMMED KABBA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10500,MOMODOU CHAM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10501,MOMODOU S SAMATEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10502,"Monitoring, Control & Surveillance Joint Operation",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10503,MOP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10504,MOSES GOMEZ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10505,MOUKHTARA HOLDING CO.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10506,Mr Hamid Barry - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10507,MR ISAAC THOMAS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10508,MR JABEL TOURAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10509,MR MUHAMMED NJIE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10510,MR OUSMAN JOBE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10511,MR YACOB FAAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10512,Mr YU Honghai,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10513,Mr.  O’REMY JOINER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10514,Mr. ABDOULIE TOURAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10515,MR. ALFRED BLELLE -  LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10516,MR. MOHAMMED HAIDARA - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10517,MR. MOMODOU B.A.SENGHORE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10518,MR. OMAR MBENGA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10519,MR. ROHIT KUMAR ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10520,MR. WOYEH BAMBA SISSOHO ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10521,Mr.PA SAMBA NDURE  - LPG 55KG Kairaba,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10522,MRS ELLEN. M.J.SOCK,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10523,MRS MARY JOHNSON,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10524,MRS. NJAMEH SOSSEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10525,Mrs. Winifred A. Thomas,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10526,MRS.BINTOU SAHOR DEMBA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10527,MS. HAJA JALLOW,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10528,MS. IDA DRAMMEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10529,Ms. LINGEURE DEBORAH SOCK ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10530,MUHAMEDOU OULD MUTARR SALOUM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10531,MUSA NYANG - PREMIX,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10532,MUSLIM HANDS - THE GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10533,MUSTAPHA G. JALLOW & SONS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10534,MUSTAPHA NJIE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10535,MUTAPOLA VOICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10536,MV ANNIKA III,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10537,MV CASSIOPPA  ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10538,MV LILA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10539,MV MARIANA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10540,NANOUS FARM - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10541,NAT. CONTRACTING COMM.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10542,NAT. WATER SECTOR REFORM PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10543,NATCOM  FOR  UNESCO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10544,NATIONAL AGENCY AGAINST TRAFFICKING IN  PERSONS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10545,NATIONAL AGENCY FOR LEGAL AID,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10546,NATIONAL AGRICULTURAL RESARCH INSTITUTE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10547,National Aids Control Programme,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10548,National AIDS Secretariat,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10549,NATIONAL ASSEMBLY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10550,NATIONAL AUDIT OFFICE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10551,National Centre for Arts  and Culture (The Gambia),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10552,National Council For Civic Education (NCCE),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10553,NATIONAL COUNCIL FOR LAW REPORTING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10554,NATIONAL DISASTER MANAGEMENT AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10555,NATIONAL ENTERPRISE DEVELOPMENT INITIATIVE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10556,NATIONAL ENVIRONMENT AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10557,NATIONAL EYE CARE PROGRAMME,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10558,National Food Security Processing & Marketing Corp,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10559,NATIONAL INTELLIGENCE AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10560,National Malaria Control Programme,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10561,NATIONAL NUTRITION AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10562,NATIONAL PLANNING COMMISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10563,NATIONAL POPULATION COMMISSION SECRETARIAT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10564,NATIONAL PUBLIC HEALTH LABORATORIES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10565,NATIONAL RECORDS SERVICE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10566,NATIONAL ROADS AUTHORITY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10567,National security service,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10568,National security service ARMY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10569,National security service FIRE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10570,National security service NAVY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10571,National security service POLICE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10572,NATIONAL TRAINING AUTHORITY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10573,NATIONAL WATER & ELECT CO LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10574,National Women Farmers Association (NaWFA),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10575,NATIONAL YOUTH COUNCIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10576,NATIONAL YOUTH PALIAMENT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10577,NATIVE GAS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10578,NAWEC,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10579,NDURE SERIGNE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10580,NESSIM TRADING COMPANY LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10581,NETPAGE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10582,NEW VISION INSURANCE COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10583,NFANSU TOURAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10584,NGALA LODGE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10585,NGO AFFAIRS AGENCY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10586,NIGERIA HIGH COMMISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10587,NJAWARA AGRIC TRAINING CENTRE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10588,NJEGAN  BROTHERS GAS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10589,NUSRAT SENIOR SECONDARY SCHOOL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10590,NYIMA'S MACHINERY ENTERPRISES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10591,O.M TOURAY & SONS  GARAGE       ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10592,OB LOGISTICS LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10593,OBT SHIPPING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10594,OCEAN BAY HOTEL & RESORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10595,OFFICE OF THE  PRESIDENT / PMO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10596,OFFICE OF THE PARAMOUNT CHIEF,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10597,OFFICE OF THE PRESIDENT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10598,OFFICE OF THE VICE PRESIDENT ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10599,OK Gambia,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10600,OLIVIA RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10601,OMVG ENERGY PROJECT - NAT. MONITORING PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10602,ONE SIGHT GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10603,OPERATION BULLDOZER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10604,OPTIBET 777 JACKPOT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10605,OSI CONNECTIONS LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10606,OUSAINOU JACK,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10607,OUSAINOU MAHANERA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10608,OUSMAN BAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10609,OUSMAN FOFANA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10610,OUSMAN NJIE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10611,PAGES COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10612,PALM BEACH HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10613,PALMEA CO. LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10614,PAPA ARMINDO MOTEIRO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10615,PAPERMART-PRINTMART,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10616,PARADISE SUITES HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10617,PARADISO RESTAURANT LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10618,PARKS AND WILDLIFE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10619,PAUL SOLOMON BRUCE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10620,PAYCE CONSULTING LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10621,PCU - MINISTRY OF FINANCE - TEMP ACCOUNT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10622,PEACE AMBASSADORS THE GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10623,Pelican Seafood,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10624,"Petrogal Guiné-Bissau, Lda",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10625,PHOENIX LOUNGE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10626,PIMU(MOA),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10627,PIWAM SAPU,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10628,PIWAMP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10629,PKF,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10630,PLASTICCO INDUSTRIES - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10631,PLAZA APARTMENT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10632,POCOLOCO BEACH BAR & RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10633,PREM IX - SUWAIBOU JOBARTEH - GUNJUR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10634,PREMIER AGRO OIL (G) LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10635,PREMIER SPORT BETTING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10636,PREMIX- ABUBACARR JAITEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10637,PREMIX- ALH DODOU NJIE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10638,PREMIX- ALIEU MASS KAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10639,Premix Dealer,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10640,PREMIX- MODOU JOBE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10641,PREMIX- SEREIGN JAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10642,PREMIX- WALLY FAYE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10643,PREMIX-ABDULIE JAWNEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10644,PREMIX-ALAGIE SARR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10645,PREMIX-AMADOU NJIE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10646,PREMIX-AMIE JOBATEH BRUFUT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10647,PREMIX-AMIE JOBATEH TANJI,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10648,PREMIX-CHERNO MANNEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10649,PREMIX-DECORY CEESAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10650,PREMIX-FATOU SAINE TANJI,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10651,PREMIX-GORGI SARR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10652,PREMIX-LAMIN JAWNEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10653,PREMIX-LAMIN SARR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10654,PREMIX-LANDING MANNEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10655,PREMIX-MAMOUTH TOURAY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10656,PREMIX-MOMODOU NDOYE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10657,PREMIX-MUHAMMED SALOUM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10658,PREMIX-MUSTAPHA NYING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10659,PREMIX-SERIGNE NDURE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10660,PREMIX-SHEIKH SILLAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10661,PREMIX-SUWAIBOU JOBATEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10662,PREMIX-TALLA JOBE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10663,President's Empowerment Of Girl Education Project.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10664,PRESTIGE SECURITY SERVICES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10665,PRIME INSURANCE COMPANY LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10666,PRIME STATIONERY LTD.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10667,PRINCESS BEACH RESORT COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10668,Pristine Consulting,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10669,PROGEBE-GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10670,PROJECT COORDINATION UNIT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10671,PROJECT IMPLEMENTATION UNIT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10672,PRO-POOR ADVOCACY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10673,PUBLIC SERVICE COMMISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10674,Public Utilities Regulatory Authority(PURA),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10675,QCELL LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10676,R & A Company Limited,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10677,R & R SERVICES LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10678,RADVILLE COLD STORES LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10679,RADVILLE FARMS LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10680,RAINBOW BEACH RESORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10681,REGAL APARTMENTS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10682,REGISTRY OF BIRTHS & DEATHS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10683,REO'S DELI & PIZZA - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10684,REYNOLD CARROL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10685,RIDERS FOR HEALTH THE GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10686,RIYAN APARTMENTS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10687,ROYAL ENERGY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10688,ROYAL HASKONINING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10689,ROYAL INSURANCE GAMBIA LIMITED ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10690,ROYAL VICTORIAL HOSPITAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10691,RUBEN TRADING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10692,RUDDER S.A.M.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10693,RURAL DEVELOPMENT ORGANISATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10694,RURAL FINANCE PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10695,S.C.A. SHIPPING CONSULTANTS ASSOCIATED SARL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10696,SAFETY'S WAY DRIVING SCHOOL LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10697,SAHEL INVESTMENT MANAGEMENT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10698,"Saikou Omar Gigo,Torodo Builders",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10699,SAIKOU TOURAY LPG DEALER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10700,SAILORS BEACH BAR & RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10701,SALLY SINGHATEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10702,SALOUM OIL COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10703,SAMA SANG CCF PROGRAMME AREA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10704,SAMBA'S KITCHEN,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10706,SAMSUNG DEALER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10707,SANTA YALLA BUSINESS GROUP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10708,SARATA CONATEH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10709,SBEC INTERNATIONAL SCHOOL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10710,SCALA RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10711,SCHOOL OF NURSING AND MIDWIFERY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10712,SEA FRONT RESIDENCE HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10713,SEA SHELL'S RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10714,SEABIZ LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10715,SEAVIEW GARDEN HOTEL LPG A/C,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10716,Senegalese High Commission,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10717,SenegaloGambian Permanent Secretariat,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10718,Senegambia Beach Hotel,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10719,SERIGNE NDURE - FORTUNE OIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10720,SERREKUNDA HOSPITAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10721,SHAPOORJI PALLONJI & CO. LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10722,SHARE AND CARE TRADING,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10723,SHEIKH TIJAN KAH,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10724,Sheikh Zayed Regional Eye Care,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10725,SHEL GAMBIA PARTNER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10726,Sheraton Gambia Hotel Resort & SPA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10727,SHERIFF YUNUSA HYDARA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10728,SHYBEN A. MADI AND SONS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10729,SIERRA LEONE HIGH COMMISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10730,SIGHT SAVERS INTERNATIONAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10731,SMILING COAST RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10732,SOCIAL DEVELOPMENT FUND,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10733,Social Programme For Food Security.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10734,SOCIAL SECURITY & HOUSING FINANCE CORP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10735,SOLMIC CATERING SERVICES LPG Account,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10736,SOLO DABO COMPANY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10737,SONKO JILENG ENTERPRISE LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10738,Sony's hardware & Construction Company Ltd,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10739,SOPE NABIE COSMETIC SHOP - DIPPAKUNDA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10740,SOVEREIGN MOTOR LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10741,SPCL - SMCIPL JOINT VENTURE - SHAPOORJI - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10742,SPCP - SMCIPL JV for NAWEC Project - SHAPOORJI PAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10743,SPFS-DOSA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10744,SPINAP-AHI,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10745,SS LATRIKUNDA - SALAH FARAGE - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10746,St Francis Senior Secondary School,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10747,ST. AUGUSTINE'S SENIOR SECONDARY SCHOOL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10748,ST. PETER'S TECHNICAL JUNIOR & SENIOR SECONDARY ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10749,Standard Chartered Bank (G) Ltd,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10750,STAR OIL MALI SA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10751,STICHTING STEUN EN OPBOUW GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10752,STONEWIN SIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10754,SULTAN TRADERS AND REAL ESTATE COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10755,SUNBEACH HOTEL & RESORT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10756,SUNSET HOTEL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10757,SUNSHINE INDUSTRIES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10758,SUNSHINE INSURANCE LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10759,SUPER DRIVE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10760,survelliance operation co-ordination unit(socu),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10761,SWAMI GAMBIA LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10762,SWE-GAM COMPANY LIMITED ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10763,T.K. MOTORS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10764,TAF HOLDING CO. LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10765,TAIWANE TECH MISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10766,TAJ  CO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10767,TAKAFUL INSURANCE GAMBIA LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10769,TANGO OFFICE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10770,TANJI COMM.FISHERIES PRO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10771,TAO RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10772,TECHWORLD LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10773,Tee Farms Gambia Limited,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10774,THE DINNING ROOM - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10775,THE EMBASSY OF THE REPUBLIC OF CUBA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10776,THE GAMBIA BANKERS ASSOCIATION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10777,THE GAMBIA COMMISSION FOR REFUGEES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10778,THE GAMBIA COMPETITION COMMISSION,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10779,THE GAMBIA GROWTH & COMPETITIVENESS PROJECT C/O,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10780,The Gambia Lowland Development Project.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10781,THE GAMBIA MEDICAL & DENTAL COUNCIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10782,THE GAMBIA NURSES AND MIDWIVES COUNCIL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10783,THE GAMBIA POLICE FORCE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10784,THE GAMBIA SMALL ARMS & LIGHT WEAPONS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10785,THE GAMBIA SONGHAI INITIATIVE - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10786,THE GAMBIA STANDARD BUREAU,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10787,THE GAMBIA SUBMARINE CABLE COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10788,The Gambia Technical Training Institute,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10789,THE GIRLS AGENDA ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10790,THE HUT RESTAURANT - LPG ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10791,THE NEW NUT CO. ( GAMBIA) LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10792,THE OBSEVER CO(GAMBIA ) LTD.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10793,THE PRESIDENT ROTARY CLUB OF BANJUL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10794,"The Scene, Beach Lounge Restaurant",Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10795,THE SUPPORT FOR PROJECT COORDINATOR,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10796,The West African Examinations Council.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10797,THERESE ABRAHAM - LPG ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10798,THINK YOUNG WOMEN,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10799,THOCOMAR GAMBIA LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10800,THOMEX ENTERPRISES,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10801,THREE LITTLE BIRDS ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10802,TIDA GAS ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10803,TIMBER &FURNITURE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10804,TIME INN RESTAURANT - LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10805,TIMELESS RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10806,TOTAL,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10807,TOUBA AKC ENTERPRISE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10808,TOUKKI MAN TRAVEL & LOGISTICS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10809,TRESCO HOLDINGS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10810,TRIAD RESOURCES GROUP,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10811,TRUST BANK LIMITED,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10812,TRUST TRANSPORT COMPANY LTD,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10813,TURKISH EMBASSY ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10814,TYPISCH HOLLANDS BAR & RESTAURANT- LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10815,Uncredited Customer lodgements by bank,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10816,UNDP (UNITED NATIONS DEVELOPMENT PROGRAMME),Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10817,Un-identified Customers with Lodgements,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10818,UNIDO/GEF 5 PROJECT ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10819,Unique Solution,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10820,UNIQUE TRANSPORT SYSTEM,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10821,UNITED NATION CHILDREN FUND,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10822,UNITED STATES EMBASSY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10823,UNIVERSITY OF THE GAMBIA,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10824,US PEACE CORPS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10825,VAT RECEIVABLE ACCOUNT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10826,VENEZUELAN EMBASSY,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10827,VINCI ENERGIES TTE FRANCE POUR OMVG ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10828,WAAPP ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10829,WARCIP PROJECT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10830,WASSU GAMBIA KAFO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10831,West Africa Quality System Programme,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10832,WEST AFRICAN COLLEGE OF NURSING.,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10833,West African Leisure Group Limited,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10834,WEST AFRICAN QUALITY PROGRAMME,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10835,WEST AFRICAN TOURS,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10836,WEST COAST RADIO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10837,WOMEN'S  BUREAU,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10838,WWF - WAMPO,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10839,Yankuba Jawara,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10840,YASMINA RESTAURANT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10841,YONNA FOREIGN EXCHANGE BUREAU ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10842,YUSUPHA GYE,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10843,YUSUPHA KETTER,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10844,ZAHRA RESTAURANT-LPG,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10845,ZENITH BANK POS CLEARING ACCOUNT,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10846,ZION ENTERPRISE ,Gambia,Banjul,B2B,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_b2b,l10n_petrogas.coa_customer_b2b
+10038,ALLUNHARI SERVICE STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_customer_coco
+10082,BANSANG SAEVICE STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_customer_coco
+10097,BRIKAMA SERVICE STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_customer_coco
+10099,BRUSUBI SERVICE STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_customer_coco
+10349,I- DRIVE SERVICE STATION,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_customer_coco
+10397,KAIRABA SERVICE STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_customer_coco
+10768,TALINNING SERVICE STATION ,Gambia,Banjul,COCO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_coco,l10n_petrogas.coa_customer_coco
+10075,BAKOTEH SERVICE STATION (BALA MANEH),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
+10156,DIPPAKUNDA SERVICE STATION (EBRIMA CEESAY),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
+10225,FARAFENNI SERVICE STATION (SAINEY DIBBA),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
+10408,KAUR SERVICE STATION (SAMBA NJIE),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
+10421,LAMIN SERVICE STATION (EBRIMA CEESAY),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
+10425,LATRIKUNDA GERMAN SERVICE (MIYAN),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
+10705,SAMBUJANG SAIDYLEIGH (SOMA),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
+10753,SUKUTA SERVICE STATION (EBRIMA CEESAY),Gambia,Banjul,CODO,Immediate Payment,D.P,company,True,False,GAMPET,l10n_petrogas.coa_customer_codo,l10n_petrogas.coa_customer_codo
