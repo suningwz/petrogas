@@ -11,14 +11,14 @@
                 </field>
 
                 <field name="partner_id" position="after">
-                    <field name="regime_id" required="0" attrs="{'readonly':[('state','!=','draft')]}"
+                    <field name="regime_id" string="Custom Duty" required="0" attrs="{'readonly':[('state','!=','draft')]}"
                            options="{'no_create_edit': True, 'no_open': True}"/>
                     <field name="client_order_ref"/>
                 </field>
 
                 <field name="pricelist_id" position="replace">
                     <field name="date_order" readonly="True"/>
-                    <field name="location_id" required="0" attrs="{'readonly':[('state','!=','draft')]}"
+                    <field name="location_id" string="Depot" required="0" attrs="{'readonly':[('state','!=','draft')]}"
                            options="{'no_create_edit': True, 'no_open': True}"/>
                     <field name="pricelist_id" attrs="{'readonly':[('state','!=','draft')]}"
                         options="{'no_create_edit': True, 'no_open': True}"/>

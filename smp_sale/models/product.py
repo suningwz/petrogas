@@ -59,7 +59,7 @@ class ProductProduct(models.Model):
 
             if transport_type and transport_type.charge.id == product.id:
                 transport_cost_id = self.env['transport.picking'].get_transport_cost_from_sale_order_line(transport_type, location_id, partner_id)
-                prices[product.id] = transport_cost_id and transport_cost_id.value or product[price_type] or 0.0
+                prices[product.id] = transport_cost_id and transport_cost_id.value or (product[price_type] or 0.0)
 
             if price_type == 'list_price':
                 prices[product.id] += product.price_extra

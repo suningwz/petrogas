@@ -495,8 +495,8 @@ class SaleOrderLine(models.Model):
 
     @api.onchange('product_uom', 'product_uom_qty')
     def product_uom_change(self):
-        self = self.with_context(regime_id= self.order_id.regime_id.id,
-                                 location_id= self.order_id.location_id.id,
+        self = self.with_context(regime_id=self.order_id.regime_id.id,
+                                 location_id=self.order_id.location_id.id,
                                  transport_type=self.order_id.transport_type and self.order_id.transport_type.id or False,)
         res = super(SaleOrderLine, self).product_uom_change()
 
@@ -524,6 +524,8 @@ class SaleOrderLine(models.Model):
             product = product.with_context(location_id=self.order_id.location_id.id)
         if self.order_id.regime_id:
             product = product.with_context(regime_id=self.order_id.regime_id.id)
+        if self.order_id.transport_type:
+            product = product.with_context(transport_type=self.order_id.transport_type.id)
 
         if self.order_id.pricelist_id.discount_policy == 'with_discount':
             price = product.with_context(pricelist=self.order_id.pricelist_id.id).price

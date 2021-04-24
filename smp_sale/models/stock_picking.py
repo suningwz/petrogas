@@ -51,21 +51,13 @@ class StockPicking(models.Model):
                     record.sale_id.payment_term_id.line_ids[0].days == 0:
                 if not self.user_has_groups('smp_sale.bc_validation_control'):
                     if not record.sale_id.invoice_ids:
-                        raise UserError(_("""For an immediate payment, the invoice must be paid before to grant access to the delivery order printing. """))
+                        raise UserError(_("""For an immediate payment, the invoice must be paid before to grant access to the delivery order printing."""))
                     states = all([i.state == 'done' for i in record.sale_id.invoice_ids])
                     invoice_amount = sum([i.amount_total for i in record.sale_id.invoice_ids if i.state =='paid'])
                     ordered_amount = record.sale_id.amount_total
                     if not invoice_amount == ordered_amount:
                         invoice_name = ', '.join(record.invoice_ids.mapped('number'))
-                        raise UserError("""Pour un paiement au comtpant veuillez régler la ou les factures %s concernée(s) par ce BL correspond au montant du bon de commande. """ % invoice_name)
-                    # TODO: Verifier quantité livré et quantité commandé
-                # else:
-                    # message = """Attention: Vous venez d'outepassez une procédure de vente consistant à bloquer l'inpression d'un BL au cas le client est soumis à un réglement immédiat"""
-                    # mess = {
-                    #     'title': "Contrôle sur les ventes aux comptant ",
-                    #     'message': message
-                    # }
-                    # return {'warning': mess}
+                        raise UserError(_("""For an immediate payment, the invoice %s must be paid before to grant access to the delivery order printing.""") % invoice_name)
 
             """ Contrôle limitation d'impression"""
             if self.printed and print_limit:
