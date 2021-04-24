@@ -64,7 +64,7 @@
         <field name="arch" type="xml">
             <button name="do_print_picking" position="after">
 <!--                <button name="confirm_product_qty" string="Confirmer les quantités" type="object" states="confirmed,assigned"/>-->
-                <button name="action_get_account_moves" string="Pièces Comptable" type="object" states="done"/>
+                <button name="action_get_account_moves" string="Account Move" type="object" states="done"/>
             </button>
 
             <button name="button_validate"  position="replace">
