@@ -305,8 +305,8 @@ class CredocDeposit(models.Model):
 
     deposit_date = fields.Date('Date', required=True)
     credoc_id = fields.Many2one('credoc.credoc', 'Letter Credit', required=True)
-    move_id = fields.Many2one('account.move', 'Pièce comptable')
-    currency_id = fields.Many2one('res.currency', 'Devise', readonly=True)
+    move_id = fields.Many2one('account.move', 'Account Move')
+    currency_id = fields.Many2one('res.currency', 'Currency', readonly=True)
     amount_credoc = fields.Monetary('Montant Crédit', currency_field='currency_id', required=True)
     amount_deposit = fields.Monetary('Montant Deposit', currency_field='currency_id', required=True)
 
