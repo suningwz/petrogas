@@ -194,7 +194,8 @@ class SaleOrder(models.Model):
 
         for picking in self.picking_ids.filtered(lambda x: x.state not in ('done','cancel')
                                                            and not x.to_be_confirmed_manually() ):
-
+            picking.scheduled_date = self.date_order
+            picking.date_done = self.date_order
             if self.picking_policy == 'one' and all([move.product_uom_qty == move.reserved_availability for move in picking.move_lines]):
                 for move in picking.move_lines.filtered(lambda m: m.state not in ['done', 'cancel']):
                     for move_line in move.move_line_ids:
@@ -272,6 +273,7 @@ class SaleOrder(models.Model):
                 """ Si pas de facture selon la clé de répartition on crée la facture"""
                 if group_key not in invoices:
                     inv_data = order._prepare_invoice()
+                    inv_data['date_invoice'] = order.date_order.strftime("%Y-%m-%d")
                     invoice = inv_obj.create(inv_data)
                     if order.regime_id:
                         invoice.regime_id = order.regime_id
