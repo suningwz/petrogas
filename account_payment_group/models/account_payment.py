@@ -355,3 +355,15 @@ class AccountPayment(models.Model):
                 self.payment_group_id.communication,
                 self.communication and ": %s" % self.communication or "")
         return vals
+
+    def _get_liquidity_move_line_vals(self, amount):
+        res = super(AccountPayment, self)._get_liquidity_move_line_vals(self.invoice_ids)
+        if self.communication:
+            res['name'] += ': ' + self.communication
+        return res
+
+    def _get_counterpart_move_line_vals(self, invoice=False):
+        res = super(AccountPayment, self)._get_counterpart_move_line_vals(self.invoice_ids)
+        if self.communication:
+            res['name'] += ': ' + self.communication
+        return res
