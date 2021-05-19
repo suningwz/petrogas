@@ -40,6 +40,7 @@ class ProductProduct(models.Model):
             location_id = product._context.get('location_id', False)
             regime_id = product._context.get('regime_id', False)
             partner_id = product._context.get('partner', False)
+            delivery_address = product._context.get('delivery_address', False)
             transport_type = product._context.get('transport_type', False)
 
             if location_id:
@@ -58,7 +59,8 @@ class ProductProduct(models.Model):
                 prices[product.id] = product[price_type] or 0.0
 
             if transport_type and transport_type.charge.id == product.id:
-                transport_cost_id = self.env['transport.picking'].get_transport_cost_from_sale_order_line(transport_type, location_id, partner_id)
+                transport_cost_id = self.env['transport.picking'].get_transport_cost_from_sale_order_line(
+                    transport_type, location_id, delivery_address or partner_id)
                 prices[product.id] = transport_cost_id and transport_cost_id.value or (product[price_type] or 0.0)
 
             if price_type == 'list_price':
