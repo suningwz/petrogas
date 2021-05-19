@@ -68,6 +68,11 @@ class SaleOrder(models.Model):
         if self.env['ir.config_parameter'].sudo().get_param('sale.use_sale_note') and self.env.user.company_id.sale_note:
             values['note'] = self.with_context(lang=self.partner_id.lang).env.user.company_id.sale_note
 
+
+        config = self.env['res.config.settings'].sudo().search([])[0]
+        if config.group_sale_delivery_address:
+            values['partner_shipping_id'] = self.partner_id.id
+
         if self.partner_id.team_id:
             values['team_id'] = self.partner_id.team_id.id
         self.update(values)
@@ -443,6 +448,7 @@ class SaleOrderLine(models.Model):
         product = self.product_id.with_context(
                 lang=self.order_id.partner_id.lang,
                 partner=self.order_id.partner_id,
+                delivery_address=self.order_id.partner_shipping_id or self.order_id.partner_id,
                 quantity=vals.get('product_uom_qty') or self.product_uom_qty,
                 date=self.order_id.date_order,
                 pricelist=self.order_id.pricelist_id.id,
@@ -498,6 +504,7 @@ class SaleOrderLine(models.Model):
     @api.onchange('product_uom', 'product_uom_qty')
     def product_uom_change(self):
         self = self.with_context(regime_id=self.order_id.regime_id.id,
+                                 delivery_address=self.order_id.partner_shipping_id or self.order_id.partner_id,
                                  location_id=self.order_id.location_id.id,
                                  transport_type=self.order_id.transport_type and self.order_id.transport_type.id or False,)
         res = super(SaleOrderLine, self).product_uom_change()
@@ -527,7 +534,9 @@ class SaleOrderLine(models.Model):
         if self.order_id.regime_id:
             product = product.with_context(regime_id=self.order_id.regime_id.id)
         if self.order_id.transport_type:
-            product = product.with_context(transport_type=self.order_id.transport_type.id)
+            product = product.with_context(transport_type=self.order_id.transport_type.id,
+                                           delivery_address=self.order_id.partner_shipping_id or self.order_id.partner_id,
+                                           )
 
         if self.order_id.pricelist_id.discount_policy == 'with_discount':
             price = product.with_context(pricelist=self.order_id.pricelist_id.id).price

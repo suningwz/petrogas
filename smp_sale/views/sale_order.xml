@@ -32,6 +32,10 @@
 
                 </field>
 
+               <xpath expr="//field[@name='partner_shipping_id']" position="attributes">
+                    <attribute name="domain">['|', ('id','=',partner_id), ('parent_id','=',partner_id)]</attribute>
+                </xpath>
+
 
                 <xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="after">
                     <field name="qty_to_confirm"/>
