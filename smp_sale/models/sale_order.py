@@ -69,9 +69,10 @@ class SaleOrder(models.Model):
             values['note'] = self.with_context(lang=self.partner_id.lang).env.user.company_id.sale_note
 
 
-        config = self.env['res.config.settings'].sudo().search([])[0]
-        if config.group_sale_delivery_address:
-            values['partner_shipping_id'] = self.partner_id.id
+        # config = self.env['res.config.settings'].sudo().search([])
+        #
+        # if config.group_sale_delivery_address:
+        values['partner_shipping_id'] = self.partner_id.id
 
         if self.partner_id.team_id:
             values['team_id'] = self.partner_id.team_id.id
