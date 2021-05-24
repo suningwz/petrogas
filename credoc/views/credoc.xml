@@ -4,7 +4,7 @@
     ********************* Credit deposit *************
 
       <record model="ir.ui.view" id="credoc_deposit_form">
-          <field name="name">Déposit Crédit Documentaire</field>
+          <field name="name">Déposit Letter Of Credit</field>
           <field name="model">credoc.deposit</field>
           <field name="arch" type="xml">
               <form>
@@ -32,7 +32,7 @@
       </record>
 
     <record model="ir.ui.view" id="credoc_deposit_tree">
-          <field name="name">Déposit Crédit Documentaire</field>
+          <field name="name">Déposit Letter Of Credit</field>
           <field name="model">credoc.deposit</field>
           <field name="arch" type="xml">
               <tree>
@@ -49,14 +49,14 @@
       </record>
 
       <act_window id="credoc_deposit_action"
-          name="Déposit Crédit Documentaire"
+          name="Déposit Letter Of Credit"
           res_model="credoc.deposit"
           target="new"
       />
 
-    **************  Crédit Documentaire Configuration **************
+    **************  Letter Of Credit Configuration **************
     <record model="ir.ui.view" id="credoc.credoc_conf_form">
-        <field name="name">Configuration Crédit Documentaire</field>
+        <field name="name">Configuration Letter Of Credit</field>
         <field name="model">credoc.configuration</field>
         <field name="arch" type="xml">
             <form create="true">
@@ -79,11 +79,11 @@
 
     </record>
 
-    **************  Crédit Documentaire Ajustement **************
+    **************  Letter Of Credit Ajustement **************
 
     <!-- WIzard credoc azjustement       -->
     <record model="ir.ui.view" id="credoc.credoc_ajustement_form">
-      <field name="name">Ajustement du crédit documentaire</field>
+      <field name="name">Ajustement du Letter Of Credit</field>
       <field name="model">credoc.adjustment</field>
       <field name="arch" type="xml">
           <form>
@@ -107,7 +107,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="credoc.credoc_adjustment_action_window">
-        <field name="name">Ajustement De Crédits documentaires.</field>
+        <field name="name">Ajustement Letter Of Credit.</field>
         <field name="res_model">credoc.adjustment</field>
         <field name="view_type">form</field>
         <field name="view_mode">form</field>
@@ -115,7 +115,7 @@
         <field name="target">new</field>
     </record>
 
-    **************  Crédit Documentaire **************
+    **************  Letter Of Credit **************
     <record model="ir.ui.view" id="credoc.form">
       <field name="name">credoc form</field>
       <field name="model">credoc.credoc</field>
@@ -303,7 +303,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="credoc_action_window">
-      <field name="name">Crédits documentaires.</field>
+      <field name="name">Letter Of Credit.</field>
       <field name="res_model">credoc.credoc</field>
       <field name="view_type">form</field>
       <field name="view_mode">tree,form</field>
@@ -422,14 +422,14 @@
 <!--    />-->
 
 
-    **************  Crédit Documentaire Menu  **************
-    <menuitem name="Crédits documentaire" id="credoc.menu_root" parent="account.menu_finance"/>
-    <menuitem name="Crédits documentaire" id="credoc.menu_credoc" parent="credoc.menu_root"
+    **************  Letter Of Credit Menu  **************
+    <menuitem name="Letter Of Credit" id="credoc.menu_root" parent="account.menu_finance"/>
+    <menuitem name="Letter Of Credit" id="credoc.menu_credoc" parent="credoc.menu_root"
               sequence="10" action="credoc_action_window"/>
-    <menuitem name="Configuration Crédits documentaire" id="credoc.menu_conf" parent="credoc.menu_root"
+    <menuitem name="Configuration Letter Of Credit" id="credoc.menu_conf" parent="credoc.menu_root"
               sequence="100" action="credoc_conf_action"/>
 
-    **************  Crédit Documentaire - Payment Action **************
+    **************  Letter Of Credit - Payment Action **************
 
     <record id="smp_credoc_payment_ids_compute_rule_action" model="ir.actions.server">
         <field name="name">Get Payments</field>

@@ -47,16 +47,6 @@ class CredocCredoc(models.Model):
                 self.paid_amount = sum(invoice_ids2.mapped('amount'))
 
 
-    # @api.multi
-    # @api.depends('payment_ids')
-    # def _get_paid_amount(self):
-    #     self.ensure_one()
-    #     if not self.payment_ids:
-    #         self.paid_amount = sum([r.amount for r in self.payment_ids])
-    #     else:
-    #         self.paid_amount = 0.0
-
-
     name = fields.Char('Sequence', readonly=True, default="/", copy=False)
     currency_id = fields.Many2one('res.currency', string='Devise', readonly=True)
     opening_currency_rate = fields.Float(' Commission Currency rate', digits=(12, 6), default=1.0)
@@ -71,7 +61,7 @@ class CredocCredoc(models.Model):
     payment_term = fields.Many2one('account.payment.term', 'Payment term', states=READONLY_STATES,
                                        required=True)
     date_due = fields.Date("Due Date", compute='_compute_date_due', readonly=True)
-    deposit_percentage = fields.Percent('Déposit in %', states=READONLY_STATES, required=True)
+    deposit_percentage = fields.Percent('Deposit in %', states=READONLY_STATES, required=True)
     amount_deposit = fields.Monetary('Deposit Amount', compute='_get_deposit_amount', currency_field='currency_id', readonly=True)
 
     company_currency_id = fields.Many2one('res.currency', string='Company Currency', readonly=True, )
@@ -645,3 +635,10 @@ class CredocRetrocessionWizard(models.TransientModel):
         retrocession_id = self.env['credoc.retrocession'].create([val])
         retrocession_id.confirm()
 
+
+# class CredocOpeningLine(models.Model):
+#     _inherit = 'credoc.opening.line'
+#
+#     name = fields.Char(string='Nom', required=True)
+#     bank_id = fields.Many2one('account.journal', 'Bank', domain=[('type', '=', 'bank')], states=READONLY_STATES, required=True)
+#     # type = fields.Selection([('fixed','Fixed')])
