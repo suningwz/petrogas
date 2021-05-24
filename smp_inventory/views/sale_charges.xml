@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <form string="Sale Charges">
                     <header>
-                        <button string="Confir" type="object" name="confirm" states="draft" class="oe_highlight" />
+                        <button string="Confirm" type="object" name="confirm" states="draft" class="oe_highlight" />
 <!--                    <button string="Mark as done" type="object" name="action_done"-->
 <!--                            states="confirmed" class="oe_highlight"/>-->
 <!--                    <button string="Reset to draft" type="object" name="action_draft"-->
@@ -56,12 +56,12 @@
         <field name="name">sale_charges_search</field>
         <field name="model">sale.charges</field>
         <field name="arch" type="xml">
-        <search>
-        <field name="product_id"/>
-        <field name="location_id"/>
-        <field name="regime_id"/>
-        <field name="rubrique_id"/>
-        </search>
+            <search>
+                <field name="product_id"/>
+                <field name="location_id"/>
+                <field name="regime_id"/>
+                <field name="rubrique_id"/>
+            </search>
         </field>
         </record>
 

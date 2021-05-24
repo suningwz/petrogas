@@ -28,7 +28,7 @@
         </field>
     </record>
 
-    <menuitem id="smp_stock_move_charges_menu" name="Charges Générées" parent="smp_bulletin.smp_stock_accounting_charge"
+    <menuitem id="smp_stock_move_charges_menu" name="Accrued Logistic Cost" parent="smp_bulletin.smp_stock_accounting_charge"
               action="smp_inventory.smp_stock_move_charges_action"/>
 
      ---------- Stock Move Charge - Update Account Entries -  Action server ----------------
@@ -79,12 +79,12 @@
         <field name="arch" type="xml">
           <xpath expr="//footer" position="before">
             <h3>
-                <p>Guide de sélections et de régularisation des charges logistiques et commerciales</p>
+                <p>Control And Regularization Form For Accrued Logistic Cost</p>
             </h3>
 
             <group name="start" attrs="{'invisible': [('state', '!=', 'start')]}">
                 <div>
-                    <p>Souhaitez-vous incorporer les frais selectionnés dans un bulletin existant?</p>
+                    <p>Would you like to incorporate the selected fees into an existing form?</p>
 <!--                    <field name="bulletin_selection" widget="state_selection"/>-->
                     <field name="bulletin_selection" widget="selection"/>
                     <group>
@@ -98,14 +98,13 @@
 
             <group name="bulletin_line" attrs="{'invisible': [('state', '!=', 'bulletin_line')]}">
                 <div>
-                    <p>Souhaitez-vous incorporer les frais selectionnés dans une nouvelle ligne bulletin ?</p>
+                    <p>Would you like to incorporate the selected fees into a new regularization line?</p>
                     <field name="bulletin_line_selection"/>
 <!--                    <group name="bulletin_line_yes" attrs="{'invisible': [('state', '!=', 'bulletin_line'),('bulletin_line_selection', '!=', 'yes')]}">-->
                     <group name="bulletin_line_yes" attrs="{'invisible': [('bulletin_line_selection','=','no')]}">
-                        <p><b>Attentions !!! </b>Dans le cas contraire les entrées obligatoires existant seront réutilisées !!!</p>
+                        <p><b>Warning !!! </b>Otherwise the existing mandatory entries will be reused !!!</p>
                         <field name="bulletin_line_id"
                                attrs="{'invisible':[('bulletin_line_selection','=','no')],'required':[('bulletin_line_selection','=','yes')] }"/>
-<!--                        <field  name="bulletin_line_id"-->
                     </group>
                 </div>
             </group>
@@ -136,7 +135,7 @@
     </record>
 
     <record id="smp_stock_move_charges_compute_rule_wizard_action" model="ir.actions.act_window">
-            <field name="name">Régularisation des charges</field>
+            <field name="name">Regularization of the logistic costs </field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">stock.move.charges.wizard</field>
             <field name="view_type">form</field>
