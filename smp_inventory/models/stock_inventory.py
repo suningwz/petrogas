@@ -22,9 +22,11 @@ class Inventory(models.Model):
             for line in r.line_ids:
                 domain = [('product_id', '=', line.product_id.id), ('location_id', '=', line.location_id.id)]
                 quant_id = self.env['stock.quant'].search(domain)
-                quant_id.ensure_one()
                 diff = line.theoretical_qty - line.product_qty
-                quant_id.quantity += diff
+
+                if quant_id:
+                    quant_id.ensure_one()
+                    quant_id.quantity += diff
 
             r.state = 'cancel'
 
