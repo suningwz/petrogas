@@ -1,0 +1,212 @@
+<odoo>
+  <data>
+
+      <menuitem id="main_coupon_menu"
+                name="Coupon"
+                parent="sale.sale_menu_root"
+                />
+
+     ****************************************************************************************************************
+                        'Coupon Configuration'
+    ****************************************************************************************************************
+    <record id="coupon_configuration_view_form" model="ir.ui.view">
+        <field name="name">coupon_configuration_view_form</field>
+        <field name="model">coupon.configuration</field>
+        <field name="arch" type="xml">
+            <form string="Configuration">
+                <sheet>
+                    <group>
+
+                        <group col="4">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <newline/>
+                            <field name="validity_date"/>
+                            <field name="key"/>
+                            <field name="sale_journal_id"/>
+                            <field name="return_journal_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="product_ids" string="Coupon Product">
+                            <field name="product_ids"></field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="coupon_configuration_view_tree" model="ir.ui.view">
+        <field name="name">coupon_configuration_view_tree</field>
+        <field name="model">coupon.configuration</field>
+        <field name="arch" type="xml">
+        <tree string="Configuration">
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="sale_journal_id"/>
+            <field name="return_journal_id"/>
+            <field name="key"/>
+            <field name="validity_date"/>
+        </tree>
+        </field>
+    </record>
+
+      <record model="ir.actions.act_window" id="coupon_configuration_view_action">
+        <field name="name">Coupons Configuration</field>
+        <field name="res_model">coupon.configuration</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="coupon_configuration_menu" name="Configuration" parent="main_coupon_menu" action="coupon_configuration_view_action"
+              sequence="100"/>
+
+    ****************************************************************************************************************
+                                    'Coupon'
+    ****************************************************************************************************************
+
+    <record id="coupon_view_form" model="ir.ui.view">
+        <field name="name">coupon_coupon_view_form</field>
+        <field name="model">coupon.value</field>
+        <field name="arch" type="xml">
+            <form string="Coupon" create="0" edit="0" delete="0">
+              <header>
+                  <field name="state" widget="statusbar"/>
+              </header>
+                <sheet>
+                    <group>
+                         <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="date"/>
+                        <field name="expiration_date"/>
+                        <field name="sequence"/>
+                        <field name="barcode" groups="bons_valeurs.group_coupon_manager"/>
+                        <field name="barcode_trunked"/>
+                        <field name="value"/>
+                        <field name="stack_id"/>
+                        <field name="partner_id"/>
+                        <field name="product_id"/>
+                        <field name="printing_order_id"/>
+<!--                        <field name="sale_id"/>-->
+                        <field name="return_id"/>
+                        <field name="product_id"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="coupon_view_tree" model="ir.ui.view">
+        <field name="name">coupon_coupon_view_tree</field>
+        <field name="model">coupon.value</field>
+        <field name="arch" type="xml">
+            <tree string="Coupon" create="0" edit="0" delete="0" >
+
+              <field name="company_id" groups="base.group_multi_company"/>
+              <field name="date"/>
+              <field name="expiration_date"/>
+              <field name="sequence"/>
+              <field name="barcode_trunked"/>
+              <field name="stack_id"/>
+              <field name="partner_id"/>
+              <field name="product_id"/>
+              <field name="printing_order_id"/>
+<!--              <field name="sale_id"/>-->
+              <field name="return_id"/>
+              <field name="value"/>
+              <field name="state"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="coupon_view_search" model="ir.ui.view">
+       <field name="name">coupon_search</field>
+       <field name="model">coupon.value</field>
+        <field name="arch" type="xml">
+          <search string="Coupon Search">
+            <field name="barcode_trunked"/>
+            <field name="sequence"/>
+            <field name="printing_order_id"/>
+<!--            <field name="sale_id"/>-->
+            <field name="return_id"/>
+          </search>
+       </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="coupon_view_action">
+        <field name="name">Coupons</field>
+        <field name="res_model">coupon.value</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+<!--            <field name="domain">[('invoice_id.state', 'not in', ('draft', 'cancel')),('asset_category_id','!=',False),('invoice_id.journal_id.type', 'in',('purchase','purchase_refund'))]</field>-->
+<!--        <field name="context">{'search_default_end_date': False}</field>-->
+    </record>
+
+      <!-- This Menu Item must have a parent and an action -->
+      <menuitem id="coupon_menu" name="Coupons" parent="main_coupon_menu" action="coupon_view_action" sequence="1"/>
+      <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+
+      ****************************************************************************************************************
+                                    'Coupon Stack'
+    ****************************************************************************************************************
+
+    <record id="coupon_stack_view_form" model="ir.ui.view">
+        <field name="name">coupon_stack_view_form</field>
+        <field name="model">coupon.stack</field>
+        <field name="arch" type="xml">
+            <form string="Coupon Stack" create="0" edit="0" delete="0">
+                <sheet>
+                    <group>
+                         <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="sequence"/>
+                        <field name="product_qty"/>
+                        <field name="printing_order_id"/>
+                        <field name="sale_id"/>
+                        <field name="delivery_id"/>
+                        <field name="coupon_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="coupon_stack_view_tree" model="ir.ui.view">
+    <field name="name">coupon_stack_view_tree</field>
+    <field name="model">coupon.stack</field>
+    <field name="arch" type="xml">
+        <tree string="Coupon Stack" create="0" edit="0" delete="0">
+
+          <field name="company_id" groups="base.group_multi_company"/>
+            <field name="sequence"/>
+            <field name="product_qty"/>
+            <field name="printing_order_id"/>
+            <field name="sale_id"/>
+            <field name="delivery_id"/>
+        </tree>
+    </field>
+</record>
+
+    <record id="coupon_stack_view_search" model="ir.ui.view">
+       <field name="name">coupon_stack_search</field>
+       <field name="model">coupon.stack</field>
+        <field name="arch" type="xml">
+          <search string="Coupon Search">
+            <field name="sequence"/>
+            <field name="printing_order_id"/>
+            <field name="sale_id"/>
+            <field name="delivery_id"/>
+          </search>
+       </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="coupon_stack_view_action">
+        <field name="name">Coupons Stacks</field>
+        <field name="res_model">coupon.stack</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="coupon_stack_menu"  parent="main_coupon_menu" action="coupon_stack_view_action" sequence="80"/>
+
+  </data>
+</odoo>

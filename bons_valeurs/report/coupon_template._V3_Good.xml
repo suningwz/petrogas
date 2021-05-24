@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <template id="coupon_unique_print">-->
+<!--        <t t-call="web.internal_layout">-->
+<!--            <t t-foreach="docs" t-as="o">-->
+
+<!--                <div class="page">-->
+<!--                    <div class="oe_structure"/>-->
+<!--&lt;!&ndash;                    <t t-set="foo" t-value="len(groupe_list)"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <p><span t-field="foo"/></p>&ndash;&gt;-->
+<!--                    <div class="row">-->
+<!--                        <div id="left" class="col-3">-->
+<!--                            <div id="l1"><span t-field="o.sequence"/></div>-->
+<!--                            <div id="l2"><span t-field="o.value"/></div>-->
+<!--                            <div id="l3"></div>-->
+<!--                            <div id="l4"></div>-->
+<!--                            <div id="l6"><span t-field="o.barcode_trunked"/></div>-->
+<!--                            <div id="l5"></div>-->
+<!--                        </div>-->
+<!--                        <div id="right" class="col-">-->
+<!--                            <div class="row">-->
+<!--                                <div id="r1">-->
+<!--                                    <div id="r1.1">-->
+<!--                                        <t t-if="o.partner_id">-->
+<!--                                            <h2><p>Customer: <span t-field="o.partner_id"/></p></h2>-->
+<!--                                        </t>-->
+<!--                                    </div>-->
+<!--                                    <div id="r1.2" style="border: 4px solid #7C7BAD; border-bottom: 4px solid #7C7BAD">-->
+<!--                                        <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code11', o.barcode, 600, 100)" alt="Barcode"/>-->
+<!--                                    </div>-->
+<!--                                    <div id="r1.3"></div>-->
+<!--                                    <div id="r1.4"><span t-field="o.barcode_trunked"/></div>-->
+<!--                                    <div id="r1.5"><span t-field="o.company_id"/></div>-->
+<!--                                </div>-->
+<!--                                <div id="r2" >-->
+<!--                                    <div id="r2.1"><span t-field="o.sequence"/></div>-->
+<!--                                    <div id="r2.2"><span t-field="o.value"/></div>-->
+<!--                                    <div id="r2.3"></div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;                            <div class="col-4" name="right_box">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code128', o.barcode, 600, 100)" alt="Barcode"/>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </t>-->
+<!--            </t>-->
+
+<!--    </template>-->
+
+<!--    <template id="coupon_template">-->
+<!--        <t t-call="web.html_container">-->
+<!--            <t t-foreach="docs" t-as="doc">-->
+<!--                <t t-call="bons_valeurs.coupon_unique_print" t-lang="doc.partner_id.lang"/>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--    </template>-->
+
+
+
+    <template id="coupon_template">
+        <t t-call="web.html_container">
+
+            <t t-call="web.internal_layout">
+            <t t-foreach="docs" t-as="o">
+
+                <div class="page">
+                    <div class="oe_structure"/>
+<!--                    <t t-set="foo" t-value="len(groupe_list)"/>-->
+
+<!--                    <p><span t-field="foo"/></p>-->
+                    <div class="row">
+                        <div id="left" class="col-3">
+                            <div id="l1"><span t-field="o.sequence"/></div>
+                            <div id="l2"><span t-field="o.value"/></div>
+                            <div id="l3"></div>
+                            <div id="l4"></div>
+                            <div id="l6"><span t-field="o.barcode_trunked"/></div>
+                            <div id="l5"></div>
+                        </div>
+                        <div id="right" class="col-">
+                            <div class="row">
+                                <div id="r1">
+                                    <div id="r1.1">
+                                        <t t-if="o.partner_id">
+                                            <h2><p>Customer: <span t-field="o.partner_id"/></p></h2>
+                                        </t>
+                                    </div>
+                                    <div id="r1.2" style="border: 4px solid #7C7BAD; border-bottom: 4px solid #7C7BAD">
+                                        <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code11', o.barcode, 600, 100)" alt="Barcode"/>
+                                    </div>
+                                    <div id="r1.3"></div>
+                                    <div id="r1.4"><span t-field="o.barcode_trunked"/></div>
+                                    <div id="r1.5"><span t-field="o.company_id"/></div>
+                                </div>
+                                <div id="r2" >
+                                    <div id="r2.1"><span t-field="o.sequence"/></div>
+                                    <div id="r2.2"><span t-field="o.value"/></div>
+                                    <div id="r2.3"></div>
+                                </div>
+                            </div>
+
+                            <!--                            <div class="col-4" name="right_box">-->
+                            <!--                                <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code128', o.barcode, 600, 100)" alt="Barcode"/>-->
+                            <!--                            </div>-->
+                        </div>
+                    </div>
+
+                </div>
+            </t>
+            </t>
+        </t>
+    </template>
+
+
+    <record id="coupon_report" model="ir.actions.report">
+        <field name="name">Coupon Report</field>
+        <field name="model">coupon.value</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">bons_valeurs.coupon_template</field>
+        <field name="print_report_name">'Coupon Report - %s' % (object.sequence)</field>
+    </record>
+
+
+</odoo>

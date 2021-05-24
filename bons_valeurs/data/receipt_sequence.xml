@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="seq_coupon_printing_order" model="ir.sequence">
+            <field name="name">Coupon Printing Order</field>
+            <field name="code">coupon.printing.order</field>
+            <field name="prefix">CPO/</field>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_coupon_delivery_order" model="ir.sequence">
+            <field name="name">Coupon Delivery Order</field>
+            <field name="code">coupon.delivery.order</field>
+            <field name="prefix">CDO/</field>
+            <field name="padding">6</field>
+        </record>
+
+        <record id="seq_coupon_receipt_return" model="ir.sequence">
+            <field name="name">Coupon Return Order</field>
+            <field name="code">coupon.return.order</field>
+            <field name="prefix">RR/</field>
+            <field name="padding">6</field>
+        </record>
+
+
+
+        <record id="seq_receipt_stack" model="ir.sequence">
+            <field name="name">Carnets</field>
+            <field name="code">coupon.stack</field>
+            <field name="prefix">STACK/</field>
+            <field name="padding">9</field>
+        </record>
+
+        <record id="seq_receipt_sequence" model="ir.sequence">
+            <field name="name">Coupons</field>
+            <field name="code">coupon.value</field>
+            <field name="prefix">TCK/</field>
+            <field name="padding">12</field>
+        </record>
+
+<!--        <record id="bv_peines_soins_config_data" model="bv.peines.soins.configuration">-->
+<!--            <field name="product_id"></field>-->
+<!--            <field name="commission_by_receipt"></field>-->
+<!--        </record>-->
+        
+
+    </data>
+</openerp>

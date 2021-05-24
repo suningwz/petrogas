@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data >
+	
+	<!--<record id="group_connexion" model="res.groups">-->
+        <!--<field name="name">Connexion/Déconnexion</field>-->
+    <!--</record>-->
+	<!---->
+
+    <record id="group_coupon" model="ir.module.category">
+        <field name="name"> Bons valeurs </field>
+        <field name="description"> Droits d'accès aaux fonctionnalités de bons valeurs </field>
+    </record>
+
+    <record id="group_coupon_reader" model="res.groups">
+        <field name="name">Coupon Readers</field>
+        <field name="category_id" ref="group_coupon"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+
+    </record>
+
+
+	<record id="group_coupon_sale_officer" model="res.groups">
+        <field name="name">Coupon Sale Officer</field>
+        <field name="category_id" ref="group_coupon"/>
+        <field name="implied_ids" eval="[(4, ref('group_coupon_reader'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+
+    </record>
+
+	<record id="group_coupon_production_officer" model="res.groups">
+        <field name="name">Coupon Production Officer</field>
+        <field name="category_id" ref="group_coupon"/>
+        <field name="implied_ids" eval="[(4, ref('group_coupon_reader'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+	
+	<record id="group_return_officer" model="res.groups">
+        <field name="name">Coupon Return Officer</field>
+        <field name="category_id" ref="group_coupon"/>
+        <field name="implied_ids" eval="[(4, ref('group_coupon_reader'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+    
+    <record id="group_coupon_manager" model="res.groups">
+        <field name="name">Coupon Manager</field>
+        <field name="category_id" ref="group_coupon"/>
+        <field name="implied_ids" eval="[(4, ref('group_coupon_reader')), (4, ref('group_coupon_sale_officer')), (4, ref('group_coupon_production_officer')), (4, ref('group_return_officer'))]"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+
+    </record>
+
+
+
+</data>
+</openerp>

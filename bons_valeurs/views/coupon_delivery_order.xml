@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="coupon_delivery_order_form" model="ir.ui.view">
+            <field name="name">coupon.delivery.order.form</field>
+            <field name="model">coupon.delivery.order</field>
+            <field name="arch" type="xml">
+                <form string="Coupon Delivery Note">
+                    <header>
+                      <button string="Deliver" type="object" name="deliver" states="ready" class="oe_highlight" />
+                      <field name="state" widget="statusbar"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="sequence"/>
+                            <h1>
+                                <field name="sequence"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="company_id"/>
+                                <field name="confirmation_date"/>
+                                <field name="partner_id"/>
+                                <field name="sale_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="stack" string="Coupon Stack">
+                                <field name="stack_ids">
+                                    <tree editable="bottom" >
+                                        <field name="sequence"/>
+                                        <field name="value_unit"/>
+                                        <field name="product_qty"/>
+                                        <field name="printing_order_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="coupon_delivery_order_tree" model="ir.ui.view">
+            <field name="name">coupon.delivery.order.tree</field>
+            <field name="model">coupon.delivery.order</field>
+            <field name="arch" type="xml">
+                <tree string="Coupon delivery Order">
+                    <field name="sequence"/>
+                    <field name="confirmation_date"/>
+                    <field name="partner_id"/>
+                    <field name="sale_id"/>
+                    <field name="company_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="coupon_delivery_order_search" model="ir.ui.view">
+            <field name="name">coupon.delivery.order.search</field>
+            <field name="model">coupon.delivery.order</field>
+            <field name="arch" type="xml">
+                <search string="Coupon Delivery Order Search">
+                    <group expand="1" string="Group By">
+                        <filter string="state" name="example_field" domain="[]"
+                                context="{'group_by':'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="coupon_delivery_order_view_action" model="ir.actions.act_window">
+            <field name="name">Coupon Delivery Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">coupon.delivery.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Coupon Delivery Order" id="coupon_delivery_order_view_menu"
+                  parent="main_coupon_menu" action="coupon_delivery_order_view_action"/>
+
+    </data>
+</odoo>

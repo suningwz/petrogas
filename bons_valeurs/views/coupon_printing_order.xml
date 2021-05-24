@@ -1,0 +1,92 @@
+<odoo>
+  <data>
+
+    ****************************************************************************************************************
+                                    'Coupon Printing Order'
+    ****************************************************************************************************************
+    <record id="coupon_printing_order_view_form" model="ir.ui.view">
+        <field name="name">coupon_printing_order_view_form</field>
+        <field name="model">coupon.printing.order</field>
+        <field name="arch" type="xml">
+            <form string="Coupon Printing Order">
+                <header>
+                  <button string="Create Coupons" type="object" name="open" states="draft" class="oe_highlight" />
+                  <button string="Print Coupons" type="object" name="print_printing_order" states="open" class="oe_highlight" />
+                  <button string="Done" type="object" name="done" states="printed" class="oe_highlight" />
+                  <field name="state" widget="statusbar"/>
+
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="sequence"/>
+                        </h1>
+                    </div>
+                    <group col="4">
+                         <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="confirmation_date"/>
+                        <field name="sale_order_id"/>
+                        <field name="partner_id"/>
+                        <field name="printer_id"/>
+
+                    </group>
+                    <notebook>
+                        <page name="order" string="Orders">
+                            <field name="printing_line_ids">
+                                <tree editable="bottom" >
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="value"/>
+                                    <field name="coupon_per_stack"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="coupon_printing_order_view_tree" model="ir.ui.view">
+        <field name="name">coupon_printing_order_view_tree</field>
+            <field name="model">coupon.printing.order</field>
+        <field name="arch" type="xml">
+            <tree string="Coupon Printing Order">
+                 <field name="company_id" groups="base.group_multi_company"/>
+                <field name="name"/>
+                <field name="confirmation_date"/>
+                <field name="sale_order_id"/>
+                <field name="partner_id"/>
+                <field name="printer_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="coupon_printing_order_search" model="ir.ui.view">
+       <field name="name">coupon_printing_order_search</field>
+        <field name="model">coupon.printing.order</field>
+        <field name="arch" type="xml">
+          <search string="Coupon Printing Order Search">
+                <field name="confirmation_date"/>
+                <field name="sale_order_id"/>
+                <field name="partner_id"/>
+                <field name="printer_id"/>
+
+          </search>
+       </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="coupon_printing_order_action">
+        <field name="name">Coupon Printing Order</field>
+        <field name="res_model">coupon.printing.order</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+      <menuitem id="coupon_printing_order_menu" name="Printing Order" parent="main_coupon_menu" action="coupon_printing_order_action" sequence="20"/>
+
+  </data>
+</odoo>
