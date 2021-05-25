@@ -32,27 +32,34 @@ class SaleOrder(models.Model):
     is_coupon_order = fields.Boolean('Is coupon order', default=False)
 
     @api.multi
-    def generate_coupon_perso_order(self, line_ids):
+    def _prepare_coupon_printing_order(self, line_ids):
         self.ensure_one()
         res = []
         for line in line_ids:
-            res = [0, 0, {
+            res += [(0, 0, {
                 'company_id': self.company_id.id,
-                'sale_order_line_id': self.line.id,
-                'product_id': line.product_id,
-                'quantity': line.product_qty,
+                'sale_order_line_id': line.id,
+                'product_id': line.product_id.id,
+                'quantity': line.product_uom_qty,
                 'value': line.price_unit,
-            }]
+                'coupon_per_stack': line.coupon_per_stack,
+            })]
 
-        order = {
+        return {
             'company_id': self.company_id.id,
             'sale_order_id': self.id,
+            'location_id': self.location_id.id,
             'partner_id': self.partner_id.id,
-            'date': self.order_date.strftime('%Y-%m-%d'),
+            'printing_date': self.date_order.strftime('%Y-%m-%d'),
+            'confirmation_date': self.date_order.strftime('%Y-%m-%d'),
+            'state': 'draft',
             'printing_line_ids': res,
-            'state': 'ready_to_print',
         }
-        order_id = self.env['coupon.printing.order'].create(order)
+        
+    def _create_coupon_printing_order(self, line_ids):
+        self.ensure_one()
+        order_id = self.env['coupon.printing.order'].create(self._prepare_coupon_printing_order(line_ids))
+        order_id.open()
         return order_id
 
     def generate_coupon_no_perso_delivery(self, stack_ids):
@@ -129,7 +136,7 @@ class SaleOrder(models.Model):
 
             if coupon_perso:
             # Si personnalisé on génère un ordre d'impression
-                print_order_id = self.generate_coupon_perso_order(coupon_perso)
+                print_order_id = self._create_coupon_printing_order(coupon_perso)
 
         return res
 

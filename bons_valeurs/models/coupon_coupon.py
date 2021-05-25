@@ -44,7 +44,10 @@ class CouponConfiguration(models.Model):
         s = str(s)
 
         # TODO: A supprimer
-        s = 'star'
+        # s = 'star'
+        s = self.key
+        if not s:
+            raise UserError(_("Create A Coupon Company key."))
         s_byte = bytes(s, 'utf-8')
 
         for i in range(Length):
@@ -86,7 +89,7 @@ class CouponValue(models.Model):
     company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.user.company_id)
     sequence = fields.Char('Sequence', required=True)
     barcode = fields.Char('Code Bare', size=13, readonly=True)
-    barcode_trunked = fields.Char('Code Bare', size=9, readonly=True)
+    barcode_trunked = fields.Char('Code Bare Trunked', size=9, readonly=True)
     value = fields.Float('Coupon Value', readonly=True)
     state = fields.Selection(COUPON_STATES, 'Statut', readonly=True)
     active = fields.Boolean('Active', Default=True, readonly=True)
@@ -122,6 +125,18 @@ class CouponValue(models.Model):
     def _get_expired_coupon_in_circulation(self):
         pass
 
+    def _set_coupons_to_deliver_state(self):
+        self.write({'state': 'to_deliver'})
+
+    def _set_coupons_to_circulation_state(self):
+        self.write({'state': 'circulation'})
+
+    def _set_coupons_to_done_state(self):
+        self.write({'state': 'done'})
+
+    def _set_coupons_to_returned_state(self):
+        self.write({'state': 'return'})
+
 
 class CouponStack(models.Model):
     _name = 'coupon.stack'
@@ -139,6 +154,9 @@ class CouponStack(models.Model):
     delivery_id = fields.Many2one('coupon.delivery.order')
     value_unit = fields.Float('Coupon Value Unit', required=True)
     location_id = fields.Many2one('stock.location', readonly=True, required=True)
+
+
+
 
     def get_stock(self):
         return self.read_group(domain=[('delivery_id', '=', False), ('state', '=', False)],

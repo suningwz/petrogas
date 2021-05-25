@@ -8,20 +8,20 @@
             <field name="arch" type="xml">
                 <form string="Coupon Delivery Note">
                     <header>
-                      <button string="Deliver" type="object" name="deliver" states="ready" class="oe_highlight" />
+                      <button string="Deliver" type="object" name="confirm_delivery" states="open" class="oe_highlight" />
                       <field name="state" widget="statusbar"/>
                     </header>
 
                     <sheet>
                         <div class="oe_title">
-                            <label for="sequence"/>
+                            <label for="name"/>
                             <h1>
-                                <field name="sequence"/>
+                                <field name="name"/>
                             </h1>
                         </div>
                         <group>
                             <group>
-                                <field name="company_id"/>
+                                 <field name="company_id" groups="base.group_multi_company"/>
                                 <field name="confirmation_date"/>
                                 <field name="partner_id"/>
                                 <field name="sale_id"/>
@@ -50,11 +50,11 @@
             <field name="model">coupon.delivery.order</field>
             <field name="arch" type="xml">
                 <tree string="Coupon delivery Order">
-                    <field name="sequence"/>
+                    <field name="name"/>
                     <field name="confirmation_date"/>
                     <field name="partner_id"/>
                     <field name="sale_id"/>
-                    <field name="company_id"/>
+                     <field name="company_id" groups="base.group_multi_company"/>
                     <field name="state"/>
                 </tree>
             </field>

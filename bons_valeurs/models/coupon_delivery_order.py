@@ -21,18 +21,20 @@ class CouponDeliveryOrder(models.Model):
     location_id = fields.Many2one('stock.location', domain=[('is_sale_production', '=', True)], required=True
                                   , readonly=True, states={'draft': [('readonly', False)]})
 
+    # # @api.multi
+    # def create(self, vals_list):
+    #     for r in vals_list:
+    #         r['name'] = self.env.ref('bons_valeurs.seq_coupon_delivery_order').next_by_id()
+    #     return super(CouponDeliveryOrder, self).create(vals_list)
+
     def print_delivery(self):
         pass
 
     def confirm_delivery(self):
         self.ensure_one()
-        # On s'assure que l'ordre d'impression est finalisé
-        # assert self.stack_ids.mapped('printing_order_id.state') == 'done'
-        assert self.stack_ids.mapped('coupon_ids.state') == 'attenteliv'
         assert self.state == 'open'
-
         #On change le statut des coupon comme délivré
-        self.stack_ids.mapped('coupon_ids') .write({'state': 'circulation'})
+        self.stack_ids.mapped('coupon_ids')._set_coupons_to_circulation_state()
         self.state = 'done'
         return True
 
@@ -42,7 +44,7 @@ class CouponDeliveryOrder(models.Model):
         all_ticket_no_peso = False
         if not all_ticket_no_peso:
             raise UserError(_("""You can not cancel a coupon delivery order wich contain personalized coupon"""))
-        self.stack_ids.mapped('coupon_ids').write({'state': 'done'})
+        self.stack_ids.mapped('coupon_ids')._set_coupons_to_done_state()
         self.stack_ids = [(5, 0, 0)]
         self.state = 'cancel'
         # self.stack_ids.write({'delivery_id': False})

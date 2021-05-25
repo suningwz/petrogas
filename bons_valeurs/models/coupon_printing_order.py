@@ -12,11 +12,20 @@ class CouponPrintingOrder(models.Model):
                                  default=lambda self: self.env.user.company_id)
     name = fields.Char('Name', required=True, default='/', readonly=True, copy=False)
     sale_order_id = fields.Many2one('sale.order', readonly=True, copy=False)
-    printing_line_ids = fields.One2many('coupon.printing.order.line', 'printing_order_id')
-    partner_id = fields.Many2one('res.partner', 'Customer', related='sale_order_id.partner_id', readonly=True)
-    printer_id = fields.Many2one('printing.printer')
-    printing_date = fields.Date('Print Date', default=fields.date.today())
-    confirmation_date = fields.Date('Confirmation Date', default=fields.date.today(),copy=False)
+    printing_line_ids = fields.One2many('coupon.printing.order.line', 'printing_order_id',
+                                        readonly=True, states={'draft': [('readonly', False)]})
+    partner_id = fields.Many2one('res.partner', 'Customer', related='sale_order_id.partner_id',
+                                        readonly=True, states={'draft': [('readonly', False)]})
+    printer_id = fields.Many2one('printing.printer',
+                                        readonly=True, states={'open': [('readonly', False)]})
+    delivery_id = fields.Many2one('coupon.delivery.order', 'Coupon Delivery Order',
+                                        readonly=True, states={'draft': [('readonly', False)]})
+    printing_date = fields.Date('Print Date', default=fields.date.today(),
+                                        readonly=True, states={'draft': [('readonly', False)]})
+    confirmation_date = fields.Date('Confirmation Date', default=fields.date.today(),copy=False,
+                                        readonly=True, states={'draft': [('readonly', False)]})
+    location_id = fields.Many2one('stock.location', 'Coupon Location',
+                                        readonly=True, states={'draft': [('readonly', False)]})
     state = fields.Selection([
         ('draft', 'Draft'),
         ('open', 'Ready to print'),
@@ -27,11 +36,16 @@ class CouponPrintingOrder(models.Model):
     # open ---> print_printing_order ---->done
 
     @api.multi
+    def create(self, vals_list):
+        name = self.env.ref('bons_valeurs.seq_coupon_printing_order').next_by_id()
+        vals_list['name'] = name
+        return super(CouponPrintingOrder, self).create(vals_list)
+
+    @api.multi
     def open(self):
         self.ensure_one()
-        res = self.create_coupons()
+        res = self._create_coupons()
         self.state = 'open'
-        self.name = self.env.ref('bons_valeurs.seq_coupon_printing_order').next_by_id()
         return res
 
     @api.multi
@@ -42,25 +56,21 @@ class CouponPrintingOrder(models.Model):
         self.write({'state': 'printing'})
         return coupon_ids._print_coupon()
 
+    @api.multi
     def done(self):
         self.ensure_one()
 
         # Si c'est une vente on crée un bon de livrison
         if self.sale_order_id:
-            self.delivery_id = [(0, 0, {
-                'name': self.env.ref('bons_valeurs.seq_coupon_delivery_order').next_by_id(),
-                'state': 'open',
-                'confirmation_date': self.confirmation_date,
-                'company_id': self.company_id.id,
-                'partner_id': self.partner_id.id,
-                'sale_id': self.sale_order_id.id,
-                'stack_ids': [(6, 0, [r.id for r in self.printing_line_ids.mapped('stack_ids')])],
-            })]
-            self.printing_line_ids.mapped('stack_ids.coupon_ids').write({'state': 'attenteliv'})
+            # delivery_id = self._create_delivery_order_from_print_order()
+            self.delivery_id = self._create_coupon_delivery()
+            if not self.delivery_id and not self.delivery_id.stack_ids:
+                raise UserError(_("""No stack in the coupon delivery order."""))
+            self.delivery_id.stack_ids.mapped('coupon_ids')._set_coupons_to_circulation_state()
 
         else:
             # Sinon on modifie le statut des tickets
-            self.printing_line_ids.mapped('stack_ids.cupon_ids').write({'state': 'done'})
+            self.printing_line_ids.mapped('stack_ids.coupon_ids')._set_coupons_to_done_state()
 
         self.state = 'done'
 
@@ -73,25 +83,28 @@ class CouponPrintingOrder(models.Model):
         return coupon_ids._print_coupon()
 
     @api.multi
-    def create_coupons(self):
+    def _create_coupons(self):
         self.ensure_one()
         stack_ids = self.env['coupon.stack']
         for line in self.printing_line_ids:
             stack_ids |= line._create_stack()
 
+    @api.multi
     def _create_coupon_delivery(self):
         self.ensure_one()
-        if self.sale_id and self.state == 'printed':
-            state = 'open'
+        if self.sale_order_id:
+            stack_ids = self.printing_line_ids.mapped('stack_ids').ids
             val = {
-                'state': state,
-                'confirmation_date': self.confirmation_date,
+                'state': 'open',
+                'confirmation_date': self.confirmation_date.strftime('%Y-%m-%d'),
+                'name': self.env.ref('bons_valeurs.seq_coupon_delivery_order').next_by_id(),
+                'company_id': self.company_id.id,
                 'partner_id': self.sale_order_id.partner_id.id,
-                'sale_id': self.sale_order_id.id,
-                'stack_ids': [(0, 0, self.stack_ids.ids)],
-                'location_id': [self.sale_order_id.location_id],
+                'sale_order_id': self.sale_order_id.id,
+                'stack_ids': [(6, 0, stack_ids)],
+                'location_id': self.location_id and self.location_id.id or False,
             }
-            return self.env['coupon.delivery.order'].create(val)
+            return self.env['coupon.delivery.order'].create([val])
 
 
 class CouponPrintingOrderLine(models.Model):
@@ -113,13 +126,14 @@ class CouponPrintingOrderLine(models.Model):
         self.ensure_one()
         ir_sequence = self.env['ir.sequence']
         stack_ids = []
-        for i in range(1, len(range(0, self.quantity, self.coupon_per_stack))+1):
-            # Il se peut que le dernier carnet contienne moins de ticket
+        for i in range(1, len(range(0, self.quantity, self.coupon_per_stack)) + 1):
+            # Il se peut que le dernier carnet contienne moins de tickets
             coupon_per_stack = self.coupon_per_stack if (i * self.coupon_per_stack) <= self.quantity else (self.quantity - (i-1) * self.coupon_per_stack)
             stack_ids += [{
                 'company_id': self.company_id.id,
                 'sequence': ir_sequence.next_by_code('sheet.stack'),
                 'product_qty': coupon_per_stack,
+                'value_unit': self.value,
                 'coupon_ids': self._prepare_coupon_to_create(coupon_per_stack),
                 'printing_order_line_id': self.id,
                 'sale_line_id': self.sale_order_line_id and self.sale_order_line_id.id or False,
@@ -135,17 +149,14 @@ class CouponPrintingOrderLine(models.Model):
         assert config
         key = config.key
 
-        # receipt_name = self.env['ir.sequence'].next_receipt(self.env.ref('seq_receipt_sequence'))
-        # receipt_name = self.env.ref('seq_receipt_sequence').next_by_id()
         res = []
-        ir_sequence = self.env['ir.sequence']
 
         for i in range(int(coupon_by_stack)):
             barcode_receipt = config.RandomEAN13(key)
             res += [(0, 0, {
                 'active': True,
                 'company_id': self.company_id.id,
-                'sequence': ir_sequence.next_by_code('receipt.sequence'),
+                'sequence': self.env.ref('bons_valeurs.seq_coupon_delivery_order').next_by_id(),
                 'barcode': barcode_receipt,
                 'barcode_trunked': barcode_receipt[:9],
                 'product_id': self.product_id.id,

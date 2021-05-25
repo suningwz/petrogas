@@ -12,7 +12,7 @@
                 <header>
                   <button string="Create Coupons" type="object" name="open" states="draft" class="oe_highlight" />
                   <button string="Print Coupons" type="object" name="print_printing_order" states="open" class="oe_highlight" />
-                  <button string="Done" type="object" name="done" states="printed" class="oe_highlight" />
+                  <button string="Confirm Printing" type="object" name="done" states="printing" class="oe_highlight" />
                   <field name="state" widget="statusbar"/>
 
                 </header>
@@ -28,8 +28,9 @@
                         <field name="confirmation_date"/>
                         <field name="sale_order_id"/>
                         <field name="partner_id"/>
+                        <field name="location_id"/>
                         <field name="printer_id"/>
-
+                        <field name="delivery_id"/>
                     </group>
                     <notebook>
                         <page name="order" string="Orders">
@@ -86,7 +87,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-      <menuitem id="coupon_printing_order_menu" name="Printing Order" parent="main_coupon_menu" action="coupon_printing_order_action" sequence="20"/>
+      <menuitem id="coupon_printing_order_menu" name="Coupon Printing Order" parent="main_coupon_menu" action="coupon_printing_order_action" sequence="20"/>
 
   </data>
 </odoo>

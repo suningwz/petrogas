@@ -27,6 +27,12 @@ class CouponReturnOrder(models.Model):
     notes = fields.Text()
 
     @api.multi
+    def create(self, vals_list):
+        name = self.env.ref('bons_valeurs.seq_coupon_delivery_order').next_by_id()
+        vals_list['name'] = name
+        return super(CouponReturnOrder, self).create(vals_list)
+
+    @api.multi
     def open(self):
         self.ensure_one()
         self.name = self.env['ir.sequence'].next_by_code('bons_valeurs.seq_coupon_receipt_return')
@@ -44,7 +50,7 @@ class CouponReturnOrder(models.Model):
         invoice_id = self.env['account.invoice'].create(invoice_val)
 
         # On actualise les statuts des coupons et du bon de retour
-        self.coupon_ids.write({'state': 'done'})
+        self.coupon_ids._set_coupons_to_returned_state()
         self.state = 'done'
         return invoice_id
 
