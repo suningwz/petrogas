@@ -101,8 +101,8 @@ class SaleOrder(models.Model):
                     # ayant le régime %s , le dépôt %s et valide à la date %s""" % (self.regime_id.code,self.location_id.name,self.date_order)
                     # warning_mess = {'title': 'Aucun article trouvé !!!', 'message': message}
                     # return {'warning': warning_mess}
-                    raise exceptions.except_orm("Attention","""Aucun article n'a été trouvé dans la matrice des prix de vente
-                     ayant le régime %s , le dépôt %s et valide à la date %s""" % (self.regime_id.code,self.location_id.name,self.date_order))
+                    raise exceptions.except_orm("Warning","""No item was found in the sales price matrix
+                     having the %s plan, the %s deposit and valid on the date %s""" % (self.regime_id.code,self.location_id.name,self.date_order))
 
                 # TODO: Croiser les deux listes on garde que les élements qui sont dans la liste de prix et de la matrice
                 product_domain = product_domain & price_sale_products
@@ -118,7 +118,6 @@ class SaleOrder(models.Model):
             product_domain_no_structure = product_domain_no_structure.filtered(lambda x: x.product_tmpl_id.apply_price_structure == False )
             if product_domain_no_structure:
                 product_domain = product_domain | product_domain_no_structure
-            # TODO: Mettre à le context
             self.product_domain = product_domain.ids
             self = self.with_context(product_domain=tuple(product_domain.ids))
 
@@ -186,6 +185,10 @@ class SaleOrder(models.Model):
 
         # Si False
         verify_group = self.verify_group()
+
+        if not verify_group:
+            raise UserError(_("""Only users with the sale order validation control ('Validate SO') can confirm sale order."""))
+
         if not verify_group:
             # test_check = all([v for k,v in check_bc.items()])
             test = [v for k, v in check_bc.items()]
