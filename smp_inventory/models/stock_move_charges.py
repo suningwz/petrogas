@@ -124,7 +124,7 @@ class StockMoveCharges(models.Model):
                 res += [(0, 0, line_vals) for line_vals in account_move_lines]
 
         # Create charge of transport
-        if stock_move_id.has_transport_charge():
+        if stock_move_id.has_transport_charge() and not self.origin_returned_move_id:
             transport_aml_dict = stock_move_id.create_transport_account_move_line()
             if transport_aml_dict:
                 res += [(0, 0, v) for k, v in transport_aml_dict.items()]
