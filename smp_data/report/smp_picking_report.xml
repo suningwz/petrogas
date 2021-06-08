@@ -50,7 +50,7 @@
                             <br/>
                             <br/>
                             <br/>
-                            <div class="h-50 row" name="lines">
+                            <div class="h-40 row" name="lines">
                                 <table class="table table-sm">
                                     <thead class="thead-light">
                                         <tr>
@@ -71,11 +71,13 @@
                                 </table>
                             </div>
 
-                            <div class="h-20 row" name="signature">
+                            <div class="h-30 row" name="signature">
     <!--                        <div class="row align-items-end " name="signature">-->
-                                <div class="col-6"><h5>The Direction</h5></div>
-                                <div class="col-6" t-if="doc.picking_type_id.code=='outgoing'"><h5>The Customer</h5></div>
-                                <div class="col-6" t-if="doc.picking_type_id.code=='incoming'"><h5>The Vendor</h5></div>
+                                <div class="col-4"><h5>The Direction</h5></div>
+                                <div class="col-4" t-if="doc.picking_type_id.code=='outgoing'"><h5>The Customer</h5></div>
+                                <div class="col-4" t-if="doc.picking_type_id.code=='incoming'"><h5>The Vendor</h5></div>
+                                <div class="col-4" t-if="doc.transportor_is_visible == True"><h5>The Transport</h5></div>
+
                             </div>
                         </div>
 
