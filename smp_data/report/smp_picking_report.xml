@@ -23,28 +23,29 @@
                             </div>
                             <br/>
                             <br/>
-                            <div class="h-20 row" name="general_info">
-                                <div name="partner_info" class="col-6 ">
+                            <div class="h-20 row" name="general_info" style="font-size: 0.8em">
+                                <div name="partner_info" class="col-4 ">
                                     <h4 t-if="doc.picking_type_id.code=='outgoing'"><b>Customer Info:</b> </h4>
                                     <h4 t-if="doc.picking_type_id.code=='incoming'"><b>Supplier Info:</b> </h4>
                                     <p><b>Customer: </b> <span t-field="doc.partner_id"/></p>
                                     <p><span t-field="doc.partner_id.city_id"/>, <span t-field="doc.partner_id.country_id"/></p>
 <!--                                    <p><span t-field="doc.transport_type"/>, <span t-field="doc.partner_id.country_id"/></p>-->
 <!--                                    <div class="col-6" t-if="doc.picking_type_id.code=='outgoing'"><h5>The Customer</h5></div>-->
-                                    <div name="transportor">
-                                        <h4 t-if="doc.transportor_is_visible == True"><b>Transport Info:</b> </h4>
-                                        <p t-if="doc.transportor_is_visible == True"><b>Transport Type: </b> <span t-field="doc.transport_type"/></p>
-                                        <p t-if="doc.transportor_is_visible == True"><b>Transportor: </b> <span t-field="doc.transportor"/></p>
-<!--                                        <p t-if="doc.transportor_is_visible == True"><b>Driver: </b> <span t-field="doc.driver"/></p>-->
-<!--                                        <p t-if="doc.transportor_is_visible == True"><b>Driver Contact: </b> <span t-field="doc.driver_contact"/></p>-->
-                                    </div>
                                 </div>
-                                <div name="transaction_info" class="col-6 ">
+                                <div name="transaction_info" class="col-4 ">
                                     <h4><b>Transaction Info</b></h4>
                                     <p><b>Sale Order: </b> <span t-field="doc.origin"/></p>
                                     <p><b>Order Date: </b> <span t-field="doc.scheduled_date"/></p>
                                     <p><b>Custom Duty: </b><span t-field="doc.regime_id"/></p>
                                     <p><b>Location: </b><t t-esc="doc.location_id.name"/></p>
+                                </div>
+
+                                <div name="transportor" class="col-4 ">
+                                    <h4 t-if="doc.transportor_is_visible == True"><b>Transport Info:</b> </h4>
+                                    <p t-if="doc.transportor_is_visible == True"><b>Transport Type: </b> <span t-field="doc.transport_type"/></p>
+                                    <p t-if="doc.transportor_is_visible == True"><b>Transporter: </b> <span t-field="doc.transportor"/></p>
+                                    <p t-if="doc.transportor_is_visible == True"><b>Driver: </b> <span t-field="doc.driver"/></p>
+                                    <p t-if="doc.transportor_is_visible == True"><b>Truck Number: </b> <span t-field="doc.truck_number"/></p>
                                 </div>
                             </div>
                             <br/>
@@ -71,12 +72,17 @@
                                 </table>
                             </div>
 
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
                             <div class="h-30 row" name="signature">
     <!--                        <div class="row align-items-end " name="signature">-->
-                                <div class="col-4"><h5>The Direction</h5></div>
-                                <div class="col-4" t-if="doc.picking_type_id.code=='outgoing'"><h5>The Customer</h5></div>
-                                <div class="col-4" t-if="doc.picking_type_id.code=='incoming'"><h5>The Vendor</h5></div>
-                                <div class="col-4" t-if="doc.transportor_is_visible == True"><h5>The Transport</h5></div>
+                                <div class="col-4"><h5>Responsible</h5></div>
+                                <div class="col-4" t-if="doc.picking_type_id.code=='outgoing'"><h5>Customer</h5></div>
+                                <div class="col-4" t-if="doc.picking_type_id.code=='incoming'"><h5>Vendor</h5></div>
+                                <div class="col-4" t-if="doc.transportor_is_visible == True"><h5>Driver</h5></div>
+<!--                                <div class="col-4" t-if="doc.transportor_is_visible == True"><h5>The Transport</h5></div>-->
 
                             </div>
                         </div>

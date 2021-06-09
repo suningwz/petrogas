@@ -148,7 +148,8 @@ class StockPicking(models.Model):
     transport_type = fields.Many2one('transport.picking.type', 'Transport Type')
     transportor = fields.Many2one('res.partner', 'Transporter', domain=[('is_transportor','=', True)] )
     transportor_is_visible = fields.Boolean(default=False)
-    driver = fields.Char('Driver')
+    driver = fields.Char('Driver Name')
+    truck_number = fields.Char('Truck Number')
     driver_contact = fields.Char('Driver Contact')
 
     @api.onchange('transport_type')

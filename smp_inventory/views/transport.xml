@@ -22,9 +22,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <field name='origin' position="after">
-                    <field name="transport_type" options="{'no_create': True}"/>
                     <field name="transportor_is_visible" invisible="True"/>
+                    <field name="transport_type" options="{'no_create': True}"/>
                     <field name="transportor" options="{'no_create': True}" attrs="{'required':[('transportor_is_visible','=',True)]}"/>
+                    <field name="driver"  attrs="{'required':[('transportor','!=',False)]}"/>
+                    <field name="truck_number"  attrs="{'required':[('transportor','!=',False)]}"/>
                 </field>
             </field>
         </record>
