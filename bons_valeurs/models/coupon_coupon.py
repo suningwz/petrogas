@@ -25,6 +25,7 @@ class StockLocation(models.Model):
 class CouponConfiguration(models.Model):
     _name = 'coupon.configuration'
     _description = 'Coupon Configuration'
+    _rec_name = 'company_id'
 
     company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.user.company_id)
     validity_date = fields.Integer('Number of days before coupon expiration')
@@ -85,6 +86,11 @@ class CouponValue(models.Model):
     _name = 'coupon.value'
     _description = 'Coupon'
     _order = 'sequence'
+    _rec_name = 'sequence'
+
+    # def compute_expiration_date(self):
+    #     if self.printing_order_id:
+
 
     company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.user.company_id)
     sequence = fields.Char('Sequence', required=True)
@@ -96,12 +102,11 @@ class CouponValue(models.Model):
     stack_id = fields.Many2one('coupon.stack', 'Stack')
     partner_id = fields.Many2one('res.partner', 'Customer', required=False)
     product_id = fields.Many2one('product.product', 'Product', required=True)
-    printing_order_id = fields.Many2one('coupon.printing.order', related='stack_id.printing_order_id', required=True)
-    # sale_id = fields.Many2one('sale.order', related='stack_id.sale_id')
+    printing_order_id = fields.Many2one('coupon.printing.order', related='stack_id.printing_order_id', required=True, store=True)
+    sale_id = fields.Many2one('sale.order', related='stack_id.sale_id')
     return_id = fields.Many2one('coupon.return.order', string="Coupon Return Receipt")
-
-    date = fields.Date('Date')
-    expiration_date = fields.Date('Expiration Date')
+    delivery_date = fields.Date('Delivery Date', related='stack_id.delivery_id.confirmation_date', store=True)
+    expiration_date = fields.Date('Expiration Date', readonly=True)
 
     _sql_constraints = [('barcode_uniq', 'unique(barcode)', 'The codebare must be unique !')]
 
@@ -134,7 +139,9 @@ class CouponValue(models.Model):
     def _set_coupons_to_done_state(self):
         self.write({'state': 'done'})
 
-    def _set_coupons_to_returned_state(self):
+    def _set_coupons_to_returned_state(self, return_id=False):
+        if not return_id:
+            raise UserError(_("A coupon return order ID must be set before to return a coupon."))
         self.write({'state': 'return'})
 
 
@@ -142,21 +149,19 @@ class CouponStack(models.Model):
     _name = 'coupon.stack'
     _description = 'Coupon Stack'
     _order = 'sequence'
+    _rec_name = 'sequence'
 
     sequence = fields.Char('Sequence', required=True, readonly=True, default='/')
-    company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.user.company_id)
-    coupon_ids = fields.One2many('coupon.value', 'stack_id')
-    product_qty = fields.Integer('Quantity')
-    printing_order_line_id = fields.Many2one('coupon.printing.order.line')
-    printing_order_id = fields.Many2one('coupon.printing.order', related='printing_order_line_id.printing_order_id')
-    sale_line_id = fields.Many2one('sale.order.line', related='printing_order_line_id.sale_order_line_id')
-    sale_id = fields.Many2one('sale.order')
-    delivery_id = fields.Many2one('coupon.delivery.order')
+    company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.user.company_id, readonly=True)
+    coupon_ids = fields.One2many('coupon.value', 'stack_id', 'Coupons', readonly=True)
+    product_qty = fields.Integer('Quantity', readonly=True)
+    printing_order_line_id = fields.Many2one('coupon.printing.order.line', readonly=True)
+    printing_order_id = fields.Many2one('coupon.printing.order', related='printing_order_line_id.printing_order_id', readonly=True)
+    sale_line_id = fields.Many2one('sale.order.line', related='printing_order_line_id.sale_order_line_id', readonly=True)
+    sale_id = fields.Many2one('sale.order', readonly=True)
+    delivery_id = fields.Many2one('coupon.delivery.order', readonly=True)
     value_unit = fields.Float('Coupon Value Unit', required=True)
     location_id = fields.Many2one('stock.location', readonly=True, required=True)
-
-
-
 
     def get_stock(self):
         return self.read_group(domain=[('delivery_id', '=', False), ('state', '=', False)],
@@ -168,7 +173,6 @@ class CouponStack(models.Model):
         domain = [('delivery_id', '=', False), ('sale_id', '=', False),
                   ('value_unit', '=', value_unit), ('product_qty', '=', coupon_per_stack)]
         return self.search(domain, order="id asc", limit=number_of_stack)
-
 
     # @api.model
     # def reserve_stock_type_or_stack(self,value=False, value_unit=False, quantity=False, coupon_per_stack=False):

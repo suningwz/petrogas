@@ -47,7 +47,6 @@
         <field name="category_id" ref="group_coupon"/>
         <field name="implied_ids" eval="[(4, ref('group_coupon_reader')), (4, ref('group_coupon_sale_officer')), (4, ref('group_coupon_production_officer')), (4, ref('group_return_officer'))]"/>
         <field name="users" eval="[(4, ref('base.user_admin'))]"/>
-
     </record>
 
 

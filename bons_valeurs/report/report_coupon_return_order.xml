@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_coupon_return_order">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.creater_id.lang)" />
+
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+                                <h2 >Coupon Return Order: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="h-20 row" name="general_info">
+                                <div class="col-6" name="general_infos">
+                                    <p><b>Return Status: </b> <span t-field="doc.state"/></p>
+                                    <p><b>Return Date: </b> <span t-field="doc.confirmation_date"/></p>
+                                    <p><b>Partner: </b> <span t-field="doc.partner_id"/></p>
+                                    <p><b>Invoice: </b> <span t-field="doc.invoice_id"/></p>
+                                    <p><b>Value: </b> <span t-field="doc.value"/></p>
+                                </div>
+
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="h-50 row " name="lines">
+                                <table class="table" style="table-layout: fixed;">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Coupon</th>
+                                            <th>Value Unit</th>
+                                            <th>Quantity</th>
+                                            <th>Total Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="doc.coupon_return_count_ids" t-as="line" >
+                                            <td><span t-field="line.product_id" /></td>
+                                            <td><span t-field="line.value_unit" /></td>
+                                            <td><span t-field="line.quantity" /></td>
+                                            <td><span t-field="line.quantity" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="h-20 row" name="signature">
+                                <div class="col-6"><h5>The Operator</h5></div>
+                                <div class="col-6"><h5>The Customer</h5></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        string="Coupon Return Order"
+        id="action_report_coupon_return_order"
+        model="coupon.return.order"
+        report_type="qweb-pdf"
+        name="bons_valeurs.report_coupon_return_order"
+        file="bons_valeurs.report_coupon_return_order"
+        print_report_name="'Coupon Return Order - %s' % (object.name)"
+    />
+
+</odoo>

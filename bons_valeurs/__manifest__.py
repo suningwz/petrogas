@@ -37,6 +37,7 @@
         'views/coupon_return_order.xml',
 
         "report/coupon_template.xml",
+        "report/page_format.xml",
 
     ],
     # only loaded in demonstration mode

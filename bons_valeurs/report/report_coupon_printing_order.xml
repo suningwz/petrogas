@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_coupon_printing_order">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="doc" t-value="doc.with_context(lang=doc.creater_id.lang)" />
+
+                    <div class="page">
+
+                        <div class="column" style="height:900px;">
+                            <div class="oe_structure"/>
+                            <div class="h-10 row" style="background-color:#E9ECEF; margin:5px" name="title">
+                                <h2 >Coupon Printing Order: <t t-esc="doc.name"/></h2>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="h-20 row" name="general_info">
+                                <div class="col-6" name="general_infos">
+                                    <p><b>Printing Status: </b> <span t-field="doc.state"/></p>
+                                    <p><b>Printing Date: </b> <span t-field="doc.printing_date"/></p>
+                                    <t t-if="doc.sale_order_id'">
+                                        <p><b>Sale Order: </b> <span t-field="doc.sale_order_id"/></p>
+                                        <p><b>Partner: </b> <span t-field="doc.sale_order_id.partner_id"/></p>
+                                    </t>
+                                </div>
+
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="h-50 row " name="lines">
+                                <table class="table" style="table-layout: fixed;">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Stack Number</th>
+                                            <th>Number Stack</th>
+                                            <th>Fisrt Coupon</th>
+                                            <th>Last Coupon</th>
+                                            <th>Coupon Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="doc.printing_line_ids" t-as="line">
+                                            <tr t-foreach="line.stack_ids" t-as="stack" >
+                                                <td><span t-field="stack.sequence" /></td>
+                                                <td><span t-field="stack.product_qty" /></td>
+                                                <td><span t-field="stack.coupon_ids[0].name" /></td>
+                                                <td><span t-field="stack.coupon_ids[-1].name" /></td>
+                                                <td><span t-field="stack.value_unit" /></td>
+                                            </tr>
+                                        </t>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="h-20 row" name="signature">
+                                <div class="col-6"><h5>The Operator</h5></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        string="Coupon Printing Order"
+        id="action_report_coupon_printing_order"
+        model="coupon.printing.order"
+        report_type="qweb-pdf"
+        name="bons_valeurs.report_coupon_printing_order"
+        file="bons_valeurs.report_coupon_printing_order"
+        print_report_name="'Coupon Printing Order - %s' % (object.name)"
+    />
+
+</odoo>

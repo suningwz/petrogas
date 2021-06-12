@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="coupon_internal_layout">
+        <style>
+
+        </style>
+        <t t-if="not o" t-set="o" t-value="doc"/>
+
+        <t t-if="not company">
+            <!-- Multicompany -->
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+
+<!--        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">-->
+        <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+          <t t-raw="0"/>
+        </div>
+    </template>
+
+    <!-- Main template -->
+    <template id="coupon_template">
+        <t t-call="web.html_container">
+            <t t-foreach="coupon_per_page" t-as="page">
+<!--                <div class="container">-->
+                <div class="container-fluid">
+                    <t t-call="bons_valeurs.coupon_unique_print"/>
+                </div>
+<!--                <t t-call="bons_valeurs.coupon_unique_print" t-lang="doc.partner_id.lang"/>-->
+            </t>
+        </t>
+    </template>
+
+    <!-- Translatable template -->
+    <template id="coupon_unique_print">
+        <t t-call="web.basic_layout">
+
+            <div class="row" style="border: 1px solid green; height:1470px; text-align: center" >
+
+                    <div class="col-12 " style="height:100%; width:100%; border: 2px solid blue;">
+                        <t t-foreach="page" t-as="o">
+                            <div class="row" style=" height:25%; width:103%; border: 2px solid orange;">
+                                <div id="left" class="col" style="width:30%; height:100%; border: 1px solid red; color:red; padding-right: 50px;">
+
+                                    <div class="row" id="l1" style="height:23%; width:100%;
+                                        border: 1px solid red; color:red; position:relative; top:50%; ">
+<!--                                        <div style="position:relative; top:50%;">-->
+                                            <span style="display:inline-block; vertical-align:middle" t-field="o.sequence"/>
+<!--                                        </div>-->
+                                    </div>
+                                    <div class="text-right" id="l2" style=" height:14%; width:100%;"><span t-field="o.value"
+                                        t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'
+                                    /></div>
+                                    <div class="text-right" id="l3" style=" height:13%; width:100%;"></div>
+                                    <div class="text-right" id="l4" style=" height:13%; width:100%;"></div>
+                                    <div class="text-right" id="l6" style=" height:13%; width:100%;"><span t-field="o.barcode_trunked"/></div>
+                                    <div class="text-right" id="l5" style=" height:24%; width:100%;"></div>
+
+                                </div>
+<!--                                <div id="right text-center" class="col" style="width:70%; height:100%; border: 1px solid red;">-->
+                                <div id="right" class="col" style="width:70%; height:100%; border: 1px solid green;">
+                                    <div class="row " style="height:100%; width:100%">
+                                        <div id="r1" class="col" style="width:60%; height:100%;">
+                                            <div class="text-center" id="r1.1" style="height:23%;">
+                                                <t t-if="o.partner_id">
+                                                    <h4 style="text-align: center;"><span t-field="o.partner_id.name"/></h4>
+                                                </t>
+                                            </div>
+                                            <div class="text-center" id="r1.2" style="height:30%;">
+                                                <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code128', o.barcode, 600, 200)" alt="Barcode" style="width:100%;height:100%"/>
+                                            </div>
+                                            <div class="text-center" id="r1.3" style="height:10%;"></div>
+                                            <div class="text-center" id="r1.4" style="height:13%;"><span t-field="o.barcode_trunked"/></div>
+                                            <div class="text-center" id="r1.5" style="height:23%;"><span t-field="o.company_id"/></div>
+                                        </div>
+                                        <div id="r2" class="col" style="width:40%; height:100%; border: 1px solid black;">
+                                            <div class="text-center" id="r2.1" style="height:25%;"><span t-field="o.sequence"/></div>
+                                            <div class="text-center" id="r2.2" style="height:29%;"><span t-field="o.value"
+                                                t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'
+                                            /></div>
+                                            <div class="text-center" id="r2.3" style="height:46%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+            </div>
+<!--        </div>-->
+        </t>
+    </template>
+
+    <record id="coupon_report" model="ir.actions.report">
+        <field name="name">Coupon Report</field>
+        <field name="model">coupon.value</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">bons_valeurs.coupon_template</field>
+        <field name="print_report_name">'Coupon Report - %s' % (object.sequence)</field>
+    </record>
+
+
+</odoo>

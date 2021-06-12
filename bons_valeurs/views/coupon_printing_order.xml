@@ -11,6 +11,7 @@
             <form string="Coupon Printing Order">
                 <header>
                   <button string="Create Coupons" type="object" name="open" states="draft" class="oe_highlight" />
+<!--                  <button string="Print Coupons" type="object" name="print_printing_order" states="done" class="oe_highlight" />-->
                   <button string="Print Coupons" type="object" name="print_printing_order" states="open" class="oe_highlight" />
                   <button string="Confirm Printing" type="object" name="done" states="printing" class="oe_highlight" />
                   <field name="state" widget="statusbar"/>

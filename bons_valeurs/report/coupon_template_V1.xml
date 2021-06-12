@@ -13,10 +13,10 @@
                                         <div class="row" style="border: 1px solid green; height:25%; width=100%; ">
                                             <div id="left" class="col" style="width:30%; height:100%; ">
                                                 <div class="row" id="l1" style=" height:23%; width=100%">
-<!--                                                    <div style="position:relative; top:80%; left: 30%;"><span t-field="o.sequence"/></div>-->
+                                                    <div style="position:relative; top:50%; left: 20%;"><span t-field="o.sequence"/></div>
                                                 </div>
                                                 <div class="row" id="l2" style=" height:14%; width=100%">
-                                                    <div style="position:relative; top:80%; left: 30%;">
+                                                    <div style="position:relative; top:50%; left: 20%;">
                                                         <span t-field="o.value"
                                                               t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'
                                                         />
@@ -25,7 +25,7 @@
                                                 <div class="row" id="l3" style=" height:13%; width=100%"></div>
                                                 <div class="row" id="l4" style=" height:13%; width=100%"></div>
                                                 <div class="row" id="l6" style=" height:13%; width=100%">
-                                                    <div class="text-right" style="position:relative; top:80%; left: 30%; font-size:1em;"><span t-field="o.sequence"/></div>
+                                                    <div class="text-right" style="position:relative; top:50%; left: 20%;"><span t-field="o.barcode_trunked"/></div>
                                                 </div>
                                                 <div class="row" id="l5" style=" height:24%; width=100%"></div>
                                             </div>
@@ -36,32 +36,26 @@
                                                             <t t-if="o.partner_id">
             <!--                                                <div class="row" id="l5" style=" height:24%; width=100%"></div>-->
 
-                                                                <h4 style="position:relative; top:50%; left: 5%; font-size:1em;"><span t-field="o.partner_id.name"/></h4>
+                                                                <h4 style="position:relative; top:20%; left: 20%;"><span t-field="o.partner_id.name"/></h4>
                                                             </t>
                                                         </div>
                                                         <div class="row" id="r1.2" style="height:30%;">
-<!--                                                            <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code128', o.barcode, 600, 200)" alt="Barcode" style="width:100%;height:100%"/>-->
-                                                            <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code128', o.barcode, 600, 00)" alt="Barcode" style="width:100%;height:60%"/>
+                                                            <img class="barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s&amp;humanreadable=0' % ('Code128', o.barcode, 600, 200)" alt="Barcode" style="width:100%;height:100%"/>
                                                         </div>
-                                                        <div class="row" id="r1.3" style="height:10%;">
-                                                            <div class="col-12" style="position:relative; top:0%; left: 0%; font-size:1em;">
-                                                                <span t-field="o.barcode_trunked" style=""/>
-                                                                <p>Ticket Valid Until:<span  t-field="o.expiration_date"/></p>
-                                                            </div>
-                                                        </div>
+                                                        <div class="row" id="r1.3" style="height:10%;"></div>
                                                         <div class="row" id="r1.4" style="height:13%;">
-                                                            <div class="text-right" style="position:relative; top:80%; left: 20%;"><span t-field="o.sequence"/></div>
+                                                            <div class="text-right" style="position:relative; top:50%; left: 20%;"><span t-field="o.barcode_trunked"/></div>
                                                         </div>
 <!--                                                        <div class="row" id="r1.5" style="height:23%;">-->
-<!--                                                            <div class="text-right" style="position:relative; top:80%; left: 20%;"><span t-field="o.company_id"/></div>-->
+<!--                                                            <div class="text-right" style="position:relative; top:50%; left: 20%;"><span t-field="o.company_id"/></div>-->
 <!--                                                        </div>-->
                                                     </div>
                                                     <div id="r2" class="col" style="width:40%; height:100%; ">
                                                         <div class="row" id="r2.1" style="height:25%;">
-<!--                                                            <div class="text-right" style="position:relative; top:80%; left: 20%;"><span t-field="o.sequence"/></div>-->
+                                                            <div class="text-right" style="position:relative; top:50%; left: 20%;"><span t-field="o.sequence"/></div>
                                                         </div>
                                                         <div class="row" id="r2.2" style="height:29%;">
-                                                            <div style="position:relative; top:80%; left: 20%;">
+                                                            <div style="position:relative; top:50%; left: 20%;">
                                                                 <span t-field="o.value"
                                                                       t-options='{"widget": "monetary", "display_currency": o.company_id.currency_id}'
                                                                 />

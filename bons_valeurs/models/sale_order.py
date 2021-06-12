@@ -6,8 +6,9 @@ from lxml import etree
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    coupon_perso = fields.Boolean('Personnalised Coupon', default=False)
+    coupon_perso = fields.Boolean('Personnalised Coupon', default=True)
     coupon_per_stack = fields.Integer('Number Of Coupon Per Stack')
+    # coupon_delivery_order_id = fields.Many2one('')
 
     @api.multi
     def _prepare_invoice_line(self, qty):

@@ -78,10 +78,10 @@
                             <br/>
                             <div class="h-30 row" name="signature">
     <!--                        <div class="row align-items-end " name="signature">-->
-                                <div class="col-4"><h5>Responsible</h5></div>
-                                <div class="col-4" t-if="doc.picking_type_id.code=='outgoing'"><h5>Management</h5></div>
-                                <div class="col-4" t-if="doc.picking_type_id.code=='incoming'"><h5>Vendor</h5></div>
-                                <div class="col-4" t-if="doc.transportor_is_visible == True"><h5>Driver</h5></div>
+                                <div class="col-4 text-center"><h5>Management</h5></div>
+                                <div class="col-4 text-center" t-if="doc.picking_type_id.code=='outgoing'"><h5>Customer</h5></div>
+                                <div class="col-4 text-center" t-if="doc.picking_type_id.code=='incoming'"><h5>Vendor</h5></div>
+                                <div class="col-4 text-center" t-if="doc.transportor_is_visible == True"><h5>Driver</h5></div>
 <!--                                <div class="col-4" t-if="doc.transportor_is_visible == True"><h5>The Transport</h5></div>-->
 
                             </div>

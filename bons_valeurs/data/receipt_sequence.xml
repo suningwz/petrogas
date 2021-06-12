@@ -18,7 +18,7 @@
         <record id="seq_coupon_receipt_return" model="ir.sequence">
             <field name="name">Coupon Return Order</field>
             <field name="code">coupon.return.order</field>
-            <field name="prefix">RR/</field>
+            <field name="prefix">CRO/</field>
             <field name="padding">6</field>
         </record>
 
@@ -34,10 +34,46 @@
         <record id="seq_receipt_sequence" model="ir.sequence">
             <field name="name">Coupons</field>
             <field name="code">coupon.value</field>
-            <field name="prefix">TCK/</field>
+            <field name="prefix">C</field>
             <field name="padding">12</field>
         </record>
 
+
+        <record id="seq_journal_note_debit_coupon" model="ir.sequence">
+            <field name="name">Coupons Debit Note</field>
+            <field name="code">coupon.debit.note</field>
+            <field name="prefix">CDN/</field>
+            <field name="padding">6</field>
+        </record>
+
+
+        <record id="seq_journal_note_credit_coupon" model="ir.sequence">
+            <field name="name">Coupons Credit Note</field>
+            <field name="code">coupon.credit.note</field>
+            <field name="prefix">CCD/</field>
+            <field name="padding">6</field>
+        </record>
+
+
+        <record id="journal_coupon_note_credit" model="account.journal">
+            <field name="name">Coupons Credit Note</field>
+            <field name="type">purchase</field>
+            <field name="code">CCN/</field>
+            <field name="sequence_id" eval="ref('bons_valeurs.seq_journal_note_credit_coupon')"/>
+        </record>
+
+        <record id="journal_coupon_note_debit" model="account.journal">
+            <field name="name">Coupons Debit Note</field>
+            <field name="type">sale</field>
+            <field name="code">CDN/</field>
+            <field name="sequence_id" eval="ref('bons_valeurs.seq_journal_note_debit_coupon')"/>
+        </record>
+
+
+<!--        <record id="coupon_configuration" model="coupon.configuration">-->
+<!--            <field name="company_id" search="[('','=', 'Petrogas')]"/>-->
+<!--            <field name="commission_account"></field>-->
+<!--        </record>-->
 <!--        <record id="bv_peines_soins_config_data" model="bv.peines.soins.configuration">-->
 <!--            <field name="product_id"></field>-->
 <!--            <field name="commission_by_receipt"></field>-->
